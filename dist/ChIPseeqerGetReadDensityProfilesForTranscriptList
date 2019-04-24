@@ -1,0 +1,131 @@
+#!/usr/bin/perl
+use lib "$ENV{HOME}/PERL_MODULES";
+use Sets;
+use strict;
+
+
+use Getopt::Long;
+
+if (@ARGV == 0) {
+  die "Args --chipdir=DIR --genelist=FILE --format=STR\n";
+}
+
+my $chipdir		= undef;
+my $genelist	= undef;
+my $todo		= undef;
+my $annotation	= undef;
+my $lenu		= 2000;
+my $lend		= 2000;
+my $format		= "bed";
+my $verbose		= 0;
+my $prefix		= undef;
+my $db			= "RefGene";
+my $genome		= "hg18";
+
+
+GetOptions("chipdir=s"  => \$chipdir,
+	   "verbose=s"  => \$verbose,
+	   "format=s"   => \$format,
+		"lenu=s"     => \$lenu,
+		"lend=s"     => \$lend,
+		"prefix=s"   => \$prefix,
+		"genelist=s" => \$genelist,
+		"db=s"		=> \$db,
+		"genome=s"	=> \$genome);
+
+if ($genome eq "hg18") {
+	if($db eq "RefGene") {
+		$annotation = "$ENV{CHIPSEEQERDIR}/DATA/hg18/refGene.txt.07Jun2010.oneperTSS"; 
+	}
+	elsif ($db eq "AceView") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/hg18/acembly.txt.hg18.MAR2006.oneperTSS";
+	}
+	elsif ($db eq "Ensembl") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/hg18/ensGene.txt.hg18.MAR2006.oneperTSS";
+	}
+	elsif ($db eq "UCSCGenes") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/hg18/knownGene.txt.hg18.MAR2006_transf.oneperTSS";
+	}
+}
+elsif ($genome eq "mm9") {
+	if($db eq "RefGene") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/mm9/refGene.txt.mm9.20APR2010.oneperTSS";
+	}
+	elsif ($db eq "AceView") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/mm9/acembly.txt.mm9.JUL2007.oneperTSS";
+	}
+	elsif ($db eq "Ensembl") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/mm9/ensGene.txt.mm9.JUN2007.oneperTSS";
+	}
+	elsif ($db eq "UCSCGenes") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/mm9/knownGene.txt.mm9.JUL2007_transf.oneperTSS";
+	}
+}
+elsif ($genome eq "dm3") {
+	if($db eq "RefGene") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/dm3/refGene.txt.dm3.APR2006.oneperTSS";
+	}
+	elsif ($db eq "Ensembl") {
+		$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/dm3/ensGene.txt.dm3.APR2006.oneperTSS";
+	}	
+}
+elsif ($genome eq "sacser") {
+	$annotation	= "$ENV{CHIPSEEQERDIR}/DATA/sacser/sgd.JUN2008.j.oneperTSS";
+	$db = "SGD";
+}
+
+
+my $tmpints = Sets::getTmpFile("/tmp/int");
+$todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_upstream_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$lenu --lengthD=$lend --checkmaxlen=0 --uniquegenes=1 --shortgenes=0 > $tmpints ";
+system($todo) == 0 or die "Cannot exec $tmpints\n";
+my @a_ints = ();
+if (-e $tmpints) {
+  print STDERR "Created $tmpints\n";
+}
+# table of intervals
+my $intfile = undef;
+
+if (defined($genelist)) {
+
+  if ($genelist eq "all") {
+
+    # make full list
+    $intfile = $tmpints;
+    
+  } else {
+
+    # make sublist
+    my $h_ref_genes = Sets::getIndex($genelist);
+    $intfile =  "$genelist.promoters";
+    open OUT, ">$intfile";
+    open IN, $tmpints or die "Cannot open file $tmpints\n";
+    while (my $l = <IN>) {
+      chomp $l;
+      my @a = split /\t/, $l, -1;
+      if (defined($h_ref_genes->{$a[0]})) {
+	print OUT "$l\n";
+      }
+    }
+    close IN;
+    close OUT;
+
+  }
+
+} else {
+  die "No genelist\n";
+}
+
+my $genelistfile = Sets::filename($genelist);
+
+my $outfile = "$chipdir/$genelistfile.profiles.txt";
+$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerGetReadDensityProfiles.bin -intervals $intfile -chipdir $chipdir -format $format -fraglen 0 -nummtnorm 0 -rpkmnorm 0  -uniquereads 0 -hasid 1 -outfile $outfile ";
+if ($verbose == 1) {
+  print "$todo\n";
+}
+system($todo) == 0 or die "Cannot exec $todo\n";
+if (-e $outfile) {
+  print "Created $outfile\n";
+} else {
+  die "$outfile couldn't be created\n";
+}
+

@@ -1,0 +1,123 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+my $refGeneAnnotation	= "$ENV{CHIPSEEQERDIR}/DATA/refGene.txt.25Nov2009.new";
+my $aceViewAnnotation	= "$ENV{CHIPSEEQERDIR}/DATA/acembly_data_hg18.txt";
+my $annotation	= undef;
+my $targets     = undef;
+my $suf         = undef;
+my $todo        = undef;
+my $iswig       = undef;
+my $lenu        = undef;
+my $lend        = undef;
+my $db			= "RefGene";
+my $distance	= 5000;
+my $verbose     = 0;
+
+if (@ARGV == 0) {
+	die "Usage: FindDistandPeaks --targets=FILE --prefix=STR --lenu=INT --lend=INT --db=STR\n";
+}
+
+GetOptions("targets=s" => \$targets,
+"lenu=s"     => \$lenu,
+"lend=s"     => \$lend,
+"prefix=s"   => \$suf,
+"verbose=s"  => \$verbose,
+"db=s"		 => \$db,
+"distance=s" => \$distance,
+"iswig=s"    => \$iswig	);
+
+if ($db eq "RefGene") {
+	$annotation = $refGeneAnnotation; 
+}
+elsif ($db eq "AceView") {
+	$annotation = $aceViewAnnotation; 
+}
+
+if (!defined($suf)) {
+	die("Must provide --prefix=STR\n");
+}
+
+#
+# extract proms
+#
+my $promfile = "$annotation.u$lenu\_d$lend";
+$todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_upstream_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$lenu --lengthD=$lend --checkmaxlen=0 > $promfile"  ;
+if ($verbose == 1) {
+	print "$todo\n";
+}
+print "Extracting promoters ... ";
+system($todo) == 0 or die "Cannot execute promoter extraction script.\n"; 
+print "Done.\n";
+
+#
+# find overlapping/non-overlapping peaks
+#
+$todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -intervals2 $promfile -hasid2 1 -show_ov_int 1";
+if (defined($iswig)) {
+	$todo .= " -iswig $iswig ";
+}
+$todo .= " > $suf.$db.OV_PEAKS";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+print "Determining overlap between promoters and ChIP-seq peaks ... ";
+system($todo) == 0 or die "Cannot exec CompareIntervals\n";
+if (-e "$suf.$db.OV_PEAKS") {
+	
+	my $todo2 = "awk -F \"\t\" '{if (\$4 == 0) print \$0}' $suf.$db.OV_PEAKS > $suf.$db.NOV_PEAKS";
+	system($todo2) == 0 or die "Cannot exec $todo2\n";
+	print "Done ($suf.$db.NOV_PEAKS created).\n";	
+	
+	#count number of transcripts with a peak
+	open IN, "$suf.$db.NOV_PEAKS";
+	my $cnt = 0;
+	while (my $l = <IN>) {
+		chomp $l;
+		my $line = split /\n/;
+		$cnt++;
+	}
+	close IN;
+	
+	print "Found $cnt non-overlapping peaks.\n";
+	
+	my $todo3 = "rm $suf.$db.OV_PEAKS";
+	system($todo3) == 0 or die "Cannot exec $todo3\n";
+
+}
+
+#
+# find distant (isolated) peaks
+#
+if (-e "$suf.$db.NOV_PEAKS") {
+
+	my $todo3= "./CompareIntervalsDistance -intervals1 $suf.$db.NOV_PEAKS -intervals2 $annotation.u$lenu\_d$lend -hasid2 1 -distance_min $distance > $suf.$db.$distance.DIST_PEAKS.tmp";
+	system($todo3) == 0 or die "Cannot exec $todo3\n";
+	
+	my $todo4 = "awk -F \"\t\" '{if (\$4 != 0) print \$0}' $suf.$db.$distance.DIST_PEAKS.tmp > $suf.$db.$distance.DIST_PEAKS";
+	system($todo4) == 0 or die "Cannot exec $todo4\n";
+	
+	print "Done ($suf.$db.$distance.DIST_PEAKS created).\n";
+	
+	#count number of transcripts with a peak
+	open IN, "$suf.$db.$distance.DIST_PEAKS";
+	my $cnt = 0;
+	while (my $l = <IN>) {
+		chomp $l;
+		my $line = split /\n/;
+		$cnt++;
+	}
+	$cnt = $cnt - 1;
+	close IN;
+	
+	print "Found $cnt peaks at $distance b distant from the promoters ($lenu b upstream/ $lend b downstream).\n";
+	
+	my $todo5 = "rm $suf.$db.$distance.DIST_PEAKS.tmp";
+	system($todo5) == 0 or die "Cannot exec $todo5\n";
+
+}

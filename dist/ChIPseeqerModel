@@ -1,0 +1,585 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+# variables to store options
+my $coreTFFile		= undef;
+my $suppTFFile		= undef;
+my $d0				= 5000;
+my $peakheightcol	= 7;
+my $rpkmFile		= undef;
+my $suppTFMode		= "all";
+my $skipPol2		= 1;
+my $anova			= 0;
+my $response		= "log\"(LY1+1)\"";
+my $calcScores		= 1;
+my $calcSuppScores	= 1;
+my $pcaCenter		= 0;
+my $pcaScale		= 1;
+my $suffix			= undef;
+my $mirna			= 0;
+my $mirnafile		= "$ENV{CHIPSEEQERDIR}/DATA/miRNA/human_predictions_S_C_aug2010.txt.MIR.txt";
+#my $mirnafile		= "$ENV{CHIPSEEQERDIR}/DATA/miRNA/human_predictions_S_C_aug2010.txt.MIR_small.txt";
+my $method			= "pca";
+my $matrix			= undef;
+my $jack_knife_trials = 10;
+my $knockdown		= undef;
+
+# other variables
+my $idx				= undef;
+my $coredir			= undef;
+my $suppdir			= undef;
+my $suppTFnum		= undef;
+my $clust			= 1;
+my $sortby			= undef;
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerModel --$coreTFFile=FILE\n";
+}
+
+# handling given options
+GetOptions("coreTFFile=s"		=> \$coreTFFile,
+"suppTFFile=s"		=> \$suppTFFile,
+"d0=s"				=> \$d0,
+"peakheightcol=s"	=> \$peakheightcol,
+"calcScores=s"		=> \$calcScores,
+"pcaCenter=s"		=> \$pcaCenter,
+"pcaScale=s"		=> \$pcaScale,
+"rpkmFile=s"		=> \$rpkmFile,
+"response=s"		=> \$response,
+"suppTFMode=s"		=> \$suppTFMode,
+"skipPol2=s"		=> \$skipPol2,
+"anova=s"			=> \$anova,
+"suffix=s"			=> \$suffix,
+"calcSuppScores=s"	=> \$calcSuppScores,
+"mirna=s"			=> \$mirna,
+"clust=s"			=> \$clust,
+"sortby=s"			=> \$sortby,
+"method=s"			=> \$method,
+"matrix=s"			=> \$matrix,
+"knockdown=s"		=> \$knockdown);
+
+if (!defined($coreTFFile)) {
+	if(!defined($matrix)) {
+		die("Must provide --coreTFFile=FILE or --matrix=FILE\n");
+	}
+}
+
+if (!defined($suffix)) {
+	die("Must provide --suffix=STR\n");
+}
+
+if (defined($coreTFFile)) {
+	# get coreTF directory
+	$idx	= rindex($coreTFFile, "/");
+	$coredir = substr $coreTFFile, 0, $idx+1;  
+}
+
+if (defined($matrix)) {
+	# get coreTF directory
+	$idx	= rindex($matrix, "/");
+	$coredir = substr $matrix, 0, $idx+1;  
+}
+
+# get suppTF directory
+if(defined($suppTFFile)) {
+	$idx	= rindex($suppTFFile, "/");
+	$suppdir = substr $suppTFFile, 0, $idx+1;  
+}
+
+
+#############################
+# Regular run starts here	#
+#############################
+if(defined($coreTFFile)) {
+	#
+	# Calculate scores for each promoters
+	#
+	if($calcScores) {
+		# open coreTFFile
+		open(IN, "$coreTFFile") or die "Can't open file $coreTFFile.";
+		
+		while (my $line = <IN>) {
+			
+			chomp $line;
+			
+			if($skipPol2) {
+				next if $line =~ /Pol2/;
+			}
+			
+			my @a = split /\t/, $line, -1;
+			
+			my $peakfile	= "$a[0]";
+			my $label		= "$a[1]";
+			
+			if(defined($a[2])) {
+				$d0 = "$a[2]";
+			}
+			
+			#print "$peakfile \t $label \t $d0 \n";
+			
+			my $calcTodo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/CalcExtendedPeakScores.pl --peakfile=$peakfile --d0=$d0 --label=$label --peakheightcol=$peakheightcol > $coredir$label.$d0.PB";
+			system($calcTodo) == 0 or die "Cannot exec $calcTodo\n";
+			
+			#print "$calcTodo\n";
+		}
+		close IN;
+	}
+	
+	
+	#
+	# Concatenate TF scores into a matrix.
+	#
+	my $concatTodo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/expression_concatenate_matrices.pl $coredir/*.PB ";
+	$concatTodo .= " > $coredir\MatPromBind.$suffix.txt";
+	
+	print "Concatenate TF scores into a matrix.\n";
+	system($concatTodo) == 0 or die "Cannot exec $concatTodo\n";
+	
+	if($method eq "pca")
+	{
+		#
+		# Run PCA.
+		#
+		my $pcaTodo = "$ENV{CHIPPCADIR}/ChIP_PCA -chipdata $coredir\MatPromBind.$suffix.txt -center $pcaCenter -scale $pcaScale ";
+		
+		if(defined($sortby)) {
+			$pcaTodo .= "-sortby $sortby "
+		}
+		
+		if(defined($knockdown)) {
+			$pcaTodo .= "-kd $knockdown "
+		}
+		
+		print "Run PCA.\n";
+		system($pcaTodo) == 0 or die "Cannot exec $pcaTodo\n";
+		
+		#
+		# Create heatmap.
+		#
+		my $heatmapTodo = "$ENV{PERLSCRIPTSDIR}/draw_expression_heatmap.pl --matrix=$coredir\MatPromBind.$suffix.txt.evec --minmax=0.25 --distance=euclidean --clustcols=$clust --cmap=$ENV{HEATMAPDIR}/colormaps/cmap2.txt";
+		print "Create heatmap.\n";
+		system($heatmapTodo) == 0 or die "Cannot exec $heatmapTodo\n";
+		
+	}
+	
+	#
+	# Run regression.
+	#
+	if(defined($rpkmFile)) {
+		my $regressionTodo = "$ENV{CHIPPCADIR}/CorrelatePCADataAndExpression.pl --evec1=$coredir\MatPromBind.$suffix.txt.proj --expfile=$rpkmFile --resp=$response ";
+		
+		if(defined($knockdown)) {
+			$regressionTodo .= "--knockdown=$coredir\MatPromBind.$suffix.txt.proj.kd$knockdown ";
+		}
+		
+		print "$regressionTodo\n";
+		
+		print "Run regression.\n";
+		system($regressionTodo) == 0 or die "Cannot exec $regressionTodo\n";
+	}
+}
+
+#############################
+# Regular run ends here		#
+#############################
+
+
+if(defined($matrix)) {
+	
+	#
+	# Run PCA for the original matrix
+	#
+	my $pcaTodo = "$ENV{CHIPPCADIR}/ChIP_PCA -chipdata $matrix -center $pcaCenter -scale $pcaScale ";
+	
+	if(defined($sortby)) {
+		$pcaTodo .= "-sortby $sortby"
+	}
+	
+	print "Run PCA.\n";
+	system($pcaTodo) == 0 or die "Cannot exec $pcaTodo\n";
+	
+	#
+	# Create heatmap.
+	#
+	my $heatmapTodo = "$ENV{PERLSCRIPTSDIR}/draw_expression_heatmap.pl --matrix=$matrix.evec --minmax=0.25 --distance=euclidean --clustcols=$clust --cmap=$ENV{HEATMAPDIR}/colormaps/cmap2.txt";
+	print "Create heatmap.\n";
+	system($heatmapTodo) == 0 or die "Cannot exec $heatmapTodo\n";
+	
+	
+	#
+	# Run regression.
+	#
+	if(defined($rpkmFile)) {
+		my $regressionTodo = "$ENV{CHIPPCADIR}/CorrelatePCADataAndExpression.pl --evec1=$matrix.proj --expfile=$rpkmFile --resp=$response";
+		print "Run regression.\n";
+		system($regressionTodo) == 0 or die "Cannot exec $regressionTodo\n";
+	}
+	
+	# Run PCA on subsets of the orignal matrix
+	#for(my $k=1; $k<=$jack_knife_trials; $k++) {
+	
+	# Make subsets of matrix
+	#	my $todo_subset_matrix = "randomly_select_rows.pl $matrix > $matrix.trial$k.txt";
+	#	print "Creating subsets of the matrix...trial $k.\n";
+	#	system($todo_subset_matrix) == 0 or die "Cannot exec $todo_subset_matrix\n";
+	
+	#	if($method eq "pca")
+	#	{
+	#
+	# Run PCA.
+	#
+	#		my $pcaTodo = "$ENV{CHIPPCADIR}/ChIP_PCA -chipdata $matrix.trial$k.txt -center $pcaCenter -scale $pcaScale ";
+	
+	#		if(defined($sortby)) {
+	#			$pcaTodo .= "-sortby $sortby"
+	#		}
+	
+	#		print "Run PCA.\n";
+	#		system($pcaTodo) == 0 or die "Cannot exec $pcaTodo\n";
+	#	}
+	#}
+	
+}
+
+
+
+if(defined($coreTFFile)) {
+	
+	#
+	# When mirna == 1
+	#
+	if($mirna == 1) {
+		
+		# first create one matrix for each miRNA
+		my $miRNATodo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/add_mirna_to_matrix_file.pl --mirnafile=$mirnafile --matrix=$coredir\MatPromBind.$suffix.txt.proj";
+		print "Creating matrices and adding miRNAs.\n";
+		system($miRNATodo) == 0 or die "Cannot exec $miRNATodo\n";
+		
+		
+		# open suppTFFile
+		open(IN, "$coredir\MatPromBind.$suffix.txt.proj.MIRfiles.txt") or die "Can't open file $coredir\MatPromBind.$suffix.txt.proj.MIRfiles.txt.";
+		
+		while (my $line = <IN>) {
+			
+			chomp $line;
+			
+			my @a = split /\t/, $line, -1;
+			
+			my $mirfile		= "$a[0]";
+			my $label		= "$a[1]";
+			
+			#
+			# Run regression.
+			#
+			if(defined($rpkmFile)) {
+				my $regressionTodo = "$ENV{CHIPPCADIR}/CorrelatePCADataAndExpression.pl --evec1=$mirfile --evec2=$coredir\MatPromBind.$suffix.txt.proj --expfile=$rpkmFile --resp=$response --anova=$anova --verbose=1";
+				print "Run regression.\n";
+				system($regressionTodo) == 0 or die "Cannot exec $regressionTodo\n";
+			}
+		}
+		close IN;
+		
+		my @contents = ();
+		
+		if (defined($coredir)) {
+			#print STDOUT "Opening directory $coredir\n";
+			opendir (DIRECTORY, $coredir) or die "can't open directory $coredir: $!";
+			@contents = grep !/^\.\.?$/, readdir DIRECTORY; # skip . and ..
+			foreach my $f (@contents) {
+				$f = "$coredir/$f";
+			}
+		} 
+		
+		#print "LABEL\tR-SQ\tp-value\tSign.symbol\tCorr.p-value\n";
+		
+		# for each file
+		foreach my $file (@contents) {
+			if ($file =~ /\.stats.txt$/) {    # keep only files ending with stats.txt
+				#print STDOUT "Opening $file\n";
+				
+				my @b = split /\./, $file, -1;
+				if ($b[$#b-2] eq "proj") {    # keep only files ending with stats.txt
+					print "CoreTF\t";
+				}
+				else {
+					print "$b[$#b-3]\t";	
+				}
+				
+				# open stats file
+				open(IN, "$file") or die "Can't open file $file.";
+				
+				while (my $line = <IN>) {
+					
+					# get the coefficient
+					if($line =~ /^MIMA/) {
+						chomp $line;
+						
+						my @b = split / /, $line, -1;
+						
+						shift @b;	
+						
+						print "@b\t";
+					}
+					
+					# get R2 value
+					if($line =~ /^Multiple R-squared/) {
+						
+						chomp $line;
+						
+						my $idx	= rindex($line, ":");
+						my $val = substr $line, $idx+1; 
+						
+						print "$val\t";
+					}
+					
+					# if anova has ran
+					if($anova) {
+						#print p-value
+						if($line =~ /^(2)/) {
+							
+							chomp $line;
+							
+							my $last1 = (split/ /, $line)[-1];
+							
+							if($last1 =~ /^(\*)/ || $last1 =~ /^(\.)/) {							
+								my $last2 = (split/ /, $line)[-2];
+								print "$last2\t$last1\t";
+								
+								my $corr = sprintf("%3.8f", $last2*$suppTFnum);
+								print "$corr\n";
+								
+							}
+							else {
+								print "$last1\t\t";
+								
+								my $corr = sprintf("%3.8f", $last1*$suppTFnum);
+								print "$corr\n";
+							}
+						}
+					}
+				}
+				
+				print "\n";
+				
+				close IN;
+			}
+		}
+	}
+	
+}
+
+
+if(defined($coreTFFile)) {
+	#
+	# When suppTFFile is provided...
+	#
+	if(defined($suppTFFile)) {
+		
+		# open suppTFFile
+		open(IN, "$suppTFFile") or die "Can't open file $suppTFFile.";
+		
+		while (my $line = <IN>) {
+			
+			chomp $line;
+			
+			if($skipPol2) {
+				next if $line =~ /Pol2/;
+			}
+			
+			my @a = split /\t/, $line, -1;
+			
+			my $peakfile	= "$a[0]";
+			my $label		= "$a[1]";
+			
+			# if mode is set to all: Running coreTF with all suppTFs
+			if($suppTFMode eq "all") {
+				
+				#
+				# Calculate scores for all suppTF files
+				#			
+				if($calcSuppScores) {
+					my $calcTodo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/CalcExtendedPeakScores.pl --peakfile=$suppdir$peakfile --d0=$d0 --label=$label --peakheightcol=$peakheightcol > $suppdir$peakfile.PB";
+					system($calcTodo) == 0 or die "Cannot exec $calcTodo\n";
+				}
+			}
+			# if mode is set to onebyone: Running coreTF with one suppTFs at a time
+			elsif($suppTFMode eq "onebyone"){
+				
+				#
+				# Calculate scores for all suppTF files
+				#
+				if($calcSuppScores) {
+					my $calcTodo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/CalcExtendedPeakScores.pl --peakfile=$suppdir$peakfile --d0=$d0 --label=$label --peakheightcol=$peakheightcol > $suppdir$peakfile.PB";
+					system($calcTodo) == 0 or die "Cannot exec $calcTodo\n";
+				}
+				
+				#
+				# Concatenate TF scores into a matrix.
+				#
+				my $concatTodo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/expression_concatenate_matrices.pl $coredir/*.PB $suppdir$peakfile.PB > $coredir\MatPromBind.$suffix.$label.txt";
+				
+				print "Concatenate TF scores into a matrix.\n";
+				system($concatTodo) == 0 or die "Cannot exec $concatTodo\n";
+				
+				if($method eq "pca")
+				{
+					#
+					# Run PCA.
+					#
+					my $pcaTodo = "$ENV{CHIPPCADIR}/ChIP_PCA -chipdata $coredir\MatPromBind.$suffix.$label.txt -center $pcaCenter -scale $pcaScale";
+					print "Run PCA.\n";
+					system($pcaTodo) == 0 or die "Cannot exec $pcaTodo\n";
+					
+					#
+					# Create heatmap.
+					#
+					my $heatmapTodo = "$ENV{PERLSCRIPTSDIR}/draw_expression_heatmap.pl --matrix=$coredir\MatPromBind.$suffix.$label.txt.evec --minmax=0.25 --distance=euclidean --clustcols=$clust --cmap=$ENV{HEATMAPDIR}/colormaps/cmap2.txt";
+					print "Create heatmap.\n";
+					system($heatmapTodo) == 0 or die "Cannot exec $heatmapTodo\n";
+					
+				}
+				#
+				# Run regression.
+				#
+				if(defined($rpkmFile)) {
+					my $regressionTodo = "$ENV{CHIPPCADIR}/CorrelatePCADataAndExpression.pl --evec1=$coredir\MatPromBind.$suffix.$label.txt.proj --evec2=$coredir\MatPromBind.$suffix.txt.proj --expfile=$rpkmFile --resp=$response --anova=$anova";
+					print "Run regression.\n";
+					system($regressionTodo) == 0 or die "Cannot exec $regressionTodo\n";
+				}
+			}
+			
+			$suppTFnum++;
+		}
+		close IN;
+		
+		# if mode is set to all, we're not done yet: We need to run the analysis for the CoreTF+suppTF
+		if($suppTFMode eq "all") {
+			#
+			# Concatenate TF scores into a matrix.
+			#
+			my $concatTodo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/expression_concatenate_matrices.pl $coredir/*.PB ";
+			
+			if(defined($suppTFFile)) {
+				$concatTodo .= "$suppdir/*.PB";
+			}
+			
+			$concatTodo .= " > $coredir\MatPromBind.$suffix.ALL.txt";
+			
+			print "Concatenate TF scores into a matrix.\n";
+			system($concatTodo) == 0 or die "Cannot exec $concatTodo\n";
+			
+			if($method eq "pca")
+			{
+				#
+				# Run PCA.
+				#
+				my $pcaTodo = "$ENV{CHIPPCADIR}/ChIP_PCA -chipdata $coredir\MatPromBind.$suffix.ALL.txt -center $pcaCenter -scale $pcaScale";
+				print "Run PCA.\n";
+				system($pcaTodo) == 0 or die "Cannot exec $pcaTodo\n";
+				
+				#
+				# Create heatmap.
+				#
+				my $heatmapTodo = "$ENV{PERLSCRIPTSDIR}/draw_expression_heatmap.pl --matrix=$coredir\MatPromBind.$suffix.ALL.txt.evec --minmax=0.25 --distance=euclidean --clustcols=$clust --cmap=$ENV{HEATMAPDIR}/colormaps/cmap2.txt";
+				print "Create heatmap.\n";
+				system($heatmapTodo) == 0 or die "Cannot exec $heatmapTodo\n";
+				
+			}
+			#
+			# Run regression.
+			#
+			if(defined($rpkmFile)) {
+				my $regressionTodo = "$ENV{CHIPPCADIR}/CorrelatePCADataAndExpression.pl --evec1=$coredir\MatPromBind.$suffix.ALL.txt.proj --evec2=$coredir\MatPromBind.$suffix.txt.proj --expfile=$rpkmFile --resp=$response --anova=$anova";
+				print "Run regression.\n";
+				system($regressionTodo) == 0 or die "Cannot exec $regressionTodo\n";
+			}
+		}
+		
+		#
+		# In all modes, we need to print some stats
+		#
+		
+		
+		my @contents = ();
+		
+		if (defined($coredir)) {
+			#print STDOUT "Opening directory $coredir\n";
+			opendir (DIRECTORY, $coredir) or die "can't open directory $coredir: $!";
+			@contents = grep !/^\.\.?$/, readdir DIRECTORY; # skip . and ..
+			foreach my $f (@contents) {
+				$f = "$coredir/$f";
+			}
+		} 
+		
+		print "LABEL\tR-SQ\tp-value\tSign.symbol\tCorr.p-value\n";
+		
+		# for each file
+		foreach my $file (@contents) {
+			if ($file =~ /\.stats.txt$/) {    # keep only files ending with stats.txt
+				#print STDOUT "Opening $file\n";
+				
+				my @b = split /\./, $file, -1;
+				
+				if ($b[2] eq "txt") {    # keep only files ending with stats.txt
+					print "CoreTF\t";
+				}
+				else {
+					print "$b[2]\t";	
+				}
+				
+				# open stats file
+				open(IN, "$file") or die "Can't open file $file.";
+				
+				while (my $line = <IN>) {
+					
+					# get R2 value
+					if($line =~ /^Multiple R-squared/) {
+						
+						chomp $line;
+						
+						my $idx	= rindex($line, ":");
+						my $val = substr $line, $idx+1; 
+						
+						print "$val\t";
+					}
+					
+					# if anova has ran
+					if($anova) {
+						#print p-value
+						if($line =~ /^(2)/) {
+							
+							chomp $line;
+							
+							my $last1 = (split/ /, $line)[-1];
+							
+							if($last1 =~ /^(\*)/ || $last1 =~ /^(\.)/) {							
+								my $last2 = (split/ /, $line)[-2];
+								print "$last2\t$last1\t";
+								
+								my $corr = sprintf("%3.8f", $last2*$suppTFnum);
+								print "$corr\n";
+								
+							}
+							else {
+								print "$last1\t\t";
+								
+								my $corr = sprintf("%3.8f", $last1*$suppTFnum);
+								print "$corr\n";
+							}
+						}
+					}
+				}
+				
+				print "\n";
+				
+				close IN;
+			}
+		}		
+	}
+}

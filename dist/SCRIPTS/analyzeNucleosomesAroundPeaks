@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gr "./ChIPseeqerGetReadDensityProfiles.bin -intervals $1 -chipdir DATA/SOLEXA/Nucleosomes-LY1 -format bed -fraglen 0 -nummtnorm 0 -uniquereads 0 > $1.NUCLLY1"
+gr "./ChIPseeqerGetReadDensityProfiles.bin -intervals $1 -chipdir DATA/SOLEXA/Nucleosomes-NB  -format bed -fraglen 0 -nummtnorm 0 -uniquereads 0 > $1.NUCLNB "
+gr "./ChIPseeqerGetReadDensityProfiles.bin -intervals $1 -chipdir DATA/SOLEXA/Nucleosomes-CB  -format bed -fraglen 0 -nummtnorm 0 -uniquereads 0 > $1.NUCLCB "

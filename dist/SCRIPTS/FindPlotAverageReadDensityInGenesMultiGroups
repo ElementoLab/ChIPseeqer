@@ -1,0 +1,79 @@
+#!/usr/bin/perl
+use lib "$ENV{HOME}/PERL_MODULES";
+use Sets;
+use strict;
+
+use Getopt::Long;
+
+my $groupfile   = undef;
+my $chipdir     = undef;
+my $suffix      = undef;
+my $normalize   = "max";
+my $useprofiles = undef;
+my $skip        = undef;
+my $legend      = undef;
+my $revlegend   = undef;
+
+if (@ARGV == 0) {
+  die "Args: --groupfile=FILE [ --chipdir=DIR | --useprofiles=FILE ] --suffix=STR\n";
+}
+
+GetOptions("groupfile=s"   => \$groupfile,
+	   "suffix=s"      => \$suffix,
+	   "skip=s"        => \$skip,
+	   "legend=s"      => \$legend,
+	   "revlegend=s"   => \$revlegend,
+	   "useprofiles=s" => \$useprofiles,
+	   "normalize=s"   => \$normalize,
+           "chipdir=s"     => \$chipdir);
+
+
+
+my @a_skip = split /\,/, $skip;
+
+# split group file
+open IN, $groupfile or die "Cannot open $groupfile\n";
+my $l = <IN>;
+my %GROUPS = ();
+my %HASH   = ();
+while (my $l = <IN>) {
+    chomp $l;
+    my @a = split /\t/, $l, -1;
+    push @{$GROUPS{$a[1]}}, $a[0] if !defined($HASH{$a[0]}{$a[1]}); #(!Sets::in_array($a[0], @{$GROUPS{$a[1]}}));
+    $HASH{$a[0]}{$a[1]} = 1;
+}
+close IN;
+
+my @outfiles = ();
+my @keyset   = ();
+foreach my $k (sort(keys(%GROUPS))) {
+
+  next if (Sets::in_array($k, @a_skip));
+
+    my $f = "$groupfile.c$k";
+    Sets::writeSet($GROUPS{$k}, $f);
+    my $todo = "ChIPseeqerPlotAverageReadDensityInGenes --genelist=$f --h=200 --numbins=20 --geneparts=body --format=eland --title=YYY --suffix=$suffix --normalize=$normalize --plot=0 ";
+    if (defined($chipdir)) {
+      $todo .= " --chipdir=$chipdir ";
+    } elsif (defined($useprofiles)) {
+      $todo .= " --useprofiles=$useprofiles ";
+    }
+    print "$todo\n";
+    system($todo) == 0 or die "Cannot exec $todo\n";
+    push @outfiles, "$f.genedataprofiles.$suffix";
+    push @keyset, $k;
+} 
+
+# merge
+my $txtfiles = join(",", @outfiles);
+my $txtkey   = join(",", @keyset);
+
+my $todo = "perl $ENV{CHIPSEEQERDIR}/ChIPseeqerPlotMultipleAverageReadDensityInGenes --profiles=$txtfiles --draw=evince --title=$suffix --suffix=$suffix ";
+if (defined($legend)) {
+  $todo .= " --legend=$legend ";
+}
+if (defined($revlegend)) {
+  $todo .= " --revlegend=$revlegend ";
+}
+print "$todo\n";
+system($todo) == 0 or die "Cannot exec $todo\n";

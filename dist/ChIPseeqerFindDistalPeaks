@@ -1,0 +1,107 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+my $annotation		= undef;
+my $targets			= undef;
+my $suf				= undef;
+my $todo			= undef;
+my $iswig			= undef;
+my $lenu			= 2000;
+my $lend			= 2000;
+my $db				= "refSeq";
+my $verbose			= 0;
+my $mindistaway		= 2000;
+my $genome			= "hg18";
+my $usepeakcenter	= 1;
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerFindDistalPeaks --peakfile=FILE  --mindistaway=INT [ --db=STR --prefix=STR --genome=STR]\n";
+}
+
+GetOptions("targets=s" => \$targets,
+"peakfile=s"		=> \$targets,
+"mindistaway=s"		=> \$mindistaway,
+"lenu=s"			=> \$lenu,
+"lend=s"			=> \$lend,
+"prefix=s"			=> \$suf,
+"verbose=s"			=> \$verbose,
+"db=s"				=> \$db,
+"iswig=s"			=> \$iswig,
+"usepeakcenter=s"	=> \$usepeakcenter,
+"genome=s"			=> \$genome );
+
+if ($genome eq "sacser") {
+	$db				= "sgd";
+}
+
+$annotation			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.new";
+
+# if no prefix defined, use peak file name
+if (!defined($suf)) {
+   $suf = $targets;
+}
+
+print "Looking for peaks that are > $mindistaway bp away from any $db genes\n";
+
+#
+# extract proms
+#
+my $genebodies = "$annotation.u$mindistaway\_d$mindistaway";
+$todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_extended_genebody_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$mindistaway --lengthD=$mindistaway --checkmaxlen=0 > $genebodies";
+if ($verbose == 1) {
+	print "$todo\n";
+}
+print "Extracting extended gene bodies ... ";
+system($todo) == 0 or die "Cannot execute gene body extraction script.\n"; 
+print "Done.\n";
+
+
+#
+# find intervals that do not overlap with extended genes
+#
+$todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -intervals2 $genebodies -hasid2 1 -ovtype andnot -output peaklist -showpeakdesc 1 ";
+if (defined($iswig)) {
+	$todo .= " -iswig $iswig ";
+}
+if ($usepeakcenter == 1) {
+	$todo .= " -usepeak1center 1 ";
+}
+
+$todo .= " > $suf.$db.DISTPEAKS";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+
+system($todo) == 0 or die "Cannot exec CompareIntervals\n";
+
+my $cnt1 = Sets::nbLinesInFile("$suf.$db.DISTPEAKS");
+
+
+#
+# find intervals that DO overlap with extended genes
+#
+$todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -intervals2 $genebodies -hasid2 1 -ovtype and -output peaklist -showpeakdesc 1 ";
+if (defined($iswig)) {
+	$todo .= " -iswig $iswig ";
+}
+if ($usepeakcenter == 1) {
+	$todo .= " -usepeak1center 1 ";
+}
+
+$todo .= " > $suf.$db.GENEPEAKS";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+
+system($todo) == 0 or die "Cannot exec CompareIntervals\n";
+
+my $cnt1 = Sets::nbLinesInFile("$suf.$db.DISTPEAKS");
+my $cnt2 = Sets::nbLinesInFile("$suf.$db.GENEPEAKS");
+
+
+print "Found $cnt2 peaks within extended gene bodies (in $suf.$db.GENEPEAKS), and $cnt1 distant peaks ($suf.$db.DISTPEAKS).\n";

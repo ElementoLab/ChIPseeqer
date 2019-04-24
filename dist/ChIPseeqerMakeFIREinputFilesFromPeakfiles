@@ -1,0 +1,182 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use lib "$ENV{FIREDIR}";
+
+use Markov;
+use Fasta;
+use Getopt::Long;
+use strict;
+
+my $genome		= "hg18";
+my $fastafile	= undef;
+my $peakfile1	= undef;
+my $peakfile2   = undef;
+my $suf			= undef;
+my $todo		= undef;
+my $iswig		= undef;
+my $verbose		= 0;
+my $runit		= 1;
+my $randmode	= undef;
+my $genomeid	= 0;
+my $peaksfolder	= undef;
+my $seed        = undef;
+my $species		= "human";
+my $prefix      = undef;
+my $extend      = undef;
+my $blankpeaks  = undef;
+
+my %peaksindx   = ();
+
+if (($ENV{FIREDIR} eq "") || (! -e "$ENV{FIREDIR}/fire.pl")) {
+	die "It looks like FIRE is not installed. Please install FIRE from http://tavazoielab.princeton.edu/FIRE\n";
+}
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerMakeFIREinputFilesFromPeakfiles --peakfile1=FILE --peakfile2=FILE --fastafile=FILE  [ -randomize=INT  --randmode=adjacent|1MM --genome=STR(dm9) --iswig=INT --seed=INT ]\n";
+}
+
+GetOptions("peakfile1=s"	 => \$peakfile1,
+	   "peakfile2=s"         => \$peakfile2,   # not a bug, ok this way
+	   "fastafile=s"	 => \$fastafile,
+	   "genome=s"		 => \$genome,	
+	   "prefix=s"		 => \$prefix,
+	   "randmode=s"          => \$randmode,
+	   "blankpeaks=s"        => \$blankpeaks,
+	   "extend=s"            => \$extend,
+	   "iswig=s"		 => \$iswig,
+	   "verbose=s"		 => \$verbose,
+	   "peaksfolder=s"       => \$peaksfolder,
+	   "seed=s"		 => \$seed,
+	   "runit=s"		 => \$runit,
+	   "species=s"		 => \$species);
+
+if (! -e $peakfile1) {
+	die "Cannot find $peakfile1\n";
+}
+if (! -e $peakfile2) {
+	die "Cannot find $peakfile2\n";
+}
+
+if (!defined($prefix)) {
+	die "Please define prefix for new files\n";
+}
+
+if (!defined($fastafile)) {
+	my $p1 = "$ENV{SNVSEEQERDIR}/REFDATA/hg18/wg.fa";
+	if (-e $p1) {
+		$fastafile = $p1;   
+	} else {
+		die "--fastafile must be defined.\n";
+	}
+}
+
+if (! -e $fastafile) {
+	die "$fastafile not a valid file\n";
+}
+
+#
+# get actual sequences for peakfile1
+#
+$todo = "$ENV{CHIPSEEQERDIR}/GetSubstringsIdx -intervals $peakfile1 -fastafile $fastafile -genome $genome ";
+if (defined($extend)) {
+  $todo .= " -extend $extend ";
+}
+if (defined($blankpeaks)) {
+  $todo .= " -blankpeaks $blankpeaks ";
+}
+$todo .= " > $peakfile1.tmp.seq ";
+
+if ($verbose == 1) {
+	print STDERR "Exec: $todo\n";  
+}
+
+print "Extracting sequences ($peakfile1) ... ";
+system($todo) == 0 or die "Cannot exec $todo\n";
+print "Done.\n";
+
+
+#
+# same for peakfile2
+#
+$todo = "$ENV{CHIPSEEQERDIR}/GetSubstringsIdx -intervals $peakfile2 -fastafile $fastafile -genome $genome ";
+if (defined($extend)) {
+  $todo .= " -extend $extend ";
+}
+if (defined($blankpeaks)) {
+  $todo .= " -blankpeaks $blankpeaks ";
+}
+$todo .= " > $peakfile2.tmp.seq ";
+
+if ($verbose == 1) {
+	print STDERR "Exec: $todo\n";
+}
+
+print "Extracting sequences ($peakfile2) ... ";
+system($todo) == 0 or die "Cannot exec $todo\n";
+print "Done.\n";
+
+#
+# create output files
+#
+my $expfile = "$prefix.FIRE.txt";
+my $seqfile = "$prefix.FIRE.seq";
+open OUTEXP, ">$expfile" or die "Cannot open $expfile for writing\n";
+open OUTSEQ, ">$seqfile" or die "Cannot open $seqfile for writing\n";
+print OUTEXP "GENE\tEXP\n";
+
+my %H = ();  # store sequence names
+my $name = undef;
+
+print "# writing set 1 ... ";
+my $fa = Fasta->new;   # open seq1
+$fa->setFile("$peakfile1.tmp.seq");
+while (my $a_ref = $fa->nextSeq()) {
+	my ($n, $s) = @$a_ref;
+	if (defined($H{$n})) {
+		$name = "$n-$H{$n}"; # use new name
+	} else {
+		$name = $n;
+	}
+	
+	$H{$n} ++; # increase num
+	
+	print OUTEXP "$name\t1\n";
+	print OUTSEQ ">$name\n$s\n";  
+}
+$fa->dispose();
+print "Done\n";
+
+print "# writing set 0 ... ";
+$fa = Fasta->new;   # open seq1
+$fa->setFile("$peakfile2.tmp.seq");  # seq2
+while (my $a_ref = $fa->nextSeq()) {
+	my ($n, $s) = @$a_ref;
+	
+	if (defined($H{$n})) {
+		$name = "$n-$H{$n}"; # use new name
+	} else {
+		$name = $n;
+	}
+	
+	$H{$n} ++; # increase num
+	
+	print OUTEXP "$name\t0\n";
+	print OUTSEQ ">$name\n$s\n";  
+}
+$fa->dispose();
+print "Done\n";
+close OUTEXP;
+close OUTSEQ;
+
+if (-e $expfile) {
+	print "# Created $expfile\n";
+}
+
+if (-e $seqfile) {
+	print "# Created $seqfile\n";
+}
+
+$todo = "$ENV{FIREDIR}/fire.pl --expfile=$expfile --fastafile_dna=$seqfile --nodups=1 --minr=2 --species=$species --dorna=0 --dodnarna=0 --dogoclusters=0";
+print "\nTo run FIRE, run:\n $todo\n";
+

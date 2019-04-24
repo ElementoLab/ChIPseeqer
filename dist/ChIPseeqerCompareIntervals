@@ -1,0 +1,146 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Getopt::Long;
+use Table;
+use Sets;
+use strict;
+
+my $peakfile1		= undef;
+my $peakfile2		= undef;
+my $hasid1			= 0;
+my $hasid2			= 0;
+my $hasheader1		= 0;
+my $hasheader2		= 0;
+my $show_ov_int		= 0;
+my $showovpeaks		= 1;
+my $showunion		= 0;
+my $showpeakdesc	= 0;
+my $usepeak1center	= 0;
+my $usepeak2center	= 0;
+my $ovtype			= "AND";	# can be "AND" or "ANDNOT"
+my $file1_lines		= undef;
+my $overlap_lines	= undef;
+my $iterations		= 1000;
+my $randmode		= "gendist"; # Can be "gendist", for genomic distribution: to preserve the same distribution of peaks in promoters/exons/etc
+# or "default", for creating totally random regions
+my $genome			= "hg18";
+my $db				= "refSeq";
+my $output			= undef;
+my $filename		= undef;
+
+my $verbose		= 0;
+my $prefix		= undef;
+my $outdir		= undef;
+my $idx			= undef;
+my $fromgui		= 0;
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerCompareIntervals --peakfile1=FILE --peakfile2=FILE --prefix=STR\n";
+}
+
+GetOptions("peakfile1=s"  => \$peakfile1,
+"peakfile2=s"	=> \$peakfile2,
+"hasid1=s"		=> \$hasid1,
+"hasid2=s"		=> \$hasid2,
+"hasheader1=s"	=> \$hasheader1,
+"hasheader2=s"	=> \$hasheader2,
+"show_ov_int=s"	=> \$show_ov_int,
+"showovpeaks=s" => \$showovpeaks,
+"showunion=s"	=> \$showunion,
+"showpeakdesc=s"	=> \$showpeakdesc,
+"usepeak1center"	=> \$usepeak1center,
+"usepeak2center"	=> \$usepeak2center,
+"prefix=s"		=> \$prefix,
+"outdir=s"		=> \$outdir,
+"ovtype=s"		=> \$ovtype,
+"iterations=s"	=> \$iterations,
+"randmode=s"	=> \$randmode,
+"genome=s"		=> \$genome,
+"db=s"			=> \$db,
+"output=s"		=> \$output,
+"verbose=s"		=> \$verbose,
+"fromgui=s"		=> \$fromgui);
+
+if (!defined($peakfile1)) {
+	die("Please define --peakfile1=FILE");
+}
+
+if (!defined($peakfile2)) {
+	die("Please define --peakfile2=FILE");
+}
+
+if (!defined($outdir)) {
+	$idx		= rindex($peakfile1, "/");
+	$outdir		= substr $peakfile1, 0, $idx+1;  
+	$filename	= substr $peakfile1, $idx+1;  
+}
+
+if (!defined($prefix)) {
+	$idx		= rindex($peakfile1, "/");
+	$prefix		= substr $peakfile1, $idx+1; 
+}
+
+#
+# Create random regions
+#
+if($iterations!=0) {
+	my $todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerCreateRandomRegions --peakfile=$peakfile1 --prefix=$prefix --iterations=$iterations --outdir=$outdir --randmode=$randmode --verbose=$verbose ";
+	
+	$todo .= "--genome=$genome --db=$db ";
+	
+	if ($verbose == 1){ 
+		print "$todo\n";
+	}
+	
+	print "Creating $iterations random files for $peakfile1 ...\n";
+	
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	
+	print "Done.\n";
+	
+}
+
+#
+# Count lines of peakfile1
+#
+open (PF1, $peakfile1) || die "Could not open $peakfile1: $!\n";
+my @pf1 = <PF1>;
+close PF1;
+my $file1_lines = @pf1;
+
+#
+# Find overlapping peaks with gene parts
+#
+my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals ";
+
+$todo .= " -intervals1 $peakfile1 -hasid1 $hasid1 -hasheader1 $hasheader1 -usepeak1center $usepeak1center ";
+
+$todo .= " -intervals2 $peakfile2 -hasid2 $hasid2 -hasheader2 $hasheader2 -usepeak2center $usepeak2center ";
+
+$todo .= " -show_ov_int $show_ov_int -ovtype $ovtype -showovpeaks $showovpeaks -showunion $showunion -showpeakdesc $showpeakdesc ";
+
+$todo .= " -outfile $outdir/OUT.$prefix.txt ";
+
+if($iterations!=0) {
+	
+	$todo .= " -rand_dir $outdir -prefix $prefix ";
+	
+	if(defined($output)) {
+		$todo .= " -output $output ";
+	}
+	
+	$todo .= " > $outdir/STATS.$prefix.txt";
+}
+
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+
+print "Determining overlap between $peakfile1 and $peakfile2 ... ";
+
+system($todo) == 0 or die "Cannot exec CompareIntervals\n";
+
+print "Done.\n";

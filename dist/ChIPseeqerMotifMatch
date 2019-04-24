@@ -1,0 +1,206 @@
+#!/usr/bin/perl
+
+use lib "$ENV{PERLMODULESDIR}";
+
+use Getopt::Long;
+use Sets;
+
+if ($ENV{MYSCANACEDIR} eq "") {
+	die "Please set MYSCANACEDIR variable.\n";
+}
+
+if (@ARGV == 0) {
+	die "ChIPseeqerFindPeaksWithMotifMatch --targets=FILE --motifname=NAME --c=FLOAT
+	
+	where:
+	--c=FLOAT			indicates the motif threshold in num std dev (default 1.0) 
+	--targets=FILE		indicates a peak file
+	--motifname=NAME	tells the program which motif name to look for; eg Bcl6b 
+	--motifseq=PATTERN	tells the program which motif sequence to look for; eg TCCTAGA 
+	--suffix=STR		defines the name of the output file
+	\n";
+}
+
+my $targets		= undef;
+my $motifname	= undef;
+my $motifseq	= undef;
+my $genome		= "$ENV{CHIPSEEQERDIR}/DATA/hg18/WG/wg.fa";
+my $verbose		= 1;
+
+if ((! -e $genome) && (-e "$ENV{HOME}/PROGRAMS/SNPseeqer/REFDATA/hg18/wg.fa")) {
+	$genome = "$ENV{HOME}/PROGRAMS/SNPseeqer/REFDATA/hg18/wg.fa";
+} else {
+	#die "can't find genomic sequence (wg.fa).\n";
+}
+
+my $c			= 1;
+my $output		= undef;
+my $fetchseq	= 0;
+my $suffix		= undef;
+
+GetOptions("targets=s"  => \$targets,
+"peakfile=s"	=> \$targets,
+"fetchseq=s"	=> \$fetchseq,
+"genome=s"		=> \$genome,
+"c=s"			=> \$c,
+"output=s"		=> \$output,
+"motifname=s"	=> \$motifname,
+"motifseq=s"	=> \$motifseq,
+"verbose=s"		=> \$verbose,
+"suffix=s"		=> \$suffix);
+
+if (!defined($motifname)) {
+	if(!defined($motifseq)) {
+		die "You must define --motifname=STR or --motifseq=STR, e.g --motifname=Bcl6b or --motifseq=TCCTAGA\n";
+	}
+}
+
+if (!defined($suffix)) {
+	#die("Must provide --suffix=STR\n");
+	if(defined($motifname)) {
+		$suffix = $targets.$motifname.".txt";
+	}
+	elsif(defined($motifseq)) {
+		$suffix = $targets.$motifseq.".txt";
+	}
+}
+
+
+my $seqfile = $targets;
+if ($seqfile =~ /\.txt$/) {
+	$seqfile =~ s/\.txt/\.seq/;
+} else {
+	$seqfile .= ".seq";
+}
+
+
+
+if ((! -e $seqfile) || ($fetchseq == 1)) {
+	if (! -e $genome) {
+		die "$genome does not exist. Please point -genome to a valid genome file.\n";
+	}
+	print "Extracting peak sequences ...";
+	my $todo = "$ENV{CHIPSEEQERDIR}/GetSubstringsIdx -peakfile $targets -fastafile $genome -show_peakdesc 1 > $seqfile";
+	system($todo) == 0 or die "cannot exec $todo\n";
+	
+	if($verbose) {
+		print "$todo\n";
+	}
+	
+	print "Done\n";
+}
+
+
+#
+# Run MySCANAce for Jaspar or Bulyk motifs
+#
+if(defined($motifname)) {
+	
+	# here identify motif
+	my $motiffile = undef;
+	my $motifopt  = undef;
+	my $a_ref_j = Sets::getFiles("$ENV{CHIPSEEQERDIR}/DATA/BULYK_MATRICES/*pwm_primary.txt");
+	my @matches = ();
+	foreach my $f (@$a_ref_j) {
+		my $ff = Sets::filename($f);
+		if ($ff =~ /$motifname/) {
+			push @matches, [$ff, "PBM"];
+		}
+	}
+	$a_ref_j = Sets::getFiles("$ENV{CHIPSEEQERDIR}/DATA/JASPAR_MATRICES/*.jaspar");
+	foreach my $f (@$a_ref_j) {
+		my $ff = Sets::filename($f);
+		if ($ff =~ /$motifname/) {
+			push @matches, [$ff, "JASPAR"];
+		}
+	}
+	
+	
+	if (@matches == 0) {
+		print "Found no matches.\n";
+		exit;
+	} elsif (@matches > 1) {
+		print "Found multiple matches:\n";
+		foreach my $r (@matches) {
+			print "$r->[0]\t$r->[1]\n";
+		}
+		exit;
+	} else {
+		
+		if ($matches[0]->[1] eq "PBM") {
+			$motiffile = "$ENV{CHIPSEEQERDIR}/DATA/BULYK_MATRICES/$matches[0]->[0]";
+			$motifopt  = "-jb";
+		} else {
+			$motiffile = "$ENV{CHIPSEEQERDIR}/DATA/JASPAR_MATRICES/$matches[0]->[0]";
+			$motifopt  = "-j";
+		}
+		
+	}
+	
+	# run ScanACE
+	my $todo = "$ENV{MYSCANACEDIR}/MyScanACE $motifopt $motiffile -z $seqfile -g 0.52 -c $c ";
+	#print "$todo\n";
+	if ($output eq "all") {
+	} 
+	else {
+		$todo .= " -p 1 -output cs ";
+	}
+	
+	if (defined($suffix)) {
+		$todo .= " > $suffix";
+	}
+	
+	system($todo) == 0 or die "cannot exec $todo\n";
+	print "The results are in $suffix \n";
+}
+
+#
+# Run genregexp for user-defined motif sequences
+#
+elsif(defined($motifseq)) {
+	
+	# run genregexp
+	my $todo = "$ENV{CHIPSEEQERDIR}/genregexp -re $motifseq -fastafile $seqfile > $suffix";
+	system($todo) == 0 or die "cannot exec $todo\n";
+	
+	if($verbose) {
+		print "$todo\n";
+	}
+	
+	my $todo2="perl -pi -e 's/\\//\\t/g' $suffix";
+	system($todo2) == 0 or die "Cannot execute $todo2.\n"; 	
+	print "The results are in $suffix \n";
+	
+}
+
+#count number of peaks
+open IN, "$targets";
+my $peaks_cnt = 0;
+while (my $l = <IN>) {
+	chomp $l;
+	my $line = split /\n/;
+	$peaks_cnt++;
+}
+close IN;
+
+#count number of peaks with motif
+open IN, "$suffix";
+my $peaks_motif_cnt = 0;
+while (my $l = <IN>) {
+	chomp $l;
+	my $line = split /\n/;
+	$peaks_motif_cnt++;
+}
+close IN;
+
+$peaks_motif_prct = sprintf("%3.1f", 100 * $peaks_motif_cnt/$peaks_cnt);
+
+
+open FILE, ">>$suffix";
+if(defined($motifseq)) {
+	print FILE "# $peaks_cnt peaks, $peaks_motif_cnt ($peaks_motif_prct %) with motif match ($motifseq)\n";
+}
+elsif(defined($motifname)) {
+	print FILE "# $peaks_cnt peaks, $peaks_motif_cnt ($peaks_motif_prct %) with motif match ($motifname)\n";
+}
+close FILE;

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Run as:
+# get_description_from_file RefGene RefLink
+
+#chunk
+CHUNK=1024
+
+#regex
+reg=""
+
+#fix
+FIX=2
+
+# check if two files were passed as argument
+if (( $# < 2 )); then
+  echo "Please specify the files to compare"
+  exit
+  
+fi
+
+for name in `cat $1 | sort -k1 -d | tr "\t" " " | cut -d " " -f1`; do
+	reg=$reg"$name\|"
+	len=${#reg}
+	if (( $len > $CHUNK )); then
+		let offset=$len-$FIX
+		reg=${reg:0:$offset}
+		grep "$reg" -w $2
+		reg=""
+	fi
+done
+
+let offset=$len-$FIX
+reg=${reg:0:$offset}
+grep "$reg" -w $2

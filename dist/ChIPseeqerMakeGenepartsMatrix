@@ -1,0 +1,170 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+# variables to store options
+my $TFgenesFile	= undef;
+
+# other variables
+my $idx			= undef;
+my $dir			= undef;
+my $file		= undef;
+
+my %PROMMATRIX		= ();
+my %DWMATRIX		= ();
+my %EXONSMATRIX		= ();
+my %INTRONSMATRIX   = ();
+my %INTRON1MATRIX   = ();
+my %INTRON2MATRIX   = ();
+my %DISTALMATRIX	= ();
+
+my @COLS     = ();
+my @ROWS     = ();
+my %HROWS    = ();
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerMakeGenepartsMatrix --TFgenesFile=FILE\n";
+}
+
+# handling given options
+GetOptions("TFgenesFile=s"		=> \$TFgenesFile);
+
+if (!defined($TFgenesFile)) {
+	die("Must provide --TFgenesFile=FILE\n");
+}
+
+# get TFgenesFile directory and filename
+$idx	= rindex($TFgenesFile, "/");
+$dir	= substr $TFgenesFile, 0, $idx+1;  
+$file	= substr $TFgenesFile, $idx+1; 
+
+# make output files
+open PROMOTERSFILE, "> $dir$file.promoters";
+open DWFILE, "> $dir$file.dw";
+open EXONSFILE, "> $dir$file.exons";
+open INTRONSFILE, "> $dir$file.introns";
+open INTRON1FILE, "> $dir$file.intron1";
+open INTRON2FILE, "> $dir$file.intron2";
+open DISTALFILE, "> $dir$file.distal";
+
+
+# open TFgenesFile again
+open(IN, "$TFgenesFile") or die "Can't open file $TFgenesFile.";
+
+# read TFgenesFile
+while (my $line = <IN>) {
+	
+	chomp $line;
+	
+	my @a = split /\t/, $line, -1;
+	
+	my $genefile	= "$a[0]";
+	my $label		= "$a[1]";
+
+	push @COLS, $label;
+
+	# open the .genes file
+	open(INF, "$genefile") or die "Can't open file $genefile.";
+	
+	#print "Opening file $genefile\n";
+	
+	# ignore the header
+	my $l = <INF>;
+	
+	# read the .genes file
+	while (my $gline = <INF>) {
+		
+		chomp $gline;
+		
+		my @b = split /\t/, $gline, -1;
+		
+		my $TSid	= shift @b;
+		if (!defined($HROWS{$TSid})) {
+			push @ROWS, $TSid;
+		}
+		$HROWS{$TSid} = 1;
+
+		push @{ $PROMMATRIX{ $TSid } }, $b[0];
+		push @{ $DWMATRIX{ $TSid } }, $b[1];
+		push @{ $EXONSMATRIX{ $TSid } }, $b[2];
+		push @{ $INTRONSMATRIX{ $TSid } }, $b[3];
+		push @{ $INTRON1MATRIX{ $TSid } }, $b[4];
+		push @{ $INTRON2MATRIX{ $TSid } }, $b[5];
+		push @{ $DISTALMATRIX{ $TSid } }, $b[6];
+	}
+	close INF2;
+}
+close IN2;
+
+# print header of files
+#print "TSID";
+print PROMOTERSFILE "TSID";
+print DWFILE "TSID";
+print EXONSFILE "TSID";
+print INTRONSFILE "TSID";
+print INTRON1FILE "TSID";
+print INTRON2FILE "TSID";
+print DISTALFILE "TSID";
+
+foreach my $c (@COLS) {
+	#print "\t$c";
+	print PROMOTERSFILE "\t$c";
+	print DWFILE "\t$c";
+	print EXONSFILE "\t$c";
+	print INTRONSFILE "\t$c";
+	print INTRON1FILE "\t$c";
+	print INTRON2FILE "\t$c";
+	print DISTALFILE "\t$c";
+}
+#print "\n";
+print PROMOTERSFILE "\n";
+print DWFILE "\n";
+print EXONSFILE "\n";
+print INTRONSFILE "\n";
+print INTRON1FILE "\n";
+print INTRON2FILE "\n";
+print DISTALFILE "\n";
+
+foreach my $g (@ROWS) {
+	#print "$g\t";
+	print PROMOTERSFILE "$g\t";
+	print DWFILE "$g\t";
+	print EXONSFILE "$g\t";
+	print INTRONSFILE "$g\t";
+	print INTRON1FILE "$g\t";
+	print INTRON2FILE "$g\t";
+	print DISTALFILE "$g\t";
+	
+	#print join("\t", @{$PROMMATRIX{$g}}); 
+	print PROMOTERSFILE join("\t", @{$PROMMATRIX{$g}});
+	print DWFILE join("\t", @{$DWMATRIX{$g}});
+	print EXONSFILE join("\t", @{$EXONSMATRIX{$g}});
+	print INTRONSFILE join("\t", @{$INTRONSMATRIX{$g}});
+	print INTRON1FILE join("\t", @{$INTRON1MATRIX{$g}});
+	print INTRON2FILE join("\t", @{$INTRON2MATRIX{$g}});
+	print DISTALFILE join("\t", @{$DISTALMATRIX{$g}});
+	
+	#print "\n";
+	print PROMOTERSFILE "\n";
+	print DWFILE "\n";
+	print EXONSFILE "\n";
+	print INTRONSFILE "\n";
+	print INTRON1FILE "\n";
+	print INTRON2FILE "\n";
+	print DISTALFILE "\n";
+}
+
+
+# close output files
+close PROMOTERSFILE;
+close DWFILE;
+close EXONSFILE;
+close INTRONSFILE;
+close INTRON1FILE;
+close INTRON2FILE;
+close DISTALFILE; 

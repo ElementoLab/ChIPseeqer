@@ -1,0 +1,210 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Table;
+use Sets;
+use strict;
+use Getopt::Long;
+
+# variables definition
+my $format		= "gzscores";
+my $targets		= undef;
+my $consdir		= undef;
+my $fraglen		= 250;
+my $outfile		= undef;
+my $outepsmap	= undef;
+my $outrandom	= undef;
+my $category	= "placental";
+my $verbose		= 0;
+my $make_rand	        = 1;
+my $getintervals        = 1;
+my $adjcons             = 0;
+my $overwrite           = 1;
+my $chr                 = undef;
+my $randmode			= undef;
+my $todo				= undef;
+my $method				= "phastCons";
+my $show_profiles		= 0;
+my $window_size			= undef;
+my $hasid				= undef;
+my $showalldata			= undef;
+my $around_summit		= 0;
+my $distance	        = undef; 
+my $randist				= 50000;
+my $score_thres			= 0.5;
+my $genome				= "hg18";
+my $chrdata				= undef;
+
+# check for lack of arguments
+if (@ARGV == 0) {
+	die "
+	Usage: ChIPseeqer2Cons --targets=FILE --consdir=DIR --oufile=FILE [ --format=STR ]	
+	--targets=FILE      file containing genomic regions
+	--consdir=DIR       directory that contains the conservation scores (one file per chromosome, e.g. chr9.phastCons44way.placental.wigFix.gz etc),
+	--format=STR        gzscores (default), scores or nucleosomes
+	--outfile=STR       output file
+	--category=STR	    can be either placental or primates. Default is placental.
+	--method=STR	    can be either phastCons or phyloP. Default is phastCons.
+	--make_rand=INT		if set to 1, extracts random regions and estimates their consrvation
+	--randist=INT		distance of random regions from the peaks. Used when make_rand=1
+	--show_profiles=INT if set to 0, gives average/min/max conservation per peak, 
+	if set to 1, gives average conservation for each $window_size bp window of the peak
+	--around_summit=INT if set to 1, extracts regions around peak summit and computes conservation. Used when show_profiles=1
+	--window_size=INT   Sets the window size for eastimating the avg conservation profile. Default is 10bp. Used when show_profiles=1
+	--distance=INT		distance around the peak summit. Used when around_summit=1
+	"; 
+}
+
+GetOptions(
+"targets=s"             => \$targets,
+"peakfile=s"            => \$targets,
+"consdir=s"				=> \$consdir,
+"overwrite=s"           => \$overwrite,
+"format=s"				=> \$format,
+"make_rand=s"           => \$make_rand,
+"adjcons=s"             => \$adjcons,
+"chr=s"                 => \$chr,
+"getintervals=s"        => \$getintervals,
+"outfile=s"				=> \$outfile,
+"outepsmap=s"			=> \$outepsmap,
+"outrandom=s"			=> \$outrandom,
+"category=s"	        => \$category,
+"distance=s"	        => \$distance,
+"verbose=s"             => \$verbose,
+"method=s"				=> \$method,
+"show_profiles=s"		=> \$show_profiles,
+"window_size=s"			=> \$window_size,
+"hasid=s"				=> \$hasid,
+"showalldata=s"         => \$showalldata,
+"around_summit=s"		=> \$around_summit,
+"randist=s"				=> \$randist,
+"score_thres=s"			=> \$score_thres,
+"chrdata=s"				=> \$chrdata,
+"genome=s"				=> \$genome
+);
+
+$chrdata			= "$ENV{CHIPSEEQERDIR}/DATA/$genome.chrdata";
+
+# check if the output file already exists 
+if (defined($outfile) && (-e $outfile) && ($overwrite == 0)) {
+	print "$outfile already exist, overwrite ? [y] ";
+	my $ans = <STDIN>;
+	chomp $ans;
+	if (($ans eq "") || ($ans =~ /y/)) {
+		system("rm $outfile");
+	} else {
+		die "Exiting.\n";
+	}
+}
+
+if (!defined($consdir)) {
+	die "Please define -consdir\n";
+}
+
+if($around_summit==1) {
+	
+	$todo = "extract_regions_around_peak_summits.pl --peakfile=$targets ";
+	
+	if (defined($distance)) {
+		$todo .= " --w=$distance";
+	}
+	else {
+		$distance="2000";
+		$todo .= " --w=$distance";
+	}
+	
+	if ($verbose == 1) {
+		print "$todo\n";
+	}
+	
+	system($todo) == 0 or die "Cannot execute $todo\n";
+	
+	$targets		= "$targets.centered$distance";
+	$show_profiles	= 1;
+}
+
+#
+# Run ChIPseeqer2Cons.bin
+#
+$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqer2Cons.bin -intervals $targets -format $format -category $category -method $method -consdir $consdir ";
+
+$todo .= " -show_profiles $show_profiles -make_rand $make_rand -genome $genome ";
+
+if ($adjcons == 1) {
+	$todo .= " -adjcons 1 ";
+}
+
+if (defined($chr)) {
+	$todo .= " -chr $chr ";
+}
+
+if (defined($randist)) {
+	$todo .= " -randist $randist ";
+}
+
+if (defined($showalldata)) {
+	$todo .= " -showalldata $showalldata ";
+}
+
+if(defined($window_size)) {
+	$todo.= "-ws $window_size ";
+}
+
+if(defined($hasid)) {
+	$todo.= "-hasid $hasid ";
+}
+
+if(defined($showalldata)) {
+	$todo.= "-showalldata $showalldata ";
+}
+
+if(defined($outepsmap)) {
+	$todo.= "-outepsmap $outepsmap ";
+}
+
+if (!defined($outfile)) {
+	$outfile = "$targets.cons.txt";
+}
+$todo .= " -outfile $outfile ";
+
+if($make_rand == 1) {
+	if (!defined($outrandom)) {
+		$outrandom = "$targets.randcons.txt";
+	}
+	$todo .= " -outrandom $outrandom ";
+}
+
+if(defined($chrdata)) {
+	$todo.= "-chrdata $chrdata ";
+}
+
+if ($verbose == 1) {
+	print "$todo\n";
+}
+
+print "Running conservation script ... ";
+system($todo) == 0 or die "Cannot execute ChIPseeqer2Cons.bin\n";
+print "Done.\n" if (defined($outfile));
+
+if($show_profiles == 0) {
+	
+	open(IN, "$outfile") or die "Can't open file $outfile.";
+	open OUT2, ">>$outfile.filter";
+
+	while (my $line = <IN>) {
+		
+		chomp $line;
+		
+		my @a = split /\t/, $line, -1;
+		
+		my $score = $a[3];
+		
+		if( $score > $score_thres ) {
+			print "$line\n";
+			print OUT2 "$line\n";
+		}
+	}
+	close IN;
+	close OUT2;
+}

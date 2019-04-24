@@ -1,0 +1,45 @@
+#!/usr/bin/perl
+
+use Getopt::Long;
+
+my $targets		= undef;
+my $trackname	= undef;
+my $outfile		= undef;
+
+if (@ARGV == 0) {
+  die "Usage: ChIPseeqer2Track --peakfile=FILE --trackname=STR\n";
+}
+
+GetOptions("targets=s"   => \$targets,
+           "peakfile=s"   => \$targets,
+			"outfile=s"	=> \$outfile,
+			"trackname=s" => \$trackname);
+if (!defined($trackname)) {
+       die "Please define --trackname=STR\n";
+}
+if(!defined($outfile)) {
+	$outfile="$targets";
+}
+
+my $out = "$outfile.wgl";
+
+open IN, $targets or die "Cannot open $targets\n";
+open OUT, ">$out";
+print OUT "track name=\"$trackname\" description=\"$trackname\" visibility=dense autoScale=off color=0,0,0\n";
+
+while (my $l = <IN>) {
+  chomp $l;
+  my @a = split /\t/, $l, -1;
+
+  print OUT "$a[0]\t$a[1]\t$a[2]\n";
+
+}
+close IN;
+
+close OUT;
+
+system("gzip -f $out");
+
+if (-e "$out.gz") {
+  print STDOUT "$out.gz created.\n";
+}

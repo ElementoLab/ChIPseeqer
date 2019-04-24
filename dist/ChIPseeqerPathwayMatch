@@ -1,0 +1,308 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use lib "$ENV{PAGEDIR}";
+
+use Getopt::Long;
+use Table;
+use Sets;
+use strict;
+
+my $peakfile	= undef;
+my $db			= "refSeq";		# could be refSeq, AceView, Ensembl, UCSCGenes
+my $genome		= "hg18";		# could be hg18, mm9, dm3, sacser
+my $lenuP       = 2000;
+my $lendP       = 2000;
+my $lenuDW      = 2000;
+my $lendDW      = 2000;
+my $geneparts	= "P";			# can be "P,I", or any combination or P, E, I, I1, I2, DW, D
+my $pathway		= undef;
+my $pathways	= undef;
+my $verbose		= undef;
+my $pref		= undef;
+my $overlapfile = undef;
+my $fromgui		= 0;
+my $todo		= undef;
+
+my $genes_lines					= 0;
+my $genes_peaks_lines			= 0;
+my $genes_pathway_lines			= 0;
+my $genes_peaks_pathway_lines	= 0;
+
+# hashes
+my %NMHash		= ();
+my %PEAKHash	= ();
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerPathwayMatch --peakfile=FILE --pathway=STR --pathways=STR (e.g. human_go_orf) --prefix=STR\n";
+}
+
+GetOptions("peakfile=s"  => \$peakfile,
+"db=s"			=> \$db,
+"genome=s"		=> \$genome,
+"lenuP=s"		=> \$lenuP,
+"lendP=s"		=> \$lendP,
+"lenuDW=s"		=> \$lenuDW,
+"lendDW=s"		=> \$lendDW,
+"geneparts=s"	=> \$geneparts,
+"pathway=s"		=> \$pathway,
+"pathways=s"	=> \$pathways,
+"prefix=s"		=> \$pref,
+"verbose=s"		=> \$verbose,
+"overlapfile=s" => \$overlapfile,
+"fromgui=s"		=> \$fromgui);
+
+if (!defined($pref)) {
+	$pref = $peakfile;
+}
+
+if (!defined($pathway)) {
+	die("Must provide --pathway=STR\n");
+}
+
+if ($genome eq "hg18") {
+	if (!defined($pathways)) {
+		$pathways			= "human_go_orf";
+	}
+}
+elsif ($genome eq "mm9") {
+	if (!defined($pathways)) {
+		$pathways			= "mouse_go_orf";
+	}
+}
+elsif ($genome eq "dm3") {
+	# We are missing GO for Drosophila
+	die "Unfortunately no GO data is currently available for Drosophila melanogaster (dm3)";
+}
+elsif ($genome eq "sacser") {
+	
+	$db = "SGD";
+	
+	if (!defined($pathways)) {
+		$pathways			= "yeast_go";
+	}
+}
+
+#
+# Run CSAnnotate
+#
+$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate --targets=$peakfile --db=$db --genome=$genome --lenuP=$lenuP --lendP=$lendP --lenuDW=$lenuDW --lendDW=$lendDW --fromgui=$fromgui --print_stats=0";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+print "Running ChIPseeqerAnnotate ...\n";
+system($todo) == 0 or die "Cannot exec $ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate\n";
+
+#
+# Run mergeGenesColumns
+#
+$todo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/mergeCSAnnotateGenesColumns.pl --genefile=$peakfile.$db.GP.genes.annotated.txt --geneparts=$geneparts --showORF=1 --outfile=$peakfile.merged.$geneparts.txt";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+print "Running mergeCSAnnotateGenesColumns.pl ...\n";
+system($todo) == 0 or die "Cannot exec $ENV{CHIPSEEQERDIR}/SCRIPTS/mergeCSAnnotateGenesColumns.pl\n";
+
+# keep only unique gene names
+if(-e "$peakfile.merged.$geneparts.txt") {
+	$todo = "cat $peakfile.merged.$geneparts.txt | sort -u > $peakfile.merged.$geneparts.uniq.txt";
+}
+system($todo) == 0 or die "Cannot exec $todo\n";
+
+# store number of genes with peaks
+open (GP, "$peakfile.merged.$geneparts.uniq.txt") || die "Could not open $peakfile.merged.$geneparts.uniq.txt: $!\n";
+my @gpl = <GP>;
+close GP;
+$genes_peaks_lines = @gpl;
+
+#
+# Get all the genes from the database, run $PAGEDIR/SCRIPTS/find_genes_in_pathway.pl script
+#
+if(-e "$peakfile.$db.DISTPEAKS.$db.GENEWITHPEAKS.txt") {
+	
+	open (ALLG, "$peakfile.$db.DISTPEAKS.$db.GENEWITHPEAKS.txt") || die "Could not open $peakfile.$db.DISTPEAKS.$db.GENEWITHPEAKS.txt: $!\n";
+	open ALLTRANS, ">$peakfile.$db.TRANSCRIPTS";
+	
+	# skip the header line
+	my $l = <ALLG>;
+	while ($l = <ALLG>) {
+		chomp $l;
+		my @a = split /\t/, $l, -1;
+		
+		print ALLTRANS "$a[0]\n";
+	}
+	
+	close ALLG;
+	close ALLTRANS;
+	
+	# transform NMs to ORFs
+	$todo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/transcript_to_gene_transformation.pl --inputfile=$peakfile.$db.TRANSCRIPTS  --column=0 --type=toORF --outtype=\"replace\" "; 
+	$todo .= "> $peakfile.$db.GENES";
+	
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	if ($verbose == 1){ 
+		print "$todo\n";
+	}
+	
+	# keep only unique ORFs
+	$todo = "cat $peakfile.$db.GENES | sort -u > $peakfile.$db.GENES.uniq.txt";
+	
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	
+	# store number of genes 
+	open (GF, "$peakfile.$db.GENES.uniq.txt") || die "Could not open $peakfile.$db.GENES.uniq.txt: $!\n";
+	my @gl = <GF>;
+	close GF;
+	$genes_lines = @gl;
+	
+	#
+	# Run the $PAGEDIR/SCRIPTS/find_genes_in_pathway.pl script for all the genes
+	# 
+	$todo = "perl $ENV{PAGEDIR}/SCRIPTS/find_genes_in_pathway.pl --expfile=$peakfile.$db.GENES.uniq.txt --pathway=$pathway --species=$pathways > $peakfile.GENES.uniq.txt.$pathway.txt";
+	if ($verbose == 1){ 
+		print "$todo\n";
+	}
+	print "Looking for genes in pathway $pathway ...";
+	system($todo) == 0 or die "Cannot exec $ENV{PAGEDIR}/SCRIPTS/find_genes_in_pathway.pl\n";
+	
+	if (-e "$peakfile.GENES.uniq.txt.$pathway.txt") {
+		print "Done ($peakfile.GENES.uniq.txt.$pathway.txt created).\n";	
+		
+		# store number of genes 
+		open (GPF, "$peakfile.GENES.uniq.txt.$pathway.txt") || die "Could not open $peakfile.GENES.uniq.txt.$pathway.txt: $!\n";
+		my @gpl = <GPF>;
+		close GPF;
+		$genes_pathway_lines = @gpl;
+	}	
+}
+
+#
+# Run the $PAGEDIR/SCRIPTS/find_genes_in_pathway.pl script for the genes with peaks
+# 
+$todo = "perl $ENV{PAGEDIR}/SCRIPTS/find_genes_in_pathway.pl --expfile=$peakfile.merged.$geneparts.uniq.txt --pathway=$pathway --species=$pathways > $pref.genes.$pathway.txt";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+print "Looking for genes in pathway $pathway ...";
+system($todo) == 0 or die "Cannot exec $ENV{PAGEDIR}/SCRIPTS/find_genes_in_pathway.pl\n";
+
+if (-e "$pref.genes.$pathway.txt") {
+	print "Done ($pref.genes.$pathway.txt created).\n";	
+}
+
+# store number of genes with peaks
+open (GPP, "$pref.genes.$pathway.txt") || die "Could not open $pref.genes.$pathway.txt: $!\n";
+my @gppl = <GPP>;
+close GPP;
+$genes_peaks_pathway_lines = @gppl;
+
+# merge all peaks from geneparts in one file
+my @a_p = split /\,/, $geneparts;
+
+foreach (@a_p) {
+	if($_ eq "P") {
+		system("cat $peakfile.$db.GP.promoters >> $peakfile.merged.$geneparts.peaks.txt") == 0 or die "Cannot exec cat command\n";
+	}
+	elsif($_ eq "I") {
+		system("cat $peakfile.$db.GP.introns >> $peakfile.merged.$geneparts.peaks.txt") == 0 or die "Cannot exec cat command\n";
+	}
+	elsif($_ eq "I1") {
+		system("cat $peakfile.$db.GP.introns1 >> $peakfile.merged.$geneparts.peaks.txt") == 0 or die "Cannot exec cat command\n";
+	}
+	elsif($_ eq "I2") {
+		system("cat $peakfile.$db.GP.introns2 >> $peakfile.merged.$geneparts.peaks.txt") == 0 or die "Cannot exec cat command\n";
+	}
+	elsif($_ eq "E") {
+		system("cat $peakfile.$db.GP.exons >> $peakfile.merged.$geneparts.peaks.txt") == 0 or die "Cannot exec cat command\n";
+	}
+	elsif($_ eq "D") {
+		system("cat $peakfile.$db.GP.distal >> $peakfile.merged.$geneparts.peaks.txt") == 0 or die "Cannot exec cat command\n";
+	}
+	elsif($_ eq "DW") {
+		system("cat $peakfile.$db.GP.DOWNEXTR >> $peakfile.merged.$geneparts.peaks.txt") == 0 or die "Cannot exec cat command\n";
+	}
+} 
+
+print "Looking for peaks in pathway $pathway ...";
+
+# fill in the NMs hash from the overlapfile
+open IN, "$peakfile.merged.$geneparts.peaks.txt";
+
+my $cnt = 0;
+while (my $l = <IN>) {
+	chomp $l;
+	my @a = split /\t/, $l, -1;
+	
+	my $peak	= join("\t", ($a[0], $a[1], $a[2], $a[3], $a[4], $a[5], $a[6], $a[7], $a[8], $a[9], $a[10]));
+	
+	for(my $i=11; $i<$#a+1; $i++) {
+		my @b = split /\t/, $a[$i];
+		
+		$NMHash{$b[0]}		= $peak;
+	}	
+}
+close IN;
+
+#for my $key ( keys %NMHash ) {
+#	my $value = $NMHash{$key};
+#	print "$key => $value\n";
+#}
+
+# looking for the peaks for each NM
+open IN, "$pref.genes.$pathway.txt";
+open PEAKSFILE, ">$pref.peaks.$pathway.txt";
+
+my $cnt = 0;
+while (my $l = <IN>) {
+	chomp $l;
+	
+	#split the line
+	my @a = split /\t/, $l, -1;
+	
+	my $NMs = $a[1];
+	
+	#split the NMs field
+	my @b = split /\//, $NMs, -1;
+	
+	foreach my $j(@b) {
+		if(exists($PEAKHash{$NMHash{$j}})) {
+			$PEAKHash{$NMHash{$j}}	= join("\\", ($PEAKHash{$NMHash{$j}}, $j));
+		}
+		else {
+			$PEAKHash{$NMHash{$j}}	= $j;
+		}
+		#print "$PEAKHash{$NMHash{$j}}\n"		
+	}
+}
+
+for my $key ( keys %PEAKHash ) {
+	
+	if($key ne "") {
+		my $value = $PEAKHash{$key};
+		print PEAKSFILE "$key\t$value\n";
+	}
+}
+
+close IN;
+close PEAKSFILE;
+
+print "Done ($pref.peaks.$pathway.txt created).\n";	
+
+#
+# Run the hypergeometric test
+#
+
+$todo = "$ENV{CHIPSEEQERDIR}/myhypergeom -i $genes_peaks_pathway_lines -N $genes_lines -s2 $genes_peaks_lines -s1 $genes_pathway_lines > $pref.pvalue.$pathway.txt"; 
+
+print "Running Hypergeometric test...\nResults: ";
+
+system($todo) == 0 or die "Cannot exec $todo\n";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+
+# Deleted intermediate files
+unlink <$peakfile.$db.*>;
+unlink <$peakfile.GENES.*>;
+unlink <$peakfile.merged.*>;

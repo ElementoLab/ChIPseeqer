@@ -1,0 +1,202 @@
+#!/usr/bin/perl
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Sets;
+use Getopt::Long;
+use strict;
+
+my $readdir   = undef;
+my $samfile   = undef;
+my $todo      = undef;
+my $trackname = undef;
+my $upload    = 0;
+my $chrdata   = undef;
+my $bigwig    = 0;
+my $verbose   = 0;
+my $gzip      = 1;
+my $fraglen   = undef;
+my $format    = "eland";
+my $outfile   = undef;
+my $bwfile    = undef;
+my $normalize = 1;
+my $maketrack = 1;
+my $ws        = undef;
+my $inc       = undef;
+my $updir     = undef;
+my $exec      = 1;
+my $uniquereads = 1;
+
+if (@ARGV == 0) {
+  print "Args: --samfile FILE | --readdir DIR --formar=STR  --trackname=STR [ --upload=INT --chrdata=FILE --ws=INT(10) --inc=INT(10)] \n";
+  exit;
+}
+
+
+GetOptions("samfile=s"   => \$samfile,
+		"readdir=s"   => \$readdir,
+		"format=s"    => \$format,
+		"trackname=s" => \$trackname,
+		"exec=s"      => \$exec,
+		"upload=s"    => \$upload,
+		"normalize=s" => \$normalize,
+		"maketrack=s" => \$maketrack,
+		"outfile=s"   => \$outfile,
+		"bigwig=s"    => \$bigwig,
+		"updir=s"     => \$updir,
+		"inc=s"       => \$inc,
+		"ws=s"        => \$ws,
+		"fraglen=s"   => \$fraglen,
+		"verbose=s"   => \$verbose,
+		"gzip=s"      => \$gzip,
+		"chrdata=s"   => \$chrdata,
+		"uniquereads=s"	=>	\$uniquereads);
+
+
+if (! -e "$ENV{CHIPSEEQERDIR}/DATA/hg18.chroms.sizes") {
+  print "Count not find $ENV{CHIPSEEQERDIR}/DATA/hg18.chroms.sizes\n";
+  exit;
+}
+
+if (($bigwig == 1) && (! -e "$ENV{CHIPSEEQERDIR}/SCRIPTS/wigToBigWig")) {
+  print "Cound not find $ENV{CHIPSEEQERDIR}/SCRIPTS/wigToBigWig\n";
+  exit;
+}
+
+$todo = "$ENV{CHIPSEEQERDIR}/MakeGenomicReadDensityTrack ";
+
+if (defined($samfile)) {
+  $todo .= " -readdir $samfile\_SPLIT -format sam ";
+} elsif (defined($readdir)) { 
+  $todo .= " -readdir $readdir -format $format ";
+} else {
+  die("Please define -readdir\n");	
+}
+
+
+if (defined($normalize)) {
+  $todo .= " -normalize $normalize "; 
+}
+
+if ($bigwig == 1) {
+  $todo .= "  -bigwig 1 ";
+}
+
+if (defined($inc)) {
+  $todo .= "  -inc $inc ";
+}
+
+if (defined($ws)) {
+  $todo .= "  -ws $ws ";
+}
+
+
+if (defined($chrdata)) {
+  $todo .= " -chrdata $chrdata ";
+}
+
+if ((defined($trackname)) && ($bigwig == 0)) {
+  $todo .= " -desc \"$trackname\" ";
+}
+
+if (defined($fraglen)) {
+  $todo .= " -fraglen $fraglen ";
+}
+
+if (defined($uniquereads)) {
+	$todo .= " -uniquereads $uniquereads ";
+}
+
+if (defined($verbose)) {
+	$todo .= " -verbose $verbose ";
+}
+
+if (!defined($outfile)) {
+   if (defined($samfile)) {
+      $outfile = "$samfile.wig";
+   } elsif (defined($trackname)) {
+      my $name = $trackname;
+      $name =~ s/\ /\_/g;
+      $outfile = "$readdir/$name.wig";
+   } else {
+     die "Please provide either --outfile or --trackname option\n";
+   }
+}  
+
+$todo .= " > $outfile";
+
+$bwfile = $outfile;
+$bwfile =~ s/wig$/bw/; 
+
+if ($maketrack == 1) {
+  
+  if ($verbose == 1) {
+    print "$todo\n";
+  }
+  print "Making Wig track ... " if ($verbose == 1);
+  if ($exec == 1) {
+      system($todo) == 0 or die "Cannot execute $todo\n";
+      print "Done\n" if ($verbose == 1);
+  }
+}
+
+
+if ($bigwig == 1) {
+  print "Making BigWig track ... " if ($verbose == 1);
+  $todo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/wigToBigWig $outfile $ENV{CHIPSEEQERDIR}/DATA/hg18.chroms.sizes $bwfile";
+  if ($exec == 1) {
+      system($todo) == 0 or die "Cannot execute $todo\n";
+       print "Done.\n" if ($verbose == 1);
+  }
+} else {
+  if ($gzip == 1) {
+    system("gzip -f $outfile") == 0 or die "cannot gzip\n";
+  }	
+}
+
+if ($upload == 1) {
+  print "Uploading track ... \n" if ($verbose == 1);
+  my $filetoupload = undef;
+  if ($bigwig == 1) {
+    $filetoupload = "$bwfile";
+  } else {
+    if ($gzip == 1) {
+      $filetoupload = "$outfile.gz";
+    } else {
+      $filetoupload = "$outfile";
+    }
+  }
+  my $upfile = Sets::filename($filetoupload);
+
+  if (defined($updir)) {
+    system("ssh oleweb\@okeeffe.med.cornell.edu \"mkdir -p www/files/$updir\"");
+    $upfile = "$updir/$upfile";
+  }
+
+  while (1) {
+    $todo = "scp $filetoupload oleweb\@okeeffe.med.cornell.edu:www/files/$upfile";
+    if (system($todo) != 0) { 
+      print "Try again ? [Y/N]\n";
+      my $ans = <STDIN>;
+      if ($ans =~ /^[nN]/) {
+	print "Ok, exit now\n";
+	exit;
+      } 
+    } else {
+      last;
+    }
+  }
+  print "Done.\n" if ($verbose == 1);
+
+  print "Now go to the Genome Browser and add a track using the following code:\n" if ($verbose == 1);
+  if ($bigwig == 1) {
+    
+    print "track type=bigWig name=\"$trackname\" description=\"$trackname\" bigDataUrl=http://physiology.med.cornell.edu/faculty/elemento/lab/files/$upfile visibility=\"full\" maxHeightPixels=\"64:64:11\" smoothingWindow=\"10\" viewLimits=\"0:100\" autoScale=\"off\"\n";
+  } else {
+    my $filetoupload = "$outfile";
+    if ($gzip == 1) {
+      $filetoupload .= ".gz";
+    }
+    print "http://physiology.med.cornell.edu/faculty/elemento/lab/files/$upfile\n";
+  }
+}
+

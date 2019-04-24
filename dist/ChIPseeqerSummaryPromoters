@@ -1,0 +1,129 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+my $refLink		= undef;
+my $annotation	= undef;
+my $targets		= undef;
+my $suf         = undef;
+my $todo        = undef;
+my $iswig       = undef;
+my $lenu        = 2000;
+my $lend        = 2000;
+my $db			= "refSeq";
+my $verbose     = 0;
+my $genome		= "hg18";
+my $chrdata		= undef;
+
+my $usemaxpeak2height = undef;
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerSummary --targets=FILE --prefix=STR --lenu=INT --lend=INT --iswig=INT --db=STR\n";
+}
+
+GetOptions("targets=s" => \$targets,
+"peakfile=s" => \$targets,
+"lenu=s"    => \$lenu,
+"lend=s"    => \$lend,
+"prefix=s"  => \$suf,
+"usemaxpeak2height=s" => \$usemaxpeak2height,
+"verbose=s" => \$verbose,
+"db=s"		=> \$db,
+"iswig=s"   => \$iswig,
+"genome=s"	=> \$genome );
+
+if ($genome eq "sacser") {
+	$db				= "sgd";
+}
+
+$annotation			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.new";
+
+if($db eq "refSeq") {
+	$refLink		= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.refLink";
+}
+
+$chrdata			= "$ENV{CHIPSEEQERDIR}/DATA/$genome.chrdata";
+
+if (!defined($suf)) {
+	$suf = $targets;
+	#die("Must provide --prefix=STR\n");
+}
+
+
+print "Species: $genome\n";
+print "Database annotation: $db\n";
+
+#
+# extract proms
+#
+my $promfile = "$annotation.u$lenu\_d$lend";
+$todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_upstream_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$lenu --lengthD=$lend --checkmaxlen=0 --shortgenes=1 > $promfile";
+if ($verbose == 1) {
+	print "$todo\n";
+}
+print "Extracting promoters ... ";
+system($todo) == 0 or die "Cannot execute promoter extraction script.\n"; 
+print "Done.\n";
+
+
+#
+# compare intervals
+#
+$todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $promfile -hasid1 1 -intervals2 $targets -show_ov_int 1 -chrdata $chrdata";
+
+if (defined($usemaxpeak2height)) {
+	$todo .= " -usemaxpeak2height $usemaxpeak2height ";
+}
+
+if (defined($iswig)) {
+	$todo .= " -iswig $iswig ";
+}
+$todo .= " > $suf.$db.ALL.NM.txt";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+print "Determining overlap between promoters and ChIP-seq peaks ... ";
+system($todo) == 0 or die "Cannot exec CompareIntervals\n";
+
+if (-e "$suf.$db.ALL.NM.txt") {
+	
+	my $todo2 = "awk -F \" \" '{if (\$5 != 0) print \$0}' $suf.$db.ALL.NM.txt > $suf.$db.NM.txt";
+	system($todo2) == 0 or die "Cannot exec $todo2\n";
+	print "Done ($suf.$db.NM.txt created).\n";	
+	
+	
+	#count number of transcripts with a peak
+	open IN, "$suf.$db.NM.txt";
+	my $cnt = 0;
+	while (my $l = <IN>) {
+		chomp $l;
+		my $line = split /\n/;
+		$cnt++;
+	}
+	close IN;
+	
+	print "Found $cnt $db transcripts with a peak.\n";
+	
+}
+
+if ($db eq "refSeq") {
+	#
+	# get gene names and description from RefLink
+	#
+	$todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/translate_column_using_table_column.pl --table=$suf.$db.NM.txt --col=0 --dict=$refLink --k=0 --v=1 --multicol=1 > $suf.tmp";
+	print "Converting RefSeq NM identifiers to ORFs (gene symbols, e.g. TP53, MYC, etc) and extracting gene descriptions... ";
+	system($todo) == 0 or die "Cannot exec Conversion\n";
+	
+	my $todo2 = "cat $suf.tmp | sort -u --key=1,1 > $suf.$db.SUM.txt";
+	system($todo2) == 0 or die "Cannot exec $todo2\n";
+	
+	unlink "$suf.tmp";
+	
+	if (-e "$suf.$db.SUM.txt") {
+		print "Done ($suf.$db.SUM.txt created).\n";	
+	}
+}

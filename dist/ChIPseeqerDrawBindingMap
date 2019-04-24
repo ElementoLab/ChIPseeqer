@@ -1,0 +1,228 @@
+#!/usr/bin/perl
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Sets;
+use GD::Simple;
+use strict;
+
+use Getopt::Long;
+
+my $cdtfile   = undef;
+my $draw      = undef; #"open";
+my $max       = undef;
+my $min       = 0;
+my $stopat    = undef;
+my $matfile   = undef;
+my $cmap      = undef;
+my $infile    = undef;
+my $tss       = 1;
+my @amap      = ();
+my $w         = 5;
+my $verbose   = 0;
+my $bkg       = "black";
+my $skipevery = undef;
+my $smooth    = undef;
+my $qmax      = undef;
+my $col       = undef;
+
+if (@ARGV == 0) {
+  die "Args: [ --matfile=FILE or --cdtfile=FILE ] [ --min=FLT(def=0) [ --max=FLT(def=undef) --qmax=FLT ] --bkg=white ]\n";
+}
+
+GetOptions(
+	   "cdtfile=s"   => \$cdtfile,
+	   "matfile=s"   => \$matfile,
+	   "draw=s"      => \$draw,
+	   "w=s"         => \$w,
+           "bkg=s"       => \$bkg,
+	   "max=s"       => \$max,
+	   "qmax=s"      => \$qmax,
+           "smooth=s"    => \$smooth,
+	   "min=s"       => \$min,
+	   "skipevery=s" => \$skipevery,
+	   "verbose=s"   => \$verbose,
+	   "cmap=s"      => \$cmap,
+	   "stopat=s"    => \$stopat,
+           "col=s"       => \$col,
+	   "tss=s"       => \$tss
+	  );
+
+
+if (defined($cmap)) {
+
+  open IN, $cmap;
+  while (my $l = <IN>) {
+    chomp $l;
+    my @a = split /[\t\ ]/, $l, -1;
+    push @amap, \@a;
+  }
+  close IN;
+
+
+}
+
+my @M = ();
+my @allvalues = ();
+if (defined($cdtfile)) {
+
+  open IN, $cdtfile;
+  my $l = <IN>;
+  $l = <IN>;
+  my $i = 0;
+  while ($l = <IN>) {
+    chomp $l;
+    my @a = split /\t/, $l, -1;
+    shift @a;
+    shift @a;
+    shift @a;
+    push @M, \@a;
+    $i++;
+    if (defined($stopat) && ($stopat == $i)) {
+      last;
+    }
+  }
+  close IN;
+  $infile = $cdtfile;
+
+} elsif (defined($matfile)) {
+
+  open IN, $matfile;
+  #my $l = <IN>;
+  #$l = <IN>;
+  my $i = 0;
+  while (my $l = <IN>) {
+    chomp $l;
+    my @a = split /\t/, $l, -1;
+    shift @a;
+    if (!defined($max)) {
+      for (my $i=0; $i<@a; $i++) {
+        push @allvalues, $a[$i];
+      }
+    } 
+    push @M, \@a;
+    $i++;
+    if (defined($stopat) && ($stopat == $i)) {
+      last;
+    }
+  }
+  close IN;
+  $infile = $matfile;
+}
+
+# set max if not defined
+if (!defined($max)) {
+  if (!defined($qmax)) {
+    die "Please define --qmax\n";
+  }
+  $max = Sets::percentile(\@allvalues, $qmax);
+  printf STDERR "# using $max as upper limit\n";
+}
+
+my $a_bkgcol = [0,0,0];
+my $a_forcol = [255,0,0];
+
+if ($bkg eq "white") {
+  $a_bkgcol = [255,255,255];
+}
+
+if ($col eq "green") {
+  $a_forcol = [0,255,0];
+} elsif ($col eq "darkgreen") {
+  $a_forcol = [0,100,0];
+}
+
+my $ximg = scalar(@{$M[0]}) * $w; # + 100;
+my $yimg = @M; # + 100;
+if (defined($skipevery)) {
+  $yimg = int(1+$yimg / $skipevery);
+}
+my  $img = GD::Simple->new($ximg,$yimg);
+
+#print STDERR  "Creating a $ximg x $yimg image\n"; <STDIN>;
+
+#$img->bgcolor(undef);
+#$img->fgcolor("red");
+#$img->rectangle(0+10,0+10,$ximg-10, $yimg-10);
+
+#print $img->png;
+#exit;
+
+my $jj = 0;  # used only for drawing ... $j for data
+for (my $j=0; $j<@M; $j++) {
+  
+  next if ($M[$j][0] eq "");
+
+  if (defined($skipevery) && ($j % $skipevery != 0)) {
+    next;
+  } 
+
+  $img->moveTo(0,    $jj);
+   
+  my @val = @{$M[$j]};
+  my $numval = @val;
+
+  if (defined($smooth)) {
+
+    #my $smooth = 10;
+    my $half   = int(($smooth - 1)/2);
+
+    my @newval = ();
+    for (my $i=0; $i<$numval; $i++) {
+        my $sum = 0;
+        my $ksum = 0;
+        for (my $k=Sets::max(0,$i-$half); $k<=Sets::min($numval-1, $i+$half); $k++) {
+           $sum += $val[$k];
+           $ksum ++;
+        }
+        $newval[$i] = $sum / $ksum;
+    }
+    @val = @newval;
+  }
+
+  for (my $i=0; $i<$numval; $i++) {
+
+    $img->bgcolor(undef);
+    my @col = ();
+    if (!defined($cmap)) {
+      @col = Sets::interp_general( $val[$i], $a_bkgcol, $a_forcol, 0, $max);
+      if ($verbose == 1) {
+          print "$M[$j][$i] -> " . join("-", @col) . "\n";
+       }
+    } else {
+      #@col = Sets::interp_from_matlab_colormap( -Sets::sign($M[$j][$i]), \@amap, $min, $max);
+      @col = Sets::interp_from_matlab_colormap( $val[$i], \@amap, $min, $max);
+    }
+
+    $img->fgcolor(@col);
+    my $xto = $i*$w+$w;
+    my $yto = $jj;
+    $img->lineTo($xto, $yto);
+
+  }
+
+  if ($j % 100 == 0) {
+    print STDERR "$j lines drawn.        \r";
+  }
+
+  $jj++;   # increment real j
+
+  #last if ($j == 250);
+}
+
+if ($tss == 1) {
+  $img->fgcolor("white");
+  my $xmid = $ximg/2;
+  
+  $img->moveTo($xmid, 0);
+  $img->lineTo($xmid, $yimg);
+}
+
+open OUT, ">$infile.png" or die "Cannot open $infile.png for writing\n";
+print OUT $img->png;
+close OUT;
+
+print "Created $infile.png.\n";
+
+if (defined($draw) && ($draw eq "open")) {
+  system("open $infile.png") == 0 or die "Cannot open file using Preview.\n";
+}

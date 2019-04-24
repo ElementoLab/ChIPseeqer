@@ -1,0 +1,93 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use Sets;
+use strict;
+use Getopt::Long;
+
+my $file1 = undef;
+
+my %scoresHash	= ();
+
+#
+# get options
+#
+GetOptions
+(	"peakfile1=s"   => \$file1);
+
+if (! -e $file1) {
+	die "$file1 cannot be opened\n";
+} 
+
+#
+# Run Compare Intervals both ways
+#
+
+my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -peakfile1 $file1 -peakfile2 $file1 -showovpeaks 1 -ovtype AND -show_ov_int 1 -showscores 0 -showunion 1 > $file1.compare";
+system($todo) == 0 or die "Cannot exec $todo\n";
+
+#
+# Open results from first run and store union peak in separate file
+#
+
+open IN, "$file1.compare";
+open UNION1, ">$file1.compare.union";
+
+while (my $line = <IN>) {
+	chomp $line; 
+	
+	my @peak	= (split /\t/, $line); 
+	my $nm		= $peak[5];
+	my $cnt		= 1;
+	
+	my $last1		= (split/\t/, $line)[-1];
+	
+	my @unionpeak	= (split /-/, $last1); 
+	
+	#print "$unionpeak[0]\t$unionpeak[1]\t$unionpeak[2]\t$avgscore\n";
+	print UNION1 "$unionpeak[0]\t$unionpeak[1]\t$unionpeak[2]\n";
+	
+	my $tmp = "$unionpeak[0]-$unionpeak[1]-$unionpeak[2]";
+}
+
+close UNION1;
+close IN;
+
+#
+# Run Compare Intervals on the union peaks
+#
+#my $unioncomp = Sets::getTempFile("/tmp/unioncomp");
+#my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -peakfile1 $union2 -peakfile2 $union1 -showovpeaks 1 -ovtype AND -show_ov_int 1 -showunion 1 -showpeakdesc 0 > $unioncomp";
+#system($todo) == 0 or die "Cannot exec $todo\n";
+
+#
+# Open results from the Union run and store union peak in separate file
+#
+#my $unionfinal	= Sets::getTempFile("/tmp/union");
+
+#open IN, $unioncomp;
+#open UNIONF, ">$unionfinal";
+
+#while (my $line = <IN>) {
+# 	chomp $line; 
+	
+#	my $last1 = (split/\t/, $line)[-1];
+	
+#	my @unionpeak = (split /-/, $last1); 
+	
+	#print "$unionpeak[0]\t$unionpeak[1]\t$unionpeak[2]\n";
+#	print UNIONF "$unionpeak[0]\t$unionpeak[1]\t$unionpeak[2]\t";
+	
+#	my $tmp = "$unionpeak[0]-$unionpeak[1]-$unionpeak[2]";
+	
+#	if(exists($scoresHash{$tmp})) {
+#		print  UNIONF "$scoresHash{$tmp}\n";
+#	}
+#}
+
+#close UNIONF;
+#close IN;
+
+# keep unique records only
+my $todo = "cat $file1.compare.union | sort -u | uniq";
+system($todo) == 0 or die "Cannot exec $todo\n";

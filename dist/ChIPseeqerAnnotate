@@ -1,0 +1,1073 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use Fasta;
+use Getopt::Long;
+use strict;
+use POSIX;
+
+# annotation type
+my $type_geneparts	= "GeneParts";
+
+my $geneparts			= undef;
+my $annotation			= undef;
+my $annotation_tss_tes	= undef;
+my $nm2orf				= undef;
+my $refLink				= undef;
+my $fracgene            = undef;
+
+# variables to store the arguments values
+my $targets             = undef;
+my $suf                 = undef;
+my $verbose             = 0;
+my $annot_type	        = $type_geneparts;
+my $overlap             = 0;
+my $lenuP               = 2000;
+my $lendP               = 2000;
+my $lenuDW              = 2000;
+my $lendDW              = 2000;
+my $gp_type				= 0;			# flag for computing gene parts on a peak-based annotation (0) or a gene-based annotation (1)
+my $db					= "refSeq";		# could be refSeq, AceView, Ensembl, UCSCGenes
+my $usepeakcenter       = 1;
+my $collabel            = "";
+my $fromgui				= 0;
+my $genome              = "hg18";		# could be hg18, hg19, mm9, dm3, sacser
+
+my $mindistaway			= 2000;			# minimum distance away from transcripts
+my $maxdistal			= 50000;		# used to define the distal regions (<2kb and <50kb)
+my $maxdistaway			= undef;		# maximum distance away from peaks
+my $ext					= 0;			# minimum distance away from peaks
+my $iswig				= undef;
+my $num_genes			= 1;			# how many closest genes. Can be 1 or 2
+my $showNM				= 1;			# if set to 1 shows the NM name. If set to 0 shows the ORF name
+my $nm					= undef;
+my $print_stats			= 1;
+my $fv					= undef;
+
+# variable use to parse hashes
+my $key;
+
+# variables to store percentages
+my $rep_prct	        = undef;
+my $cpg_prct	        = undef;
+my $dup_prct	        = undef;
+my $gp_prct				= undef;
+my $not_gp_prct         = undef;
+my $prom_prct	        = undef;
+my $downextr_prct		= undef;
+my $ex_prct				= undef;
+my $int_prct	        = undef;
+my $dist_prct	        = undef;
+my $inter_prct	        = undef;
+
+my $prom_only_prct		= undef;
+my $downextr_only_prct	= undef;
+my $ex_only_prct		= undef;
+my $int_only_prct		= undef;
+
+my %TS2GENE		= ();
+my %TS2GENEDESC = ();
+
+# handling lack of arguments
+if (@ARGV == 0) {
+	print "Usage: ChIPseeqerAnnotate --targets=FILE  [--type=STR --overlap=INT --prefix=STR --lenuP=INT --lendP=INT --gp_type=INT --db=STR] 
+	where:
+	--targets=FILE			peak file
+	--usepeakcenter=INT		1 to use peak midpoin (default), 0 otherwise
+	--type=STR				GeneParts
+	--db=STR				refSeq, AceView, UCSCGenes or Ensembl
+    --collabel=STR			column label, eg H3K79me3 to be added to P, E, I (useful for data integration)\n
+	--lenuP=INT				upstream length of the TSS
+	--lendP=INT				downstream length of the TSS
+	--lenuDW=INT			upstream length of the TES
+	--lendDW=INT			downstream length of the TSS
+	--print_stats=INT		1 to print statistics, 0 to skip printing
+";
+        exit;
+}
+
+# processing command line options
+GetOptions("targets=s" => \$targets,
+"peakfile=s"		=> \$targets,
+"prefix=s"			=> \$suf,
+"verbose=s"			=> \$verbose,
+"type=s"			=> \$annot_type,
+"overlap=s"			=> \$overlap,
+"collabel=s"		=> \$collabel,
+"lenuP=s"			=> \$lenuP,
+"lendP=s"			=> \$lendP,
+"lenuDW=s"			=> \$lenuDW,
+"lendDW=s"			=> \$lendDW,
+"genome=s"			=> \$genome,
+"db=s"				=> \$db,
+"usepeakcenter=s"	=> \$usepeakcenter,
+"gp_type=s"			=> \$gp_type,
+"mindistaway=s"		=> \$mindistaway,
+"maxdistaway=s"		=> \$maxdistaway,
+"ext=s"				=> \$ext,
+"iswig=s"			=> \$iswig,
+"num_genes=s"		=> \$num_genes,
+"showNM=s"			=> \$showNM,
+"maxdistal=s"		=> \$maxdistal,
+"print_stats=s"		=> \$print_stats,
+"fromgui=s"			=> \$fromgui);
+
+
+if ($genome eq "sacser") {
+	$db				= "sgd";
+}
+
+$annotation			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.new";
+$fracgene			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.genomefractions";
+$geneparts			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.GENEPARTS";
+$annotation_tss_tes = "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.TSS_TES"; 
+$nm2orf				= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.NM2ORF";
+$refLink			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.refLink";
+
+if (!defined($suf)) {
+	$suf = $targets;
+}
+
+# count number of peaks in targets file
+open TAR, "$targets";
+my $peaks_num = 0;
+while (my $l = <TAR>) {
+	chomp $l;
+	#my $line = split /\n/, $l;
+	$peaks_num++;
+}
+close TAR;
+
+# Gene parts annotation (promoters, exons, introns)
+if($annot_type eq $type_geneparts) {
+	#
+	# extract promoters
+	#
+	my $promoters	= "$annotation.u$lenuP\_d$lendP.PROMOTERS";
+	my $downextr	= "$annotation.u$lenuDW\_d$lendDW.DWEXTREMITIES";
+	
+	my $todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_upstream_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$lenuP --lengthD=$lendP --checkmaxlen=0 --shortgenes=1 > $promoters"  ;
+	if ($verbose == 1) {
+		print "$todo\n";
+	}
+	print "Extracting [$lenuP - TSS - $lendP] promoters ... ";
+	system($todo) == 0 or die "Cannot execute $todo.\n"; 
+	print "Done.\n";
+	
+	
+	if (-e "$geneparts.u$lenuP\_d$lendP") {
+		unlink("$geneparts.u$lenuP\_d$lendP");
+	}
+	
+	#open file
+	open PROM, "$promoters";
+	
+	open GENEPARTSFILE, ">>$geneparts.u$lenuP\_d$lendP";
+	
+	#for each line
+	while (my $l = <PROM>) {
+		chomp $l;
+		
+		#split line
+		my @a = split /[\t]/, $l, -1;
+		print GENEPARTSFILE "P-$a[0]\t$a[1]\t $a[2]\t $a[3]\n";
+	}
+	
+	#close files
+	close GENEPARTSFILE;
+	close PROM;
+	
+	#
+	# extract downstream extremities
+	#
+	my $todo4 = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_downstream_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$lenuDW --lengthD=$lendDW --checkmaxlen=0 --shortgenes=1 > $downextr"  ;
+	if ($verbose == 1) {
+		print "$todo4\n";
+	}
+	print "Extracting [$lenuDW - TES - $lendDW] downstream extremities ... ";
+	system($todo4) == 0 or die "Cannot execute $todo4.\n"; 
+	print "Done.\n";
+	
+	#open file
+	open DW, "$downextr";
+	
+	open GENEPARTSFILE, ">>$geneparts.u$lenuP\_d$lendP";
+	
+	#for each line
+	while (my $l = <DW>) {
+		chomp $l;
+		
+		#split line
+		my @a = split /[\t]/, $l, -1;
+		print GENEPARTSFILE "DW-$a[0]\t$a[1]\t $a[2]\t $a[3]\n";
+	}
+	
+	#close files
+	close GENEPARTSFILE;
+	close DW;
+	
+	#
+	# add gene parts to the list
+	#
+	my $todo = "cat $geneparts >> $geneparts.u$lenuP\_d$lendP";
+	system($todo) == 0 or die "Cannot exec $todo\n";	
+	
+	
+	# ts 2 gene
+	if($db eq "refSeq") {
+		open NM2ORF, $nm2orf or die "cannot open $nm2orf\n";
+		while (my $l = <NM2ORF>) {
+			chomp $l;
+			my @a = split /\t/, $l, -1;
+			$TS2GENE{$a[0]} = $a[1];
+		}
+		close NM2ORF;
+	}
+	
+	if($db eq "refSeq") {
+		open REF, $refLink or die "cannot open $refLink\n";
+		while (my $l = <REF>) {
+			chomp $l;
+			my @a = split /\t/, $l, -1;
+			$TS2GENEDESC{$a[0]} = $a[2];
+		}
+		close REF;
+	}
+	
+	# peak-based annotation
+	if($gp_type == 0) {
+		
+		# read peak list to store full peak data
+		my %PEAKDATA = ();
+		open TAR2, $targets;
+		while (my $l = <TAR2>) {
+			chomp $l;
+			my @a = split /\t/, $l, -1;
+			my $peak	= join("\t", ($a[0], $a[1], $a[2]));
+			$PEAKDATA{$peak} = $l;
+		}
+		close TAR2;
+		
+		# hashes to store the promoters, exons and introns per peak
+		my %promoters	= ();
+		my %downextr	= ();
+		my %exons		= ();
+		my %introns		= ();
+		my %distal		= ();
+		my %intergenic	= ();
+	
+		my %promoters_peak_gene	= ();
+		my %downextr_peak_gene	= ();
+		my %exons_peak_gene		= ();
+		my %introns_peak_gene	= ();
+		my %introns1_peak_gene	= ();
+		my %introns2_peak_gene	= ();
+		my %distal_peak_gene	= ();
+		my %intergenic_peak_gene	= ();
+		
+		# find distal peaks
+		my $todo5 = "$ENV{CHIPSEEQERDIR}/ChIPseeqerFindDistalPeaks --peakfile=$targets --mindistaway=$mindistaway --genome=$genome --db=$db";
+		
+		print "\nLooking for distal peaks ... ";
+		
+		if ($verbose == 1) {
+			print "$todo5\n";
+		}
+		
+		system($todo5) == 0 or die "Cannot exec $todo5\n";		
+		
+		if (-e "$targets.$db.DISTPEAKS") {
+			my $todo6 = "$ENV{CHIPSEEQERDIR}/ChIPseeqerFindClosestGenes --targets=$targets.$db.DISTPEAKS --prefix=$targets.$db.DISTPEAKS --genome=$genome --db=$db --num_genes=$num_genes --mindistaway=$ext ";
+			
+			if (defined($maxdistaway)) {
+				$todo6 .= " --maxdistaway=$maxdistaway ";
+			}			
+			
+			print "\nLooking for 2 closest genes ... ";
+			if ($verbose == 1) {
+				print "$todo6\n";
+			}
+			system($todo6) == 0 or die "Cannot exec $todo6\n";
+		}	
+
+		if(-e "$targets.$db.DISTPEAKS.$db.CLOSEST_NM.txt") {
+		
+			# find overlapping peaks with gene parts
+			my $todo7 = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -hasid1 0 -intervals2 $geneparts.u$lenuP\_d$lendP -hasid2 1 -show_ov_int 1 -overlap_min $overlap ";
+			if ($usepeakcenter == 1) {
+				$todo7 .= " -usepeak1center 1 ";
+			}
+			
+			$todo7 .= " > $suf.$db.ALL.GP";
+			
+			if ($verbose == 1){ 
+				print "$todo7\n";
+			}
+			
+			print "Determining overlap between gene parts and ChIP-seq peaks ... ";
+			
+			system($todo7) == 0 or die "Cannot exec CompareIntervals\n";
+			
+			
+			if (-e "$suf.$db.ALL.GP") {
+				
+				# make a list with all peaks that overlap with at least 1 gene part
+				open ALLGP, "$suf.$db.ALL.GP";
+				open GPFILE, ">$suf.$db.GP";
+				
+				#for each line
+				while (my $l = <ALLGP>) {
+					chomp $l;
+					
+					#split line
+					my @a = split /[\t]/, $l, -1;
+					
+					if ($a[3] ne '0') {
+						print GPFILE "$l\n";
+					}
+				}
+				
+				close ALLGP;
+				print "Done ($suf.$db.GP created).\n";	
+				
+				# add in the list the genes with the distal peaks
+				open IN, "$targets.$db.DISTPEAKS.$db.CLOSEST_NM.txt";
+				#for each line
+				while (my $l = <IN>) {
+					chomp $l;
+					
+					my @a = split /-/, $l, -1;	
+					
+					my $distance = $a[$#a];
+					
+					if($distance > $maxdistal) {
+						$l =~ s/D/G/g; 
+					}
+					
+					print GPFILE "$l\n";
+				}
+				
+				close GPFILE;
+				close IN;
+				
+				#count number of peaks that overlap with binding locations
+				open GP, "$suf.$db.GP";
+				my $cnt = 0;
+				while (my $l = <GP>) {
+					chomp $l;
+					my $line = split /\n/;
+					$cnt++;
+				}
+				close GP;
+				
+				# fill in the hashes
+				open GP2, "$suf.$db.GP";
+				my @intron_position		= ();
+				
+				# gene-based matrix
+				my %genedata			= ();
+				my $peaks_in_promoters	= 0;
+				my $peaks_in_downextr	= 0;
+				my $peaks_in_exons		= 0;
+				my $peaks_in_introns	= 0;
+				my $peaks_distal		= 0;
+				my $peaks_intergenic	= 0;
+				
+				my @a_prompeaks		= ();
+				my @a_downextrpeaks	= ();
+				my @a_intronpeaks	= ();
+				my @a_intron1peaks	= ();
+				my @a_intron2peaks	= ();
+				my @a_exonpeaks		= ();
+				my @a_distalpeaks	= ();
+				my @a_intergenicpeaks	= ();
+				
+				while (my $l = <GP2>) {
+					chomp $l;		
+					
+					my @a		= split /\t/, $l, -1;
+					
+					# get peak id
+					my $peak	= join("\t", ($a[0], $a[1], $a[2]));
+					
+					my $ov_with_promoters	= 0;
+					my $ov_with_downextr	= 0;
+					my $ov_with_exons		= 0;
+					my $ov_with_introns		= 0;
+					my $ov_with_intron1		= 0;
+					my $ov_with_intron2		= 0;
+					my $ov_with_distal		= 0;
+					my $ov_with_intergenic	= 0;
+					
+					# traverse overlapping gene parts, count how many of each type each peak overlaps with
+					for(my $i=4; $i<$#a+1; $i++) {
+						
+						# split to get intron num
+						my @b = split /\-/, $a[$i];
+						
+						# notice: priority given to promoter peaks, then exon peaks
+						if($a[$i]=~ m/P/) {
+							
+							$promoters{$peak} += 1;
+							# get gene name (last)
+							my $genename = $b[$#b];
+							$genedata{$genename}{"P"} ++;
+							$ov_with_promoters	= 1;
+							
+							push(@{$promoters_peak_gene{$peak}}, $genename);
+						}
+						elsif($a[$i]=~ m/DW/) {
+							
+							$downextr{$peak} += 1;
+							# get gene name (one before last)
+							my $genename = $b[$#b];
+							$genedata{$genename}{"DW"} ++;
+							$ov_with_downextr	= 1;
+							
+							push(@{$downextr_peak_gene{$peak}}, $genename);
+						}
+						elsif($a[$i]=~ m/EX/) {
+							
+							$exons{$peak} += 1;
+							# get gene name (one before last)
+							my $genename = $b[$#b-1];
+							$genedata{$genename}{"EX"} ++;
+							$ov_with_exons	= 1;
+							
+							push(@{$exons_peak_gene{$peak}}, $genename);
+						}
+						elsif($a[$i]=~ m/I/) {
+							
+							$introns{$peak} += 1;
+							my $intron_num = $b[$#b]; # last element
+							$intron_position[$intron_num] ++;
+							# get gene name (one before last)
+							my $genename = $b[$#b-1];
+							$genedata{$genename}{"I"} ++;
+							if ($intron_num == 1) {
+								$genedata{$genename}{"I-1"} ++;
+								$ov_with_intron1 = 1;
+								push(@{$introns1_peak_gene{$peak}}, $genename);
+							}
+							if ($intron_num == 2) {
+								$genedata{$genename}{"I-2"} ++;
+								$ov_with_intron2 = 1;							
+								push(@{$introns2_peak_gene{$peak}}, $genename);
+							}
+							$ov_with_introns = 1;
+
+							push(@{$introns_peak_gene{$peak}}, $genename);
+						}
+						elsif($a[$i]=~ m/D/) {
+														
+							$distal{$peak} += 1;
+							# get gene name (one before last)
+							my $genename = $b[$#b-1];
+							$genedata{$genename}{"D"} ++;
+							$ov_with_distal	= 1;
+							
+							push(@{$distal_peak_gene{$peak}}, $genename);
+						}
+						elsif($a[$i]=~ m/G/) {
+							
+							$intergenic{$peak} += 1;
+							# get gene name (one before last)
+							my $genename = $b[$#b-1];
+							$genedata{$genename}{"G"} ++;
+							$ov_with_intergenic	= 1;
+							
+							push(@{$intergenic_peak_gene{$peak}}, $genename);
+						}
+					} # end for
+					
+					# determine ov with gene parts, with priority on promoters
+					if ($ov_with_promoters == 1) {
+						$peaks_in_promoters ++;
+						push @a_prompeaks, $peak;
+					} elsif ($ov_with_exons == 1) {
+						$peaks_in_exons ++;
+						push @a_exonpeaks, $peak;
+					} elsif ($ov_with_introns == 1) {
+						$peaks_in_introns ++;
+						push @a_intronpeaks, $peak;
+						
+						if ($ov_with_intron1 == 1) {
+							push @a_intron1peaks, $peak;
+						}
+						if ($ov_with_intron2 == 1) {
+							push @a_intron2peaks, $peak;
+						}
+					}
+					elsif ($ov_with_downextr == 1) {
+						$peaks_in_downextr ++;
+						push @a_downextrpeaks, $peak;
+					}
+					elsif ($ov_with_distal == 1) {
+						$peaks_distal ++;
+						push @a_distalpeaks, $peak;
+					}
+					elsif ($ov_with_intergenic == 1) {
+						$peaks_intergenic ++;
+						push @a_intergenicpeaks, $peak;
+					}
+					
+				} # while <IN>
+				
+				close GP2;
+				
+				# count the peaks that are uniquely found in introns/exons/promoters
+				open IN, "$suf.$db.GP";
+				my $peaks_in_promoters_only	= undef;
+				my $peaks_in_downextr_only	= undef;
+				my $peaks_in_exons_only		= undef;
+				my $peaks_in_introns_only	= undef;
+				
+				while (my $l = <IN>) {
+					chomp $l;		
+					
+					my @a		= split /\t/, $l, -1;
+					my $peak	= join("\t", ($a[0], $a[1], $a[2]));
+					
+					# a[3] gives how many gene parts each peak overlaps with
+					if ($promoters{$peak} == $a[3]) {
+						$peaks_in_promoters_only++;
+					}
+					
+					if ($downextr{$peak} == $a[3]) {
+						$peaks_in_downextr_only++;
+					}
+					
+					if ($exons{$peak} == $a[3]) {
+						$peaks_in_exons_only++;
+					}
+					
+					if ($introns{$peak} == $a[3]) {
+						$peaks_in_introns_only++;
+					}
+				}
+				close IN;
+				
+				
+				# count %
+				my $not_gp_cnt = $peaks_num - $cnt;
+				
+				if($peaks_num != 0) {
+					$gp_prct		= sprintf("%3.1f", 100 * $cnt/$peaks_num);
+					$not_gp_prct	= sprintf("%3.1f", 100 * $not_gp_cnt/$peaks_num);
+					
+					$prom_prct		= sprintf("%3.1f", 100 * $peaks_in_promoters/$peaks_num);
+					$downextr_prct	= sprintf("%3.1f", 100 * $peaks_in_downextr/$peaks_num);
+					$ex_prct		= sprintf("%3.1f", 100 * $peaks_in_exons/$peaks_num);
+					$int_prct		= sprintf("%3.1f", 100 * $peaks_in_introns/$peaks_num);
+					$dist_prct		= sprintf("%3.1f", 100 * $peaks_distal/$peaks_num);
+					$inter_prct		= sprintf("%3.1f", 100 * $peaks_intergenic/$peaks_num);
+					
+					$prom_only_prct		= sprintf("%3.1f", 100 * $peaks_in_promoters_only/$peaks_num);
+					$downextr_only_prct	= sprintf("%3.1f", 100 * $peaks_in_downextr_only/$peaks_num);
+					$ex_only_prct		= sprintf("%3.1f", 100 * $peaks_in_exons_only/$peaks_num);
+					$int_only_prct		= sprintf("%3.1f", 100 * $peaks_in_introns_only/$peaks_num);
+				}
+				else {
+					print "Cannot compute percentages, number of peaks is set to 0.\n"
+				}
+				
+				print "Creating stats file ... ";
+				
+				# print in stats file
+				open STATSFILE, ">$suf.$db.GP.stats";
+				print STATSFILE "Number of peaks:\t$peaks_num\n";
+				#print STATSFILE "Number of peaks that overlap with exons/introns/promoters/downstream extremities/distal:\t$cnt \t (%$gp_prct) \n";
+				#print STATSFILE "Number of peaks that do not overlap with exons/introns/promoters/downstream extremities/distal:\t$not_gp_cnt \t (%$not_gp_prct) \n";
+				
+				print STATSFILE "Number of peaks that overlap with [-$lenuP;$lendP] PROMOTERS:\t$peaks_in_promoters \t (%$prom_prct) \n";
+				print STATSFILE "Number of peaks that overlap with [-$lenuDW;$lendDW] DOWNSTREAM EXTREMITIES:\t$peaks_in_downextr \t (%$downextr_prct) \n";
+				print STATSFILE "Number of peaks that overlap with EXONS:\t$peaks_in_exons \t (%$ex_prct) \n";
+				print STATSFILE "Number of peaks that overlap with INTRONS:\t$peaks_in_introns \t (%$int_prct) \n";
+				print STATSFILE "Number of peaks that overlap with DISTAL (>$mindistaway and <$maxdistal):\t$peaks_distal \t (%$dist_prct) \n";
+				print STATSFILE "Number of peaks that overlap with INTERGENIC (>$maxdistal):\t$peaks_intergenic \t (%$inter_prct) \n";
+				
+				#print STATSFILE "Number of peaks that overlap with [-$lenuP;$lendP] PROMOTERS only:\t$peaks_in_promoters_only \t (%$prom_only_prct) \n";
+				#print STATSFILE "Number of peaks that overlap with [-$lenuDW;$lendDW] DOWNSTREAM EXTREMITIES only:\t$peaks_in_downextr_only \t (%$downextr_only_prct) \n";
+				#print STATSFILE "Number of peaks that overlap with EXONS only:\t$peaks_in_exons_only \t (%$ex_only_prct) \n";
+				#print STATSFILE "Number of peaks that overlap with INTRONS only:\t$peaks_in_introns_only \t (%$int_only_prct) \n";
+				
+				for (my $j=1; $j<=$#intron_position; $j++) {
+					print STATSFILE "Number of peaks overlapping with intron $j:\t$intron_position[$j]\n";
+				}
+				close STATSFILE;
+				
+				# end of execution
+				print "Done ($suf.$db.GP.stats created).\n";
+				
+				# % fractions in each region
+				my %frac = ();
+				if (defined($fracgene) && (-e $fracgene)) {
+				  open IN, $fracgene or die "Cannot open $fracgene\n";
+				  while (my $l = <IN>) {
+				    chomp $l;
+				    my @a = split /\t/, $l, -1;			
+				    $frac{$a[0]} = $a[1];
+				  }
+				  close IN;
+				}
+				open FRACFILE, ">$suf.$db.GP.frac" or die "Cannot open frac file\n";
+				print FRACFILE "Promoters\t$prom_prct"; print FRACFILE "\t$frac{Promoters}" if (defined($frac{Promoters})); print FRACFILE "\n";
+				print FRACFILE "Downstream\t$downextr_prct"; print FRACFILE "\t$frac{Downstream}" if (defined($frac{Downstream})); print FRACFILE "\n";
+				print FRACFILE "Exons\t$ex_prct"; print FRACFILE "\t$frac{Exons}" if (defined($frac{Exons})); print FRACFILE "\n";
+				print FRACFILE "Introns\t$int_prct"; print FRACFILE "\t$frac{Introns}" if (defined($frac{Introns})); print FRACFILE "\n";
+				#my $distal_prct = 100 - $prom_prct - $downextr_prct - $ex_prct - $int_prct;
+				print FRACFILE "Distal\t$dist_prct"; print FRACFILE "\t$frac{Distal}" if (defined($frac{Distal})); print FRACFILE "\n";
+				print FRACFILE "Intergenic\t$inter_prct"; print FRACFILE "\t$frac{Intergenic}" if (defined($frac{Intergenic})); print FRACFILE "\n";
+				close FRACFILE;
+
+				print "Creating frac file $suf.$db.GP.frac .. Done\n";
+				
+				my $pval_pr		= (fact($peaks_num)/(fact($peaks_in_promoters)*fact($peaks_num - $peaks_in_promoters))) * (($frac{Promoters}/100) ** $peaks_in_promoters) * ((1-($frac{Promoters}/100)) ** ($peaks_num - $peaks_in_promoters));
+				my $pval_dw		= (fact($peaks_num)/(fact($peaks_in_downextr)*fact($peaks_num - $peaks_in_downextr))) * (($frac{Downstream}/100) ** $peaks_in_downextr) * ((1-($frac{Downstream}/100)) ** ($peaks_num - $peaks_in_downextr));
+				my $pval_ex		= (fact($peaks_num)/(fact($peaks_in_exons)*fact($peaks_num - $peaks_in_exons))) * (($frac{Exons}/100) ** $peaks_in_exons) * ((1-($frac{Exons}/100)) ** ($peaks_num - $peaks_in_exons));
+				my $pval_intr	= (fact($peaks_num)/(fact($peaks_in_introns)*fact($peaks_num - $peaks_in_introns))) * (($frac{Introns}/100) ** $peaks_in_introns) * ((1-($frac{Introns}/100)) ** ($peaks_num - $peaks_in_introns));
+				my $pval_dis	= (fact($peaks_num)/(fact($peaks_distal)*fact($peaks_num - $peaks_distal))) * (($frac{Distal}/100) ** $peaks_distal) * ((1-($frac{Distal}/100)) ** ($peaks_num - $peaks_distal));
+				my $pval_inter	= (fact($peaks_num)/(fact($peaks_intergenic)*fact($peaks_num - $peaks_intergenic))) * (($frac{Intergenic}/100) ** $peaks_intergenic) * ((1-($frac{Intergenic}/100)) ** ($peaks_num - $peaks_intergenic));
+				
+				print "Binomial probabilities\n";
+				print "----------------------\n";
+				print "Promoters: $pval_pr\n";
+				print "Downstream: $pval_dw\n";
+				print "Exons: $pval_ex\n";
+				print "Introns: $pval_intr\n";
+				print "Distal: $pval_dis\n";
+				print "Intergenic: $pval_inter\n";
+								
+				# make transcript list
+				my %TSIDX = ();
+				open IN, $annotation;
+				while (my $l = <IN>) {
+					chomp $l;
+					my @a = split /\t/, $l, -1;
+					$TSIDX{$a[0]} = 1;
+					
+				}
+				close IN;
+				my @TSLIST = keys(%TSIDX);
+				
+				# write gene-based matrix
+				print "Creating transcript file with number of P, E, and I peaks for each transcript ... ";
+				open GENEFILE, ">$suf.$db.GP.genes" or die "Cannot open gene file\n";
+				open GENEFILEALL, ">$suf.$db.GP.genes.alltsnames.txt" or die "Cannot open ts name file\n";
+				open GENEFILEANN, ">$suf.$db.GP.genes.annotated.txt" or die "Cannot open gene file\n";
+				
+				print GENEFILE "TSID\tP$collabel\tDW$collabel\tE$collabel\tI$collabel\tI1$collabel\tI2$collabel\tD$collabel\tIG$collabel\n";
+				print GENEFILEANN "TSID\tP$collabel\tDW$collabel\tE$collabel\tI$collabel\tI1$collabel\tI2$collabel\tD$collabel\tIG$collabel\tGENEID\tGENEDESCR\n";
+				my %inlist = ();
+
+				foreach my $g (@TSLIST) {
+					print GENEFILE "$g\t";
+					print GENEFILE (defined($genedata{$g}{"P"})?$genedata{$g}{"P"}:0) . "\t";
+					print GENEFILE (defined($genedata{$g}{"DW"})?$genedata{$g}{"DW"}:0) . "\t";
+					print GENEFILE (defined($genedata{$g}{"E"})?$genedata{$g}{"E"}:0) . "\t";
+					print GENEFILE (defined($genedata{$g}{"I"})?$genedata{$g}{"I"}:0) . "\t";
+					print GENEFILE (defined($genedata{$g}{"I-1"})?$genedata{$g}{"I-1"}:0) . "\t";
+					print GENEFILE (defined($genedata{$g}{"I-2"})?$genedata{$g}{"I-2"}:0) . "\t";
+					print GENEFILE (defined($genedata{$g}{"D"})?$genedata{$g}{"D"}:0) .	"\t";
+					print GENEFILE (defined($genedata{$g}{"G"})?$genedata{$g}{"G"}:0) .	"\n";
+					
+					# list of all ts with a nearby peak
+					if (defined($genedata{$g}{"P"}) || defined($genedata{$g}{"DW"}) || defined($genedata{$g}{"E"}) ||
+					    defined($genedata{$g}{"E"}) || defined($genedata{$g}{"I-1"}) || defined($genedata{$g}{"I-2"}) ||
+					    defined($genedata{$g}{"D"}) || defined($genedata{$g}{"G"})) {
+					  
+					  if (!defined($inlist{$g})) {
+					    print GENEFILEALL "$g\n";
+					    $inlist{$g} = 1;
+					  }
+					}									  
+
+					my $ss = 0;
+					foreach my $v (values(%{$genedata{$g}})) {
+						$ss += $v;
+					}
+					
+					if ($ss > 0) {
+						print GENEFILEANN "$g\t";
+						print GENEFILEANN (defined($genedata{$g}{"P"})?$genedata{$g}{"P"}:0) . "\t";
+						print GENEFILEANN (defined($genedata{$g}{"DW"})?$genedata{$g}{"DW"}:0) . "\t";
+						print GENEFILEANN (defined($genedata{$g}{"E"})?$genedata{$g}{"E"}:0) . "\t";
+						print GENEFILEANN (defined($genedata{$g}{"I"})?$genedata{$g}{"I"}:0) . "\t";
+						print GENEFILEANN (defined($genedata{$g}{"I-1"})?$genedata{$g}{"I-1"}:0) . "\t";
+						print GENEFILEANN (defined($genedata{$g}{"I-2"})?$genedata{$g}{"I-2"}:0) . "\t";
+						print GENEFILEANN (defined($genedata{$g}{"D"})?$genedata{$g}{"D"}:0) . "\t";
+						print GENEFILEANN (defined($genedata{$g}{"G"})?$genedata{$g}{"G"}:0);
+						print GENEFILEANN "\t$TS2GENE{$g}";
+						print GENEFILEANN "\t$TS2GENEDESC{$g}";
+						print GENEFILEANN "\n";			    
+					}
+					
+				}
+				close GENEFILE;
+				close GENEFILEANN;
+				close GENEFILEALL;
+
+				print "Done ($suf.$db.GP.genes created).\n";
+				print "Done ($suf.$db.GP.genes.annotated created).\n";
+				
+				# save promoters, downstream extremities, exon and intronic peaks
+				open OUTP, ">$suf.$db.GP.promoters";
+				foreach my $p (@a_prompeaks) {
+					print OUTP "$PEAKDATA{$p}";
+					foreach $nm (@{$promoters_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTP "\t$nm";
+						}
+						else {
+							print OUTP "\t$TS2GENE{$nm}";
+						}
+					}
+					print OUTP "\n";
+				}
+				close OUTP;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in promoters ... $suf.$db.GP.promoters\n";
+				}
+				
+				open OUTP, ">$suf.$db.GP.DOWNEXTR";
+				foreach my $p (@a_downextrpeaks) {
+					print OUTP "$PEAKDATA{$p}";
+					foreach $nm (@{$downextr_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTP "\t$nm";
+						}
+						else {
+							print OUTP "\t$TS2GENE{$nm}";
+						}
+					}
+					print OUTP "\n";
+				}
+				close OUTP;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in downstream extremities ... $suf.$db.GP.DOWNEXTR\n";
+				}
+				
+				open OUTE, ">$suf.$db.GP.exons";
+				foreach my $p (@a_exonpeaks) {
+					print OUTE "$PEAKDATA{$p}";
+					foreach $nm (@{$exons_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTE "\t$nm";
+						}
+						else {
+							print OUTE "\t$TS2GENE{$nm}";
+						}
+					}
+					print OUTE "\n";
+				}
+				close OUTE;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in exons ... $suf.$db.GP.exons\n";
+				}
+				
+				open OUTI, ">$suf.$db.GP.introns";
+				foreach my $p (@a_intronpeaks) {
+					print OUTI "$PEAKDATA{$p}";
+					foreach $nm (@{$introns_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTI "\t$nm";
+						}
+						else {
+							print OUTI "\t$TS2GENE{$nm}";
+						}					}
+					print OUTI "\n";
+				}
+				close OUTI;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in introns ... $suf.$db.GP.introns\n";
+				}
+				
+				open OUTI, ">$suf.$db.GP.introns1";
+				foreach my $p (@a_intron1peaks) {
+					print OUTI "$PEAKDATA{$p}";
+					foreach $nm (@{$introns1_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTI "\t$nm";
+						}
+						else {
+							print OUTI "\t$TS2GENE{$nm}";
+						}
+					}
+					print OUTI "\n";
+				}
+				close OUTI;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in introns 1 ... $suf.$db.GP.introns1\n";
+				}
+				
+				open OUTI, ">$suf.$db.GP.introns2";
+				foreach my $p (@a_intron2peaks) {
+					print OUTI "$PEAKDATA{$p}";
+					foreach $nm (@{$introns2_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTI "\t$nm";
+						}
+						else {
+							print OUTI "\t$TS2GENE{$nm}";
+						}
+					}
+					print OUTI "\n";
+				}
+				close OUTI;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in introns 2 ... $suf.$db.GP.introns2\n";
+				}
+				
+				open OUTI, ">$suf.$db.GP.distal";
+				foreach my $p (@a_distalpeaks) {
+					print OUTI "$PEAKDATA{$p}";
+					foreach $nm (@{$distal_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTI "\t$nm";
+						}
+						else {
+							print OUTI "\t$TS2GENE{$nm}";
+						}
+					}
+					print OUTI "\n";
+				}
+				close OUTI;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in distal regions (>$mindistaway and <$maxdistal) ... $suf.$db.GP.distal\n";
+				}
+				
+				open OUTI, ">$suf.$db.GP.intergenic";
+				foreach my $p (@a_intergenicpeaks) {
+					print OUTI "$PEAKDATA{$p}";
+					foreach $nm (@{$intergenic_peak_gene{$p}}) {
+						if ($showNM == 1) {
+							print OUTI "\t$nm";
+						}
+						else {
+							print OUTI "\t$TS2GENE{$nm}";
+						}
+					}
+					print OUTI "\n";
+				}
+				close OUTI;
+				
+				if($print_stats eq 1) {
+					print "Creating list of peaks in intergenic regions (>$maxdistal) ... $suf.$db.GP.intergenic\n";
+				}
+				
+				# fill in the hashes
+				open IN, "$suf.$db.GP";
+				open IN2, ">$suf.$db.GP.ORF";
+				
+				while (my $l = <IN>) {
+					chomp $l;		
+					
+					my @a		= split /\t/, $l, -1;
+					
+					# get peak id
+					my $genename = undef;
+					
+					# traverse overlapping gene parts, count how many of each type each peak overlaps with
+					for(my $i=4; $i<$#a+1; $i++) {
+						
+						# split to get intron num
+						my @b = split /\-/, $a[$i];
+						
+						# notice: priority given to promoter peaks, then exon peaks
+						if($a[$i]=~ m/P/) {
+							
+							# get gene name (last)
+							$genename = $b[$#b];
+							
+						}
+						elsif($a[$i]=~ m/DW/) {
+							
+							# get gene name (one before last)
+							$genename = $b[$#b];
+							
+						}
+						elsif($a[$i]=~ m/EX/) {
+							
+							# get gene name (one before last)
+							$genename = $b[$#b-1];
+							
+						}
+						elsif($a[$i]=~ m/I/) {
+							
+							# get gene name (one before last)
+							$genename = $b[$#b-1];
+
+						}
+						elsif($a[$i]=~ m/D/) {
+							
+							# get gene name (one before last)
+							$genename = $b[$#b-1];
+							
+						}
+
+						elsif($a[$i]=~ m/G/) {
+							
+							# get gene name (one before last)
+							$genename = $b[$#b-1];
+							
+						}
+						
+						$l =~ s/$genename/$TS2GENE{$genename}/g;
+
+					} # end for
+			
+					print IN2 "$l\n";
+				
+				} # while <IN>
+				
+				close IN;
+				close IN2;
+
+				
+				if($fromgui == 0) {
+					system("head -12 $suf.$db.GP.stats");
+				}
+			
+				#for my $key ( keys %promoters_peak_gene ) {
+				#	print "$key => \t";
+				#	foreach $nm (@{$promoters_peak_gene{$key}}) {
+				#		print " $nm";
+				#		print "\t$TS2GENE{$nm}";
+				#	}
+				#	print "\n";
+				#}
+				
+				#unlink("$suf.$db.GP");
+				#unlink("$suf.$db.GP.ORF");
+				#unlink("$suf.$db.ALL.GP");
+				#unlink("$targets.$db.DISTPEAKS.$db.CLOSEST_NM.txt");
+				#unlink("$targets.$db.DISTPEAKS.$db.CLOSEST_NM.tmp");
+				#unlink("$targets.$db.DISTPEAKS.$db.CLOSEST_ORF.txt");
+				#unlink("$targets.$db.DISTPEAKS.$db.GENEWITHPEAKS.txt");
+				#unlink("$targets.$db.DISTPEAKS");
+				#unlink("$targets.$db.GENEPEAKS");
+			}
+		}
+	}
+	
+	# gene-based annotation
+	if($gp_type == 1) {
+		
+		# hashes to store the promoters, downstream extremities, exons and introns per peak
+		my $prom_cnt		= undef;
+		my $downextr_cnt	= undef;
+		my $ex_cnt			= undef;
+		my $int_cnt			= undef;
+		
+		# find overlapping peaks with gene parts
+		my $todo5 = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $geneparts.u$lenuP\_d$lendP -hasid1 1 -intervals2 $targets -hasid2 0 -show_ov_int 1 ";
+		
+		if ($usepeakcenter == 1) {
+			$todo5 .= " -usepeak2center 1 ";
+		}
+		
+		$todo5 .= " > $suf.$db.ALL.GP";
+		
+		if ($verbose == 1){ 
+			print "$todo5\n";
+		}
+		
+		print "Determining overlap between gene parts and ChIP-seq peaks ... ";
+		
+		system($todo5) == 0 or die "Cannot exec CompareIntervals\n";
+		
+		
+		if (-e "$suf.$db.ALL.GP") {
+			
+			# make a list with all peaks that overlap with at least 1 gene part
+			open IN, "$suf.$db.ALL.GP";
+			open GPFILE, ">>$suf.$db.GP";
+			
+			#for each line
+			while (my $l = <IN>) {
+				chomp $l;
+				
+				#split line
+				my @a = split /[\t]/, $l, -1;
+				
+				if ($a[4] ne '0') {
+					print GPFILE "$l\n";
+				}
+			}
+			
+			close IN;
+			print "Done ($suf.$db.GP created).\n";	
+			
+			#count number of genes, promoters, exons and introns that overlap with peaks
+			open IN, "$suf.$db.GP";
+			my $cnt = 0;
+			while (my $l = <IN>) {
+				chomp $l;
+				
+				if($l =~ m/P/) {
+					$prom_cnt++;
+				}
+				elsif($l =~ m/DW/) {
+					$downextr_cnt++;
+				}
+				elsif($l =~ m/EX/) {
+					$ex_cnt++;
+				}
+				elsif($l =~ m/I/) {
+					$int_cnt++;
+				}
+				
+				$cnt++;
+			}
+			close IN;
+			
+			# count %
+			if($cnt != 0) { 
+				$prom_prct		= $prom_cnt/$cnt;
+				$downextr_prct	= $downextr_cnt/$cnt;
+				$ex_prct		= $ex_cnt/$cnt;
+				$int_prct		= $int_cnt/$cnt;
+			}
+			
+			print "Creating stats file ... ";
+			
+			# print in stats file
+			open STATSFILE, ">$suf.$db.GP.stats";
+			print STATSFILE "Number of peaks: \t $peaks_num\n";
+			print STATSFILE "Number of gene parts that overlap with peaks: \t $cnt \n";
+			print STATSFILE "Number of promoters that overlap with peaks: \t $prom_cnt \t (%$prom_prct) \n";
+			print STATSFILE "Number of downstream extremities that overlap with peaks: \t $downextr_cnt \t (%$downextr_prct) \n";
+			print STATSFILE "Number of exons that overlap with peaks: \t $ex_cnt \t (%$ex_prct) \n";
+			print STATSFILE "Number of introns that overlap with peaks: \t $int_cnt \t (%$int_prct) \n";
+			close STATSFILE;
+			
+			# end of execution
+			print "Done ($suf.$db.GP.stats created).\n";
+			
+			if($fromgui == 0) {
+				system("head -15 $suf.$db.GP.stats");
+			}
+		}
+	}
+	
+	
+}
+else {
+	print "Please use a valid -type (GeneParts).\n"
+}
+
+sub fact {
+	my $val = $_[0];
+	if ($val > 1) {
+		$fv = $val * fact($val-1);
+	} else {
+		$fv = 1;
+	}
+}

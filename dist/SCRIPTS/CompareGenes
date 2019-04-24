@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Run as:
+# CompareGenes file1 file2
+
+# check if two files were passed as argument
+if (( $# < 2 )); then
+  echo "Please specify the files to compare"
+  exit
+  
+fi
+
+#count the lines of first file
+flines=`cat $1 | wc -l`
+	
+	#for every line in the file
+	for(( i=1; $i<=$flines; i++ )); do
+		
+		# save current line
+		sline=`cat $1 | head -n$i | tail -n1 | tr "\t" " " | cut -d" " -f1`
+		
+		# find line in second file
+		cat $2 | tr "\t" " " | grep "^$sline " >> /dev/null
+		
+		if [ $? == 0 ]; then
+			echo $sline >> tmpfile
+		else
+			echo $sline >> tmp2file	
+		fi 
+				
+	done
+	
+cat tmpfile | sort | uniq > commons.txt
+wc -l commons.txt
+rm tmpfile
+
+cat tmp2file | sort | uniq > notcommons.txt
+wc -l notcommons.txt
+rm tmp2file
+

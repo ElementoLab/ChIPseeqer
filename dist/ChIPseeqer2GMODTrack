@@ -1,0 +1,38 @@
+#!/usr/bin/perl
+
+use Getopt::Long;
+
+my $targets   = undef;
+my $trackname = undef;
+
+if (@ARGV == 0) {
+  die "Usage: ChIPseeqer2Track --targets=FILE --trackname=STR\n";
+}
+
+GetOptions("targets=s"   => \$targets,
+           "trackname=s" => \$trackname);
+
+
+
+my $out = "$targets.gmod";
+
+open IN, $targets or die "Cannot open $targets\n";
+open OUT, ">$out";
+#print OUT "track name=\"$trackname\" description=\"$trackname\" visibility=dense autoScale=off color=0,0,0\n";
+
+my $prevchr = "";
+my $peakid = 1;
+while (my $l = <IN>) {
+  chomp $l;
+  my @a = split /\t/, $l, -1;
+  if ($a[0] ne $prevchr) {
+    print OUT "reference = $a[0]\n";
+    $prevchr = $a[0];
+  }
+  print OUT "Peak\t$peakid\t$a[1]-$a[2]\n";
+  $peakid++;
+}
+close IN;
+
+close OUT;
+

@@ -1,0 +1,115 @@
+#!/usr/bin/perl
+
+use lib "$ENV{PERLMODULESDIR}";
+
+use Sets;
+use strict;
+use Getopt::Long;
+
+# variables to store the arguments values
+my $peakfile	= undef;
+my $chipdirfile = undef;
+my $format		= "eland";
+my $outfile		= undef;
+my $chrdata		= undef;
+my $output		= "max";
+
+# other variables
+my $chipdir    = undef;
+my $todo       = undef;
+my $verbose    = 0;
+my $w          = 1000;
+
+# handling lack of arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerGetReadCountInPeaksMatrix --chipdirfile=FILE --peakfile=FILE --format=STR\n";
+}
+
+# handling given options
+GetOptions(
+"chipdirfile=s" => \$chipdirfile,
+"peakfile=s"    => \$peakfile,
+"verbose=s"     => \$verbose,
+"outfile=s"     => \$outfile,
+"w=s"           => \$w,
+"chrdata=s"		=> \$chrdata,
+"format=s"		=> \$format,
+"output=s"		=> \$output);
+
+if (!defined($peakfile)) {
+	die "Please define --peakfile\n";
+}
+
+if (!defined($chipdirfile)) {
+	die "Please define --chipdirfile\n";
+}
+
+if (!defined($chrdata)) {
+	die "Please define --chrdata\n";
+}
+
+if (!defined($outfile)) {
+	die "Please define --outfile\n";
+}
+
+# open file with ChIP directories
+open IN, $chipdirfile or die "cannot open $chipdirfile\n";
+my %a_out = ();
+my %MA = ();
+
+# read every line
+while (my $l = <IN>) {
+	chomp $l;
+	
+	# store TF name and ChIP dir
+	my ($tfname, $chipdir) = split /\t/, $l;  
+	
+	print "Estimating reads count for $tfname ($chipdir)...\n";
+
+	$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerGetReadCountInPeakRegions -intervals $peakfile -chipdir $chipdir -format $format -fraglen 0 -chrdata $chrdata -output $output -outfile $outfile.$tfname ";
+	if ($verbose == 1) {
+		print "$todo\n";
+	}
+	
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	
+	if (-e "$outfile.$tfname") {
+		print "Created $outfile.$tfname\n";
+		$a_out{$tfname} = 1;
+		
+		open IM, "$outfile.$tfname";
+		while (my $m = <IM>) {
+			chomp $m;
+			my @b = split /\t/, $m, -1;
+			
+			my $last = $b[$#b];
+
+			$MA{"$b[0]-$b[1]-$b[2]"}{$tfname} = $last;
+			
+			#print "$b[0]-$b[1]-$b[2]\t$tfname\t$last\n";
+		}
+		close IM;
+		
+	} else {
+		die "$outfile.$tfname couldn't be created\n";
+	}
+	print "...Done\n";
+	
+}
+close IN;
+
+# open matrix file for writing
+open OUT, ">$outfile.matrix.txt" or die "Cannot open $outfile.matrix.txt\n";
+
+# print header: all TFnames
+print OUT "\t" . join("\t", keys(%a_out)) . "\n";
+
+foreach my $i (keys(%MA)) {
+	print OUT "$i";
+	foreach my $t (keys(%a_out)) {
+		print OUT "\t$MA{$i}{$t}";
+	}
+	print OUT "\n";
+}
+
+close OUT;
