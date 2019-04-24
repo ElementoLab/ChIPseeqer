@@ -1,0 +1,4 @@
+#!/bin/bash
+aa=`perl ~/PERL_MODULES/SCRIPTS/revcomp.pl $2`
+egrep "($2|$aa)" $1
+

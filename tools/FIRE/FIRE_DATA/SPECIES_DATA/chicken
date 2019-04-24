@@ -1,0 +1,15 @@
+fastafile_dna_p	FIRE_DATA/CHICKEN/SEQUENCES/chicken_ensembl_u_
+fastafile_dna	FIRE_DATA/CHICKEN/SEQUENCES/chicken_ensembl_u_1000_1000.fa
+seqlen_u_dna	1000
+seqlen_d_dna	1000
+seqlen_dna	2000
+rightlabel_dna	+1000
+leftlabel_dna	-1000
+fastafile_rna	FIRE_DATA/CHICKEN/SEQUENCES/chicken_ensembl_3_0_300.fa
+seqlen_rna	300
+rightlabel_rna	300
+leftlabel_rna	0
+goindex	FIRE_DATA/CHICKEN/ANNOTATIONS/chicken_go_index.txt
+gonames	FIRE_DATA/CHICKEN/ANNOTATIONS/chicken_go_names.txt
+acelibrary_dna	FIRE_DATA/CHICKEN/MOTIFNAMES/UPSTREAM/*.ace
+micrornas	FIRE_DATA/CHICKEN/MOTIFNAMES/MIRNAS/mirnas.seq

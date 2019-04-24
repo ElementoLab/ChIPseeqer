@@ -1,0 +1,8 @@
+#!/bin/bash
+file=$1
+dir=`pwd | sed 's/\/Users\/olivier\///'`
+if [[ $2 != "" ]]
+then ssh ole2001@redwulf.medresearch.cornell.edu "mkdir -p ~/$dir"
+fi
+echo "scp $1 ole2001@redwulf.medresearch.cornell.edu:$dir/"
+scp $1 ole2001@redwulf.medresearch.cornell.edu:$dir/

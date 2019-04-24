@@ -1,0 +1,6 @@
+#!/bin/bash
+pngtopnm $1 > toto.pnm
+pnmcrop toto.pnm > toto_cropped.pnm
+rm toto.pnm
+pnmtopng toto_cropped.pnm 
+rm toto_cropped.pnm

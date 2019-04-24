@@ -1,0 +1,13 @@
+Changes
+Hypergeom.pm
+Hypergeom.xs
+Makefile.PL
+MANIFEST
+ppport.h
+README
+t/1.t
+fallback/const-c.inc
+fallback/const-xs.inc
+hypergeom/Makefile.PL
+hypergeom/hypergeom.c
+hypergeom/hypergeom.h

@@ -1,0 +1,6 @@
+Revision history for Perl extension Hypergeom.
+
+0.01  Tue Jul  1 11:05:58 2003
+	- original version; created by h2xs 1.22 with options
+		-O -n Hypergeom ./Hypergeom/hypergeom/hypergeom.h
+

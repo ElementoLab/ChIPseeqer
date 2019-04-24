@@ -1,0 +1,2 @@
+#!/bin/sh
+wget --output-document=$1.txt "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=$1&targ=self&form=text&view=full"

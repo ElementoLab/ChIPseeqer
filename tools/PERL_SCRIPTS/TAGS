@@ -1,0 +1,4136 @@
+
+CGtoFBGN_Fasta.pl,55
+my $t t9,124
+my $h_ref h_ref13,183
+my $f f16,226
+
+CGtoFBGN_array.pl,63
+my $t t9,126
+my $h_ref h_ref15,204
+my $a_ref a_ref22,304
+
+CGtoFBGN_array_leave_unknown.pl,63
+my $t t9,124
+my $h_ref h_ref13,183
+my $a_ref a_ref18,251
+
+FACE_index_names_to_GSEA_GMT.pl,83
+my $ta ta6,86
+my $a_ref a_ref8,132
+my %CAT CAT11,163
+my $h_ref h_ref20,310
+
+FIRE_create_fire_file_from_gene_list_and_bkg.pl,64
+my $ta ta6,86
+my $h_ref h_ref12,155
+my $a_ref a_ref19,238
+
+FIRE_make_fire_input_files_from_actual_and_random_sequences.pl,84
+my $ta ta16,299
+my $a_ref a_ref19,346
+my $a_ref a_ref25,458
+my $fa fa30,545
+
+FIRE_retain_unique_genes.pl,71
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $r r10,162
+my %H H13,216
+
+GEO_concatenate_experiments.pl,38
+my @FH FH6,91
+my $lcnt lcnt13,179
+
+GEO_concatenate_experiments_if_present.pl,38
+my @FH FH6,91
+my $lcnt lcnt13,179
+
+GEO_series_to_matrix.pl,18
+my $cnt cnt3,20
+
+GEO_to_files.pl,20
+my $file file4,74
+
+GE_show_categories.pl,52
+my $go go6,81
+my $a_ref_genes a_ref_genes14,198
+
+GNF1H_cluster_using_mcl.pl,20
+my $todo todo6,29
+
+GNF1H_create_gene_to_probe_index.pl,54
+my $ta ta5,50
+my $a_ref a_ref7,96
+my %H H10,127
+
+GNF1H_get_probes_and_average_them.pl,181
+my @genes genes8,99
+my %PROBES PROBES9,116
+my $cnt cnt10,133
+my @EXPRESSION EXPRESSION30,374
+my @COUNTS COUNTS31,395
+my $l l38,501
+my $mmax mmax40,526
+my $n n64,876
+
+GNF1H_map_present_probes_to_hprd.pl,69
+my $ta ta6,62
+my $h_ref_map h_ref_map8,108
+my %SAVE SAVE13,168
+
+GNF1H_merge_replicate_present_probes_lists.pl,53
+my %H H8,50
+my $cnt cnt9,64
+my %SAVE SAVE12,97
+
+GNF1H_output_present_probes.pl,93
+my $l l8,60
+my @b b10,85
+my $n n26,325
+my %PRESENT PRESENT28,346
+my $cnt cnt30,365
+
+GNF1H_remove_physically_adjacent_genes_in_probe_to_genes_list.pl,108
+my $ga ga12,213
+my $ta ta29,401
+my $a_ref a_ref31,447
+my %INDEX_REM INDEX_REM33,477
+my %H H34,497
+
+GO_OBO_get_parents.pl,16
+my $go go6,83
+
+GO_OBO_print_category_names.pl,16
+my $go go6,83
+
+GO_enrichment.pl,59
+my $goc goc7,83
+my $df df8,113
+my $a_ref a_ref25,430
+
+GO_gene_association2index.pl,104
+my $ta ta22,258
+my $h_ref_parents h_ref_parents24,304
+my $type type29,403
+my %INDEX INDEX35,489
+
+GO_gene_association2index_human_ebi.pl,104
+my $ta ta16,123
+my $h_ref_parents h_ref_parents18,169
+my $type type23,268
+my %INDEX INDEX29,354
+
+GO_get_gene_ontology_categories.pl,53
+my $go go8,118
+my $a_ref_genes a_ref_genes22,321
+
+GO_get_parents.pl,90
+my $df df15,136
+my $go go17,162
+my $type type19,181
+my $a_ref_cat a_ref_cat32,436
+
+GO_index_to_files_for_fire.pl,149
+my $ta ta7,98
+my $a_ref a_ref9,144
+my %H H11,174
+my %GO GO12,187
+my $h_ref_go h_ref_go23,413
+my @genes genes25,451
+my @cats cats26,473
+
+GO_transform_GOA_index_to_NP_using_xref.pl,133
+my $ta ta8,108
+my $h_ref_NP_NM h_ref_NP_NM13,175
+my $a_ref a_ref18,258
+my %H H20,288
+my $a_ref a_ref59,788
+my %G G61,818
+
+MIPS_enrichment.pl,67
+my $df df9,108
+my $m m11,135
+my $a_ref_func a_ref_func20,317
+
+MyBiblio.pl,34
+my $b b11,124
+my $id id22,307
+
+PBS_align_upstream_or_downstream_regions.pl,95
+my $home home1,0
+my $a_ref_genes a_ref_genes11,174
+my $pwd pwd12,217
+my $cnt cnt14,251
+
+PBS_annotate_genome_using_orthologous_proteins.pl,55
+my $a_ref_files a_ref_files9,174
+my $pwd pwd10,217
+
+PBS_do_the_blasts_min_length.pl,73
+my $a_ref_files a_ref_files7,94
+my $pwd pwd9,138
+my $cnt cnt11,172
+
+add_bogus_header.pl,41
+my @a a1,0
+my @b b2,17
+my @c c3,48
+
+add_c_to_fasta.pl,16
+my $fa fa5,50
+
+add_header_to_matrix.pl,22
+my $a_ref a_ref4,52
+
+add_line_numbers.pl,18
+my $cnt cnt8,81
+
+affy_summarize_probe_mapping.pl,193
+my $mapfile mapfile9,109
+my $annotfile annotfile10,170
+my $minnbprobes minnbprobes11,233
+my $h_ref_TG h_ref_TG16,342
+my %H H26,518
+my @ps ps37,681
+my %PROBE_SETS PROBE_SETS38,700
+
+ali2consensus.pl,96
+my $fa fa7,65
+my $a_ref_aln a_ref_aln10,111
+my @I I18,234
+my $l l19,246
+my $n n20,261
+
+align_3utr.pl,434
+my $fa fa17,202
+my $se se19,224
+my $ta ta22,250
+my $a_ref_orth_info a_ref_orth_info28,346
+my @a_orthologs a_orthologs29,385
+my $nb nb30,407
+my $a_ref a_ref54,826
+my %CHR CHR56,856
+my %EXONS EXONS57,881
+my %BOUNDARIES BOUNDARIES58,906
+my %BOUNDARIES_CDS BOUNDARIES_CDS59,931
+my %STRAND STRAND60,956
+my $start start84,1887
+my $end end85,1906
+my $len len86,1925
+my $seq seq87,1944
+my $todo todo146,3595
+
+align_aa_then_nt_then_calculate_divergence.pl,104
+my $fa_aa1 fa_aa110,142
+my $fa_aa2 fa_aa211,167
+my $fa_nt1 fa_nt112,192
+my $fa_nt2 fa_nt213,217
+
+align_and_concatenate.pl,58
+my $cl cl6,63
+my $a_ref a_ref8,88
+my %OUT OUT10,127
+
+align_and_concatenate_2_matrices_based_on_index.pl,41
+my $ta ta10,99
+my $h_ref h_ref12,145
+
+align_list_of_upstream_regions.pl,28
+my $a_ref_cg a_ref_cg7,61
+
+align_mirna_to_extended_seed.pl,244
+my $al al10,134
+my $fa fa14,194
+my $a_ref a_ref17,240
+my ($n, $s)($n, $s18,268
+my $mirna mirna22,321
+my @a a24,339
+my $ta ta29,393
+my $h_ref h_ref35,486
+my $a_ref a_ref39,562
+my %H H41,592
+sub rna_sim main::rna_sim79,1421
+
+align_orthologous_sequences_using_dialign.pl,39
+my $fa1 fa18,103
+my $fa2 fa211,151
+
+align_orthologs.pl,220
+my $genefile genefile11,153
+my $dbfile dbfile12,175
+my $dir dir13,197
+my $a_ref_genes a_ref_genes24,361
+my $a_ref_db a_ref_db30,438
+my $se se35,484
+my $cnt cnt44,565
+my $a_ref_species a_ref_species45,578
+
+align_targets_to_microrna.pl,82
+my $fa fa14,240
+my $vi vi17,286
+my $mir mir20,310
+my $linker linker24,386
+
+align_upstream_or_downstream_regions.pl,567
+my $verbose verbose19,223
+my $df df21,241
+my $fa fa23,267
+my $se se25,289
+my $ta ta28,341
+my $len len34,447
+my $offset offset35,470
+my $a_ref_orth_info a_ref_orth_info41,540
+my $a_ref_ref a_ref_ref44,608
+my @a_orthologs a_orthologs47,651
+my $nb nb48,673
+my $a_ref a_ref65,1009
+my %CHR CHR67,1039
+my %EXONS EXONS68,1064
+my %BOUNDARIES BOUNDARIES69,1089
+my %BOUNDARIES_CDS BOUNDARIES_CDS70,1114
+my %STRAND STRAND71,1139
+my $start start99,2139
+my $end end100,2158
+my $seq seq101,2177
+my $utr utr104,2198
+my $todo todo195,4427
+
+align_utr.pl,455
+my $fa fa17,202
+my $se se19,224
+my $ta ta22,250
+my $a_ref_orth_info a_ref_orth_info28,374
+my @a_orthologs a_orthologs29,413
+my $nb nb30,435
+my $a_ref a_ref54,854
+my %CHR CHR56,884
+my %EXONS EXONS57,909
+my %BOUNDARIES BOUNDARIES58,934
+my %BOUNDARIES_CDS BOUNDARIES_CDS59,959
+my %STRAND STRAND60,984
+my $start start84,1915
+my $end end85,1934
+my $len len86,1953
+my $seq seq87,1972
+my $utr utr90,1993
+my $todo todo182,4290
+
+aln2consensus.pl,96
+my $cl cl7,69
+my $a_ref_aln a_ref_aln10,118
+my @I I12,153
+my $l l13,165
+my $n n14,180
+
+aln2fasta.pl,48
+my $cl cl7,91
+my $a_ref_aln a_ref_aln10,140
+
+analyze_orientation_from_bestwins_output.pl,57
+my $ta ta8,142
+my $a_ref a_ref11,189
+my $n n13,219
+
+analyze_partition_using_COG.pl,90
+my $co co7,80
+my $ta ta13,183
+my $a_ref a_ref15,229
+my %PARTITION PARTITION17,259
+
+analyze_phenotype_single_genes_using_COG.pl,54
+my $co co5,57
+my $pheno_single pheno_single11,177
+
+analyze_randomized_positions.pl,104
+my $a_ref_files a_ref_files6,61
+my $a_ref_counts a_ref_counts7,105
+my %H H9,159
+my $nr nr24,400
+
+annotate_genome_using_orthologous_proteins.pl,224
+my $ge ge12,207
+my $mb mb16,251
+my $tmpfile1 tmpfile119,343
+my $tmpfile2 tmpfile220,388
+my $tmpfile3 tmpfile321,433
+my $fa fa29,621
+my $qlen qlen32,667
+my $o_seq o_seq34,686
+my $h_ref_todo h_ref_todo40,807
+
+apply_enrich_and_mask.pl,20
+my $todo todo6,86
+
+arrange_best_reciprocal_blast_hits_splice_forms.pl,13
+my %H H1,0
+
+arrange_optimized_matrices.pl,68
+my $fs fs8,83
+my $fm fm9,95
+my $le le10,107
+my $tx tx11,123
+
+associate_genes_with_clusters.pl,16
+my $db db4,52
+
+average_window.pl,71
+my $ta ta5,59
+my $a_ref a_ref9,119
+my $n n10,148
+my $w w12,174
+
+babelfish.pl,18
+my $ua ua27,431
+
+best_reciprocal_blast_hits.pl,118
+my $mb mb10,181
+my $tmpfile1 tmpfile113,273
+my $tmpfile2 tmpfile214,323
+my $fa fa22,516
+my $qlen qlen25,562
+
+best_reciprocal_blast_hits_cdna_dna.pl,85
+my $mb mb9,121
+my $tmpfile tmpfile12,212
+my $fa fa18,359
+my $qlen qlen21,405
+
+best_reciprocal_blast_hits_mrna_mrna.pl,136
+my $mb mb14,174
+my $tmpfile tmpfile17,265
+my $fa fa25,432
+my $qlen qlen28,478
+my $s s35,555
+my $h_ref_done h_ref_done39,606
+
+best_reciprocal_blast_hits_protein_cdna.pl,134
+my $mb mb14,189
+my $tmpfile1 tmpfile117,281
+my $tmpfile2 tmpfile218,312
+my $fa fa25,462
+my $qlen qlen28,508
+my $s s35,585
+
+best_reciprocal_blast_hits_protein_protein.pl,162
+my $verbose verbose15,201
+my $mb mb20,262
+my $tmpfile1 tmpfile124,354
+my $tmpfile2 tmpfile225,404
+my $fa fa30,510
+my $qlen qlen33,556
+my $s s40,633
+
+best_reciprocal_blast_hits_protein_protein_with_min_id.pl,168
+my $mb mb14,189
+my $tmpfile1 tmpfile117,281
+my $tmpfile2 tmpfile218,312
+my $fa fa26,484
+my $qlen qlen29,530
+my $s s36,607
+my $h_ref_done h_ref_done39,657
+
+bestwinsresults2R.pl,38
+my $ta ta5,50
+my $a_ref a_ref8,97
+
+binarize_matrix.pl,14
+my $l l2,19
+
+blast_map_ests_to_ensembl_mRNAs.pl,57
+my $fa fa10,91
+my $mb mb14,138
+my $file file21,290
+
+blast_map_unigene_cdna_to_ensembl_unspliced_genes.pl,57
+my $fa fa10,87
+my $mb mb14,134
+my $file file21,286
+
+blast_transposons.pl,57
+my $fa fa10,87
+my $mb mb14,134
+my $file file33,506
+
+blastclust_analyze.pl,40
+my $ta ta7,96
+my $a_ref a_ref10,162
+
+blastclust_do_multiple_alignments.pl,55
+my $ta ta6,86
+my $a_ref a_ref9,152
+my $c c11,182
+
+build_line_index.pl,60
+my $file file1,0
+sub build_index main::build_index6,196
+
+calc_avg_std_conservation_score.pl,104
+my $i1 i14,48
+my $i2 i25,67
+my %AVG AVG7,87
+my %STD STD8,101
+my %POP POP9,115
+my %Z Z35,446
+
+calculate_3UTR_lengths_from_gene_boundaries.pl,55
+my $ta ta6,62
+my $a_ref a_ref9,109
+my %H;H11,139
+
+calculate_and_filter_non_variable_genes.pl,93
+my $l l5,67
+my @TO TO9,84
+my $i i11,98
+my %H H41,558
+my $l l48,709
+my $i i50,733
+
+calculate_average_divergence_in_alignments.pl,31
+my $fa fa5,59
+my @D D8,105
+
+calculate_average_random_position_distribution.pl,93
+my $a_ref_files a_ref_files6,71
+my @COUNTS COUNTS8,116
+my $n n19,265
+my $nf nf20,291
+
+calculate_background_frequencies_in_fasta_file.pl,66
+my $f f5,54
+my %H H10,100
+my $cnt cnt11,112
+my %N N12,125
+
+calculate_gc_content.pl,38
+my $fa fa8,88
+my $ltot ltot11,134
+
+calculate_golub_statistics.pl,228
+my $type type8,79
+my $pma pma9,95
+my $outdata outdata10,116
+my @a_cond1 a_cond121,439
+my @a_cond2 a_cond222,473
+my $ta ta25,509
+my $a_ref a_ref30,555
+my @G G32,585
+my $r r33,597
+my @firstline firstline34,620
+
+calculate_masked_proportion_in_fasta_sequences.pl,68
+my $fa fa4,49
+my $cnt cnt7,95
+my $HN HN8,108
+my $HX HX9,121
+
+calculate_nt_frequencies_in_kmers.pl,57
+my $ta ta4,49
+my $a_ref a_ref6,95
+my $cnt cnt8,127
+
+calculate_orientation_biases_for_gapped_kmers.pl,92
+my $ta ta5,59
+my $a_ref a_ref7,105
+my $f1 f19,135
+my $f2 f210,187
+my $ng ng11,239
+
+calculate_present_absent.pl,228
+my $type type8,79
+my $pma pma9,95
+my $outdata outdata10,116
+my @a_cond1 a_cond123,498
+my @a_cond2 a_cond224,532
+my $ta ta27,568
+my $a_ref a_ref32,614
+my @G G34,644
+my $r r35,656
+my @firstline firstline36,679
+
+calculate_pvalues_for_coconservation.pl,39
+my $ta ta5,59
+my $a_ref a_ref7,105
+
+calculate_random_conserved_sets.pl,256
+my $ta ta12,279
+my $a_ref a_ref14,325
+my $seqfile1 seqfile118,382
+my $seqfile2 seqfile219,408
+my $seqfile2_random seqfile2_random20,434
+my $nbrepeats nbrepeats21,541
+my $matfile matfile24,569
+my $nbgenes nbgenes27,596
+my $todo todo37,940
+
+calculate_ratio_number_of_occurrences_intergenic_to_total.pl,38
+my $ta ta5,50
+my $a_ref a_ref7,96
+
+calculate_wm_threshold_using_scanace.pl,66
+my $sc sc21,388
+my $n n31,519
+my $a_ref_set a_ref_set33,542
+
+catallcols.pl,47
+my $file1 file111,97
+my $file2 file212,123
+
+catcols.pl,126
+my $cols cols13,261
+my $file1 file114,284
+my $file2 file215,307
+my @a_cols1 a_cols123,469
+my @a_cols2 a_cols224,503
+
+cdt2matrix.pl,42
+my $l l1,0
+my @a a2,17
+my $l l7,104
+
+check_if_web_site_changed.pl,14
+my $h h4,19
+
+chip-chip_get_sets_of_genes.pl,83
+my $ta ta7,96
+my $d d9,142
+my $n n11,161
+my $a_ref_genes a_ref_genes13,191
+
+ciona_extract_blast_alignments.pl,160
+my $mb mb13,142
+my $ta ta21,336
+my $a_ref a_ref23,382
+my $se se25,412
+my $fa fa28,464
+my $tmpfile1 tmpfile131,487
+my $process_tr process_tr34,539
+
+ciona_extract_sequences.pl,160
+my $mb mb13,142
+my $ta ta21,336
+my $a_ref a_ref23,382
+my $se se25,412
+my $fa fa28,464
+my $tmpfile1 tmpfile131,487
+my $process_tr process_tr34,539
+
+ciona_fetch_expression_patterns.pl,44
+my $log log10,121
+my $a_ref a_ref12,142
+
+ciona_fix_cdt_add_missing_values.pl,70
+my $ta ta4,53
+my $h_ref h_ref6,75
+my $l l14,207
+my @a a16,241
+
+ciona_get_ESTclusters_from_list.pl,83
+my $h_ref h_ref6,83
+my $ta ta8,122
+my $a_ref a_ref11,169
+my %EST EST14,200
+
+ciona_get_genes_for_cluster_range.pl,38
+my $ta ta4,53
+my $h_ref h_ref6,99
+
+ciona_gff2list.pl,58
+my $ta ta5,61
+my $a_ref a_ref7,107
+my %IND IND9,137
+
+ciona_gff_get_mrna_sequences.pl,79
+my $se se9,113
+my $ta ta12,165
+my $a_ref a_ref14,211
+my %IND IND18,243
+
+ciona_ghost2table.pl,354
+my $a_ref a_ref6,96
+my @H H9,135
+my %ARRAY ARRAY10,158
+my @CLUSTERS CLUSTERS11,181
+my %NOT_EXAMINED NOT_EXAMINED12,204
+my %UBIQUITOUS UBIQUITOUS13,227
+my @STAGE_LABELS STAGE_LABELS14,250
+my @COL_LABELS COL_LABELS70,1506
+my $m_all m_all71,1527
+my $cnt_total_cols cnt_total_cols72,1551
+my $n n88,1780
+my $cnt_stage cnt_stage93,1851
+
+ciona_map_est_clusters_to_mrnas.pl,76
+my $fa fa11,105
+my $se se14,151
+my $mb mb16,176
+my $file file24,349
+
+ciona_mine_GO_categories.pl,49
+my $go go9,119
+my $a_ref_ids a_ref_ids21,313
+
+ciona_remove_redundant_sequences.pl,66
+my $mb mb10,117
+my $tmpfile1 tmpfile118,291
+my $fa fa24,367
+
+ciona_special_retain_longest_CNS.pl,54
+my $ta ta6,64
+my $a_ref a_ref8,110
+my $n n9,139
+
+ciona_turn_GO_file_into_index.pl,68
+my $ta ta4,53
+my $a_ref a_ref6,99
+my %G G8,129
+my %J J9,141
+
+cluster_by_sequence_overlap.pl,72
+my $ta ta5,59
+my $a_ref a_ref10,159
+my $n n12,189
+my $r r13,214
+
+clusters.pl,24
+my @clust clust23,371
+
+clusters_renumber_partition.pl,55
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $r r10,162
+
+columns_pattern.pl,17
+my $pat pat1,0
+
+compare_conserved_sets_between_distant_phyla.pl,118
+my $ta ta11,115
+my $a_ref_1_2 a_ref_1_213,161
+my $a_ref_2_1 a_ref_2_114,200
+my $a_ref_kmers a_ref_kmers21,290
+
+compare_count_for_kmers.pl,43
+my %bkg bkg8,107
+my @KMERS KMERS18,279
+
+compare_genomes_using_megablast.pl,75
+my $fa fa10,91
+my $mb mb12,113
+my $file file25,347
+my $fa fa28,387
+
+compare_list_of_gene_predictions.pl,85
+my $ta ta4,53
+my $a_ref1 a_ref16,99
+my $h_ref2 h_ref29,155
+my $max max11,187
+
+compare_two_lists_of_kmers.pl,197
+my $t t9,106
+my $offset offset11,127
+my $a_ref a_ref18,249
+my $h_ref1 h_ref121,310
+my $h_ref2 h_ref223,340
+my $h_ref3 h_ref329,453
+my $c2 c236,567
+my $c3 c337,579
+my $c4 c438,591
+
+compare_two_lists_of_kmers_and_output_identical_ones.pl,143
+my $t t9,106
+my $offset offset11,127
+my $a_ref a_ref19,250
+my $h_ref1 h_ref122,309
+my $h_ref2 h_ref224,339
+my $h_ref3 h_ref330,452
+
+compile_annotation_from_ensembl_predictions.pl,132
+my %h1 h17,51
+my %h2 h28,64
+my %h3 h39,77
+my @k1s k1s26,513
+my @k2s k2s27,534
+my @k3s k3s28,555
+my $a_ref a_ref34,626
+
+concat_file_columns.pl,16
+my @FH FH6,91
+
+concat_file_columns_based_on_list.pl,59
+my $ta ta8,112
+my $a_ref a_ref10,134
+my @FH FH13,185
+
+concatenate_tables.pl,103
+my $ta ta7,65
+my $a_ref1 a_ref19,143
+my $a_ref2 a_ref212,231
+my $n1 n114,262
+my $n2 n215,289
+
+connected_components.pl,180
+my $ta ta22,345
+my %ADJ ADJ27,399
+my %EDGE EDGE29,414
+my $double double31,430
+my %COL COL54,892
+my @size size59,956
+my $nsize nsize91,1231
+sub DFS main::DFS99,1354
+
+conslist2ace.pl,40
+my $ta ta8,97
+my $a_ref a_ref10,143
+
+convert_conserved_sets_to_locuslink.pl,126
+my $a_ref_set a_ref_set9,98
+my $t t12,166
+my $h_ref_idx h_ref_idx15,276
+my @O O17,322
+my $a_ref_out a_ref_out28,466
+
+count_25mers.pl,75
+my $fa fa8,108
+my %C C11,154
+my $a_ref a_ref27,431
+my %CC CC29,467
+
+count_25mers_tied.pl,76
+my $fa fa10,174
+my %C C13,220
+my $a_ref a_ref31,566
+my %CC CC33,602
+
+count_conserved_blocks.pl,88
+my $a_ref_files a_ref_files14,132
+my $a_ref_block a_ref_block15,175
+my %H H17,219
+
+count_conserved_blocks_genregexp.pl,60
+my $fasta fasta15,136
+my $a_ref_block a_ref_block16,158
+
+count_conserved_kmers_in_fasta_sequences.pl,82
+my $fa fa7,61
+my @A A10,107
+my $s1 s119,210
+my $l l20,229
+my $n n21,251
+
+count_degrees_in_kmer_interaction_network.pl,40
+my $ta ta6,60
+my $a_ref a_ref11,133
+
+count_ensembl_exons.pl,35
+my $fa fa7,67
+my $cnt cnt9,112
+
+count_fasta.pl,31
+my $fa fa7,71
+my $i i9,116
+
+count_kmers.pl,146
+my $a_ref_kmers a_ref_kmers13,111
+my $const const14,154
+my @H H15,171
+my %CO CO16,183
+my $k k18,197
+my $N N28,357
+my %LEN LEN29,368
+
+count_kmers_simple.pl,146
+my $a_ref_kmers a_ref_kmers13,111
+my $const const14,154
+my @H H15,171
+my %CO CO16,183
+my $k k18,197
+my $N N28,357
+my %LEN LEN29,368
+
+count_low_complexity_kmers.pl,109
+my $ta ta9,121
+my $a_ref a_ref13,169
+my %h h15,199
+my $C C16,211
+my $cnt cnt17,224
+my $l l18,241
+
+count_mirnas_matched.pl,42
+my $mirnas mirnas3,13
+my $txt txt5,40
+
+count_non_empty_column_totals.pl,62
+my $ta ta10,131
+my $a_ref a_ref14,179
+my @CNT CNT15,208
+
+create_database_subset.pl,275
+my $ids ids9,104
+my $suffix suffix10,126
+my $database database11,148
+my $table table12,170
+my $index index13,192
+my $a_ref a_ref22,399
+my $db db24,433
+my $sql sql31,512
+my $bef bef32,555
+my $aft aft33,588
+my $file file36,657
+my $tmpfile tmpfile46,804
+
+create_eukaryotic_phylogenetic_profiles.pl,240
+my $df df21,338
+my $mb mb28,422
+my $a_ref_genomes a_ref_genomes34,558
+my $h_ref_genes h_ref_genes39,655
+my $nbgenomes nbgenomes45,752
+my $tmpfile1 tmpfile146,797
+my $tmpfile2 tmpfile247,848
+my $fa fa52,942
+my $se se55,988
+
+create_gml_from_clusters.pl,758
+my $ta ta22,398
+my %ADJ ADJ23,419
+my @CLUSTERS CLUSTERS34,615
+my %COL COL35,634
+my @size size39,697
+my $PI PI58,1047
+my $ID ID59,1064
+my $baseX baseX60,1076
+my $baseY baseY61,1092
+my $a_ref_edges_wit a_ref_edges_wit105,1854
+my $MI_wit MI_wit106,1893
+my $a_ref a_ref109,1960
+my %H H111,2000
+my $a_ref_edges_bet a_ref_edges_bet112,2012
+my $MI_bet MI_bet113,2038
+my @MI_all MI_all131,2430
+my $avg avg133,2469
+my $std std134,2504
+my $thr1 thr1135,2539
+my $thr2 thr2136,2569
+my $EID EID140,2634
+my %INDEX_EDGES INDEX_EDGES163,3144
+my @nodes nodes204,3953
+sub sortNodesByGroup main::sortNodesByGroup225,4505
+sub printNode main::printNode237,4670
+sub printEdge main::printEdge260,4988
+sub DFS main::DFS275,5180
+
+create_totally_random_sequences_of_given_length.pl,34
+my %H H11,149
+my $fa fa16,225
+
+del_empty_columns.pl,53
+my $min min6,76
+my @COL COL9,138
+my $l l10,152
+
+del_named_columns.pl,92
+my $l l5,68
+my @a a7,95
+my @todel todel8,119
+my @toshow toshow9,135
+my $i i10,152
+
+delrows.pl,14
+my $i i5,68
+
+detect_duplicates_using_blast.pl,152
+my $df df20,325
+my $s s25,407
+my $mb mb29,458
+my $a_ref_genes a_ref_genes39,655
+my $nbgenes nbgenes41,702
+my $s_tmpstore1 s_tmpstore142,743
+
+determine_evolution_tree.pl,236
+my $mb mb11,111
+my $tmpfile1 tmpfile114,203
+my $tmpfile2 tmpfile215,253
+my $fa fa23,384
+my $se se25,406
+my $ta ta28,432
+my $a_ref_orth_info a_ref_orth_info34,517
+my @a_orthologs a_orthologs35,556
+my $a_ref a_ref56,861
+
+determine_where_ciona_conserved_region_are.pl,22
+my @EXONS EXONS6,83
+
+dialign2clustalw.pl,184
+my $fa fa11,137
+my @a_n a_n14,183
+my @a_s a_s15,197
+my $w w24,326
+my $l l25,339
+my $n n26,366
+my $i_dmel i_dmel67,867
+my $t t75,970
+my $t t76,1040
+my $cl cl79,1112
+
+dialign_fasta2simple.pl,32
+my $fa fa7,65
+my @A A10,111
+
+divide_counts_by_n.pl,133
+my $ta ta4,49
+my $a_ref a_ref6,95
+my $n n8,125
+my $cnt cnt10,151
+my $jjj jjj11,182
+my $slice slice13,214
+my @A A16,254
+
+divide_file_based_on_first_column.pl,14
+my %H H5,49
+
+doClusterEnrichment.pl,106
+my $go go10,130
+my $ta ta27,393
+my $a_ref a_ref29,439
+my @a_sets a_sets31,469
+my $cnt cnt39,564
+
+doGroupEnrichment.pl,78
+my $go go12,237
+my $a_ref_genes a_ref_genes29,528
+my $a_ref a_ref32,647
+
+do_all_all_blastz.pl,16
+my $fa fa5,50
+
+do_all_expcons.pl,75
+my $ta ta6,86
+my $d d9,133
+my $a_ref a_ref12,185
+my $cnt cnt14,217
+
+do_fastcompare_randomization.pl,450
+my $thehome thehome13,305
+my $resfile resfile24,457
+my $kmerfile kmerfile25,483
+my $seqfile1 seqfile126,509
+my $seqfile2 seqfile227,535
+my $seqfile1_random seqfile1_random28,561
+my $seqfile2_random seqfile2_random29,668
+my $nbrepeats nbrepeats30,775
+my $matfile matfile33,803
+my $out_seq out_seq34,829
+my $ta ta39,894
+my $a_ref_res a_ref_res41,940
+my $nbgenes nbgenes45,977
+my $todo todo66,1758
+my %SCORES SCORES67,1775
+
+do_kellislike_scoring.pl,68
+my $a_ref_kmers a_ref_kmers12,114
+my @H H13,157
+my $k k15,170
+
+do_lalign.pl,208
+my $fa fa8,73
+my $a_ref a_ref10,118
+my ($n1, $s1)($n1, $s111,146
+my $fa fa14,186
+my $outfile outfile17,232
+my @POS POS19,258
+my $i i20,272
+my $cnt cnt67,1174
+my @a a69,1191
+my $w w71,1215
+
+do_lalign_tmp.pl,166
+my $fa fa9,89
+my $a_ref a_ref11,134
+my ($n1, $s1)($n1, $s112,162
+my $fa fa15,202
+my @POS POS19,249
+my $imax imax28,365
+my @a a99,1872
+my $w w102,1925
+
+do_the_blasts.pl,162
+my $df df21,319
+my $mb mb28,403
+my $a_ref_genomes a_ref_genomes34,539
+my $nbgenomes nbgenomes36,588
+my $s_tmpstore1 s_tmpstore137,633
+my $fa fa43,731
+
+do_the_blasts_min_length.pl,162
+my $df df21,319
+my $mb mb28,403
+my $a_ref_genomes a_ref_genomes34,539
+my $nbgenomes nbgenomes36,588
+my $s_tmpstore1 s_tmpstore137,633
+my $fa fa50,875
+
+do_the_blasts_nucleotides.pl,182
+my $df df21,319
+my $mb mb28,403
+my $a_ref_genomes a_ref_genomes34,540
+my $dir dir36,589
+my $nbgenomes nbgenomes38,623
+my $s_tmpstore1 s_tmpstore139,668
+my $fa fa45,766
+
+dpse_flybase_gff_to_ensembl.pl,39
+my $ta ta6,86
+my $a_ref a_ref8,132
+
+dvir_DGIL_gff_to_ensembl.pl,39
+my $ta ta6,86
+my $a_ref a_ref8,132
+
+eliminate_lower_scoring_complements.pl,54
+my $t t6,71
+my $a_ref a_ref10,135
+my $n n13,163
+
+eliminate_overlapping_refGenes.pl,107
+my $ta ta6,60
+my $a_ref a_ref8,106
+my @a_sorted a_sorted13,162
+my $n n17,237
+my @DEAD DEAD20,266
+
+eliminate_overlapping_transposons.pl,107
+my $ta ta6,60
+my $a_ref a_ref8,106
+my @a_sorted a_sorted13,162
+my $n n17,237
+my @DEAD DEAD20,266
+
+encode_binary_phenotypes_from_discrete_phenotypes.pl,93
+my $ta ta4,49
+my $a_ref a_ref7,96
+my $r r9,126
+my $i i11,184
+my @names names12,195
+
+encode_discrete_phenotypes.pl,93
+my $ta ta4,49
+my $a_ref a_ref7,96
+my $r r9,126
+my $i i11,184
+my @names names12,195
+
+ensembl2swissprot.pl,144
+my $a_ref a_ref18,197
+my $ta ta21,236
+my $h_ref_annot h_ref_annot25,284
+my @a_set a_set27,321
+my $a_ref_set_uniq a_ref_set_uniq37,480
+
+ensembl_exons2fasta.pl,35
+my $fa fa7,67
+my $cnt cnt9,112
+
+ensembl_ftp_cdna_to_simpler_format.pl,16
+my $fa fa6,86
+
+ensembl_ftp_pep_to_simpler_format.pl,16
+my $fa fa6,86
+
+ensembl_list_intergenic_regions.pl,39
+my $ta ta7,96
+my $a_ref a_ref9,142
+
+ensembl_output_non_overlaping_intergenic_regions.pl,145
+my $ta ta7,107
+my $a_ref a_ref9,153
+my $h_ref h_ref11,183
+my %CHR CHR13,214
+my %CHR2 CHR214,229
+my %H H16,259
+my $lmax lmax42,1166
+
+ensembl_retain_unique_ens_ll_ids.pl,75
+my $ta ta7,87
+my $a_ref a_ref9,133
+my %H1 H111,163
+my %H2 H212,176
+
+enumerate_conserved_blocks_in_consensus.pl,51
+my $a_ref_files a_ref_files12,99
+my %H H14,143
+
+enumerate_conserved_blocks_in_consensus_simple.pl,51
+my $a_ref_files a_ref_files12,99
+my %H H14,143
+
+evaluate_density_of_annotation.pl,217
+my $col col10,96
+my $verbose verbose11,118
+my $evalfile evalfile12,136
+my $cond cond13,158
+my $t t23,410
+my $a_ref_kmers a_ref_kmers25,455
+my $n n32,603
+my $i i43,773
+my $nb nb44,809
+my $w w45,821
+
+evaluate_gene_cluster_significance.pl,100
+my $l_total l_total7,77
+my $n_total n_total8,101
+my $l_win l_win9,125
+my $n_win n_win10,149
+
+evaluate_kmers.pl,1190
+my $species species22,384
+my $interactions interactions23,414
+my $kmerfile kmerfile24,440
+my $condfile condfile25,466
+my $b_func b_func26,492
+my $b_insitus b_insitus27,514
+my $b_dist b_dist29,540
+my $b_orie b_orie30,562
+my $b_cond b_cond31,584
+my $b_tfac b_tfac32,606
+my $b_mots b_mots33,628
+my $b_chip b_chip34,650
+my $verbose verbose35,672
+my $limit limit36,694
+my $after after37,720
+my $createsetsdir createsetsdir38,742
+my $fasta1 fasta139,769
+my $fasta2 fasta240,795
+my $mynbgenes mynbgenes41,821
+my $bestwins bestwins42,847
+my $typeseq typeseq43,873
+my $pause pause44,900
+my $singlestrand singlestrand45,922
+my $nbcopies nbcopies46,947
+my $myntotal myntotal47,973
+my $df df87,2315
+my $ntotal ntotal88,2345
+my $f1 f189,2366
+my $f2 f290,2387
+my $nbgenes nbgenes91,2408
+my $allsets allsets92,2429
+my $inter inter96,2453
+my $myfile myfile311,7514
+my $t t312,7573
+my $a_ref_kmers a_ref_kmers315,7638
+my $y y321,7751
+my $m m322,7768
+my $goc goc323,7785
+my $h_ref_kmers h_ref_kmers421,9991
+my $MO MO428,10124
+my $w w439,10407
+my $k k451,10603
+my $nb_kmers nb_kmers452,10614
+my $tmpfile tmpfile453,10652
+
+evaluate_orientation_bias.pl,70
+my $f1 f14,49
+my $ta ta5,71
+my %H H7,93
+my $a_ref a_ref20,276
+
+expcons_FIRE_all_exp.pl,41
+my $root root5,75
+my @slen slen6,162
+
+expcons_read_fa_pp.pl,257
+my $ta ta8,109
+my $h_ref h_ref10,155
+my $fa fa13,191
+my @ALN ALN16,237
+my $seq seq17,251
+my $cnt cnt18,268
+my @p_seq p_seq33,468
+my $a_ref_pos a_ref_pos34,496
+my @a a36,556
+my $i i38,582
+my $j j39,593
+my $c c40,604
+my $bt bt41,615
+
+expcons_read_fa_pp_all.pl,235
+my $a_ref_chr a_ref_chr8,109
+my $ta ta10,151
+my $c c12,173
+my $oo oo14,185
+my $kk kk15,229
+my @out_seq out_seq17,245
+my $out_pro out_pro18,263
+my $out_pos out_pos19,284
+my @flanks flanks21,306
+my @seq_h seq_h48,822
+
+explore_random_data.pl,16
+my $fa fa5,65
+
+expression_annotate_closest_genes.pl,63
+my $ta ta6,86
+my $h_ref h_ref8,132
+my $a_ref a_ref11,188
+
+expression_average_rows_for_same_master_id.pl,133
+my %H H8,113
+my $ta ta10,126
+my $a_ref a_ref12,172
+my %ROWS ROWS23,340
+my $l l26,375
+my $cnt cnt28,399
+my @LL LL47,649
+
+expression_average_rows_with_same_id.pl,72
+my %ROWS ROWS5,55
+my $l l8,90
+my $cnt cnt10,114
+my @LL LL27,318
+
+expression_average_sets_of_columns.pl,50
+my $f f9,90
+my $n n12,153
+my $cnt cnt14,177
+
+expression_calc_corr_between_cols.pl,74
+my $ta1 ta17,61
+my $n1 n110,110
+my $ta2 ta212,142
+my $n2 n215,191
+
+expression_cluster_indices_to_multiple_files.pl,61
+my $cnt cnt4,64
+my $h h5,77
+my %H H6,91
+my %K K7,103
+
+expression_combine_GEO_platforms.pl,17
+my $gse gse1,0
+
+expression_combine_divide_cg_avg_conditions.pl,296
+my @a a16,337
+my @b b17,365
+my $n1 n119,395
+my $n2 n220,416
+my $txt1 txt122,438
+my $txt2 txt223,464
+my $outf1 outf125,491
+my $todo todo26,524
+my $outf2 outf229,645
+my $todo todo30,677
+my $outf3 outf333,797
+my $todo todo34,827
+my $outf4 outf437,947
+my $todo todo38,978
+
+expression_combine_hughes_highest.pl,59
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $cnt cnt10,162
+
+expression_combine_presence_for_rows_with_same_id.pl,71
+my $ta ta7,98
+my $a_ref a_ref9,144
+my $h h11,174
+my %H H15,244
+
+expression_condition_to_ranks.pl,103
+my $ta ta7,87
+my $a_ref a_ref9,133
+my $r r11,163
+my @A A13,216
+my $i i14,228
+my $i i24,354
+
+expression_consensus_all_columns.pl,42
+my $l l4,21
+my @a a5,45
+my $p p6,69
+
+expression_create_fire_file_from_gene_list_and_bkg.pl,64
+my $ta ta6,86
+my $h_ref h_ref12,155
+my $a_ref a_ref19,238
+
+expression_divide_by_first_time_point.pl,47
+my $l l9,159
+my @a a11,183
+my $c c12,211
+
+expression_divide_by_previous_time_point.pl,47
+my $l l9,159
+my @a a11,183
+my $c c12,211
+
+expression_divide_by_row_average.pl,47
+my %H1 H17,86
+my %H2 H28,99
+my $l l9,112
+
+expression_extract_clusters_to_fire_format.pl,64
+my $ta ta6,86
+my $h_ref h_ref12,155
+my $a_ref a_ref19,242
+
+expression_filter_present_average_ratio.pl,101
+my $ta ta8,139
+my $a_ref a_ref11,186
+my $nbE nbE13,216
+my $nbC nbC14,236
+my $cnt cnt15,256
+
+expression_find_highest_in_rows.pl,59
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $cnt cnt10,162
+
+expression_find_lowest_in_rows.pl,59
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $cnt cnt10,162
+
+expression_from_raw_intensities_to_logratios.pl,87
+my $f f6,86
+my $ta ta8,108
+my $a_ref a_ref10,148
+my $r r12,178
+my @b b13,201
+
+expression_get_U95A_probe_NM_annotation.pl,24
+my $h_ref h_ref10,266
+
+expression_get_closest_genes.pl,129
+my $ta ta9,109
+my $h_ref h_ref11,155
+my $h_ref_ano h_ref_ano13,192
+my $p p21,310
+my %H H22,338
+my $o_ref o_ref28,462
+
+expression_get_closest_genes_to_my_genes.pl,81
+my $ta ta8,108
+my $h_ref h_ref10,154
+my %H H13,192
+my $o_ref o_ref24,370
+
+expression_get_cols_matching_headers.pl,115
+my $file file7,92
+my $l l9,132
+my @a a11,156
+my $r1 r112,180
+my $i i15,201
+my @COL_SETS COL_SETS17,213
+
+expression_get_genes_with_low_correlation.pl,121
+my $ta ta8,108
+my $a_ref a_ref10,154
+my $h_ref h_ref12,184
+my $p p14,221
+my %H H18,266
+my $o_ref o_ref27,404
+
+expression_get_overlap_among_matrix_columns.pl,93
+my $t t8,111
+my $ta ta10,139
+my $n n12,185
+my @cols cols14,219
+my @labe labe15,235
+
+expression_get_pearson_1_2.pl,121
+my $ta ta8,108
+my $a_ref a_ref10,154
+my $h_ref h_ref12,184
+my $p p14,221
+my %H H18,266
+my $o_ref o_ref39,757
+
+expression_get_pearson_among_matrix_columns.pl,75
+my $ta ta7,96
+my $n n9,142
+my @cols cols11,176
+my @labe labe12,192
+
+expression_get_present_probes_in_sets_of_columns.pl,50
+my $f f8,58
+my $n n11,121
+my $cnt cnt13,145
+
+expression_get_subset_of_expression_profiles.pl,38
+my $h_ref h_ref7,92
+my $l l12,177
+
+expression_matrix_to_CDT.pl,87
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $r r10,162
+my $n n11,185
+my @a a12,204
+
+expression_matrix_to_columns.pl,154
+my $l l11,137
+my @a a13,161
+my $ta ta16,191
+my $a_ref a_ref19,238
+my $a_ref_1 a_ref_120,269
+my $n1 n121,298
+my $n n22,329
+my @FH FH23,364
+
+expression_matrix_top_quantize.pl,113
+my $ta ta7,96
+my $a_ref a_ref9,142
+my $nc nc11,172
+my @COLS COLS13,206
+my $m m74,1210
+my $n n75,1233
+
+expression_merge_microarray_conditions.pl,45
+my %keys keys7,87
+my @tables tables8,104
+
+expression_normalize_matrix_by_average_other_matrix.pl,135
+my $ta ta7,96
+my $a_ref a_ref9,142
+my @AVG AVG16,212
+my @NAM NAM17,226
+my $a_ref a_ref30,407
+my $r r36,462
+my $i i39,516
+
+expression_normalize_rows.pl,47
+my %H1 H17,86
+my %H2 H28,99
+my $l l9,112
+
+expression_partition_to_files.pl,59
+my $ta ta7,98
+my $a_ref a_ref9,144
+my %CLU CLU11,174
+
+expression_print_present_probes.pl,59
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $cnt cnt10,162
+
+expression_remove_genes_with_too_many_missing.pl,55
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $r r10,162
+
+expression_replace_gene_names_by_ColladoVides_operon_names.pl,98
+my $ta ta6,86
+my $a_ref a_ref10,156
+my %H H12,186
+my $a_ref2 a_ref227,463
+my $r r28,493
+
+expression_roundup_negative_values.pl,59
+my $ta ta7,87
+my $a_ref a_ref9,133
+my $cnt cnt11,163
+
+expression_rows_to_ranks.pl,61
+my $ta ta8,138
+my $a_ref a_ref10,184
+my $cnt cnt12,214
+
+expression_select_one_row_per_id.pl,54
+my %ROWS ROWS5,55
+my $l l8,90
+my $cnt cnt10,114
+
+expression_single_array_fold2logratio.pl,59
+my $ta ta7,87
+my $a_ref a_ref9,133
+my $cnt cnt11,163
+
+expression_table_map_probes_to_genes.pl,101
+my $ta ta5,85
+my $h_ref h_ref7,224
+my $ta ta11,329
+my $a_ref a_ref13,375
+my $cnt cnt15,405
+
+expression_two_columns_to_logratios.pl,71
+my $ta ta7,96
+my $a_ref a_ref9,142
+my $r r11,172
+my $n n12,195
+
+expression_undef_to_na.pl,14
+my $l l5,93
+
+extract_3utr_sequences_from_genome.pl,417
+my $annotation annotation19,355
+my $genome genome20,380
+my $deflen deflen21,405
+my $forcelen forcelen22,430
+my $checkmaxlen checkmaxlen23,455
+my $minlen minlen24,476
+my $verbose verbose25,497
+my $logfile logfile26,518
+my $add1 add127,543
+my $lenfile lenfile28,564
+my $t t42,952
+my $s s45,1000
+my $len len47,1048
+my %LEN LEN49,1068
+my $h_ref_len h_ref_len64,1286
+my $a_ref a_ref79,1559
+
+extract_5p_kmers.pl,31
+my $fa fa6,64
+my %H H9,110
+
+extract_5p_seed.pl,31
+my $fa fa6,64
+my %H H9,110
+
+extract_5utr_from_ensembl_boundaries.pl,126
+my $t t11,236
+my $s s15,282
+my $len len19,447
+my $a_ref a_ref25,472
+my %HH HH27,580
+my $h_ref_len h_ref_len28,593
+
+extract_5utr_sequences_from_genome.pl,331
+my $annotation annotation19,359
+my $genome genome20,384
+my $deflen deflen21,409
+my $forcelen forcelen22,434
+my $checkmaxlen checkmaxlen23,459
+my $minlen minlen24,480
+my $verbose verbose25,501
+my $logfile logfile26,522
+my $t t38,843
+my $s s41,891
+my $len len43,939
+my %LEN LEN45,959
+my $a_ref a_ref65,1264
+
+extract_and_compare_conserved_sets_for_list_of_kmers.pl,405
+my %h1 h113,169
+my %h2 h218,360
+my %h3 h323,557
+my %h4 h428,711
+my %h5 h533,881
+my %h6 h638,1051
+my %h7 h743,1221
+my %DATA DATA49,1380
+my $d1 d162,1566
+my $d2 d263,1592
+my $t t68,1652
+my $a_ref_kmers a_ref_kmers71,1716
+my $a_ref_mapping a_ref_mapping78,1803
+my $n n79,1839
+my $nb nb85,1891
+my $k k97,1996
+my %h_sp1 h_sp198,2007
+my %h_sp2 h_sp299,2023
+my $k k109,2141
+
+extract_downstream_sequences_from_genome.pl,158
+my $t t14,284
+my $s s18,330
+my $lenD lenD21,398
+my $lenU lenU22,421
+my $minlen minlen23,444
+my $a_ref a_ref27,470
+my $h_ref_len h_ref_len33,625
+
+extract_gene_boundaries_from_exon_and_CDS_boundaries.pl,58
+my $ta ta11,227
+my $a_ref a_ref14,274
+my %H;H16,304
+
+extract_gene_boundaries_from_exon_boundaries.pl,56
+my $ta ta7,76
+my $a_ref a_ref10,123
+my %H;H12,153
+
+extract_interactions.pl,81
+my $ta ta9,138
+my $pat pat12,185
+my $typ typ13,205
+my $a_ref a_ref15,226
+
+extract_intergenic_regions_by_masking.pl,144
+my $fa fa7,97
+my $a_ref a_ref9,142
+my ($n, $s)($n, $s10,170
+my $ta ta14,196
+my $a_ref a_ref16,242
+my @a a24,392
+my $cnt cnt26,417
+
+extract_motifs_alignace.pl,78
+my @a_parts a_parts16,146
+my @a_tmpl a_tmpl20,191
+my $s_mot s_mot46,665
+
+extract_subgraph_of_highly_informative_genes.pl,185
+my $a_ref a_ref9,120
+my $i i10,157
+my @a a12,169
+my @a a13,186
+my $max max14,217
+my $ta ta26,354
+my $a_ref_names a_ref_names28,415
+my %EDGES EDGES30,453
+my $i i33,489
+
+extract_upstream_sequences_from_ensembl_orthologs.pl,222
+my $thedbfile1 thedbfile111,121
+my $thedbfile2 thedbfile212,148
+my $df df15,177
+my $min min23,316
+my $max max30,429
+my $h_ref1 h_ref137,550
+my $h_ref2 h_ref239,602
+my $a_ref a_ref41,654
+my $cnt cnt52,928
+
+extract_upstream_sequences_from_genome.pl,323
+my $annotation annotation19,373
+my $genome genome20,398
+my $lenU lenU21,423
+my $lenD lenD22,448
+my $checkmaxlen checkmaxlen23,473
+my $minlen minlen24,494
+my $verbose verbose25,515
+my $tssonly tssonly26,536
+my $add1 add127,557
+my $t t41,964
+my $s s45,1013
+my %LEN LEN49,1081
+my $a_ref a_ref65,1297
+
+extract_upstream_sequences_from_list_of_orthologs_pairs.pl,170
+my $thedbfile1 thedbfile111,131
+my $thedbfile2 thedbfile212,158
+my $df df15,187
+my $min min23,305
+my $max max30,418
+my $a_ref a_ref37,539
+my $cnt cnt48,796
+
+fast_match_micrornas_to_kmer_pairs.pl,219
+my %FPKMERS FPKMERS17,159
+my %KMERS KMERS18,177
+my %MIRNAS MIRNAS19,193
+my $fa fa20,210
+my $ta ta62,1127
+my $a_ref a_ref66,1195
+my $only5 only568,1225
+my $fulldisplay fulldisplay69,1253
+my $i i71,1275
+
+fast_match_micrornas_to_kmers.pl,219
+my %FPKMERS FPKMERS17,159
+my %KMERS KMERS18,177
+my %MIRNAS MIRNAS19,193
+my $fa fa20,210
+my $ta ta62,1126
+my $a_ref a_ref65,1173
+my $only5 only567,1203
+my $fulldisplay fulldisplay68,1231
+my $i i70,1253
+
+fasta_cut.pl,86
+my $ta ta11,100
+my $h_ref h_ref13,146
+my $deflen deflen16,183
+my $fa fa19,208
+
+fasta_detect_CpG_island.pl,31
+my $fa fa6,86
+my $w w9,132
+
+fasta_fix_SGD_kellis_fasta_file.pl,16
+my $fa fa6,86
+
+fasta_get_longest_splice_forms_no_blast.pl,101
+my $fa fa8,101
+my %LENGTH LENGTH12,148
+my %PROTEIN PROTEIN13,166
+my %SEQUENCE SEQUENCE14,184
+
+fasta_get_sequences_for_clusters_in_different_files.pl,101
+my $dir dir9,119
+my $ta ta12,167
+my $h_ref h_ref14,213
+my $a_ref_indices a_ref_indices15,247
+
+fasta_get_sequences_from_fasta_file.pl,40
+my $h_ref h_ref6,85
+my $fa fa10,136
+
+fasta_get_sequences_from_fasta_file_using_first_column.pl,58
+my $ta ta9,98
+my $h_ref h_ref11,144
+my $fa fa15,187
+
+fasta_get_sequences_from_ortholog_list.pl,148
+my $orthologs orthologs15,325
+my $fasta1 fasta116,348
+my $fasta2 fasta217,371
+my $outfasta1 outfasta118,394
+my $outfasta2 outfasta219,417
+
+fasta_get_sequences_whose_name_matches_pattern.pl,17
+my $fa fa8,130
+
+fasta_get_subseq_from_blast_db.pl,66
+my $o_seq o_seq17,170
+my $ta ta21,252
+my $a_ref a_ref23,298
+
+fasta_get_subset_sequences_with_LLID.pl,76
+my $ta ta11,166
+my %H H13,212
+my $a_ref a_ref14,224
+my $fa fa25,443
+
+fasta_lengths.pl,18
+my $fa fa12,107
+
+fasta_lengths_line_by_line.pl,43
+my $n n1,0
+my $s s2,16
+my $nb nb3,28
+
+fasta_modify_names_for_clustalw.pl,32
+my $fa fa6,86
+my %H H10,133
+
+fasta_remove_long_sequences.pl,34
+my $f f7,71
+my $min min11,116
+
+fasta_remove_short_sequences.pl,34
+my $f f7,71
+my $min min11,116
+
+fasta_rename_genes_using_orthologs.pl,57
+my $ta ta7,97
+my $h_ref h_ref9,143
+my $fa fa14,181
+
+fasta_retain_unique_sequences.pl,33
+my %H H7,102
+my $fa fa10,116
+
+fasta_sequence_names.pl,18
+my $fa fa10,105
+
+fasta_shuffle_sequences_order.pl,77
+my $fa fa9,107
+my %H H12,153
+my @kk kk21,258
+my $kk_shu kk_shu22,277
+
+fasta_shuffle_sequences_order_uniq.pl,97
+my $fa fa9,107
+my %H H12,153
+my $cnt cnt13,165
+my @kk kk22,290
+my $kk_shu kk_shu23,309
+
+fasta_split_long_sequences.pl,16
+my $fa fa6,86
+
+fasta_syncronize_f2_on_f1.pl,52
+my $fa fa7,98
+my %H1 H111,145
+my $fa fa22,305
+
+fasta_to_fastas.pl,16
+my $fa fa6,86
+
+fasta_uppercase.pl,16
+my $fa fa6,86
+
+fastcompare_compare_kmers_with_shuffled_ones.pl,120
+my $ta ta11,147
+my $a_ref a_ref13,196
+my $h_ref h_ref14,230
+my $cnt_passed cnt_passed15,269
+my $cnt cnt16,289
+
+fastcompare_compare_ranks.pl,129
+my $ta ta8,108
+my $a_ref a_ref10,154
+my %RANKS RANKS12,184
+my $cnt cnt13,200
+my $a_ref a_ref23,379
+my $cnt cnt25,409
+
+filter_IMAGEID_LL.pl,39
+my $ta ta7,87
+my $a_ref a_ref9,133
+
+filter_non_conserved_alignments.pl,51
+my $s s10,97
+my @a a18,136
+my $cnt cnt20,162
+
+find_adjacent_orfs_in_ensembl_predictions.pl,56
+my $ta ta7,61
+my $a_ref a_ref10,108
+my $n n12,138
+
+find_clusters_of_CAGGTA.pl,71
+my $ta ta7,96
+my $a_ref a_ref9,142
+my $n n10,171
+my $i i12,203
+
+find_clusters_of_positions.pl,128
+my $ov ov21,294
+my $wi wi22,306
+my $nm nm23,325
+my $ta ta28,384
+my $a_ref_pos_1 a_ref_pos_130,430
+my %CHR CHR36,507
+
+find_convergent_orfs_in_ensembl_predictions.pl,130
+my $ta ta7,61
+my $a_ref a_ref10,108
+my $n n12,138
+my $chr_idx chr_idx14,168
+my @convergent_genes convergent_genes16,190
+
+find_convergent_orfs_in_gene_list.pl,284
+my $ta ta8,73
+my $a_ref a_ref11,120
+my $n n13,150
+my @convergent_genes convergent_genes17,182
+my %CHRS CHRS18,209
+my $chr_idx chr_idx20,225
+my $orf_idx orf_idx21,243
+my $sta_idx sta_idx22,261
+my $end_idx end_idx23,279
+my $str_idx str_idx24,297
+my $idx idx26,316
+
+find_gapped_kmers_that_have_no_lower_scoring_ungapped_kmer.pl,110
+my $ta ta10,110
+my $a_ref a_ref12,156
+my $a_ref_files a_ref_files17,221
+my $t t19,266
+my $i i21,295
+
+find_genes_closest_to_CAGGTA_clusters.pl,131
+my $ta ta8,139
+my $a_ref_clu a_ref_clu10,185
+my $h_ref_zyg h_ref_zyg13,220
+my $a_ref_gen a_ref_gen18,290
+my $mm mm19,323
+
+find_higher_scoring_gapped_version.pl,108
+my $ta ta9,98
+my $a_ref a_ref11,144
+my $t t13,174
+my $a_ref_files a_ref_files15,193
+my $i i17,238
+
+find_higher_scoring_ungapped_version.pl,91
+my $ta ta7,61
+my $a_ref a_ref9,107
+my $a_ref_files a_ref_files12,138
+my $i i14,183
+
+find_kmers_in_second_list_but_not_in_first.pl,86
+my $ta ta5,50
+my $h_ref1 h_ref17,96
+my $a_ref2 a_ref211,154
+my $cnt cnt14,184
+
+find_kmers_that_overlap_with_list.pl,86
+my $a_ref_k a_ref_k4,49
+my %IDX IDX7,90
+my $ta ta12,155
+my $a_ref a_ref14,201
+
+find_non_matching_gapped_kmers.pl,93
+my $ta ta7,61
+my $a_ref a_ref9,107
+my $a_ref_gapped a_ref_gapped13,165
+my $i i19,262
+
+find_overlap_between_conserved_sets.pl,57
+my $a_ref_f1 a_ref_f17,75
+my $a_ref_f2 a_ref_f28,116
+
+find_tandem_clusters.pl,195
+my $seqio seqio8,84
+my @feats feats9,157
+my @CLUSTER CLUSTER12,194
+my $s s15,214
+my $s_tmpreport s_tmpreport20,351
+my $s_tmpstore s_tmpstore21,390
+my $s_fastapath s_fastapath23,429
+
+find_tandem_orfs_in_ensembl_predictions.pl,102
+my $ta ta7,61
+my $a_ref a_ref10,108
+my $n n12,138
+my @convergent_genes convergent_genes14,168
+
+find_target_for_mirnas.pl,271
+my $outkmers outkmers11,211
+my $kmers_mirnas kmers_mirnas12,237
+my $setdir setdir13,263
+my $targetdir targetdir14,291
+my $ta ta23,513
+my $a_ref_tab a_ref_tab25,564
+my %H H27,598
+my @a;a28,610
+my @SETS SETS64,1152
+my @KEYS KEYS65,1167
+my $n n87,1637
+
+find_target_for_mirnas_from_nbtargets_file.pl,253
+my $outkmers outkmers11,211
+my $kmers_mirnas kmers_mirnas12,237
+my $setdir setdir13,263
+my $targetdir targetdir14,291
+my $ta ta23,513
+my $a_ref_tab a_ref_tab25,564
+my %H H27,598
+my @SETS SETS38,768
+my @KEYS KEYS39,783
+my $n n61,1253
+
+find_transposon_nearby_genes.pl,93
+my %TYPE TYPE10,85
+my $a_ref_ty a_ref_ty19,232
+my $ta ta26,356
+my $a_ref a_ref28,402
+
+fix_and_shorten_ensembl_worm_sequences.pl,14
+my $f f5,50
+
+fix_and_shorten_yeast_sequences.pl,14
+my $f f5,50
+
+fix_random_sequence_data.pl,16
+my $fa fa5,65
+
+fold_mirna_with_extended_seed.pl,245
+my $vi vi11,132
+my $fa fa14,168
+my $a_ref a_ref17,214
+my ($n, $s)($n, $s18,242
+my $mirna mirna22,295
+my @a a24,313
+my $ta ta29,367
+my $h_ref h_ref35,460
+my $a_ref a_ref39,536
+my %H H41,566
+sub rna_sim main::rna_sim125,2200
+
+gap_kmers.pl,22
+my $a_ref a_ref4,48
+
+gbk_analyze_mito_file.pl,173
+my $gb gb8,118
+my $a_ref_feat a_ref_feat12,164
+my $ta ta14,202
+my $sp sp15,231
+my @a_ta a_ta19,279
+my $file file21,310
+my %H H29,465
+my %COUNTS COUNTS30,482
+
+gbk_list_genes_in_ensembl_format.pl,152
+my $gb gb10,120
+my $a_ref_feat a_ref_feat14,166
+my $ta ta16,204
+my $sp sp17,233
+my @a_ta a_ta21,281
+my %H H23,312
+my %COUNTS COUNTS24,329
+
+gbk_list_genes_in_ensembl_format_TB.pl,152
+my $gb gb10,120
+my $a_ref_feat a_ref_feat14,166
+my $ta ta16,204
+my $sp sp17,233
+my @a_ta a_ta21,281
+my %H H23,312
+my %COUNTS COUNTS24,329
+
+gbk_list_genes_in_ensembl_format_pombe.pl,152
+my $gb gb10,120
+my $a_ref_feat a_ref_feat14,166
+my $ta ta16,204
+my $sp sp17,233
+my @a_ta a_ta21,281
+my %H H23,312
+my %COUNTS COUNTS24,329
+
+gene_association2index_flybase.pl,104
+my $ta ta15,113
+my $h_ref_parents h_ref_parents17,159
+my $type type22,258
+my %INDEX INDEX28,344
+
+gene_association2index_human_ebi.pl,104
+my $ta ta16,123
+my $h_ref_parents h_ref_parents18,169
+my $type type23,268
+my %INDEX INDEX29,354
+
+gene_association2sql.pl,133
+my $df df9,112
+my $verbose verbose11,138
+my $type type13,156
+my $go go15,202
+my %annot_go annot_go30,642
+my $sp sp32,662
+
+generate_consensus_from_alignments.pl,34
+my $a_ref_files a_ref_files5,63
+
+generate_conserved_sets.pl,648
+my $species species19,354
+my $interactions interactions20,384
+my $kmerfile kmerfile21,410
+my $condfile condfile22,436
+my $b_func b_func23,462
+my $b_dist b_dist24,484
+my $b_cond b_cond25,506
+my $b_tfac b_tfac26,528
+my $b_mots b_mots27,550
+my $b_chip b_chip28,572
+my $verbose verbose29,594
+my $limit limit30,616
+my $after after31,642
+my $dir dir32,664
+my $nbcopies nbcopies33,690
+my $df df50,1208
+my $ntotal ntotal51,1238
+my $f1 f152,1259
+my $f2 f253,1280
+my $nbgenes nbgenes54,1301
+my $inter inter56,1323
+my $myfile myfile132,3156
+my $t t133,3215
+my $a_ref_kmers a_ref_kmers136,3280
+my $k k140,3361
+
+generate_conserved_sets_single_strand.pl,144
+my $ta ta4,49
+my $a_ref a_ref6,95
+my $seqfile1 seqfile18,125
+my $seqfile2 seqfile29,150
+my $dir dir10,175
+my $nbgenes nbgenes11,200
+
+generate_conserved_sets_single_strand_from_alignment.pl,103
+my $ta ta11,90
+my $a_ref a_ref13,136
+my $seqfile seqfile17,210
+my %H H20,237
+my $fa fa30,401
+
+generate_kmers.pl,26
+my $a_ref1 a_ref112,176
+
+generate_low_complexity_kmers.pl,23
+my $a_ref a_ref9,111
+
+generate_random_pairs_from_list.pl,52
+my $a_ref a_ref6,50
+my @a a8,89
+my $n n15,175
+
+generate_random_positions_from_position_file.pl,87
+my $a_ref a_ref5,55
+my $max max7,93
+my $n n8,124
+my @a a10,154
+my @b b19,257
+
+generate_randomly_positioned_matches.pl,49
+my $h_ref_chrs h_ref_chrs9,109
+my %H H11,160
+
+generate_twospecies_random_datasets.pl,516
+my $s_fasta1 s_fasta120,448
+my $s_fasta2 s_fasta221,473
+my $s_only_orf s_only_orf22,498
+my $s_after_orf s_after_orf23,523
+my $denovo denovo24,548
+my $outdir outdir25,569
+my $outalndir outalndir26,594
+my $outmat outmat27,619
+my $freqfile freqfile28,644
+my $factory factory40,1004
+my $ktuple ktuple41,1063
+my $f1 f146,1150
+my $f2 f247,1171
+my $s_fasta1_out s_fasta1_out52,1244
+my $s_fasta2_out s_fasta2_out53,1270
+my $b_after_orf b_after_orf72,1613
+my $h_ref_freqs h_ref_freqs74,1635
+
+generate_twospecies_random_datasets_nobioperl.pl,458
+my $s_fasta1 s_fasta118,397
+my $s_fasta2 s_fasta219,422
+my $s_only_orf s_only_orf20,447
+my $s_after_orf s_after_orf21,472
+my $denovo denovo22,497
+my $outdir outdir23,518
+my $outalndir outalndir24,543
+my $outmat outmat25,568
+my $freqfile freqfile26,593
+my $f1 f138,953
+my $f2 f239,974
+my $s_fasta1_out s_fasta1_out44,1047
+my $s_fasta2_out s_fasta2_out45,1073
+my $b_after_orf b_after_orf64,1416
+my $h_ref_freqs h_ref_freqs66,1438
+
+generate_twospecies_simulated_datasets.pl,257
+my $s_fasta1 s_fasta118,442
+my $s_fasta2 s_fasta219,467
+my $s_only_orf s_only_orf20,492
+my $s_after_orf s_after_orf21,516
+my $factory factory28,702
+my $ktuple ktuple29,761
+my $f1 f134,848
+my $f2 f235,869
+my $b_after_orf b_after_orf45,1001
+
+generate_ungapped_version_of_gapped_kmers.pl,35
+my @BIN BIN9,149
+my %H H11,164
+
+generegexp_calc_density_of_sites.pl,90
+my $fa fa8,98
+my %L L11,144
+my $ta ta20,252
+my $a_ref a_ref22,298
+my %M M24,328
+
+genphen_compare_blastclust_to_GGs.pl,287
+my @C1 C113,235
+my $a_ref_f a_ref_f43,649
+my $nc2 nc244,689
+my @C2 C246,739
+my $recip recip69,1071
+my $nrecip nrecip70,1087
+my $p_best p_best71,1103
+my $i i72,1120
+sub find_index_of_strongest_overlapping_cluster main::find_index_of_strongest_overlapping_cluster99,1723
+
+genphen_get_seed_gene_sequences.pl,16
+my $se se7,90
+
+genregexp_clusters.pl,148
+my $dr dr24,303
+my $ov ov25,329
+my $fasta fasta26,341
+my $a_ref_block a_ref_block27,363
+my %H H29,407
+my $cnt cnt30,419
+my @P P57,834
+
+genregexp_clusters_scorelike.pl,71
+my $wmin wmin19,183
+my $w w21,198
+my %H H23,212
+my $n n97,1347
+
+genregexp_clusters_scorelike_output.pl,54
+my $wmin wmin19,183
+my $w w21,205
+my %H H23,219
+
+genregexp_count_occurrences_per_sequences.pl,59
+my $ta ta7,96
+my $a_ref a_ref9,142
+my %POS POS11,172
+
+genregexp_processed_calculate_density.pl,90
+my $fa fa8,98
+my %L L11,144
+my $ta ta20,252
+my $a_ref a_ref22,298
+my %M M24,328
+
+getIntersection.pl,76
+my $a_ref1 a_ref15,68
+my $a_ref2 a_ref26,106
+my $a_union a_union8,145
+
+getMedian.pl,22
+my $a_ref a_ref5,49
+
+getNotIntersection.pl,76
+my $a_ref1 a_ref15,68
+my $a_ref2 a_ref26,106
+my $a_union a_union8,145
+
+getUnion.pl,76
+my $a_ref1 a_ref15,68
+my $a_ref2 a_ref26,106
+my $a_union a_union8,145
+
+get_affy_droso_subset_array.pl,270
+my $type type10,108
+my $pma pma11,124
+my $outdata outdata12,145
+my $logt logt13,166
+my @a_conds a_conds25,509
+my $dr dr27,544
+my $ta ta32,613
+my $a_ref a_ref37,659
+my @G G39,689
+my $r r40,701
+my @firstline firstline41,724
+my @COUNTS COUNTS52,889
+
+get_all_orthologs.pl,30
+my $s s8,95
+my $n n12,140
+
+get_array_averages.pl,287
+my $type type10,108
+my $pma pma11,124
+my $outdata outdata12,145
+my $logt logt13,166
+my @a_cols a_cols26,546
+my $dr dr28,579
+my $ta ta33,648
+my $a_ref a_ref38,694
+my @G G40,724
+my $r r41,736
+my @firstline firstline42,759
+my @COUNTS COUNTS56,1022
+my $n n161,2819
+
+get_average.pl,22
+my $a_ref a_ref8,87
+
+get_conservation_scores_for_kmer_list.pl,70
+my $f1 f15,59
+my $a_ref a_ref6,84
+my $ta ta7,116
+my %H H9,141
+
+get_every_X_lines.pl,13
+my $i i1,0
+
+get_expected_number_of_targets.pl,121
+my $ta ta5,59
+my $a_ref_files a_ref_files7,81
+my @a1 a19,125
+my @a2 a210,138
+my $nf nf30,391
+my $nr nr31,423
+
+get_expected_number_of_targets_distributions.pl,122
+my $ta ta5,59
+my $a_ref_files a_ref_files7,81
+my @a1 a111,177
+my @a2 a212,190
+my $nf nf32,462
+my $nr nr33,494
+
+get_gene2gene_for_highly_informative_genes.pl,224
+my $ta ta9,94
+my $a_ref a_ref13,158
+my @A A16,204
+my $i i17,216
+my %H H28,392
+my %MAT MAT40,549
+my $i i43,605
+my %ADJ ADJ44,616
+my $a_ref_names a_ref_names82,1071
+my %INDEX INDEX84,1109
+my @B B106,1522
+
+get_genes_not_on_chromosome.pl,117
+my $a_ref a_ref9,128
+my $db db12,167
+my $set set17,235
+my $sql sql18,285
+my $a_ref_genes a_ref_genes20,393
+
+get_genes_on_chromosome.pl,117
+my $a_ref a_ref9,128
+my $db db12,167
+my $set set17,235
+my $sql sql18,285
+my $a_ref_genes a_ref_genes20,389
+
+get_highest_scoring_kmers.pl,86
+my $t t10,131
+my @aa aa15,201
+my @bb bb33,527
+my @bb bb42,710
+my $n n43,733
+
+get_highest_scoring_kmers_and_kmers_without_substring.pl,86
+my $t t10,131
+my @aa aa15,201
+my @bb bb33,527
+my @bb bb42,710
+my $n n43,733
+
+get_highest_scoring_kmers_single_strand.pl,86
+my $t t10,131
+my @aa aa15,201
+my @bb bb33,527
+my @bb bb42,710
+my $n n43,733
+
+get_info_about_drosophila_set_of_genes.pl,981
+my $b_desc b_desc18,261
+my $b_func b_func19,277
+my $b_exon b_exon20,293
+my $b_orth b_orth21,309
+my $b_corr b_corr22,325
+my $b_tata b_tata23,341
+my $genefile genefile25,358
+my $gotable gotable26,380
+my $ntotal ntotal27,403
+my $html html28,424
+my $maternal maternal29,440
+my $b_insitus b_insitus30,463
+my $p_global p_global32,483
+my $original original33,505
+my $desctable desctable35,524
+my $ta ta55,1137
+my $a_ref a_ref57,1184
+my $n n58,1215
+my $h_ref_genes h_ref_genes59,1241
+my $df df64,1318
+my $db db67,1350
+my $goc goc74,1449
+my $h_ref_cat h_ref_cat87,1783
+my $set set98,1944
+my $sql sql99,1994
+my $a_ref_genes a_ref_genes100,2058
+my $h_ref_genes_sql h_ref_genes_sql101,2107
+my @H H102,2170
+my $ORTH ORTH104,2184
+my $HUMAN_ORTH HUMAN_ORTH105,2199
+my $YEAST_ORTH YEAST_ORTH106,2220
+my $MATER MATER108,2242
+my $DUPL DUPL109,2257
+my $TATA TATA110,2272
+my $nn nn177,4025
+sub printHTML main::printHTML496,12658
+
+get_info_about_worm_set_of_genes.pl,50
+my $m m18,353
+my $a_ref_func a_ref_func27,525
+
+get_intersection_between_kmer_lists.pl,95
+my $ta ta6,75
+my $a_ref1 a_ref18,121
+my $a_ref2 a_ref210,178
+my $a_union a_union12,211
+
+get_intersection_between_lists_by_column.pl,136
+my $ta ta6,75
+my $a_ref1 a_ref18,121
+my $a_ref3 a_ref39,160
+my $a_ref2 a_ref212,217
+my $a_union a_union14,257
+my %H H16,311
+
+get_kmers_without_substrings.pl,120
+my $t t10,131
+my $a_refx a_refx16,226
+my $a_refy a_refy22,300
+my $lowest lowest26,372
+my $a_refz a_refz28,451
+
+get_kmers_without_substrings_simple.pl,68
+my $t t10,131
+my $a_refx a_refx13,176
+my $a_refy a_refy19,253
+
+get_last_n_nucleotides_in_fasta_files.pl,16
+my $fa fa7,87
+
+get_light_info_about_drosophila_set_of_genes.pl,204
+my $ta ta15,229
+my $a_ref a_ref18,313
+my $df df21,355
+my $db db23,386
+my $ntotal ntotal26,436
+my $set set29,474
+my $sql sql30,524
+my $a_ref_genes a_ref_genes31,581
+my $h_ref h_ref32,630
+
+get_light_info_about_drosophila_set_of_genes_and_fetch_absent_fbgn.pl,322
+my $ta ta21,418
+my $h_ref_genes h_ref_genes23,464
+my $a_ref a_ref24,500
+my $h_ref_trad h_ref_trad30,589
+my $df df34,631
+my $db db36,662
+my $ntotal ntotal39,712
+my $set set44,776
+my $sql sql45,826
+my $a_ref_genes a_ref_genes46,883
+my $h_ref h_ref47,932
+my @server server49,1005
+my $txt txt54,1179
+
+get_light_info_about_drosophila_set_of_genes_and_fetch_absent_fbgn_traductor.pl,286
+my $ta ta18,256
+my $h_ref_genes h_ref_genes21,340
+my $a_ref a_ref22,376
+my $df df25,418
+my $db db27,449
+my $ntotal ntotal30,499
+my $set set33,537
+my $sql sql34,587
+my $a_ref_genes a_ref_genes35,644
+my $h_ref h_ref36,693
+my @server server38,766
+my $txt txt43,940
+
+get_line.pl,63
+my $FILE FILE8,99
+my $INDEX INDEX9,122
+my $row row13,183
+
+get_lines_whose_index_is_on_chromosome.pl,168
+my $ta ta11,140
+my $a_ref a_ref13,186
+my $db db16,217
+my $set set21,285
+my $sql sql22,346
+my $a_ref_genes a_ref_genes24,435
+my $h_ref_chr h_ref_chr25,484
+
+get_logo.pl,74
+my $ml ml14,128
+my $mo mo18,202
+my $f f21,241
+my $todo todo24,303
+
+get_longest_splice_forms.pl,88
+my $fa fa6,64
+my %LENGTH LENGTH10,111
+my %PROTEIN PROTEIN11,129
+my $se se32,456
+
+get_longest_splice_forms_among_ensembl_transcripts.pl,88
+my $fa fa6,64
+my %LENGTH LENGTH10,111
+my %PROTEIN PROTEIN11,129
+my $se se32,456
+
+get_max_mean_std_in_randomized_fastcompare_outputs.pl,66
+my $ta ta6,71
+my $a_ref_files a_ref_files8,93
+my @A A10,138
+
+get_median_lengths_for_list_of_genes.pl,79
+my $ta ta6,81
+my $h_ref h_ref8,127
+my $a_ref a_ref11,185
+my @a a12,222
+
+get_non_intersection_between_lists_by_column.pl,137
+my $ta ta7,87
+my $a_ref1 a_ref19,133
+my $a_ref3 a_ref310,172
+my $a_ref2 a_ref213,229
+my $a_union a_union15,269
+my %H H17,331
+
+get_not_subset_of_expression_profiles.pl,38
+my $h_ref h_ref7,88
+my $l l11,147
+
+get_orthologs_from_ensembl.pl,316
+my $ta ta4,49
+my $a_ref a_ref6,95
+my $i i8,125
+my %H_UBRH H_UBRH9,136
+my %H_MBRH H_MBRH10,153
+my %H_RHS H_RHS11,170
+my %H_BEST H_BEST12,187
+my @s1 s132,531
+my @s2 s233,555
+my @s3 s334,579
+my $a_ref_genes_1 a_ref_genes_137,604
+my $a_ref_genes_2 a_ref_genes_238,655
+my %H_TAKEN H_TAKEN40,717
+
+get_overlap_set.pl,49
+my $a_ref1 a_ref18,71
+my $a_ref2 a_ref29,109
+
+get_random_median_distances_in_sequences.pl,66
+my $ta ta17,164
+my $h_ref h_ref19,210
+my $a_ref a_ref26,296
+
+get_random_subset.pl,70
+my $a_ref a_ref6,85
+my $n n10,131
+my $a_ref_shu a_ref_shu11,156
+
+get_random_substring_from_fasta_file.pl,99
+my $fa fa6,70
+my $nb nb9,116
+my $si si10,139
+my $suffix suffix11,162
+my @SEQS SEQS13,186
+
+get_reciprocal_orthologs_from_ensembl_orthologs.pl,213
+my $h_ref1 h_ref114,200
+my $h_ref2 h_ref216,249
+my $a_ref a_ref18,298
+sub my_readEnsemblOrthologs main::my_readEnsemblOrthologs30,537
+sub my_getReciprocalOrthologs main::my_getReciprocalOrthologs60,1041
+
+get_seqs_from_list_multiple.pl,42
+my $list list20,268
+my $cnt cnt27,377
+
+get_sequences_whose_name_contain.pl,16
+my $fa fa7,56
+
+get_stddev.pl,22
+my $a_ref a_ref8,87
+
+get_strands_for_set_of_genes.pl,95
+my $ta ta5,59
+my $h_ref h_ref8,106
+my $a_ref a_ref10,137
+my $a a12,175
+my $b b13,186
+
+get_subset_of_expression_profiles.pl,38
+my $h_ref h_ref7,92
+my $l l11,151
+
+get_subset_of_expression_profiles_with_preserved_order.pl,37
+my $h_ref h_ref5,53
+my $l l9,122
+
+get_sum.pl,22
+my $a_ref a_ref8,87
+
+get_symbols_not_in_overlap.pl,98
+my $a_ref1 a_ref14,48
+my $a_ref2 a_ref25,86
+my $a_not1 a_not17,125
+my $a_not2 a_not28,185
+
+get_worm_orthologs_for_drosophila_genes.pl,81
+my $ta ta9,125
+my $h_ref_map h_ref_map13,246
+my $a_ref_dro a_ref_dro15,286
+
+getseqsfromlist.pl,360
+my $min min18,271
+my $max max19,315
+my $thedbfile1 thedbfile121,361
+my $thedbfile2 thedbfile222,389
+my $thegenefile thegenefile24,418
+my $lenfile lenfile26,447
+my $deflen deflen27,475
+my $lenfile2 lenfile229,504
+my $deflen2 deflen230,533
+my %HH HH42,785
+my $h_ref_len h_ref_len43,798
+my %HH2 HH244,820
+my $h_ref_len2 h_ref_len245,834
+
+getseqsfromlist_x3.pl,178
+my $thedbfile1 thedbfile111,156
+my $thedbfile2 thedbfile212,185
+my $thedbfile3 thedbfile313,214
+my $thegenefile thegenefile14,243
+my $min min15,272
+my $max max16,315
+
+go_get_genes_in_category.pl,37
+my $go go9,119
+my $ref ref13,178
+
+grep_aligned_kmer_within_alignment.pl,108
+my $a_ref_files a_ref_files17,214
+my $cnt_conserved cnt_conserved20,303
+my $cnt_there cnt_there21,326
+
+hprd2cdna.pl,82
+my $parser parser8,47
+my $doc doc9,82
+my $id id12,127
+my $cdna cdna13,223
+
+hprd2desc.pl,156
+my $parser parser8,47
+my $doc doc9,82
+my $protein_node protein_node12,127
+my $id id15,200
+my $title_node title_node18,275
+my $title title21,356
+
+hprd2interactions.pl,231
+my $parser parser8,67
+my $doc doc9,102
+my $id id12,147
+my $interactionListNodes interactionListNodes14,244
+my $ni ni15,320
+my $interactionList interactionList19,407
+my $interactions interactions23,466
+my $n n25,546
+
+human_GO_categories.pl,42
+my $goc goc6,68
+my $a_ref a_ref25,408
+
+identify_RNAs.pl,160
+my $mb mb10,117
+my $ta ta18,310
+my $a_ref a_ref20,356
+my $se se22,386
+my $fa fa25,438
+my $tmpfile1 tmpfile128,461
+my $process_tr process_tr31,513
+
+ids_consolidate_commadelim_mapping_using_gene_list.pl,75
+my $a_ref_genes a_ref_genes7,96
+my $ta ta9,141
+my $a_ref a_ref11,187
+
+ids_consolidate_mapping_using_gene_list.pl,75
+my $a_ref_genes a_ref_genes7,96
+my $ta ta9,141
+my $a_ref a_ref11,187
+
+ids_consolidate_multi_mapping_using_gene_list.pl,75
+my $a_ref_genes a_ref_genes7,96
+my $ta ta9,141
+my $a_ref a_ref11,187
+
+ids_consolidate_tabdelim_mapping_using_gene_list.pl,75
+my $a_ref_genes a_ref_genes7,96
+my $ta ta9,141
+my $a_ref a_ref11,187
+
+info_species.pl,31
+my $df df8,72
+my $r r10,98
+
+insert_col.pl,18
+my $db db20,466
+
+insert_constant_column_after_column.pl,39
+my $ta ta6,86
+my $a_ref a_ref8,132
+
+interactions_analyze_MCODE_output.pl,120
+my $l l5,62
+my $l l6,76
+my $l l7,90
+my $l l8,104
+my $l l9,118
+my $l l10,132
+my $l l11,146
+my $l l12,160
+
+interactions_analyze_MCODE_output_show_edge_types.pl,165
+my $s s8,71
+my %EDGES EDGES10,93
+my $l l29,363
+my $l l30,377
+my $l l31,391
+my $l l32,405
+my $l l33,419
+my $l l34,433
+my $l l35,447
+my $l l36,461
+
+interactions_analyze_MCODE_output_zygotic.pl,120
+my $l l5,62
+my $l l6,76
+my $l l7,90
+my $l l8,104
+my $l l9,118
+my $l l10,132
+my $l l11,146
+my $l l12,160
+
+interactions_analyze_MCODE_show_cluster.pl,246
+my $ta ta4,53
+my $a_ref_dic a_ref_dic6,157
+my %H H8,189
+my $c c23,335
+my $s s25,357
+my %EDGES EDGES29,381
+my $l l48,651
+my $l l49,665
+my $l l50,679
+my $l l51,693
+my $l l52,707
+my $l l53,721
+my $l l54,735
+my $l l55,749
+
+interactions_calculate_overlap_between_two_networks.pl,90
+my $ta ta5,54
+my $a_ref1 a_ref17,100
+my %INDEX INDEX9,131
+my $a_ref2 a_ref216,276
+
+interactions_count_share_go.pl,17
+my $go go8,118
+
+interactions_merge_datasets.pl,21
+my %INDEX INDEX1,0
+
+interactions_project_genes_on_network.pl,80
+my $h_ref_gen h_ref_gen9,92
+my $ta ta14,159
+my $a_ref_int a_ref_int16,205
+
+interactions_remove_duplicates.pl,53
+my $ta ta4,53
+my $a_ref a_ref6,99
+my %H H8,129
+
+interactions_remove_slashes_from_pairs.pl,41
+my $ta ta8,118
+my $a_ref a_ref10,164
+
+interactions_replace_id_by_cg.pl,114
+my $lo lo6,63
+my $ta ta8,83
+my $a_ref_int a_ref_int10,129
+my $h_ref_dic h_ref_dic13,188
+my %HH HH16,252
+
+interactions_replace_synonyms_by_cg.pl,130
+my $lo lo6,74
+my $ta ta8,94
+my $a_ref_int a_ref_int10,140
+my $a_ref_dic a_ref_dic13,199
+my %H H15,231
+my %HH HH25,371
+
+interactions_replace_synonyms_by_cg_single_column.pl,130
+my $lo lo6,74
+my $ta ta8,94
+my $a_ref_int a_ref_int10,140
+my $a_ref_dic a_ref_dic13,199
+my %H H15,231
+my %HH HH25,371
+
+invert_half_matrix.pl,274
+my @matrix matrix1,0
+my @rownames rownames2,19
+my @colnames colnames3,38
+my $n n7,114
+my $m m8,145
+my @inverted_matrix inverted_matrix10,177
+my @a a11,203
+my @b b12,215
+my @inverted_colnames inverted_colnames30,565
+sub loadMatrix main::loadMatrix57,1011
+
+kellis2re.pl,30
+my %H H6,96
+my $s s24,379
+
+kellis2re_withlabel.pl,49
+my %H H7,107
+my $ta ta24,389
+my $s s26,435
+
+kellis_search_aligned_kmer.pl,135
+my $kmer kmer11,129
+my $h_ref h_ref21,262
+my $orf orf28,392
+my $cnt_ok cnt_ok30,411
+my $cnt_th cnt_th31,427
+my $r r83,1238
+
+kmerize_sequences.pl,53
+my $fa fa8,108
+my $a_ref_kmers a_ref_kmers11,154
+
+list_VGENES.pl,65
+my $seqio seqio8,84
+my $seq seq9,157
+my @feats feats10,188
+
+list_conserved_kmers_in_3utrs.pl,28
+my $a_ref_cg a_ref_cg7,61
+
+list_intergenic_lengths.pl,59
+my $ta ta6,86
+my $a_ref a_ref8,132
+my %CHR CHR10,162
+
+locate_kmers.pl,297
+my $utr5file utr5file9,111
+my $utr3file utr3file10,133
+my $orfsfile orfsfile11,155
+my $kmerfile kmerfile12,177
+my $verbose verbose13,199
+my $bestwins bestwins14,217
+my $df df28,635
+my $s_todo s_todo29,665
+my $ta ta32,688
+my $a_ref a_ref34,740
+my $h_ref_wins h_ref_wins36,772
+
+map_affy_probes_to_cDNA.pl,74
+my $fa fa11,123
+my $mb mb13,145
+my $file file27,405
+my $l l30,463
+
+map_mirnas_to_genome.pl,57
+my $fa fa10,87
+my $mb mb12,109
+my $file file26,351
+
+map_rank_to_rank.pl,114
+my $ta ta8,88
+my $a_ref a_ref10,134
+my $oldkmer oldkmer12,164
+my $a_ref a_ref16,234
+my $rank rank17,263
+
+mask.pl,33
+my $fa fa6,42
+my $mb mb11,90
+
+mask_overlapping_coding_sequences_in_labelled_sequences.pl,156
+my %CHR CHR6,71
+my %BOUNDARIES_P BOUNDARIES_P7,94
+my %STRAND STRAND8,117
+my %BOUNDARIES_T BOUNDARIES_T9,140
+my @keys keys14,246
+my $fa fa17,271
+
+mask_tandem_repeats.pl,159
+my $fa fa8,89
+my $a_ref a_ref11,135
+my ($n, $s)($n, $s12,163
+my $tr tr14,187
+my $a_ref_tandems a_ref_tandems18,267
+my $seq_masked seq_masked21,319
+
+match_micrornas_to_imperfect_kmers.pl,104
+my $ta ta8,83
+my $a_ref a_ref11,130
+my $nb_rna_mismatches nb_rna_mismatches13,160
+my $i i15,188
+
+match_micrornas_to_kmer_groups.pl,162
+my @mirnas mirnas13,136
+my $fa fa14,153
+my $ta ta21,282
+my $a_ref a_ref23,328
+my $only5 only525,358
+my $fulldisplay fulldisplay26,386
+my $i i28,408
+
+match_micrornas_to_kmers.pl,252
+my $micrornas micrornas13,140
+my $kmerfile kmerfile14,163
+my $col col15,186
+my $limit limit16,205
+my $only5 only517,228
+my $shuffle shuffle18,251
+my $ta ta34,655
+my $a_ref a_ref40,753
+my $fulldisplay fulldisplay42,783
+my $i i44,805
+
+match_micrornas_to_kmers_imperfect.pl,118
+my $ta ta13,136
+my $a_ref a_ref16,183
+my $only5 only518,213
+my $fulldisplay fulldisplay19,241
+my $i i21,263
+
+matrix2knnimpute.pl,27
+my $l l1,0
+my @a a2,17
+
+matrix_show_entry_at_coords.pl,14
+my $i i5,93
+
+merge_conditions_experiments.pl,130
+my %IDX IDX10,112
+my %IDX_U IDX_U13,146
+my %IDX_D IDX_D14,162
+my @a_tmp a_tmp52,713
+my @a_tmp_sorted a_tmp_sorted59,812
+
+merge_conditions_experiments_multifiles.pl,164
+my $a_ref_files a_ref_files7,66
+my %IDX IDX10,111
+my %IDX_U IDX_U13,145
+my %IDX_D IDX_D14,161
+my @a_tmp a_tmp52,704
+my @a_tmp_sorted a_tmp_sorted59,803
+
+merge_tables_based_on_indices.pl,67
+my $ta ta6,60
+my $a_ref1 a_ref19,107
+my $h_ref2 h_ref214,165
+
+merge_unique_fasta_files.pl,14
+my %H H5,50
+
+mhcbn.pl,80
+my $HTML HTML5,43
+my @forms forms8,115
+my ($f)($f10,182
+my $ua ua30,582
+
+mi_combine_expression_sets.pl,74
+my $ref ref8,129
+my $a_ref a_ref9,152
+my %H H11,186
+my $c c12,198
+
+mi_mask.pl,51
+my $fa fa6,86
+my $re re9,132
+my $rc rc10,151
+
+mips.pl,259
+my $i_cnt i_cnt41,921
+my @res res71,1451
+sub removeDuplicates main::removeDuplicates118,2372
+sub in_array(main::in_array138,2628
+sub getOverlapSet main::getOverlapSet151,2819
+sub readSet main::readSet173,3111
+sub getIndex main::getIndex200,3420
+
+mirna_seed_list_to_index.pl,28
+my $g g6,83
+my %H H7,98
+
+mitochondria_NC_output_fasta_aa.pl,173
+my $gb gb8,118
+my $a_ref_feat a_ref_feat12,164
+my $ta ta14,202
+my $sp sp15,231
+my @a_ta a_ta19,279
+my $file file21,310
+my %H H29,465
+my %COUNTS COUNTS30,482
+
+mitochondria_NC_output_fasta_aa_nt.pl,235
+my %CODON_TABLE CODON_TABLE10,120
+my $gb gb29,943
+my $a_ref_feat a_ref_feat33,989
+my $ta ta35,1027
+my $sp sp36,1056
+my @a_ta a_ta42,1128
+my $file file44,1159
+my %H H52,1315
+my %COUNTS COUNTS53,1332
+my $aa aa83,1887
+
+mitochondria_associate_domain_to_genes.pl,35
+my $a_ref_files a_ref_files9,109
+
+mitochondria_merge_blastclust_clusters.pl,313
+my $a_ref_tokeep a_ref_tokeep18,288
+my @a_tokeep a_tokeep19,332
+my $cnt cnt20,355
+my $ta ta35,546
+my $a_ref a_ref38,612
+my @a_goodclu a_goodclu40,642
+my @a_badclu a_badclu41,662
+my $cnt cnt43,683
+my $create_database create_database57,873
+my $dir dir58,898
+my $se se60,928
+my $mb mb92,1532
+
+mitochondria_print_domains_from_clusters.pl,96
+my $ta ta11,135
+my $h_ref h_ref13,181
+my $a_ref_do a_ref_do14,211
+my $a_ref a_ref21,337
+
+motifs_conditions_on_fastcompare_kmers.pl,307
+my $home;home1,0
+my $kmerfile kmerfile10,136
+my $expfile expfile11,158
+my $seqfile seqfile12,180
+my $bonfplus bonfplus13,202
+my $ta ta23,426
+my $h_ref_kmers h_ref_kmers25,473
+my $a_ref_kmers a_ref_kmers26,509
+my $n n27,546
+my $b b28,587
+my %H H29,621
+my $u u88,2235
+my $d d89,2246
+
+ncbifasta2desc.pl,16
+my $fa fa6,86
+
+normalize_phenotype_by_other_phenotype.pl,126
+my $ta ta8,78
+my $a_ref1 a_ref111,125
+my $h_ref2 h_ref214,181
+my $a_ref2 a_ref216,213
+my $firstline firstline19,268
+
+output_binary_matrix_for_mirna_targets.pl,72
+my $files files5,49
+my %MIRNAS MIRNAS7,87
+my @mirnas mirnas28,304
+
+output_lines_1_if_index_2.pl,38
+my $h_ref h_ref7,86
+my $l l11,145
+
+output_mirna_degree.pl,22
+my $files files5,49
+
+overlap_simple.pl,73
+sub poverlap main::poverlap35,567
+sub getIndex main::getIndex83,1224
+
+parse_flyreg.pl,69
+my $ta ta5,50
+my $h_ref h_ref7,96
+my $i i9,131
+my @a a10,142
+
+perl_get_module.pl,111
+package $ARGV[0];2,12
+sub new $ARGV[0]::new4,31
+sub set $ARGV[0]::set13,210
+sub get $ARGV[0]::get18,292
+
+poisson.pl,30
+my @ls ls3,13
+my $n n6,44
+
+print_best_motifs.pl,60
+my $mo mo5,57
+my $a_ref a_ref16,257
+my $nbm nbm18,288
+
+print_kmers_in_both_list.pl,66
+my $ta ta5,50
+my $h_ref1 h_ref17,96
+my $a_ref2 a_ref211,154
+
+print_lines_that_contain_exact_kmers.pl,129
+my $ta ta7,75
+my $h_ref_kmers h_ref_kmers9,121
+my $a_ref_file a_ref_file13,195
+my $cnt cnt15,230
+my $renum renum16,243
+
+print_most_conserved_seed_positions.pl,140
+my $ta ta18,200
+my $h_ref h_ref21,247
+my $a_ref_kmers a_ref_kmers22,277
+my $fa fa27,341
+my $cnt0 cnt030,387
+my $cnt1 cnt131,401
+
+pseudoobscura_gff2list.pl,61
+my $ta ta9,141
+my $a_ref a_ref11,187
+my %IND IND15,219
+
+psi2interactions.pl,117
+my $parser parser11,94
+my $doc doc12,129
+my %H H21,227
+my $interactions interactions56,1176
+my $n n58,1244
+
+psi2tab.pl,66
+my $parser parser12,159
+my $doc doc13,194
+my $log log16,239
+
+pubmed2bibtex.pl,14
+my $b b7,70
+
+pubmed2bibtex_v2.pl,416
+my $ua ua7,51
+my $req req13,120
+my $content content20,307
+my @TAGS TAGS31,421
+my @CONT CONT32,436
+my $idx idx33,451
+my @lines lines34,466
+my $title title56,800
+my @authors authors57,818
+my $volume volume58,836
+my $pages pages59,854
+my $journal journal60,872
+my $year year61,890
+my $n n63,909
+my $firstauthorid firstauthorid95,1425
+my $s_authors s_authors99,1518
+my $out out102,1564
+
+pubmed2word.pl,416
+my $ua ua7,51
+my $req req13,120
+my $content content20,307
+my @TAGS TAGS31,421
+my @CONT CONT32,436
+my $idx idx33,451
+my @lines lines34,466
+my $title title56,800
+my @authors authors57,818
+my $volume volume58,836
+my $pages pages59,854
+my $journal journal60,872
+my $year year61,890
+my $n n63,909
+my $firstauthorid firstauthorid95,1425
+my $s_authors s_authors99,1518
+my $out out101,1563
+
+put_inf_first.pl,27
+my $s s1,0
+my $i i2,12
+
+quantized_pick_x_genes_per_bin.pl,71
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $H H10,162
+my $r r12,175
+
+query_ncbi_and_get_ids.pl,115
+my $q q8,69
+my $r r9,202
+my $parser parser14,259
+my $doc doc15,294
+my $nodes nodes18,329
+my $n n19,376
+
+quich_nw.pl,195
+my $fa1 fa18,113
+my $a_ref1 a_ref110,164
+my ($n1, $s1)($n1, $s111,196
+my $fa2 fa215,241
+my $a_ref2 a_ref217,292
+my ($n2, $s2)($n2, $s218,324
+my $al al21,368
+my $a_ref a_ref25,436
+
+random_triplets.pl,22
+my $a_ref a_ref4,54
+
+randomize_chromosome.pl,88
+my $f f4,50
+my $len len5,70
+my $o_markov o_markov29,411
+my $newseq newseq31,482
+
+randomize_column.pl,16
+my $ta ta6,63
+
+randomize_miRNA_except_for_seed.pl,186
+my $fa fa10,134
+my $a_ref a_ref13,185
+my ($n, $s)($n, $s14,222
+my ($le, $se, $re)($le, $se, $re15,252
+my @ra ra17,299
+my $a_sh a_sh19,332
+my $le le21,371
+my $re re23,395
+
+randomly_select_rows.pl,55
+my $ta ta6,86
+my $a_ref a_ref8,132
+my $r r10,162
+
+rank_score_in_kmer_list.pl,53
+my $ta ta4,49
+my $a_ref a_ref7,96
+my $i i9,126
+
+re2wm.pl,42
+my $ta ta11,165
+my $a_ref a_ref13,211
+
+read_blastz_alignments.pl,97
+my $ta ta9,109
+my $a_ref a_ref11,155
+my %CHR CHR13,185
+my @a a24,453
+my $cnt cnt25,465
+
+read_genregexp_output_windows.pl,69
+my %POS POS10,108
+sub output_windows{main::output_windows{31,474
+
+refGene2ensembl_longest_mrna.pl,28
+my %MRNA_LEN MRNA_LEN3,20
+
+refGene_to_3utrcoords_forchr.pl,39
+my $ta ta6,86
+my $a_ref a_ref8,132
+
+refseq_pick_single_mRNA_in_refGene.pl,39
+my $ta ta6,86
+my $a_ref a_ref8,132
+
+refseq_restrict_refGene_to_set_of_NM.pl,64
+my $h_ref h_ref8,97
+my $ta ta12,138
+my $a_ref a_ref14,184
+
+refseq_upstream_simplify_gene_names.pl,16
+my $fa fa6,86
+
+remove_duplicate_index_in_table.pl,55
+my $ta ta5,59
+my $a_ref a_ref8,106
+my %H H11,137
+
+remove_every_two_lines.pl,13
+my @a a1,0
+
+remove_everything_after_pipe_in_ensembl_fasta.pl,14
+my $f f6,66
+
+remove_gapped_kmers_that_match_each_other.pl,88
+my $ta ta9,98
+my $a_ref a_ref11,144
+my $n n14,175
+my @eliminate eliminate16,201
+
+remove_interactions_with_polyT.pl,39
+my $ta ta5,50
+my $a_ref a_ref9,118
+
+remove_longer_non_informative_kmers.pl,67
+my $ta ta6,60
+my $a_ref_kmers a_ref_kmers8,106
+my $n n10,143
+
+remove_lower_scoring_substrings_single_strand.pl,69
+my $ta ta4,49
+my $a_ref a_ref6,95
+my $n n8,125
+my @a a10,151
+
+remove_nonSGD_lines.pl,87
+my %H H6,208
+my $ta ta7,220
+my $a_ref a_ref9,299
+my $i i18,431
+my $l l19,442
+
+remove_nonSGD_triplets.pl,71
+my %H H6,208
+my $ta ta7,220
+my $a_ref a_ref9,299
+my $i i20,476
+
+remove_non_annotated_sequences.pl,14
+my $f f7,71
+
+remove_specific_sequences_from_fasta_file.pl,56
+my $ta ta7,73
+my $h_ref h_ref10,120
+my $f f13,152
+
+remove_substrings_from_kmer_list.pl,50
+my $a_ref_kmer a_ref_kmer4,48
+my $cnt cnt6,93
+
+rename_fasta_sequences_sequentially.pl,32
+my $f f5,50
+my $cnt cnt9,95
+
+renumber_col.pl,19
+my $cnt cnt12,85
+
+replace_7mers_by_better_scoring_6mers_single_strand.pl,312
+my $t t10,200
+my $size1 size112,221
+my $size2 size213,240
+my $limit limit15,260
+my $file7 file716,285
+my $verbose verbose18,311
+my $h_ref7 h_ref723,398
+my $a_ref7 a_ref724,428
+my $lowest_score lowest_score28,500
+my $size1 size130,560
+sub cmpk main::cmpk192,3429
+sub sup main::sup207,3585
+
+replace_7mers_by_better_scoring_kmers.pl,312
+my $t t10,200
+my $size1 size112,221
+my $size2 size213,240
+my $limit limit15,260
+my $file7 file716,285
+my $verbose verbose18,311
+my $h_ref7 h_ref723,398
+my $a_ref7 a_ref724,428
+my $lowest_score lowest_score28,500
+my $size1 size130,560
+sub cmpk main::cmpk165,2746
+sub sup main::sup180,2902
+
+replace_7mers_by_better_scoring_kmers_single_strand.pl,312
+my $t t10,200
+my $size1 size112,221
+my $size2 size213,240
+my $limit limit15,260
+my $file7 file716,285
+my $verbose verbose18,311
+my $h_ref7 h_ref723,398
+my $a_ref7 a_ref724,428
+my $lowest_score lowest_score28,500
+my $size1 size130,560
+sub cmpk main::cmpk201,3582
+sub sup main::sup216,3738
+
+replace_8mers_by_kmers_with_higher_score.pl,378
+my $t t10,200
+my $size1 size113,222
+my $size2 size214,241
+my $h_ref7 h_ref722,333
+my $a_ref7 a_ref723,363
+my $lowest_score lowest_score27,435
+my $a_ref8_tmp a_ref8_tmp32,544
+my $h_ref8 h_ref833,575
+my $a_ref8 a_ref834,592
+my $size2 size244,770
+my @OUT OUT47,821
+my $n n177,3424
+my %H H190,3669
+sub cmpk main::cmpk222,3865
+sub sup main::sup238,4022
+
+retain_human_gene_names_from_ensembl_sequences.pl,14
+my $f f7,67
+
+retain_longest_protein_from_ensembl_pep_files.pl,17
+my $fa fa9,104
+
+retain_specific_sequences_from_fasta_file.pl,56
+my $ta ta7,73
+my $h_ref h_ref10,120
+my $f f13,152
+
+revcompfile.pl,16
+my $fa fa5,63
+
+reverse.pl,13
+my @a a1,0
+
+reverse_fasta_file.pl,76
+my $fa fa6,72
+my $tmpfile1 tmpfile111,144
+my $tmpfile2 tmpfile212,175
+
+rna_groups_function.pl,93
+my $ta ta9,129
+my $a_ref_lines a_ref_lines11,175
+my $go go14,212
+my $line line32,503
+
+row_sizes.pl,19
+my $cnt cnt9,114
+
+row_sizes_print_index.pl,18
+my $cnt cnt6,61
+
+row_sizes_space.pl,19
+my $cnt cnt9,114
+
+scanace.pl,20
+my $cnt cnt16,266
+
+scanace2wm.pl,18
+my $mwm mwm7,68
+
+scanace_count_matches.pl,63
+my $sc sc6,88
+my $a_ref a_ref9,113
+my %COUNT COUNT11,162
+
+scanace_enhancers_evaluate_specificity.pl,134
+my $h_ref_e h_ref_e13,156
+my $s1 s114,196
+my $fa fa19,260
+my $N N21,305
+my %L L22,317
+my $sc sc33,448
+my $cnt cnt40,571
+
+scanace_multiple.pl,20
+my $cnt cnt16,266
+
+scanace_oneseq.pl,67
+my $o_seq o_seq14,436
+my $s1 s118,592
+my $a_ref a_ref46,1013
+
+scanace_oneseq_multiple.pl,39
+my $y y6,103
+my $o_seq o_seq25,701
+
+scienceexpress.pl,20
+my $HTML HTML7,60
+
+search_aligned_kmer_within_alignment.pl,108
+my $a_ref_files a_ref_files17,214
+my $cnt_conserved cnt_conserved20,303
+my $cnt_there cnt_there21,326
+
+search_kmer.pl,48
+my $k k5,64
+my $a_ref_files a_ref_files7,91
+
+search_motifs_explaining_cluster.pl,110
+my $a_ref_clusterfiles a_ref_clusterfiles8,175
+my $a_ref_motiffiles a_ref_motiffiles9,228
+my $n n12,283
+
+shorten_fasta.pl,17
+my $fa fa10,90
+
+shorten_fasta_end.pl,16
+my $fa fa7,87
+
+show_1nt_different_kmers.pl,53
+my $ta ta4,49
+my $a_ref a_ref6,95
+my $k k9,126
+
+show_genes_with_a_close_motif_window.pl,72
+my $ta ta6,86
+my $a_ref_w a_ref_w16,166
+my $a_ref_g a_ref_g24,242
+
+show_interacting_members.pl,42
+my $ta ta10,104
+my $h_ref h_ref12,150
+
+show_kmers_that_have_reverse_complement.pl,61
+my $ta ta6,60
+my $h_ref h_ref9,107
+my @keys keys10,137
+
+show_kmers_that_match_mirna_5p.pl,69
+my $ta ta5,59
+my $a_ref a_ref9,119
+my $h_ref_5p h_ref_5p13,166
+
+show_knn.pl,118
+my $ta ta5,63
+my $a_ref a_ref7,109
+my $h_ref h_ref8,138
+my $a_ref_row1 a_ref_row110,169
+my @SORT SORT14,231
+
+show_matching_matrix_entries.pl,57
+my $ta ta8,103
+my $a_ref a_ref10,149
+my $i=i12,179
+
+show_named_columns.pl,92
+my $l l5,68
+my @a a7,95
+my @todel todel8,119
+my @toshow toshow9,135
+my $i i10,152
+
+show_similar_kmers.pl,50
+my $a_ref_kmer a_ref_kmer4,48
+my $cnt cnt6,93
+
+shuffle_ACE_motif.pl,16
+my $mo mo6,86
+
+shuffle_FIRE_motif.pl,45
+my $a_ref a_ref6,85
+my $a_shu a_shu8,134
+
+shuffle_column.pl,136
+my $ta ta7,71
+my $a_ref a_ref10,118
+my $r r11,147
+my $a_ref_col a_ref_col14,206
+my $a_ref_shu a_ref_shu17,262
+my $i i19,312
+
+shuffle_expression_matrix.pl,14
+my $l l8,76
+
+shuffle_fasta_file.pl,18
+my $in in11,140
+
+shuffle_fasta_file_markov.pl,18
+my $fa fa12,145
+
+shuffle_fasta_file_simple.pl,18
+my $fa fa12,150
+
+shuffle_fasta_file_simple_with_Ns.pl,18
+my $fa fa12,150
+
+shuffle_fasta_file_simple_with_Ns_global.pl,34
+my %H H11,149
+my $fa fa16,225
+
+shuffle_rows.pl,88
+my $ta ta7,67
+my $a_ref a_ref10,114
+my $r r13,145
+my $a_ref_shu a_ref_shu16,204
+
+simplify_ncbi_sequence_names_by_gi.pl,16
+my $f f10,105
+
+simplify_ncbi_sequence_names_by_xm.pl,16
+my $f f10,105
+
+simplify_protein_names_in_ensembl_peptide_data.pl,16
+my $f f10,105
+
+simplify_sequence_names_in_ensembl_fasta_files_and_remove_1.pl,14
+my $f f6,66
+
+simplify_ucsc_refseq_sequence_names_by_removing_number_after_NMid.pl,16
+my $f f10,105
+
+smd_extract_lines_with_LL_ids.pl,28
+my $l l4,57
+my @a a5,71
+
+smd_xls2txt.pl,109
+my $f f3,20
+my $cnt cnt8,79
+my $LL_index LL_index10,93
+my $LR_index LR_index11,115
+my $nn nn15,140
+
+sort_according_to_column_of_other_file.pl,98
+my $cc1 cc113,252
+my @b b14,272
+my $cc2 cc225,407
+my $ta ta27,428
+my $h_ref h_ref29,474
+
+sort_and_recount_kmer_file.pl,102
+my $ta ta5,50
+my $a_ref a_ref8,97
+my @OUT OUT10,127
+my $i i12,179
+sub cmpk main::cmpk20,272
+
+sort_column.pl,38
+sub sortLines main::sortLines18,205
+
+sort_column_alpnum.pl,38
+sub sortLines main::sortLines18,205
+
+sort_column_alpnum_nocase.pl,38
+sub sortLines main::sortLines18,205
+
+sort_column_inv.pl,38
+sub sortLines main::sortLines18,205
+
+sort_column_inv_test.pl,38
+sub sortLines main::sortLines25,305
+
+sort_column_text.pl,38
+sub sortLines main::sortLines17,189
+
+substitute_labels_in_phylip_tree.pl,71
+my @a a7,99
+my $l l8,117
+my $ta ta10,140
+my $a_ref a_ref13,187
+
+substract_kmer_bkg.pl,103
+my %bkg bkg8,107
+my @KMERS KMERS18,279
+my @SORTED SORTED30,526
+sub sortInf main::sortInf37,650
+
+suffle_fasta_file.pl,18
+my $in in13,121
+
+sum_cols.pl,59
+my $ta ta4,49
+my $a_ref a_ref6,95
+my @sums sums8,125
+
+summarize_probes_mapping.pl,76
+my @ps ps9,149
+my %PROBE_SETS PROBE_SETS11,169
+my %GENES GENES67,1232
+
+synchronize_and_concatenate_rows_matrix2_on_matrix1.pl,92
+my $ta ta5,65
+my $h_ref1 h_ref17,143
+my $a_ref1 a_ref18,174
+my $h_ref2 h_ref211,264
+
+synchronize_columns.pl,254
+my $ta ta6,60
+my $a_ref1 a_ref18,138
+my $a_ref2 a_ref211,226
+my @a1 a116,300
+my @a2 a217,328
+my $a_ref_int a_ref_int21,379
+my $i i26,520
+my %H H27,531
+my @tokeep tokeep33,598
+my $i i53,1008
+my %H H54,1019
+my @tokeep tokeep60,1086
+
+synchronize_columns_matrix2_on_matrix1.pl,222
+my $ta ta8,112
+my $a_ref1 a_ref110,190
+my $a_ref2 a_ref213,278
+my @a1 a118,352
+my @a2 a219,380
+my $i i28,573
+my %H H29,584
+my @tokeep tokeep35,651
+my $i i50,879
+my %H H51,890
+my @new_a1 new_a162,1026
+
+synchronize_columns_matrix_from_labels.pl,91
+my $ta ta9,124
+my $a_ref1 a_ref112,221
+my $a_ref2 a_ref215,253
+my @cols cols16,301
+
+synchronize_rows_matrix2_on_matrix1.pl,67
+my $ta ta5,65
+my $a_ref1 a_ref17,143
+my $h_ref2 h_ref210,233
+
+tab2mcl.pl,160
+my $a_ref a_ref14,179
+my %H H16,218
+my $n n17,232
+my @ADJ ADJ18,243
+my @HI HI19,257
+my %INDEX INDEX21,271
+my $cnt cnt50,835
+my $cnt1 cnt158,945
+
+table_get_subset_list_splice_forms_from_gene_list.pl,63
+my $h_ref h_ref7,96
+my $ta ta9,135
+my $a_ref a_ref11,184
+
+table_reverse_indexed_list.pl,56
+my $ta ta8,97
+my $a_ref a_ref10,143
+my %H H12,173
+
+tabular2tsv.pl,34
+sub replace main::replace19,184
+
+terms2sql.pl,13
+my @a a1,0
+
+test_GenRegexp.pl,16
+my $ge ge5,54
+
+transcripts_to_gene_files.pl,33
+my $fa fa9,146
+my %H H12,192
+
+transfac_to_ace_wm.pl,40
+my @W_RAW W_RAW8,105
+my @nt nt9,121
+
+transform_duplicate_row_names.pl,54
+my $ta ta5,50
+my $a_ref a_ref8,97
+my %H H10,127
+
+translate_column_using_table_column.pl,234
+my $undef undef12,135
+my $file file13,155
+my $dict dict14,175
+my $k k15,195
+my $v v16,215
+my $col col17,235
+my $remdot remdot18,255
+my $ta ta35,565
+my $a_ref a_ref37,608
+my $h_ref_kv h_ref_kv40,660
+my $a a46,775
+
+translate_fasta_file.pl,31
+my $fa fa5,63
+my $i i9,110
+
+translate_header_using_table_column.pl,104
+my $ta ta24,386
+my $a_ref a_ref26,429
+my $h_ref_kv h_ref_kv29,481
+my $a a31,522
+my $n n33,546
+
+translate_mcl_output_using_dico.pl,165
+my $ta ta7,65
+my $h_ref_index h_ref_index9,111
+my $h_ref_desc h_ref_desc13,178
+my @C C17,238
+my $cnt cnt18,250
+sub show_cluster main::show_cluster63,914
+
+translate_ortholog_mapping_protein_to_gene.pl,89
+my $t t6,65
+my $a_ref a_ref8,109
+my $h_ref1 h_ref113,189
+my $h_ref2 h_ref218,276
+
+translate_simple.pl,39
+my $ta ta6,60
+my $h_ref h_ref8,106
+
+transpose.pl,31
+my $ta ta6,70
+my $n n9,117
+
+triplet_BIND.pl,16
+my $i i18,402
+
+triplet_MIPS.pl,16
+my $i i16,373
+
+tsv2exonlist.pl,301
+my $fa fa10,98
+my $se se12,120
+my $ta ta15,146
+my $a_ref_orth_info a_ref_orth_info21,231
+my @a_orthologs a_orthologs22,270
+my $a_ref a_ref43,570
+my %CHR CHR45,600
+my %EXONS EXONS46,614
+my %BOUNDARIES BOUNDARIES47,630
+my %STRAND STRAND48,651
+my @keys keys58,1103
+my $w w61,1130
+
+tsv2exonlist_singlespecies.pl,342
+my $fa fa11,129
+my $se se13,151
+my $ta ta16,177
+my $a_ref a_ref24,248
+my %CHR CHR26,278
+my %EXONS EXONS27,303
+my %BOUNDARIES BOUNDARIES28,328
+my %BOUNDARIES_CDS BOUNDARIES_CDS29,353
+my %STRAND STRAND30,378
+my @keys keys43,862
+my $wmax wmax46,889
+my $cnt cnt48,911
+sub getSpeComplement main::getSpeComplement171,3910
+
+tsv2exonlist_singlespecies_simple.pl,341
+my $fa fa11,129
+my $se se13,151
+my $ta ta16,177
+my $a_ref a_ref24,248
+my %CHR CHR26,278
+my %EXONS EXONS27,303
+my %BOUNDARIES BOUNDARIES28,328
+my %BOUNDARIES_CDS BOUNDARIES_CDS29,353
+my %STRAND STRAND30,378
+my @keys keys43,862
+my $wmax wmax46,889
+my $cnt cnt48,910
+sub getSpeComplement main::getSpeComplement90,1650
+
+tsv2exonlist_tmp.pl,362
+my $fa fa11,129
+my $se se13,151
+my $ta ta16,177
+my $a_ref_orth_info a_ref_orth_info22,262
+my @a_orthologs a_orthologs23,301
+my $nb nb24,323
+my $a_ref a_ref46,647
+my %CHR CHR48,677
+my %EXONS EXONS49,702
+my %BOUNDARIES BOUNDARIES50,727
+my %BOUNDARIES_CDS BOUNDARIES_CDS51,752
+my %STRAND STRAND52,777
+my @keys keys74,1718
+my $w w77,1745
+
+tsv2html.pl,16
+my $ta ta6,66
+
+tsv2latex.pl,16
+my $ta ta6,66
+
+tsv2lyx.pl,16
+my $ta ta6,66
+
+turn_text_files_into_index_for_GroupEnrichment.pl,14
+my %H H4,52
+
+txt2fasta.pl,53
+my $ta ta4,49
+my $a_ref a_ref6,95
+my $i i9,126
+
+unigene_seqs_to_id.pl,16
+my $fa fa4,49
+
+use_protein_names_in_ensembl_peptide_data.pl,34
+my $f f6,66
+my $pat pat10,111
+
+view_superfamily_gene.pl,63
+my $s s10,98
+my $a_ref a_ref12,125
+my $a_new a_new14,164
+
+view_superfamily_yeast.pl,135
+my $db db6,85
+my $a a12,217
+my $s s18,298
+my $a_ref a_ref20,325
+my @aa aa22,365
+sub  sortByRegion main::sortByRegion35,587
+
+view_superfamily_yeast_genes.pl,121
+my $db db13,165
+my $s s25,382
+my $a_ref a_ref27,409
+my @aa aa45,734
+sub  sortByRegion main::sortByRegion60,917
+
+view_superfamily_yeast_like.pl,136
+my $db db9,107
+my $a a15,239
+my $s s21,320
+my $a_ref a_ref23,347
+my @aa aa25,387
+sub  sortByRegion main::sortByRegion38,609
+
+warn_when_new_files.pl,58
+my $s s2,49
+my @a a3,68
+my %H H5,93
+my $n n13,178
+
+wb.pl,20
+my $pat pat12,273
+
+wieschaus_calculate_proportion_sygotic_maternal_with_mirna_targets.pl,105
+my $ta ta6,75
+my $h_ref_zm h_ref_zm8,121
+my $zt zt11,160
+my $mt mt12,172
+my $h_ref h_ref23,310
+
+wm2scanace.pl,16
+my $mo mo6,86
+
+worm_GO_categories.pl,320
+my $df df8,105
+my $p_global p_global11,137
+my $ntotal ntotal14,222
+my $ta ta16,267
+my $a_ref_dup a_ref_dup18,313
+my $a_ref a_ref19,348
+my $n n20,396
+my $goc goc24,425
+my $h_ref_cat h_ref_cat33,679
+my $a_ref_func a_ref_func56,1170
+my $a_ref_func a_ref_func74,1574
+my $a_ref_func a_ref_func90,1979
+
+worm_GO_categories_old.pl,58
+my $a_ref a_ref11,171
+my $a_ref_func a_ref_func26,405
+
+worm_cluster_enrichment.pl,14
+my @a a5,79
+
+wrap_create_eukaryotic_phylogenetic_profiles.pl,53
+my $a_ref_files a_ref_files8,95
+my $pwd pwd9,136
+
+yeast_set.pl,1239
+my $a_ref a_ref10,160
+my $nset nset11,197
+my $ntotal ntotal15,268
+my $m m21,312
+my $y y50,890
+my $a_ref_chip a_ref_chip51,910
+my $cnt cnt53,976
+my $a_mot a_mot75,1287
+my $a_ref_brown_RAP1 a_ref_brown_RAP185,1451
+my $a_ovl_RAP1 a_ovl_RAP186,1528
+my $s1 s187,1599
+my $s2 s288,1650
+my $i i89,1690
+my $p p90,1735
+my $a_ref_div a_ref_div107,2039
+my $a_ref_dis a_ref_dis108,2075
+my $med med110,2171
+my $h_ref h_ref112,2228
+my $less less113,2308
+my $total total125,2521
+my $pb pb126,2548
+my $a_ref_div a_ref_div139,2825
+my $a_ref_dis a_ref_dis140,2885
+my $med med142,2981
+my $h_ref h_ref144,3038
+my $less less145,3118
+my $total total157,3331
+my $pb pb158,3358
+my $a_ref_div a_ref_div181,3681
+my $a_ref_dis a_ref_dis182,3739
+my $med med184,3833
+my $h_ref h_ref186,3890
+my $less less187,3968
+my $total total199,4181
+my $pb pb200,4208
+my %hash hash216,4554
+my $i i217,4569
+my @a_loc a_loc225,4808
+my @a_glo a_glo226,4825
+my @a a227,4842
+my $med med242,5091
+my $less less247,5208
+my $total total259,5350
+my $pb pb260,5377
+my $a_ess a_ess284,5723
+my $p p285,5760
+my $a_ess_in_set a_ess_in_set286,5799
+my $k k287,5855
+my $N N288,5891
+my $pb pb293,6003
+
+warn_when_process_done.pl,0
+
+variance_normalize_array.pl,0
+
+test_shuffle.pl,0
+
+test_get.pl,0
+
+test_count_lines.pl,0
+
+simplify_proksgff.pl,0
+
+simple_cluster_kmers.pl,0
+
+sgd.pl,0
+
+revcomp_alignace_motif.pl,0
+
+revcomp.pl,0
+
+refGene2ensembl.pl,0
+
+positions_briggsae_gff_to_table.pl,0
+
+parse_pollard_WMs.pl,0
+
+parse_newcpgreport_analysis.pl,0
+
+parse_blastz_alignments.pl,0
+
+mips_compare_sets.pl,0
+
+list_db.pl,0
+
+kellis_extract_human_sequences.pl,0
+
+kellis_combine_smoothed_human_mouse_alignments.pl,0
+
+kellis_combine_smoothed_general_alignments.pl,0
+
+kellis_combine_smoothed_alignments.pl,0
+
+kellis_combine_human_mouse.pl,0
+
+kellis_combine_alignments.pl,0
+
+join_columns.pl,0
+
+interactions_flybase_genes_to_cg_synonyms.pl,0
+
+interactions_flybase_gene_names_to_cg_synonyms.pl,0
+
+getseqsfromblastdb.pl,0
+
+getpartialseqsfromblastdb.pl,0
+
+get_subseqs_from_blastdb.pl,0
+
+get_kmers_above_score_threshold.pl,0
+
+get_footprints.pl,0
+
+get_average_fold_change.pl,0
+
+form.pl,0
+
+extract_over_expressed_genes_from_table.pl,0
+
+extract_fasta_from_ali.pl,0
+
+expression_get_average_fold_change.pl,0
+
+expression_average_all_columns.pl,0
+
+delcolumns.pl,0
+
+columns_sp.pl,0
+
+columns_novoid.pl,0
+
+columns_concat.pl,0
+
+columns.pl,0
+
+clean_compendium.pl,0
+
+calculate_entropy.pl,0
+
+calculate_5utr_length_from_coordinate_file.pl,0
+
+calculate_3utr_length_from_coordinate_file.pl,0
+
+affy_probes_merge_ensembl_transcripts.pl,0
+
+adj2adj.pl,0
+
+GO_clean_sgd_annotations.pl,0
+
+GNF1H_output_HPRD_subgraph.pl,0
+
+GNF1H_arrange_tissue_names.pl,0

@@ -1,0 +1,255 @@
+%!PS-Adobe-3.0 EPSF-1.2
+%%Title: (/cygdrive/c/TEST/FACE_GUI_TEST/PostScript-Simple-0.07/MANIFEST_FACE//MANIFEST.summary.eps)
+%%LanguageLevel: 1
+%%Creator: PostScript::Simple perl module version 0.07
+%%CreationDate: Tue Jan  8 18:31:23 2008
+%%For: Lucifer
+%%Orientation: Portrait
+%%BoundingBox: 0 0 996 179
+%%EndComments
+%%BeginProlog
+/ll 1 def systemdict /languagelevel known {
+/ll languagelevel def } if
+%%BeginResource: PostScript::Simple
+/ux {72 mul 72.27 div} def
+/uy {72 mul 72.27 div} def
+/u {72 mul 72.27 div} def
+/STARTDIFFENC { mark } bind def
+/ENDDIFFENC { 
+
+% /NewEnc BaseEnc STARTDIFFENC number or glyphname ... ENDDIFFENC -
+	counttomark 2 add -1 roll 256 array copy
+	/TempEncode exch def
+	
+	% pointer for sequential encodings
+	/EncodePointer 0 def
+	{
+		% Get the bottom object
+		counttomark -1 roll
+		% Is it a mark?
+		dup type dup /marktype eq {
+			% End of encoding
+			pop pop exit
+		} {
+			/nametype eq {
+			% Insert the name at EncodePointer 
+
+			% and increment the pointer.
+			TempEncode EncodePointer 3 -1 roll put
+			/EncodePointer EncodePointer 1 add def
+			} {
+			% Set the EncodePointer to the number
+			/EncodePointer exch def
+			} ifelse
+		} ifelse
+	} loop	
+
+	TempEncode def
+} bind def
+
+% Define ISO Latin1 encoding if it doesnt exist
+/ISOLatin1Encoding where {
+%	(ISOLatin1 exists!) =
+	pop
+} {
+	(ISOLatin1 does not exist, creating...) =
+	/ISOLatin1Encoding StandardEncoding STARTDIFFENC
+		144 /dotlessi /grave /acute /circumflex /tilde 
+		/macron /breve /dotaccent /dieresis /.notdef /ring 
+		/cedilla /.notdef /hungarumlaut /ogonek /caron /space 
+		/exclamdown /cent /sterling /currency /yen /brokenbar 
+		/section /dieresis /copyright /ordfeminine 
+		/guillemotleft /logicalnot /hyphen /registered 
+		/macron /degree /plusminus /twosuperior 
+		/threesuperior /acute /mu /paragraph /periodcentered 
+		/cedilla /onesuperior /ordmasculine /guillemotright 
+		/onequarter /onehalf /threequarters /questiondown 
+		/Agrave /Aacute /Acircumflex /Atilde /Adieresis 
+		/Aring /AE /Ccedilla /Egrave /Eacute /Ecircumflex 
+		/Edieresis /Igrave /Iacute /Icircumflex /Idieresis 
+		/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde 
+		/Odieresis /multiply /Oslash /Ugrave /Uacute 
+		/Ucircumflex /Udieresis /Yacute /Thorn /germandbls 
+		/agrave /aacute /acircumflex /atilde /adieresis 
+		/aring /ae /ccedilla /egrave /eacute /ecircumflex 
+		/edieresis /igrave /iacute /icircumflex /idieresis 
+		/eth /ntilde /ograve /oacute /ocircumflex /otilde 
+		/odieresis /divide /oslash /ugrave /uacute 
+		/ucircumflex /udieresis /yacute /thorn /ydieresis
+	ENDDIFFENC
+} ifelse
+
+% Name: Re-encode Font
+% Description: Creates a new font using the named encoding. 
+
+/REENCODEFONT { % /Newfont NewEncoding /Oldfont
+	findfont dup length 4 add dict
+	begin
+		{ % forall
+			1 index /FID ne 
+			2 index /UniqueID ne and
+			2 index /XUID ne and
+			{ def } { pop pop } ifelse
+		} forall
+		/Encoding exch def
+		% defs for DPS
+		/BitmapWidths false def
+		/ExactSize 0 def
+		/InBetweenSize 0 def
+		/TransformedChar 0 def
+		currentdict
+	end
+	definefont pop
+} bind def
+
+% Reencode the std fonts: 
+/Courier-iso ISOLatin1Encoding /Courier REENCODEFONT
+/Courier-Bold-iso ISOLatin1Encoding /Courier-Bold REENCODEFONT
+/Courier-BoldOblique-iso ISOLatin1Encoding /Courier-BoldOblique REENCODEFONT
+/Courier-Oblique-iso ISOLatin1Encoding /Courier-Oblique REENCODEFONT
+/Helvetica-iso ISOLatin1Encoding /Helvetica REENCODEFONT
+/Helvetica-Bold-iso ISOLatin1Encoding /Helvetica-Bold REENCODEFONT
+/Helvetica-BoldOblique-iso ISOLatin1Encoding /Helvetica-BoldOblique REENCODEFONT
+/Helvetica-Oblique-iso ISOLatin1Encoding /Helvetica-Oblique REENCODEFONT
+/Times-Roman-iso ISOLatin1Encoding /Times-Roman REENCODEFONT
+/Times-Bold-iso ISOLatin1Encoding /Times-Bold REENCODEFONT
+/Times-BoldItalic-iso ISOLatin1Encoding /Times-BoldItalic REENCODEFONT
+/Times-Italic-iso ISOLatin1Encoding /Times-Italic REENCODEFONT
+/Symbol-iso ISOLatin1Encoding /Symbol REENCODEFONT
+/box {
+  newpath 3 copy pop exch 4 copy pop pop
+  8 copy pop pop pop pop exch pop exch
+  3 copy pop pop exch moveto lineto
+  lineto lineto pop pop pop pop closepath
+} bind def
+%%EndResource
+%%EndProlog
+0.5 u setlinewidth
+0 0 0 setrgbcolor
+/Courrier findfont 6 scalefont setfont
+newpath
+438 ux 103 uy moveto
+(0)  90 rotate   show stroke  -90 rotate 
+0 0 0 setrgbcolor
+/Courrier findfont 8 scalefont setfont
+0 0 0 setrgbcolor
+/Courrier findfont 8 scalefont setfont
+newpath
+15 ux 168 uy moveto
+(5)   dup stringwidth pop 2 div neg 0 rmoveto show 
+/Times findfont 14 scalefont setfont
+newpath
+20 ux 181 uy moveto
+()  90 rotate   show stroke  -90 rotate 
+0.784313725490196 0 0 setrgbcolor
+5 ux 165 uy 25 ux 163 uy box fill
+0.784313725490196 0 0 setrgbcolor
+5 ux 163 uy 25 ux 161 uy box fill
+0.854901960784314 0.0588235294117647 0.0588235294117647 setrgbcolor
+5 ux 161 uy 25 ux 159 uy box fill
+0.890196078431372 0.0901960784313725 0.0901960784313725 setrgbcolor
+5 ux 159 uy 25 ux 157 uy box fill
+0.929411764705882 0.117647058823529 0.117647058823529 setrgbcolor
+5 ux 157 uy 25 ux 155 uy box fill
+0.964705882352941 0.149019607843137 0.149019607843137 setrgbcolor
+5 ux 155 uy 25 ux 153 uy box fill
+0.988235294117647 0.215686274509804 0.215686274509804 setrgbcolor
+5 ux 153 uy 25 ux 151 uy box fill
+0.976470588235294 0.254901960784314 0.254901960784314 setrgbcolor
+5 ux 151 uy 25 ux 149 uy box fill
+0.968627450980392 0.294117647058824 0.294117647058824 setrgbcolor
+5 ux 149 uy 25 ux 147 uy box fill
+0.945098039215686 0.368627450980392 0.368627450980392 setrgbcolor
+5 ux 147 uy 25 ux 145 uy box fill
+0.933333333333333 0.407843137254902 0.407843137254902 setrgbcolor
+5 ux 145 uy 25 ux 143 uy box fill
+0.913725490196078 0.411764705882353 0.415686274509804 setrgbcolor
+5 ux 143 uy 25 ux 141 uy box fill
+0.898039215686275 0.415686274509804 0.427450980392157 setrgbcolor
+5 ux 141 uy 25 ux 139 uy box fill
+0.858823529411765 0.423529411764706 0.447058823529412 setrgbcolor
+5 ux 139 uy 25 ux 137 uy box fill
+0.843137254901961 0.427450980392157 0.454901960784314 setrgbcolor
+5 ux 137 uy 25 ux 135 uy box fill
+0.823529411764706 0.431372549019608 0.466666666666667 setrgbcolor
+5 ux 135 uy 25 ux 133 uy box fill
+0.803921568627451 0.435294117647059 0.474509803921569 setrgbcolor
+5 ux 133 uy 25 ux 131 uy box fill
+0.768627450980392 0.443137254901961 0.494117647058824 setrgbcolor
+5 ux 131 uy 25 ux 129 uy box fill
+0.749019607843137 0.447058823529412 0.505882352941176 setrgbcolor
+5 ux 129 uy 25 ux 127 uy box fill
+0.733333333333333 0.450980392156863 0.513725490196078 setrgbcolor
+5 ux 127 uy 25 ux 125 uy box fill
+0.694117647058824 0.458823529411765 0.533333333333333 setrgbcolor
+5 ux 125 uy 25 ux 123 uy box fill
+0.67843137254902 0.462745098039216 0.545098039215686 setrgbcolor
+5 ux 123 uy 25 ux 121 uy box fill
+0.658823529411765 0.466666666666667 0.552941176470588 setrgbcolor
+5 ux 121 uy 25 ux 119 uy box fill
+0.63921568627451 0.470588235294118 0.564705882352941 setrgbcolor
+5 ux 119 uy 25 ux 117 uy box fill
+0.603921568627451 0.47843137254902 0.580392156862745 setrgbcolor
+5 ux 117 uy 25 ux 115 uy box fill
+0.584313725490196 0.482352941176471 0.592156862745098 setrgbcolor
+5 ux 115 uy 25 ux 113 uy box fill
+0.568627450980392 0.486274509803922 0.6 setrgbcolor
+5 ux 113 uy 25 ux 111 uy box fill
+0.529411764705882 0.494117647058824 0.619607843137255 setrgbcolor
+5 ux 111 uy 25 ux 109 uy box fill
+0.513725490196078 0.498039215686275 0.631372549019608 setrgbcolor
+5 ux 109 uy 25 ux 107 uy box fill
+0.494117647058824 0.501960784313725 0.63921568627451 setrgbcolor
+5 ux 107 uy 25 ux 105 uy box fill
+0.474509803921569 0.505882352941176 0.650980392156863 setrgbcolor
+5 ux 105 uy 25 ux 103 uy box fill
+0.43921568627451 0.513725490196078 0.670588235294118 setrgbcolor
+5 ux 103 uy 25 ux 101 uy box fill
+0.419607843137255 0.517647058823529 0.67843137254902 setrgbcolor
+5 ux 101 uy 25 ux 99 uy box fill
+0.403921568627451 0.52156862745098 0.690196078431373 setrgbcolor
+5 ux 99 uy 25 ux 97 uy box fill
+0.364705882352941 0.529411764705882 0.709803921568627 setrgbcolor
+5 ux 97 uy 25 ux 95 uy box fill
+0.349019607843137 0.533333333333333 0.717647058823529 setrgbcolor
+5 ux 95 uy 25 ux 93 uy box fill
+0.329411764705882 0.537254901960784 0.729411764705882 setrgbcolor
+5 ux 93 uy 25 ux 91 uy box fill
+0.309803921568627 0.541176470588235 0.737254901960784 setrgbcolor
+5 ux 91 uy 25 ux 89 uy box fill
+0.274509803921569 0.549019607843137 0.756862745098039 setrgbcolor
+5 ux 89 uy 25 ux 87 uy box fill
+0.254901960784314 0.552941176470588 0.764705882352941 setrgbcolor
+5 ux 87 uy 25 ux 85 uy box fill
+0.23921568627451 0.556862745098039 0.776470588235294 setrgbcolor
+5 ux 85 uy 25 ux 83 uy box fill
+0.219607843137255 0.56078431372549 0.784313725490196 setrgbcolor
+5 ux 83 uy 25 ux 81 uy box fill
+0.184313725490196 0.568627450980392 0.803921568627451 setrgbcolor
+5 ux 81 uy 25 ux 79 uy box fill
+0.164705882352941 0.572549019607843 0.815686274509804 setrgbcolor
+5 ux 79 uy 25 ux 77 uy box fill
+0.145098039215686 0.576470588235294 0.823529411764706 setrgbcolor
+5 ux 77 uy 25 ux 75 uy box fill
+0.109803921568627 0.584313725490196 0.843137254901961 setrgbcolor
+5 ux 75 uy 25 ux 73 uy box fill
+0.0901960784313725 0.588235294117647 0.854901960784314 setrgbcolor
+5 ux 73 uy 25 ux 71 uy box fill
+0.0745098039215686 0.592156862745098 0.862745098039216 setrgbcolor
+5 ux 71 uy 25 ux 69 uy box fill
+0.0549019607843137 0.596078431372549 0.874509803921569 setrgbcolor
+5 ux 69 uy 25 ux 67 uy box fill
+0.0196078431372549 0.603921568627451 0.894117647058824 setrgbcolor
+5 ux 67 uy 25 ux 65 uy box fill
+0 0.607843137254902 0.901960784313726 setrgbcolor
+5 ux 65 uy 25 ux 63 uy box fill
+0 0 0 setrgbcolor
+/Courrier findfont 8 scalefont setfont
+newpath
+16 ux 54 uy moveto
+(-5)   dup stringwidth pop 2 div neg 0 rmoveto show 
+/Times findfont 14 scalefont setfont
+newpath
+20 ux 44 uy moveto
+()  90 rotate   dup stringwidth pop neg 0 rmoveto show  -90 rotate 
+%%EOF

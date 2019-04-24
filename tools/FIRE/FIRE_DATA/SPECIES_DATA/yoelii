@@ -1,0 +1,8 @@
+fastafile_dna	FIRE_DATA/YOELII/SEQUENCES/py_u_1000_0.fa
+seqlen_dna	1000
+rightlabel_dna	0
+leftlabel_dna	-1000
+fastafile_rna	FIRE_DATA/YOELII/SEQUENCES/py_3_0_1000.fa
+seqlen_rna	1000
+rightlabel_rna	1000
+leftlabel_rna	0

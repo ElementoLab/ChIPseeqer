@@ -1,0 +1,314 @@
+h_41bbPathway	The 4-1BB-dependent immune response
+h_AcetaminophenPathway	Mechanism of Acetaminophen Activity and Toxicity
+h_At1rPathway	Angiotensin II mediated activation of JNK Pathway via Pyk2 dependent signaling
+h_CCR3Pathway	CCR3 signaling in Eosinophils
+h_CSKPathway	Activation of Csk by cAMP-dependent Protein Kinase Inhibits Signaling through the T Cell Receptor
+h_CaCaMPathway	Ca++/ Calmodulin-dependent Protein Kinase Activation
+h_Ccr5Pathway	Pertussis toxin-insensitive CCR5 Signaling in Macrophage
+h_DNAfragmentPathway	Apoptotic DNA fragmentation and tissue homeostasis
+h_EfpPathway	Estrogen-responsive protein Efp controls cell cycle and breast tumors growth
+h_ErbB3Pathway	Neuroregulin receptor degredation protein-1 Controls ErbB3 receptor recycling
+h_GATA3pathway	GATA3 participate in activating the Th2 cytokine genes expression
+h_HBxPathway	Calcium Signaling by HBx of Hepatitis B virus
+h_HivnefPathway	HIV-I Nef: negative effector of Fas and TNF
+h_HuntingtonPathway	Inhibition of Huntington's disease neurodegeneration by histone deacetylase inhibitors
+h_IL12Pathway	IL12 and Stat4 Dependent Signaling Pathway in Th1 Development
+h_LDLpathway	Low-density lipoprotein (LDL) pathway during atherogenesis
+h_LairPathway	Cells and Molecules involved in local acute inflammatory response
+h_Lis1Pathway	Lissencephaly gene (LIS1) in neuronal migration and development
+h_MITRPathway	Signal Dependent Regulation of Myogenesis by Corepressor MITR
+h_PDZsPathway	Synaptic Proteins at the Synaptic Junction
+h_Par1Pathway	Thrombin signaling and protease-activated receptors
+h_ParkinsonsPathway	Alpha-synuclein and Parkin-mediated proteolysis in Parkinson's disease
+h_RELAPathway	Acetylation and Deacetylation of RelA in The Nucleus
+h_RNApol3Pathway	RNA polymerase III transcription
+h_RacCycDPathway	Influence of Ras and Rho proteins on G1 to S Transition
+h_SARSpathway	SARS Coronavirus Protease
+h_TPOPathway	TPO Signaling Pathway
+h_WNVpathway	West Nile Virus
+h_aMANpathway	Steps in the Glycosylation of Mammalian N-linked Oligosaccarides
+h_ace2Pathway	Angiotensin-converting enzyme 2 regulates heart function
+h_achPathway	Role of nicotinic acetylcholine receptors in the regulation of apoptosis
+h_acrPathway	Ahr Signal Transduction Pathway
+h_actinYPathway	Y branching of actin filaments
+h_agpcrPathway	Attenuation of GPCR Signaling
+h_agrPathway	Agrin in Postsynaptic Differentiation
+h_ahspPathway	Hemoglobin's Chaperone
+h_aifPathway	Opposing roles of AIF in Apoptosis and Cell Survival
+h_akap13Pathway	Rho-Selective Guanine Exchange Factor AKAP13 Mediates Stress Fiber Formation
+h_akap95Pathway	AKAP95 role in mitosis and chromosome dynamics
+h_akapCentrosomePathway	Protein Kinase A at the Centrosome
+h_aktPathway	AKT Signaling Pathway
+h_alkPathway	ALK in cardiac myocytes
+h_alternativePathway	Alternative Complement Pathway
+h_amiPathway	Acute Myocardial Infarction
+h_anthraxPathway	Anthrax Toxin Mechanism of Action
+h_antisensePathway	RNA polymerase III transcription
+h_appPathway	Generation of amyloid b-peptide by PS1
+h_arapPathway	ADP-Ribosylation Factor
+h_arenrf2Pathway	Oxidative Stress Induced Gene Expression Via Nrf2
+h_arfPathway	Tumor Suppressor Arf Inhibits Ribosomal Biogenesis
+h_argininecPathway	Catabolic Pathways for Arginine , Histidine, Glutamate, Glutamine, and Proline
+h_asbcellPathway	Antigen Dependent B Cell Activation
+h_atmPathway	ATM Signaling Pathway
+h_atrbrcaPathway	Role of BRCA1,  BRCA2 and ATR in Cancer Susceptibility
+h_bArrestin-srcPathway	Roles of ß-arrestin-dependent Recruitment of Src Kinases in GPCR Signaling
+h_bArrestinPathway	ß-arrestins in GPCR Desensitization
+h_badPathway	Regulation of BAD phosphorylation
+h_bard1Pathway	BRCA1-dependent Ub-ligase activity
+h_barr-mapkPathway	Role of ß-arrestins in the activation and targeting of MAP kinases
+h_bbcellPathway	Bystander B Cell Activation
+h_bcellsurvivalPathway	B Cell Survival Pathway
+h_bcrPathway	BCR Signaling Pathway
+h_bcrmolecule	B Cell Receptor Complex
+h_biopeptidesPathway	Bioactive Peptide Induced Signaling Pathway
+h_blymphocytePathway	B Lymphocyte Cell Surface Molecules
+h_botulinPathway	Blockade of Neurotransmitter Relase by Botulinum Toxin
+h_btg2Pathway	BTG family proteins and cell cycle regulation
+h_calcineurinPathway	Effects of calcineurin in Keratinocyte Differentiation
+h_cardiacegfPathway	Role of EGF Receptor Transactivation by GPCRs in Cardiac Hypertrophy
+h_carm-erPathway	CARM1 and Regulation of the Estrogen Receptor
+h_carm1Pathway	Transcription Regulation by Methyltransferase of CARM1
+h_caspasePathway	Caspase Cascade in Apoptosis
+h_cb1rPathway	Metabolism of Anandamide, an Endogenous Cannabinoid
+h_cblPathway	CBL mediated ligand-induced downregulation of EGF receptors
+h_cd40Pathway	CD40L Signaling Pathway
+h_cdMacPathway	Cadmium induces DNA synthesis and proliferation in macrophages
+h_cdc25Pathway	cdc25 and chk1 Regulatory Pathway in response to DNA damage
+h_cdc42racPathway	Role of PI3K subunit p85 in regulation of Actin Organization and Cell Migration
+h_cdk5Pathway	Phosphorylation of MEK1 by cdk5/p35 down regulates the MAP kinase pathway
+h_cell2cellPathway	Cell to Cell Adhesion Signaling
+h_cellcyclePathway	Cyclins and Cell Cycle Regulation
+h_ceramidePathway	Ceramide Signaling Pathway
+h_cftrPathway	Cystic fibrosis transmembrane conductance regulator (CFTR) and beta 2 adrenergic receptor (b2AR) pathway
+h_chemicalPathway	Apoptotic Signaling in Response to DNA Damage
+h_chrebpPathway	ChREBP regulation by carbohydrates and cAMP
+h_circadianPathway	Circadian Rhythms
+h_ck1Pathway	Regulation of ck1/cdk5 by type 1 glutamate receptors
+h_classicPathway	Classical Complement Pathway
+h_compPathway	Complement Pathway
+h_cpsfPathway	Polyadenylation of mRNA
+h_cptPathway	Mitochondrial Carnitine Palmitoyltransferase (CPT) System
+h_crebPathway	Transcription factor CREB and its extracellular signals
+h_cremPathway	Regulation of Spermatogenesis by CREM
+h_ctbp1Pathway	SUMOylation as a mechanism to modulate CtBP-dependent gene responses
+h_ctcfPathway	CTCF: First Multivalent Nuclear Factor
+h_ctlPathway	CTL mediated immune response against target cells 
+h_ctla4Pathway	The Co-Stimulatory Signal During T-cell Activation
+h_cxcr4Pathway	CXCR4 Signaling Pathway
+h_cytokinePathway	Cytokine Network
+h_d4gdiPathway	D4-GDI Signaling Pathway
+h_dbpbPathway	Transcriptional activation of dbpb from mRNA
+h_dcPathway	Dendritic cells in regulating TH1 and TH2 Development
+h_deathPathway	Induction of apoptosis through DR3 and DR4/5 Death Receptors 
+h_dicerPathway	Dicer Pathway
+h_dreampathway	Repression of Pain Sensation by the Transcriptional Regulator DREAM
+h_dspPathway	Regulation of MAP Kinase Pathways Through Dual Specificity Phosphatases
+h_ecmPathway	Erk and PI-3 Kinase Are Necessary for Collagen Binding in Corneal Epithelia
+h_edg1Pathway	Phospholipids as signalling intermediaries
+h_eea1Pathway	The role of FYVE-finger proteins in vesicle transport
+h_egfPathway	EGF Signaling Pathway
+h_egfr_smrtePathway	Map Kinase Inactivation of SMRT Corepressor
+h_eicosanoidPathway	Eicosanoid Metabolism
+h_eif2Pathway	Regulation of eIF2
+h_eif4Pathway	Regulation of eIF4e and p70 S6 Kinase
+h_eifPathway	Eukaryotic protein translation
+h_eosinophilsPathway	The Role of Eosinophils in the Chemokine Network of Allergy
+h_ephA4Pathway	Eph Kinases and ephrins support platelet aggregation
+h_epoPathway	EPO Signaling Pathway
+h_eponfkbPathway	Erythropoietin mediated neuroprotection through NF-kB
+h_eradPathway	ER–associated degradation (ERAD) Pathway
+h_erbB4pathway	g-Secretase mediated ErbB4 Signaling Pathway 
+h_erk5Pathway	Role of Erk5 in Neuronal Survival
+h_erkPathway	Erk1/Erk2 Mapk Signaling pathway
+h_erythPathway	Erythrocyte Differentiation Pathway
+h_etcPathway	Electron Transport Reaction in Mitochondria
+h_etsPathway	METS affect on Macrophage Differentiation
+h_extrinsicPathway	Extrinsic Prothrombin Activation Pathway
+h_fMLPpathway	fMLP induced chemokine gene expression in HMC-1 cells
+h_fasPathway	FAS signaling pathway ( CD95 )
+h_fbw7Pathway	Cyclin E Destruction Pathway
+h_fcer1Pathway	Fc Epsilon Receptor I Signaling in Mast Cells
+h_fibrinolysisPathway	Fibrinolysis Pathway
+h_flumazenilPathway	Cardiac Protection Against ROS 
+h_fosbPathway	FOSB gene expression and drug abuse
+h_freePathway	Free Radical Induced Apoptosis
+h_fxrPathway	FXR and LXR Regulation of Cholesterol Metabolism
+h_g1Pathway	Cell Cycle: G1/S Check Point 
+h_g1pPathway	Leloir pathway of galactose metabolism
+h_g2Pathway	Cell Cycle: G2/M Checkpoint
+h_gabaPathway	Gamma-aminobutyric Acid Receptor Life Cycle
+h_gcrPathway	Corticosteroids and cardioprotection
+h_ghPathway	Growth Hormone Signaling Pathway
+h_ghrelinPathway	Ghrelin: Regulation of Food Intake and Energy Homeostasis
+h_gleevecpathway	Inhibition of Cellular Proliferation by Gleevec
+h_glycolysisPathway	Glycolysis Pathway
+h_gpcrPathway	Signaling Pathway from G-Protein Families
+h_granulocytesPathway	Adhesion and Diapedesis of Granulocytes
+h_gsPathway	Activation of cAMP-dependent protein kinase, PKA
+h_gsk3Pathway	Inactivation of Gsk3 by AKT causes accumulation of b-catenin in Alveolar Macrophages
+h_hSWI-SNFpathway	Chromatin Remodeling by hSWI/SNF ATP-dependent Complexes
+h_hcmvPathway	Human Cytomegalovirus and Map Kinase Pathways
+h_hdacPathway	Control of skeletal myogenesis by HDAC & calcium/calmodulin-dependent kinase (CaMK)
+h_her2Pathway	Role of ERBB2 in Signal Transduction and Oncology
+h_hesPathway	Segmentation Clock
+h_hifPathway	Hypoxia-Inducible Factor in the Cardiovascular System
+h_hopPathway	Hop Pathway in Cardiac Development
+h_hsp27Pathway	Stress Induction of HSP Regulation
+h_ifnaPathway	IFN alpha signaling pathway
+h_ifngPathway	IFN gamma signaling pathway 
+h_igf1Pathway	IGF-1 Signaling Pathway
+h_igf1mtorpathway	Skeletal muscle hypertrophy is regulated via AKT/mTOR pathway
+h_igf1rPathway	Multiple antiapoptotic pathways from IGF-1R signaling lead to BAD phosphorylation
+h_il10Pathway	IL-10 Anti-inflammatory Signaling Pathway
+h_il17Pathway	IL 17 Signaling Pathway
+h_il18Pathway	IL 18 Signaling Pathway
+h_il1rPathway	Signal transduction through IL1R
+h_il22bppathway	IL22 Soluble Receptor Signaling Pathway 
+h_il2Pathway	IL 2 signaling pathway
+h_il2rbPathway	IL-2 Receptor Beta Chain in T cell Activation
+h_il3Pathway	IL 3 signaling pathway
+h_il4Pathway	IL 4 signaling pathway
+h_il5Pathway	IL 5 Signaling Pathway
+h_il6Pathway	IL 6 signaling pathway
+h_il7Pathway	IL-7 Signal Transduction
+h_inflamPathway	Cytokines and Inflammatory Response
+h_insulinPathway	Insulin Signaling Pathway
+h_integrinPathway	Integrin Signaling Pathway
+h_intrinsicPathway	Intrinsic Prothrombin Activation Pathway
+h_ionPathway	Ion Channel and Phorbal Esters Signaling Pathway
+h_iresPathway	Internal Ribosome entry pathway
+h_keratinocytePathway	Keratinocyte Differentiation
+h_lectinPathway	Lectin Induced Complement Pathway
+h_leptinPathway	Reversal of Insulin Resistance by Leptin
+h_longevityPathway	The IGF-1 Receptor and Longevity
+h_lympathway	Adhesion and Diapedesis of Lymphocytes
+h_lymphocytePathway	Adhesion Molecules on Lymphocyte
+h_mCalpainPathway	mCalpain and friends in Cell motility
+h_mPRPathway	How Progesterone Initiates the Oocyte Maturation
+h_mTORPathway	mTOR Signaling Pathway
+h_malPathway	Role of MAL in Rho-Mediated Activation of SRF
+h_malatePathway	Malate-aspartate shuttle
+h_malatexPathway	Shuttle for transfer of acetyl groups from mitochondria to the cytosol
+h_mapkPathway	MAPKinase Signaling Pathway
+h_mcmPathway	CDK Regulation of DNA Replication
+h_mef2dPathway	Role of MEF2D in T-cell Apoptosis
+h_melanocytepathway	Melanocyte Development and Pigmentation Pathway
+h_metPathway	Signaling of Hepatocyte Growth Factor Receptor
+h_methioninepathway	Catabolic Pathways for Methionine, Isoleucine, Threonine and Valine
+h_mhcPathway	Antigen Processing and Presentation
+h_mitochondriaPathway	Role of Mitochondria in Apoptotic Signaling
+h_monocytePathway	Monocyte and its Surface Molecules
+h_mrpPathway	Multi-Drug Resistance Factors
+h_mspPathway	Msp/Ron Receptor Signaling Pathway
+h_mta3Pathway	Downregulated of MTA-3 in ER-negative Breast Tumors
+h_myosinPathway	PKC-catalyzed phosphorylation of inhibitory phosphoprotein of myosin phosphatase
+h_ndkDynaminPathway	Endocytotic role of NDK, Phosphins and Dynamin
+h_neutrophilPathway	Neutrophil and Its Surface Molecules
+h_nfatPathway	NFAT and Hypertrophy of the heart (Transcription in the broken heart)
+h_nfkbPathway	NF-kB Signaling Pathway
+h_ngfPathway	Nerve growth factor pathway (NGF)
+h_nkcellsPathway	Ras-Independent pathway in NK cell-mediated cytotoxicity
+h_nktPathway	Selective expression of chemokine receptors during T-cell polarization
+h_no1Pathway	Actions of Nitric Oxide in the Heart
+h_no2il12Pathway	NO2-dependent IL 12 Pathway in NK cells
+h_nos1Pathway	Nitric Oxide Signaling Pathway
+h_notchpathway	Proteolysis and Signaling Pathway of Notch 
+h_npcPathway	Mechanism of Protein Import into the Nucleus
+h_npp1Pathway	Regulators of Bone Mineralization
+h_nthiPathway	NFkB activation by Nontypeable Hemophilus influenzae
+h_nuclearRsPathway	Nuclear Receptors in Lipid Metabolism and Toxicity
+h_ox40Pathway	OX40 Signaling Pathway
+h_p27Pathway	Regulation of p27 Phosphorylation during Cell Cycle Progression
+h_p35alzheimersPathway	Deregulation of CDK5 in Alzheimers Disease
+h_p38mapkPathway	p38 MAPK Signaling Pathway 
+h_p53Pathway	p53 Signaling Pathway
+h_p53hypoxiaPathway	Hypoxia and p53 in the Cardiovascular system
+h_parkinPathway	Role of Parkin in the Ubiquitin-Proteasomal Pathway
+h_pcafpathway	The information-processing pathway at the IFN-beta enhancer
+h_pdgfPathway	PDGF Signaling Pathway
+h_pelp1Pathway	Pelp1 Modulation of Estrogen Receptor Activity
+h_pepiPathway	Proepithelin Conversion to Epithelin and Wound Repair Control
+h_pgc1aPathway	Regulation of PGC-1a
+h_pitx2Pathway	Multi-step Regulation of Transcription by Pitx2
+h_pkcPathway	Activation of PKC through G protein coupled receptor
+h_plateletAppPathway	Platelet Amyloid Precursor Protein Pathway
+h_plcPathway	Phospholipase C Signaling Pathway
+h_plcdPathway	Phospholipase C d1 in phospholipid associated cell signaling
+h_plcePathway	Phospholipase C-epsilon pathway
+h_plk3Pathway	Regulation of cell cycle progression by Plk3
+h_pmlPathway	Regulation of transcriptional activity by PML
+h_pparPathway	Basic mechanism of action of PPARa, PPARb(d) and PPARg and effects on gene expression
+h_pparaPathway	Mechanism of Gene Regulation by Peroxisome Proliferators via PPARa(alpha)
+h_ppargPathway	Role of PPAR-gamma Coactivators in Obesity and Thermogenesis
+h_prc2Pathway	The PRC2 Complex Sets Long-term Gene Silencing Through Modification of Histone Tails
+h_prionPathway	Prion Pathway
+h_ps1Pathway	Presenilin action in Notch and Wnt signaling
+h_ptc1Pathway	Sonic Hedgehog (SHH) Receptor Ptc1 Regulates cell cycle
+h_ptdinsPathway	Phosphoinositides and their downstream targets.
+h_ptenPathway	PTEN dependent cell cycle arrest and apoptosis
+h_pyk2Pathway	Links between Pyk2 and Map Kinases
+h_rabPathway	Rab GTPases Mark Targets In The Endocytotic Machinery
+h_rac1Pathway	Rac 1 cell motility signaling pathway
+h_raccPathway	Ion Channels and Their Functional Role in Vascular Endothelium
+h_ranMSpathway	Role of Ran in mitotic spindle regulation
+h_ranPathway	Cycling of Ran in nucleocytoplasmic transport
+h_ranbp2Pathway	Sumoylation by RanBP2 Regulates Transcriptional Repression
+h_ranklPathway	Bone Remodelling
+h_rarPathway	Degradation of the RAR and RXR by the proteasome
+h_rarrxrPathway	Nuclear receptors coordinate the activities of chromatin remodeling complexes and coactivators to facilitate initiation of transcription in carcinoma cells
+h_rasPathway	Ras Signaling Pathway
+h_rbPathway	RB Tumor Suppressor/Checkpoint Signaling in response to DNA damage
+h_reckPathway	Inhibition of Matrix Metalloproteinases
+h_reelinPathway	Reelin Signaling Pathway
+h_rhoPathway	Rho cell motility signaling pathway
+h_rhodopsinPathway	Visual Signal Transduction
+h_rnaPathway	Double Stranded RNA Induced Gene Expression
+h_s1pPathway	SREBP control of lipid synthesis
+h_salmonellaPathway	How does salmonella hijack a cell
+h_sam68Pathway	Regulation of Splicing through Sam68
+h_setPathway	Granzyme A mediated Apoptosis Pathway
+h_shhPathway	Sonic Hedgehog (Shh) Pathway
+h_skp2e2fPathway	E2F1 Destruction Pathway
+h_slrp2Pathway	Function of SLRP in Bone: An Integrated View
+h_slrpPathway	Small Leucine-rich Proteoglycan (SLRP) molecules
+h_smPathway	Spliceosomal Assembly
+h_soddPathway	SODD/TNFR1 Signaling Pathway
+h_sppaPathway	Aspirin Blocks Signaling Pathway Involved in Platelet Activation
+h_spryPathway	Sprouty regulation of tyrosine kinase signals
+h_srcRPTPPathway	Activation of Src by Protein-tyrosine phosphatase alpha
+h_stat3Pathway	Stat3 Signaling Pathway
+h_stathminPathway	Stathmin and breast cancer resistance to antimicrotubule agents
+h_stemPathway	Regulation of hematopoiesis by cytokines
+h_stressPathway	TNF/Stress Related Signaling
+h_sumoPathway	Basic Mechanisms of SUMOylation
+h_tall1Pathway	TACI and BCMA stimulation of B cell immune responses.
+h_tcapoptosisPathway	HIV Induced T Cell Apoptosis
+h_tcrPathway	T Cell Receptor Signaling Pathway
+h_tcraPathway	Lck and Fyn tyrosine kinases in initiation of TCR Activation
+h_tcrmolecule	T Cell Receptor and CD3 Complex
+h_tcytotoxicPathway	T Cytotoxic Cell Surface Molecules
+h_telPathway	Telomeres, Telomerase, Cellular Aging, and  Immortality
+h_tercPathway	Overview of telomerase RNA component gene hTerc Transcriptional Regulation
+h_tertpathway	Overview of telomerase protein component gene hTert Transcriptional Regulation 
+h_tffPathway	Trefoil Factors Initiate  Mucosal Healing
+h_tgfbPathway	TGF beta signaling pathway
+h_th1th2Pathway	Th1/Th2 Differentiation
+h_thelperPathway	T Helper Cell Surface Molecules
+h_tidPathway	Chaperones modulate interferon Signaling Pathway
+h_tnfr1Pathway	TNFR1 Signaling Pathway
+h_tnfr2Pathway	TNFR2 Signaling Pathway
+h_tob1Pathway	Role of Tob in T-cell activation
+h_tollPathway	Toll-Like Receptor Pathway
+h_trkaPathway	Trka Receptor Signaling Pathway
+h_tsp1Pathway	TSP-1 Induced Apoptosis in Microvascular Endothelial Cell 
+h_tubbyPathway	G-Protein Signaling Through Tubby Proteins
+h_ucalpainPathway	uCalpain and friends in Cell spread
+h_vdrPathway	Control of Gene Expression by Vitamin D Receptor
+h_vegfPathway	VEGF, Hypoxia, and Angiogenesis
+h_vifPathway	HIV-1 defeats host-mediated resistance by CEM15
+h_vipPathway	Neuropeptides VIP and PACAP inhibit the apoptosis of activated T cells
+h_vitCBPathway	Vitamin C in the Brain
+h_vobesityPathway	Visceral Fat Deposits and the Metabolic Syndrome
+h_wnt-lrp6Pathway	Wnt/LRP6 Signalling
+h_wntPathway	WNT Signaling Pathway

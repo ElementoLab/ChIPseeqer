@@ -1,0 +1,266 @@
+/* CSS Style Document */
+
+body {
+color: #333333;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 80%;
+margin: 0;
+padding: 0; 
+}
+
+div#page {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 1em;
+width: 90%;
+}
+
+div#main {
+background-color: #FFFFFF;
+clear: both;
+display: block;
+margin-top: 1em;
+margin-left: 1%;
+margin-right: auto;
+margin-bottom: 1em;
+padding-top: 1em;
+padding-bottom: 1em;
+width: 100%;
+}
+
+div.error {
+border: 1px #FF9999 solid;
+}
+
+div.error div#notice {
+text-align: center;
+background-color: #FFFFCC;
+}
+
+div.error div#msg {
+background-color: #FF9999;
+clear: both;
+display: block;
+}
+
+div.normal {
+border: 1px #FFCC66 solid;
+}
+
+div.success {
+border: 1px #99FF99 solid;
+}
+
+div.success div#notice {
+text-align: center;
+background-color: #FFFFCC;
+}
+
+div.success div#msg {
+background-color: #99FF99;
+clear: both;
+display: block;
+}
+
+div#notice {
+text-align: center;
+background-color: #FFFFCC;
+}
+
+div#msg {
+background-color: #FFCC66;
+clear: both;
+display: block;
+}
+
+div#msg p {
+font-size: 1.8em;
+padding: 0.25em;
+text-align: center;
+}
+
+div#longnotice {
+clear: both;
+display: block;
+width: 90%;
+padding-bottom: 1em;
+}
+
+div#longnotice p {
+font-size: 1em;
+text-align: left;
+}
+
+p {
+font-size: 1em;
+text-align: left;
+padding-left: 2em;
+padding-right: 2em;
+}
+
+td.small { 
+font-size: 0.8em;
+text-align: left;
+padding-left: 0em;
+padding-right: 0em;
+}
+
+abbr:hover, acronym:hover, label[title] {
+cursor: help;
+}
+
+abbr[title], acronym[title], span[title] {
+border-bottom: 1px dashed;
+cursor: help;
+}
+
+a {
+font-size: 1em;
+text-decoration: underline;
+color: #000000; }
+
+a:visited {
+font-size: 1em;
+text-decoration: underline;
+color: #000000; }
+
+a:hover, a:visited:hover {
+font-size: 1em;
+text-decoration: none;
+color: #000033;  }
+
+h1 {
+font-size: 2em;
+font-weight: normal;
+text-align: left;
+padding-left: .5em;
+clear: both; }
+
+h2 {
+font-size: 1.5em;
+font-weight: normal;
+text-align: left;
+padding-left: .7em;
+clear: both; }
+
+h3 {
+font-size: 1.25em;
+font-weight: normal;
+text-align: left;
+padding-left: .9em;
+clear: both; }
+
+h4 {
+font-size: 1.15em;
+font-weight: normal;
+text-align: left;
+padding-left: 1.2em;
+clear: both; }
+
+dt {
+font-size: 1.25em;
+font-weight: normal;
+text-align: left;
+padding-left: 2em;
+padding-bottom: .5em; }
+
+dd {
+font-size: 1em;
+font-weight: normal;
+text-align: left;
+padding-left: 2.5em;
+padding-right: 1em;
+padding-bottom: .75em; }
+
+code { 
+font-style: courier;  
+font-size: 1.25em;
+text-align: left;
+padding-left: 0em;
+padding-right: 0em;
+}
+
+dd dl dt {
+font-size: 1.25em;
+font-weight: normal;
+text-align: left;
+padding-left: 0em;
+padding-bottom: .5em; }
+
+dd dl dd {
+font-size: 1em;
+font-weight: normal;
+text-align: left;
+padding-left: 0em;
+padding-right: 1em;
+padding-bottom: .75em; }
+
+img.left {
+float: left;
+margin: 0.5em; }
+
+img.right {
+float: right;
+margin: 0.5em; }
+
+img.center {
+display: block;
+margin: auto;
+padding: 0.5em; }
+
+.print {
+display: none; }
+
+span.bold {
+font-weight: bold; }
+
+div#form {
+margin-bottom: 1em;
+}
+
+div#form p {
+font-size: 1em;
+padding-left: 1em;
+padding-right: 2em;
+text-align: left;
+}
+
+div#form input, select, textarea {
+margin-left: 2em;
+margin-right: 2em;
+margin-top: 0.5em;
+}
+
+div#form input.normal, select.normal{
+margin-left: 0em;
+margin-right: 0em;
+margin-top: 0em;	
+}
+
+div#form fieldset {
+margin-left: 1.5em;
+margin-right: 1.5em;
+margin-top: 1em;
+}
+
+div#form legend {
+}
+
+div#footer {
+clear: both;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+text-align: center;
+width: 100%;
+}
+
+#footer p {
+font-size: 1em;
+margin: 0; 
+text-align: center;
+}
+
+.italic {
+font-style: italic;
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+file=`curl  --user oelemento:batman http://idisk.mac.com/oelemento/dropbox/file.txt`
+curl -O --user oelemento:batman http://idisk.mac.com/oelemento/dropbox/$file

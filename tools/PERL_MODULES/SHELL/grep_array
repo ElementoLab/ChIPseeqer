@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+open IN, $ARGV[1];
+my $i = 0;
+while (my $l = <IN>) {
+	chomp $l;
+
+	my @a = split /\t/, $l, -1;
+
+	for ($j=0; $j<scalar(@a); $j++) {
+		if ($a[$j] =~ /$ARGV[0]/) {
+		print "$i - $j\n";
+		}
+	}
+}

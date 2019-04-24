@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+my $todo = "grep --color \"$ARGV[0]\" $ENV{CHIPSEEQERDIR}/DATA/hg18/refGene.txt.07Jun2010";
+system($todo);

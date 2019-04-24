@@ -1,0 +1,20 @@
+# standard boilerplate 
+mCC	= cc
+mCFLAGS	= -Wall
+
+# binaries for the OS/arch detection
+mOS	= os
+mARCH	= arch
+
+.PHONY: all clean
+
+all: $(mOS) $(mARCH)
+
+$(mOS):
+	$(mCC) $(mCFLAGS) -o $(mOS) $(mOS).c
+
+$(mARCH):
+	$(mCC) $(mCFLAGS) -o $(mARCH) $(mARCH).c
+
+clean:
+	rm -rf $(mOS) $(mARCH)

@@ -1,0 +1,13 @@
+To compile
+
+cc -o kohonen kohonen.c -lm
+
+To run
+
+./kohonen -exp data/gasch_stress_microarray_data.txt -outclusters myout.txt -xdim 5 -ydim 5 -outepsmap outmap.eps  -iter 20
+
+To get more information about the options
+
+./kohonen
+
+That's it :-)

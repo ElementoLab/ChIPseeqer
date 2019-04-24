@@ -1,0 +1,4 @@
+#!/bin/bash
+a=`wc -l $1 | awk '{ print $1 }'`
+perl -e "print int(0.5+sqrt($a-1))"
+perl -e 'print "\n"'

@@ -1,0 +1,10 @@
+fastafile_dna	FIRE_DATA/POMBE/SEQUENCES/pombe_u_600_0.seq
+seqlen_dna	600
+rightlabel_dna	0
+leftlabel_dna	-600
+fastafile_rna	FIRE_DATA/POMBE/SEQUENCES/pombe_3_0_300.seq
+seqlen_rna	300
+rightlabel_rna	300
+leftlabel_rna	0
+goindex	FIRE_DATA/POMBE/ANNOTATIONS/pombe_go_index.txt
+gonames	FIRE_DATA/POMBE/ANNOTATIONS/pombe_go_names.txt

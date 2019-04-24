@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+
+use lib "$ENV{HOME}/PERL_MODULES";
+
+use PBS;
+use Getopt::Long;
+
+my $cmd = $ARGV[0];
+
+my $name   = undef;
+my $email  = "yes";
+my $memory = undef;
+my $numcpus = undef;
+
+GetOptions("name=s"   => \$name,
+	   "email=s"  => \$email,
+	   "numcpus=s" => \$numcpus,
+           "memory=s" => \$memory);
+
+my $pwd  = `pwd`; $pwd =~ s/\n//;
+my $pbs = PBS->new;
+$pbs->setPlatform("panda");
+$pbs->setWallTime("24:00:00");
+if (defined($memory)) {
+  $pbs->setMemory($memory); 
+}
+if (defined($numcpus)) {
+  $pbs->setNumCPUs($numcpus);
+}
+
+if ($email eq "yes") {
+  $pbs->setEmail("ole2001\@med.cornell.edu");
+}
+
+$pbs->addCmd("cd $pwd");
+
+if (defined($name)) {
+  $name =~ s/\//\./g; 
+  $pbs->setScriptName("script.pbs.$name");
+  $pbs->setName($name);
+}
+
+$pbs->addCmd($cmd);
+$pbs->submit();
+
+

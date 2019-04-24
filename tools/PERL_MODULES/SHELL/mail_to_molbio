@@ -1,0 +1,3 @@
+#!/bin/bash
+uuencode $1 $1 | mail -s $1 elemento@molbio.princeton.edu
+

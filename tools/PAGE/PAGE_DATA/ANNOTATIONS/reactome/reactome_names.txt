@@ -1,0 +1,1086 @@
+REACT_0	NS1 Mediated Effects on Host Pathways
+REACT_1	2-LTR circle formation
+REACT_2	3' -UTR-mediated translational regulation
+REACT_3	5-Phosphoribose 1-diphosphate biosynthesis
+REACT_4	A third proteolytic cleavage releases NICD
+REACT_5	ABC-family proteins mediated transport
+REACT_6	ABH2 mediated Reversal of Alkylation Damage
+REACT_7	ABH3 mediated Reversal of Alkylation Damage
+REACT_8	ADP signalling through P2Y purinoceptor 1
+REACT_9	ADP signalling through P2Y purinoceptor 12
+REACT_10	AKT phosphorylates targets in the cytosol
+REACT_11	AKT phosphorylates targets in the nucleus
+REACT_12	AKT-mediated inactivation of FOXO1A
+REACT_13	AMPK inhibits chREBP transcriptional activation activity
+REACT_14	APC-Cdc20 mediated degradation of Nek2A
+REACT_15	APC/C-mediated degradation of cell cycle proteins
+REACT_16	APC/C:Cdc20 mediated degradation of Cyclin B
+REACT_17	APC/C:Cdc20 mediated degradation of Securin
+REACT_18	APC/C:Cdc20 mediated degradation of mitotic proteins
+REACT_19	APC/C:Cdh1 mediated degradation of Cdc20 and other APC/C:Cdh1 targeted proteins in late mitosis/early G1
+REACT_20	APOBEC3G mediated resistance to HIV-1 infection
+REACT_21	ARMS-mediated activation
+REACT_22	ATM mediated phosphorylation of repair proteins
+REACT_23	ATM mediated response to DNA double-strand break
+REACT_24	Abortive elongation of HIV-1 transcript in the absence of Tat
+REACT_25	Acetylation
+REACT_26	Acetylcholine Binding And Downstream Events
+REACT_27	Acetylcholine Neurotransmitter Release Cycle
+REACT_28	Activated AMPK stimulates fatty-acid oxidation in muscle
+REACT_29	Activated TLR4 signalling
+REACT_30	Activation and oligomerization of BAK protein
+REACT_31	Activation of AMPA receptors
+REACT_32	Activation of APC/C and APC/C:Cdc20 mediated degradation of mitotic proteins
+REACT_33	Activation of ATR in response to replication stress
+REACT_34	Activation of BAD and translocation to mitochondria
+REACT_35	Activation of BH3-only proteins
+REACT_36	Activation of BIM and translocation to mitochondria
+REACT_37	Activation of BMF and translocation to mitochondria
+REACT_38	Activation of C3 and C5
+REACT_39	Activation of Ca-permeable Kainate Receptor
+REACT_40	Activation of CaMK IV
+REACT_41	Activation of Chaperones by ATF6-alpha
+REACT_42	Activation of Chaperones by IRE1alpha
+REACT_43	Activation of DNA fragmentation factor
+REACT_44	Activation of GABAB receptors
+REACT_45	Activation of IRF3/IRF7 mediated by TBK1/IKK epsilon
+REACT_46	Activation of Kainate Receptors upon glutamate binding
+REACT_47	Activation of NMDA receptor upon glutamate binding and postsynaptic events
+REACT_48	Activation of NOXA and translocation to mitochondria
+REACT_49	Activation of Na-permeable Kainate Receptors
+REACT_50	Activation of Nicotinic Acetylcholine Receptors
+REACT_51	Activation of PKB
+REACT_52	Activation of PUMA and translocation to mitochondria
+REACT_53	Activation of Pro-Caspase 8
+REACT_54	Activation of Rac
+REACT_55	Activation of TRKA receptors
+REACT_56	Activation of caspases through apoptosome-mediated cleavage
+REACT_57	Activation of the AP-1 family of transcription factors
+REACT_58	Activation of the mRNA upon binding of the cap-binding complex and eIFs, and subsequent binding to 43S
+REACT_59	Activation of the pre-replicative complex
+REACT_60	Activation, myristolyation of BID and translocation to mitochondria
+REACT_61	Activation, translocation and oligomerization of BAX
+REACT_62	Adenosine P1 receptors
+REACT_63	Adenylate cyclase activating pathway
+REACT_64	Adenylate cyclase inhibitory pathway
+REACT_65	Adherens junctions interactions
+REACT_66	Adrenaline signalling through Alpha-2 adrenergic receptor
+REACT_67	Adrenoceptors
+REACT_68	Advanced glycosylation endproduct receptor signaling
+REACT_69	Agmatine biosynthesis
+REACT_70	Alpha-oxidation of phytanate
+REACT_71	Alternative complement activation
+REACT_72	Amine Oxidase reactions
+REACT_73	Amine compound SLC transporters
+REACT_74	Amine ligand-binding receptors
+REACT_75	Amine-derived hormones
+REACT_76	Amino Acid conjugation
+REACT_77	Amino acid and oligopeptide SLC transporters
+REACT_78	Amino acid synthesis and interconversion (transamination)
+REACT_79	Amino acid transport across the plasma membrane
+REACT_80	Amplification  of signal from unattached  kinetochores via a MAD2  inhibitory signal
+REACT_81	Amplification of signal from the kinetochores
+REACT_82	Androgen biosynthesis
+REACT_83	Apoptosis
+REACT_84	Apoptosis induced DNA fragmentation
+REACT_85	Apoptotic cleavage of cell adhesion  proteins
+REACT_86	Apoptotic cleavage of cellular proteins
+REACT_87	Apoptotic execution  phase
+REACT_88	Apoptotic factor-mediated response
+REACT_89	Aquaporin-mediated transport
+REACT_90	Arachidonate production from DAG
+REACT_91	Aromatic amines can be N-hydroxylated or N-dealkylated by CYP1A2
+REACT_92	Asparagine N-linked glycosylation
+REACT_93	Assembly of Viral Components at the Budding Site
+REACT_94	Assembly of the ORC complex at the origin of replication
+REACT_95	Assembly of the RAD50-MRE11-NBS1 complex at DNA double-strand breaks
+REACT_96	Assembly of the RAD51-ssDNA nucleoprotein complex
+REACT_97	Assembly of the pre-replicative complex
+REACT_98	Association of TriC/CCT with target proteins during biosynthesis
+REACT_99	Association of licensing factors with the pre-replicative complex
+REACT_100	Astrocytic Glutamate-Glutamine Uptake And Metabolism
+REACT_101	Attachment of GPI anchor to uPAR
+REACT_102	Autodegradation of Cdh1 by Cdh1:APC/C
+REACT_103	Autodegradation of the E3 ubiquitin ligase COP1
+REACT_104	Autointegration results in viral DNA circles
+REACT_105	Axon guidance
+REACT_106	Axonal growth inhibition (RHOA activation)
+REACT_107	Axonal growth stimulation
+REACT_108	BH3-only proteins associate with and inactivate anti-apoptotic BCL-2 members
+REACT_109	Base Excision Repair
+REACT_110	Base-Excision Repair, AP Site Formation
+REACT_111	Base-free sugar-phosphate removal via the single-nucleotide replacement pathway
+REACT_112	Basigin interactions
+REACT_113	Beta oxidation of butanoyl-CoA to acetyl-CoA
+REACT_114	Beta oxidation of decanoyl-CoA to octanoyl-CoA-CoA
+REACT_115	Beta oxidation of hexanoyl-CoA to butanoyl-CoA
+REACT_116	Beta oxidation of lauroyl-CoA to decanoyl-CoA-CoA
+REACT_117	Beta oxidation of myristoyl-CoA to lauroyl-CoA
+REACT_118	Beta oxidation of octanoyl-CoA to hexanoyl-CoA
+REACT_119	Beta oxidation of palmitoyl-CoA to myristoyl-CoA
+REACT_120	Beta-catenin phosphorylation cascade
+REACT_121	Beta-oxidation of pristanoyl-CoA
+REACT_122	Beta-oxidation of very long chain fatty acids
+REACT_123	Bicarbonate transporters
+REACT_124	Bile acid and bile salt metabolism
+REACT_125	Bile salt and organic anion SLC transporters
+REACT_126	Binding and entry of HIV virion
+REACT_127	Binding of RNA by Insulin-like Growth Factor-2 mRNA Binding Proteins (IGF2BPs/IMPs/VICKZs)
+REACT_128	Biological oxidations
+REACT_129	Biosynthesis of the N-glycan precursor (dolichol lipid-linked oligosaccharide, LLO) and transfer to a nascent protein
+REACT_130	Biotin metabolism
+REACT_131	BoNT Light Chain Types A, C1, E cleave SNAP-25
+REACT_132	BoNT Light Chain Types B, D, and F cleave VAMP/Synaptobrevin
+REACT_133	Botulinum neurotoxicity
+REACT_134	Branched-chain amino acid catabolism
+REACT_135	Breakdown of the nuclear lamina
+REACT_136	Budding
+REACT_137	C6 deamination of adenosine
+REACT_138	CD28 co-stimulation
+REACT_139	CD28 dependent PI3K/Akt signaling
+REACT_140	CD28 dependent Vav1 pathway
+REACT_141	CDC6 association with the ORC:origin complex
+REACT_142	CDK-mediated phosphorylation and removal of Cdc6
+REACT_143	CDO in myogenesis
+REACT_144	CDT1 association with the CDC6:ORC:origin complex
+REACT_145	CHL1 interactions
+REACT_146	COPI Mediated Transport
+REACT_147	COPII (Coat Protein 2) Mediated Vesicle Transport
+REACT_148	COX reactions
+REACT_149	CREB phosphorylation
+REACT_150	CREB phosphorylation through the activation of Adenylate Cyclase
+REACT_151	CREB phosphorylation through the activation of CaMKII
+REACT_152	CREB phosphorylation through the activation of CaMKK
+REACT_153	CREB phosphorylation through the activation of Ras
+REACT_154	CRMPs in Sema3A signaling
+REACT_155	CTLA4 inhibitory signaling
+REACT_156	CYP2E1 reactions
+REACT_157	Ca-dependent events
+REACT_158	CaM pathway
+REACT_159	CaMK IV-mediated phosphorylation of CREB
+REACT_160	Calcitonin-like ligand receptors
+REACT_161	Calmodulin induced events
+REACT_162	Calnexin/calreticulin cycle
+REACT_163	Cam-PDE 1 activation
+REACT_164	Cap-dependent Translation Initiation
+REACT_165	Carnitine synthesis
+REACT_166	Caspase-8 is formed from procaspase-8
+REACT_167	Caspase-mediated cleavage of cytoskeletal proteins
+REACT_168	Catecholamine biosynthesis
+REACT_169	Cation-coupled Chloride cotransporters
+REACT_170	Cdc20:Phospho-APC/C mediated degradation of Cyclin A
+REACT_171	Cell Cycle Checkpoints
+REACT_172	Cell Cycle, Mitotic
+REACT_173	Cell death signalling via NRAGE, NRIF and NADE
+REACT_174	Cell junction organization
+REACT_175	Cell surface interactions at the vascular wall
+REACT_176	Cell-cell junction organization
+REACT_177	Cell-extracellular matrix interactions
+REACT_178	Centrosome maturation
+REACT_179	Ceramide signalling
+REACT_180	ChREBP activates metabolic gene expression
+REACT_181	Chaperonin-mediated protein folding
+REACT_182	Chemokine receptors bind chemokines
+REACT_183	Chk1/Chk2(Cds1) mediated inactivation of Cyclin B:Cdk1 complex
+REACT_184	Cholesterol biosynthesis
+REACT_185	Chromosome Maintenance
+REACT_186	Chylomicron-mediated lipid transport
+REACT_187	Circadian Clock
+REACT_188	Citric acid cycle (TCA cycle)
+REACT_189	Class A/1 (Rhodopsin-like receptors)
+REACT_190	Class B/2 (Secretin family receptors)
+REACT_191	Class C/3 (Metabotropic glutamate/pheromone receptors)
+REACT_192	Class II GLUTs
+REACT_193	Classical antibody-mediated complement activation
+REACT_194	Clathrin derived vesicle budding
+REACT_195	Cleavage of Growing Transcript in the Termination Region
+REACT_196	Cleavage of the damaged purine
+REACT_197	Cleavage of the damaged pyrimidine
+REACT_198	Coenzyme A biosynthesis
+REACT_199	Collagen adhesion via GPVI
+REACT_200	Collagen adhesion via Gp IV
+REACT_201	Collagen adhesion via alpha 2 beta 1 glycoprotein
+REACT_202	Common Pathway
+REACT_203	Complement cascade
+REACT_204	Conjugation of benzoate with glycine
+REACT_205	Conjugation of carboxylic acids
+REACT_206	Conjugation of phenylacetate with glutamine
+REACT_207	Conjugation of salicylate with glycine
+REACT_208	Conversion from APC/C:Cdc20 to APC/C:Cdh1 in late anaphase
+REACT_209	Cooperation of Prefoldin and TriC/CCT  in actin and tubulin folding
+REACT_210	Costimulation by the CD28 family
+REACT_211	Creatine metabolism
+REACT_212	Creation of C4 and C2 activators
+REACT_213	Cyclin A/B1 associated events during G2/M transition
+REACT_214	Cyclin A:Cdk2-associated events at S phase entry
+REACT_215	Cyclin B2 mediated events
+REACT_216	Cyclin D associated events in G1
+REACT_217	Cyclin E associated events during G1/S transition
+REACT_218	Cytochrome P450 - arranged by substrate type
+REACT_219	Cytochrome c-mediated apoptotic response
+REACT_220	Cytosolic sulfonation of small molecules
+REACT_221	Cytosolic tRNA aminoacylation
+REACT_222	DARPP-32 events
+REACT_223	DCC mediated attractive signaling
+REACT_224	DNA Damage Bypass
+REACT_225	DNA Damage Recognition in GG-NER
+REACT_226	DNA Damage Reversal
+REACT_227	DNA Repair
+REACT_228	DNA Replication
+REACT_229	DNA Replication Pre-Initiation
+REACT_230	DNA replication initiation
+REACT_231	DNA strand elongation
+REACT_232	DSCAM interactions
+REACT_233	Deadenylation of mRNA
+REACT_234	Deadenylation-dependent mRNA decay
+REACT_235	Death Receptor  Signalling
+REACT_236	Degradation of GABA
+REACT_237	Degradation of beta-catenin by the destruction complex
+REACT_238	Depolarization of the Presynaptic Terminal Triggers the Opening of Calcium Channels
+REACT_239	Deposition of New CENPA-containing Nucleosomes at the Centromere
+REACT_240	Depurination
+REACT_241	Depyrimidination
+REACT_242	Destabilization of mRNA by AUF1 (hnRNP D0)
+REACT_243	Destabilization of mRNA by Butyrate Response Factor 1 (BRF1)
+REACT_244	Destabilization of mRNA by KSRP
+REACT_245	Destabilization of mRNA by Tristetraprolin (TTP)
+REACT_246	Diabetes pathways
+REACT_247	Digestion of dietary carbohydrate
+REACT_248	Digestion of dietary lipid
+REACT_249	Disinhibition of SNARE formation
+REACT_250	Displacement of DNA glycosylase by  APE1
+REACT_251	Dissolution of Fibrin Clot
+REACT_252	Dopamine Neurotransmitter Release Cycle
+REACT_253	Dopamine clearance from the synaptic cleft
+REACT_254	Dopamine receptors
+REACT_255	Double-Strand Break Repair
+REACT_256	Down-stream signal transduction
+REACT_257	Downstream TCR signaling
+REACT_258	Downstream signaling of activated FGFR
+REACT_259	Dual incision reaction in GG-NER
+REACT_260	Dual incision reaction in TC-NER
+REACT_261	E2F mediated regulation of DNA replication
+REACT_262	E2F-enabled inhibition of pre-replication complex formation
+REACT_263	EGFR downregulation
+REACT_264	EGFR interacts with phospholipase C-gamma
+REACT_265	ER Quality Control Compartment (ERQC)
+REACT_266	ER to Golgi Transport
+REACT_267	ERK activation
+REACT_268	ERK/MAPK targets
+REACT_269	ERK1 activation
+REACT_270	ERK2 activation
+REACT_271	ERKs are inactivated
+REACT_272	Early Phase of HIV Life Cycle
+REACT_273	Effects of PIP2 hydrolysis
+REACT_274	Eicosanoid ligand-binding receptors
+REACT_275	Eicosanoids
+REACT_276	Electric Transmission Across Gap Junctions
+REACT_277	Elevation of cytosolic Ca2+ levels
+REACT_278	Elongation arrest and recovery
+REACT_279	Endogenous sterols
+REACT_280	Endosomal Sorting Complex Required For Transport (ESCRT)
+REACT_281	Energy dependent regulation of mTOR by LKB1-AMPK
+REACT_282	Entry of Influenza Virion into Host Cell via Endocytosis
+REACT_283	Enzymatic degradation of Dopamine by monoamine oxidase
+REACT_284	Enzymatic degradation of dopamine by COMT
+REACT_285	Estrogen biosynthesis
+REACT_286	Ethanol oxidation
+REACT_287	Eukaryotic Translation Elongation
+REACT_288	Eukaryotic Translation Initiation
+REACT_289	Eukaryotic Translation Termination
+REACT_290	Export of Viral Ribonucleoproteins from Nucleus
+REACT_291	Extension of Telomeres
+REACT_292	Extrinsic Pathway
+REACT_293	Extrinsic Pathway for Apoptosis
+REACT_294	FGFR ligand binding and activation
+REACT_295	FGFR1 ligand binding and activation
+REACT_296	FGFR1b ligand binding and activation
+REACT_297	FGFR1c and Klotho ligand binding and activation
+REACT_298	FGFR1c ligand binding and activation
+REACT_299	FGFR2 ligand binding and activation
+REACT_300	FGFR2b ligand binding and activation
+REACT_301	FGFR2c ligand binding and activation
+REACT_302	FGFR3 ligand binding and activation
+REACT_303	FGFR3b ligand binding and activation
+REACT_304	FGFR3c ligand binding and activation
+REACT_305	FGFR4 ligand binding and activation
+REACT_306	FMO oxidizes nucleophiles
+REACT_307	FRS2-mediated cascade
+REACT_308	Facilitative Na+-independent glucose transporters
+REACT_309	Factors involved in megakaryocyte development and platelet production
+REACT_310	Fanconi Anemia pathway
+REACT_311	FasL/ CD95L signaling
+REACT_312	Fatty Acyl-CoA Biosynthesis
+REACT_313	Fatty acid, triacylglycerol, and ketone body metabolism
+REACT_314	Fatty acids
+REACT_315	Folding of actin by CCT/TriC
+REACT_316	Formation and Maturation of mRNA Transcript
+REACT_317	Formation of ATP by chemiosmotic coupling
+REACT_318	Formation of Acetoacetic Acid
+REACT_319	Formation of Fibrin Clot (Clotting Cascade)
+REACT_320	Formation of HIV-1 elongation complex containing HIV-1 Tat
+REACT_321	Formation of HIV-1 elongation complex in the absence of HIV-1 Tat
+REACT_322	Formation of PAPS
+REACT_323	Formation of Platelet plug
+REACT_324	Formation of RNA Pol II elongation complex
+REACT_325	Formation of a pool of free 40S subunits
+REACT_326	Formation of annular gap junctions
+REACT_327	Formation of apoptosome
+REACT_328	Formation of editosomes by ADAR proteins
+REACT_329	Formation of incision complex in GG-NER
+REACT_330	Formation of the Early Elongation Complex
+REACT_331	Formation of the Editosome
+REACT_332	Formation of the HIV-1 Early Elongation Complex
+REACT_333	Formation of the active cofactor, UDP-glucuronate
+REACT_334	Formation of the ternary complex, and subsequently, the 43S complex
+REACT_335	Formation of transcription-coupled NER (TC-NER) repair complex
+REACT_336	Formation of tubulin folding intermediates by CCT/TriC
+REACT_337	Formyl peptide receptors bind formyl peptides and many other ligands
+REACT_338	Free fatty acid receptors
+REACT_339	Frs2-mediated activation
+REACT_340	Fructose catabolism
+REACT_341	Fusion and Uncoating of the Influenza Virion
+REACT_342	Fusion of the Influenza Virion to the Host Cell Endosome
+REACT_343	G alpha (12/13) signalling events
+REACT_344	G alpha (i) signalling events
+REACT_345	G alpha (q) signalling events
+REACT_346	G alpha (s) signalling events
+REACT_347	G alpha (z) signalling events
+REACT_348	G beta:gamma signalling through PI3Kgamma
+REACT_349	G beta:gamma signalling through PLC beta
+REACT_350	G-protein activation
+REACT_351	G-protein beta:gamma signalling
+REACT_352	G-protein mediated events
+REACT_353	G1 Phase
+REACT_354	G1/S DNA Damage Checkpoints
+REACT_355	G1/S Transition
+REACT_356	G1/S-Specific Transcription
+REACT_357	G2 Phase
+REACT_358	G2/M Checkpoints
+REACT_359	G2/M DNA damage checkpoint
+REACT_360	G2/M DNA replication checkpoint
+REACT_361	G2/M Transition
+REACT_362	GABA A (rho) receptor activation
+REACT_363	GABA A receptor activation
+REACT_364	GABA B receptor activation
+REACT_365	GABA receptor activation
+REACT_366	GABA synthesis
+REACT_367	GABA synthesis, release, reuptake and degradation
+REACT_368	GP1b-IX-V activation signalling
+REACT_369	GPCR downstream signaling
+REACT_370	GPCR ligand binding
+REACT_371	GPVI-mediated activation cascade
+REACT_372	GRB2:SOS provides linkage to MAPK signaling for Intergrins
+REACT_373	GTP hydrolysis and joining of the 60S ribosomal subunit
+REACT_374	Gab1 signalosome
+REACT_375	Galactose catabolism
+REACT_376	Gamma-carboxylation of protein precursors
+REACT_377	Gamma-carboxylation, transport, and amino-terminal cleavage of proteins
+REACT_378	Gap junction assembly
+REACT_379	Gap junction degradation
+REACT_380	Gap junction trafficking
+REACT_381	Gap junction trafficking and regulation
+REACT_382	Gap-filling DNA repair synthesis and ligation in GG-NER
+REACT_383	Gap-filling DNA repair synthesis and ligation in TC-NER
+REACT_384	Gene Expression
+REACT_385	Generation of second messenger molecules
+REACT_386	Generic Transcription Pathway
+REACT_387	Global Genomic NER (GG-NER)
+REACT_388	Glucagon signaling in metabolic regulation
+REACT_389	Glucagon-type ligand receptors
+REACT_390	Glucocorticoid biosynthesis
+REACT_391	Gluconeogenesis
+REACT_392	Glucose metabolism
+REACT_393	Glucose transport
+REACT_394	Glucuronidation
+REACT_395	Glutamate Binding, Activation of AMPA Receptors and Synaptic Plasticity
+REACT_396	Glutamate Neurotransmitter Release Cycle
+REACT_397	Glutathione conjugation
+REACT_398	Glutathione synthesis
+REACT_399	Glycogen breakdown (glycogenolysis)
+REACT_400	Glycogen synthesis
+REACT_401	Glycolysis
+REACT_402	Glycoprotein hormones
+REACT_403	Glyoxylate metabolism
+REACT_404	Golgi Associated Vesicle Biogenesis
+REACT_405	Golgi Cisternae Pericentriolar Stack Reorganization
+REACT_406	Golgi to ER Retrograde Transport
+REACT_407	Grb2 events in EGFR signaling
+REACT_408	HDL-mediated lipid transport
+REACT_409	HIV Infection
+REACT_410	HIV Life Cycle
+REACT_411	HIV-1 Transcription Elongation
+REACT_412	HIV-1 Transcription Initiation
+REACT_413	HIV-1 elongation arrest and recovery
+REACT_414	Heme biosynthesis
+REACT_415	Heme degradation
+REACT_416	Hemostasis
+REACT_417	Hexose transport
+REACT_418	Highly calcium permeable nicotinic acetylcholine receptors
+REACT_419	Highly calcium permeable postsynaptic nicotinic acetylcholine receptors
+REACT_420	Highly sodium permeable acetylcholine nicotinic receptors
+REACT_421	Histamine receptors
+REACT_422	Histidine catabolism
+REACT_423	Homologous DNA pairing and strand exchange
+REACT_424	Homologous Recombination Repair
+REACT_425	Homologous recombination repair of replication-independent double-strand breaks
+REACT_426	Hormone biosynthesis
+REACT_427	Hormone ligand-binding receptors
+REACT_428	Hormone-sensitive lipase (HSL)-mediated triacylglycerol hydrolysis
+REACT_429	Host Interactions of HIV factors
+REACT_430	Host Interactions with Influenza Factors
+REACT_431	Hypusine synthesis from eIF5A-lysine
+REACT_432	IKK complex recruitment mediated by RIP1
+REACT_433	IRAK1 recruits IKK comlex
+REACT_434	IRAK1 recruits IKK comlex upon TLR7/8 or 9 stimulation
+REACT_435	IRAK2 mediated activation of TAK1 complex
+REACT_436	IRAK2 mediated activation of TAK1 complex upon TLR7/8 or 9 stimulation
+REACT_437	IRS activation
+REACT_438	IRS-mediated signalling
+REACT_439	IRS-related events
+REACT_440	Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell
+REACT_441	Import of palmitoyl-CoA into the mitochondrial matrix
+REACT_442	Inactivation of APC/C via direct inhibition of the APC/C complex
+REACT_443	Inactivation of Cdc42 and Rac
+REACT_444	Incretin Synthesis, Secretion, and Inactivation
+REACT_445	Influenza Infection
+REACT_446	Influenza Life Cycle
+REACT_447	Influenza Viral RNA Transcription and Replication
+REACT_448	Influenza Virus Induced Apoptosis
+REACT_449	Inhibition  of voltage gated Ca2+ channels via Gbeta/gamma subunits
+REACT_450	Inhibition of HSL
+REACT_451	Inhibition of Host mRNA Processing and RNA Silencing
+REACT_452	Inhibition of IFN-beta
+REACT_453	Inhibition of Insulin Secretion by Adrenaline/Noradrenaline
+REACT_454	Inhibition of Interferon Synthesis
+REACT_455	Inhibition of PKR
+REACT_456	Inhibition of TSC complex formation by PKB
+REACT_457	Inhibition of adenylate cyclase pathway
+REACT_458	Inhibition of replication initiation of damaged DNA by Rb/E2F1
+REACT_459	Inhibition of the proteolytic activity of APC/C required for the onset of anaphase by mitotic spindle checkpoint components
+REACT_460	Initial triggering of complement
+REACT_461	Innate Immunity Signaling
+REACT_462	Inositol transporters
+REACT_463	Insulin Synthesis and Processing
+REACT_464	Insulin effects increased synthesis of Xylulose-5-Phosphate
+REACT_465	Insulin receptor recycling
+REACT_466	Insulin receptor signalling cascade
+REACT_467	Integration of energy metabolism
+REACT_468	Integration of provirus
+REACT_469	Integration of viral DNA into host genomic DNA
+REACT_470	Integrin alphaIIb beta3 signaling
+REACT_471	Integrin cell surface interactions
+REACT_472	Interaction between L1 and Ankyrins
+REACT_473	Interactions of Rev with host cellular proteins
+REACT_474	Interactions of Tat with host cellular proteins
+REACT_475	Interactions of Vpr with host cellular proteins
+REACT_476	Interactions of the immunoglobulin superfamily (IgSF) member proteins
+REACT_477	Interconversion of 2-oxoglutarate and 2-hydroxyglutarate
+REACT_478	Interconversion of polyamines
+REACT_479	Interferon Signaling
+REACT_480	Interferon alpha/beta signaling
+REACT_481	Interferon gamma signaling
+REACT_482	Interleukin receptor SHC signaling
+REACT_483	Interleukin-1 processing
+REACT_484	Interleukin-1 signaling
+REACT_485	Interleukin-2 signaling
+REACT_486	Interleukin-3, 5 and GM-CSF signaling
+REACT_487	Interleukin-6 signaling
+REACT_488	Intrinsic Pathway
+REACT_489	Intrinsic Pathway for Apoptosis
+REACT_490	Ion channel transport
+REACT_491	Ion transport by P-type ATPases
+REACT_492	Ionotropic activity of Kainate Receptors
+REACT_493	Iron uptake and transport
+REACT_494	JNK (c-Jun kinases) phosphorylation and  activation mediated by activated human TAK1
+REACT_495	Ketone body metabolism
+REACT_496	Kinesins
+REACT_497	L13a-mediated translational silencing of Ceruloplasmin expression
+REACT_498	L1CAM interactions
+REACT_499	LDL-mediated lipid transport
+REACT_500	LPS transferred from LBP carrier to CD14
+REACT_501	Lagging Strand Synthesis
+REACT_502	Late Phase of HIV Life Cycle
+REACT_503	Leading Strand Synthesis
+REACT_504	Lectin pathway of complement activation
+REACT_505	Leukotriene receptors
+REACT_506	Leukotriene synthesis
+REACT_507	Ligand-gated ion channel transport
+REACT_508	Lipid digestion, mobilization, and transport
+REACT_509	Lipoprotein metabolism
+REACT_510	Localization of the PINCH-ILK-PARVIN complex to focal adhesions
+REACT_511	Loss of Nlp from mitotic centrosomes
+REACT_512	Loss of proteins required for interphase microtubule organization from the centrosome
+REACT_513	Lysine catabolism
+REACT_514	Lysosome Vesicle Biogenesis
+REACT_515	Lysosphingolipid and LPA receptors
+REACT_516	M Phase
+REACT_517	M/G1 Transition
+REACT_518	MAP kinase activation in TLR cascade
+REACT_519	MAP kinase cascade
+REACT_520	MAPK targets/ Nuclear events mediated by MAP kinases
+REACT_521	MEK activation
+REACT_522	MRN complex relocalizes to nuclear foci
+REACT_523	Maturation of Notch precursor via proteolytic cleavage
+REACT_524	Mature Notch receptor trafficks to plasma membrane
+REACT_525	Meiotic Recombination
+REACT_526	Membrane Trafficking
+REACT_527	Metabolism of RNA
+REACT_528	Metabolism of amino acids and derivatives
+REACT_529	Metabolism of carbohydrates
+REACT_530	Metabolism of folate and pterines
+REACT_531	Metabolism of lipids and lipoproteins
+REACT_532	Metabolism of mRNA
+REACT_533	Metabolism of nitric oxide
+REACT_534	Metabolism of non-coding RNA
+REACT_535	Metabolism of nucleotides
+REACT_536	Metabolism of polyamines
+REACT_537	Metabolism of porphyrins
+REACT_538	Metabolism of proteins
+REACT_539	Metabolism of serotonin
+REACT_540	Metabolism of steroid hormones and vitamins A and D
+REACT_541	Metabolism of vitamins and cofactors
+REACT_542	Metabolism of water-soluble vitamins and cofactors
+REACT_543	Metal ion SLC transporters
+REACT_544	Methylation
+REACT_545	MicroRNA (miRNA) Biogenesis
+REACT_546	Microtubule-dependent trafficking of connexons from Golgi to the plasma membrane
+REACT_547	Mineralocorticoid biosynthesis
+REACT_548	Minus-strand DNA synthesis
+REACT_549	Miscellaneous substrates
+REACT_550	Mitochondrial Fatty Acid Beta-Oxidation
+REACT_551	Mitochondrial Uncoupling Proteins
+REACT_552	Mitochondrial tRNA aminoacylation
+REACT_553	Mitochondrial transcription initiation
+REACT_554	Mitochondrial transcription termination
+REACT_555	Mitotic G1-G1/S phases
+REACT_556	Mitotic G2-G2/M phases
+REACT_557	Mitotic M-M/G1 phases
+REACT_558	Mitotic Metaphase/Anaphase Transition
+REACT_559	Mitotic Prometaphase
+REACT_560	Mitotic Prophase
+REACT_561	Mitotic Spindle Checkpoint
+REACT_562	Mitotic Telophase /Cytokinesis
+REACT_563	Molybdenum cofactor biosynthesis
+REACT_564	Monoamines are oxidized to aldehydes by MAOA and MAOB, producing NH3 and H2O2
+REACT_565	Multifunctional anion exchangers
+REACT_566	Muscarinic acetylcholine receptors
+REACT_567	Muscle contraction
+REACT_568	MyD88 cascade initiated on plasma membrane
+REACT_569	MyD88 dependent cascade initiated on endosome
+REACT_570	MyD88-independent cascade initiated on plasma membrane
+REACT_571	MyD88:Mal cascade initiated on plasma membrane
+REACT_572	Myogenesis
+REACT_573	N-Glycan antennae elongation
+REACT_574	N-glycan antennae elongation in the medial/trans-Golgi
+REACT_575	N-glycan trimming and elongation in the cis-Golgi
+REACT_576	N-glycan trimming in the ER and Calnexin/Calreticulin cycle
+REACT_577	NADE modulates death signalling
+REACT_578	NADPH regeneration
+REACT_579	NCAM signaling for neurite out-growth
+REACT_580	NCAM1 interactions
+REACT_581	NEP/NS2 Interacts with the Cellular Export Machinery
+REACT_582	NF-kB activation through FADD/RIP-1 pathway mediated by caspase-8 and -10
+REACT_583	NF-kB is activated and signals survival
+REACT_584	NFG and proNGF binds to p75NTR
+REACT_585	NFkB and MAP kinases activation mediated by TLR4 signaling repertoire
+REACT_586	NGF processing
+REACT_587	NGF signalling via TRKA from the plasma membrane
+REACT_588	NGF-independant TRKA activation
+REACT_589	NICD trafficks to nucleus
+REACT_590	NOSIP mediated eNOS trafficking
+REACT_591	NOSTRIN mediated eNOS trafficking
+REACT_592	NRAGE signals death through JNK
+REACT_593	NRIF signals cell death from the nucleus
+REACT_594	Na+-dependent glucose transporters
+REACT_595	Na+/Cl- dependent neurotransmitter transporters
+REACT_596	Nectin/Necl  trans heterodimerization
+REACT_597	Nef Mediated CD4 Down-regulation
+REACT_598	Nef Mediated CD8 Down-regulation
+REACT_599	Nef and signal transduction
+REACT_600	Nef mediated downregulation of CD28 cell surface expression
+REACT_601	Nef mediated downregulation of MHC class I complex cell surface expression
+REACT_602	Nef-mediates down modulation of cell surface receptors by recruiting them to clathrin adapters
+REACT_603	Negative regulation of the PI3K/AKT network
+REACT_604	Negative regulators of RIG-I/MDA5 signaling
+REACT_605	Nephrin interactions
+REACT_606	Netrin mediated repulsion signals
+REACT_607	Netrin-1 signaling
+REACT_608	Neurofascin interactions
+REACT_609	Neurophilin interactions with VEGF and VEGFR
+REACT_610	Neuroransmitter Receptor Binding And Downstream Transmission In The  Postsynaptic Cell
+REACT_611	Neurotransmitter Clearance In The Synaptic Cleft
+REACT_612	Neurotransmitter Release Cycle
+REACT_613	Neurotransmitter uptake and Metabolism In Glial Cells
+REACT_614	Nicotinamide salvaging
+REACT_615	Nicotinate metabolism
+REACT_616	Nitric oxide stimulates guanylate cyclase
+REACT_617	Nonhomologous End-joining (NHEJ)
+REACT_618	Norepinephrine Neurotransmitter Release Cycle
+REACT_619	Notch receptor binds with a ligand
+REACT_620	Notch-HLH transcription pathway
+REACT_621	NrCAM interactions
+REACT_622	Nuclear Events (kinase and transcription factor activation)
+REACT_623	Nuclear Receptor transcription pathway
+REACT_624	Nuclear import of Rev protein
+REACT_625	Nucleosome assembly
+REACT_626	Nucleotide Excision Repair
+REACT_627	Nucleotide-like (purinergic) receptors
+REACT_628	Olfactory Signaling Pathway
+REACT_629	Oligomerization of connexins into connexons
+REACT_630	Opioid Signalling
+REACT_631	Opsins
+REACT_632	Orc1 removal from chromatin
+REACT_633	Orexin and neuropeptides FF and QRFP bind to their respective receptors
+REACT_634	Organic anion transport
+REACT_635	Organic anion transporters
+REACT_636	Organic cation transport
+REACT_637	Organic cation/anion/zwitterion transport
+REACT_638	Other semaphorin interactions
+REACT_639	P2Y receptors
+REACT_640	PD-1 signaling
+REACT_641	PDE3B signalling
+REACT_642	PECAM1 interactions
+REACT_643	PERK regulated gene expression
+REACT_644	PI-3K cascade
+REACT_645	PI3K Cascade
+REACT_646	PI3K/AKT signalling
+REACT_647	PKA activation
+REACT_648	PKA activation in glucagon signalling
+REACT_649	PKA-mediated phosphorylation of CREB
+REACT_650	PKA-mediated phosphorylation of key metabolic factors
+REACT_651	PKB-mediated events
+REACT_652	PLC beta mediated events
+REACT_653	PLC-gamma1 signalling
+REACT_654	PLC-mediated hydrolysis of PIP2
+REACT_655	PP2A-mediated dephosphorylation of key metabolic factors
+REACT_656	Packaging Of Telomere Ends
+REACT_657	Packaging of Eight RNA Segments
+REACT_658	Passive Transport by Aquaporins
+REACT_659	Pausing and recovery of HIV-1 elongation
+REACT_660	Pausing and recovery of Tat-mediated HIV-1 elongation
+REACT_661	Pausing and recovery of elongation
+REACT_662	Pentose phosphate pathway (hexose monophosphate shunt)
+REACT_663	Peptide chain elongation
+REACT_664	Peptide hormone biosynthesis
+REACT_665	Peptide ligand-binding receptors
+REACT_666	Peroxisomal lipid metabolism
+REACT_667	Phase 1 - Functionalization of compounds
+REACT_668	Phase II conjugation
+REACT_669	Phenylalanine and tyrosine catabolism
+REACT_670	Phospholipase C-mediated cascade
+REACT_671	Phosphorylation of CD3 and TCR zeta chains
+REACT_672	Phosphorylation of Emi1
+REACT_673	Phosphorylation of proteins involved in G1/S transition by active Cyclin E:Cdk2 complexes
+REACT_674	Phosphorylation of proteins involved in the G2/M transition by Cyclin A:Cdc2 complexes
+REACT_675	Phosphorylation of the APC/C
+REACT_676	Plasmalogen biosynthesis
+REACT_677	Platelet Activation
+REACT_678	Platelet Adhesion to exposed collagen
+REACT_679	Platelet Aggregation (Plug Formation)
+REACT_680	Platelet activation triggers
+REACT_681	Platelet calcium homeostasis
+REACT_682	Platelet degranulation
+REACT_683	Platelet homeostasis
+REACT_684	Platelet sensitization by LDL
+REACT_685	Plus-strand DNA synthesis
+REACT_686	Polo-like kinase mediated events
+REACT_687	Polyamines are oxidized to amines, aldehydes and H2O2 by PAOs
+REACT_688	Polymerase switching
+REACT_689	Polymerase switching on the C-strand of the telomere
+REACT_690	Post NMDA receptor activation events
+REACT_691	Post-Elongation Processing of Intron-Containing pre-mRNA
+REACT_692	Post-Elongation Processing of Intronless pre-mRNA
+REACT_693	Post-Elongation Processing of the Transcript
+REACT_694	Post-chaperonin tubulin folding pathway
+REACT_695	Post-translational modification: gamma carboxylation and hypusine formation
+REACT_696	Post-translational modification: synthesis of GPI-anchored proteins
+REACT_697	Post-translational protein modification
+REACT_698	Postsynaptic nicotinic acetylcholine receptors
+REACT_699	Prefoldin mediated transfer of substrate  to CCT/TriC
+REACT_700	Pregnenolone biosynthesis
+REACT_701	Presynaptic function of Kainate receptors
+REACT_702	Presynaptic nicotinic acetylcholine receptors
+REACT_703	Presynaptic phase of homologous DNA pairing and strand exchange
+REACT_704	Processing of Capped Intron-Containing Pre-mRNA
+REACT_705	Processing of Capped Intronless Pre-mRNA
+REACT_706	Processing of DNA double-strand break ends
+REACT_707	Processing of DNA ends prior to end rejoining
+REACT_708	Processing of Intronless Pre-mRNAs
+REACT_709	Processive synthesis on the C-strand of the telomere
+REACT_710	Processive synthesis on the lagging strand
+REACT_711	Progressive trimming of alpha-1,2-linked mannose residues from Man9/8/7GlcNAc2 to produce Man5GlcNAc2
+REACT_712	Proline catabolism
+REACT_713	Prolonged ERK activation events
+REACT_714	Propionyl-CoA catabolism
+REACT_715	Prostacyclin signalling through prostacyclin receptor
+REACT_716	Prostanoid ligand receptors
+REACT_717	Prostanoid metabolism
+REACT_718	Protein folding
+REACT_719	Proteolytic cleavage of SNARE complex proteins
+REACT_720	Proton-coupled monocarboxylate transport
+REACT_721	Proton-coupled neutral amino acid transporters
+REACT_722	Proton/oligonucleotide cotransporters
+REACT_723	Purine catabolism
+REACT_724	Purine metabolism
+REACT_725	Purine ribonucleoside monophosphate biosynthesis
+REACT_726	Purine salvage
+REACT_727	Pyrimidine biosynthesis
+REACT_728	Pyrimidine catabolism
+REACT_729	Pyrimidine metabolism
+REACT_730	Pyrimidine salvage reactions
+REACT_731	Pyrophosphate hydrolysis
+REACT_732	Pyruvate metabolism
+REACT_733	Pyruvate metabolism and Citric Acid (TCA) cycle
+REACT_734	RAF activation
+REACT_735	RAF phosphorylates MEK
+REACT_736	RIG-I/MDA5 mediated induction of IFN-alpha/beta pathways
+REACT_737	RNA Pol II CTD phosphorylation and interaction with CE
+REACT_738	RNA Polymerase I Chain Elongation
+REACT_739	RNA Polymerase I Promoter Clearance
+REACT_740	RNA Polymerase I Promoter Escape
+REACT_741	RNA Polymerase I Promoter Opening
+REACT_742	RNA Polymerase I Transcription
+REACT_743	RNA Polymerase I Transcription Initiation
+REACT_744	RNA Polymerase I Transcription Termination
+REACT_745	RNA Polymerase I, RNA Polymerase III, and Mitochondrial Transcription
+REACT_746	RNA Polymerase II HIV-1 Promoter Escape
+REACT_747	RNA Polymerase II Pre-transcription Events
+REACT_748	RNA Polymerase II Promoter Escape
+REACT_749	RNA Polymerase II Transcription
+REACT_750	RNA Polymerase II Transcription Elongation
+REACT_751	RNA Polymerase II Transcription Initiation
+REACT_752	RNA Polymerase II Transcription Initiation And Promoter Clearance
+REACT_753	RNA Polymerase II Transcription Pre-Initiation And Promoter Opening
+REACT_754	RNA Polymerase II Transcription Termination
+REACT_755	RNA Polymerase III Abortive And Retractive Initiation
+REACT_756	RNA Polymerase III Chain Elongation
+REACT_757	RNA Polymerase III Transcription
+REACT_758	RNA Polymerase III Transcription Initiation
+REACT_759	RNA Polymerase III Transcription Initiation From Type 1 Promoter
+REACT_760	RNA Polymerase III Transcription Initiation From Type 2 Promoter
+REACT_761	RNA Polymerase III Transcription Initiation From Type 3 Promoter
+REACT_762	RNA Polymerase III Transcription Termination
+REACT_763	RSK activation
+REACT_764	Rap1 signalling
+REACT_765	Ras activation uopn Ca2+ infux through NMDA receptor
+REACT_766	Reactions specific to the complex N-glycan synthesis pathway
+REACT_767	Reactions specific to the hybrid N-glycan synthesis pathway
+REACT_768	Receptor-ligand binding initiates the second proteolytic cleavage of Notch receptor
+REACT_769	Recognition and association of DNA glycosylase with site containing an affected purine
+REACT_770	Recognition and association of DNA glycosylase with site containing an affected pyrimidine
+REACT_771	Recruitment of NuMA to mitotic centrosomes
+REACT_772	Recruitment of mitotic centrosome proteins and complexes
+REACT_773	Recruitment of repair and signaling proteins to double-strand breaks
+REACT_774	Recycling of bile acids and salts
+REACT_775	Recycling of eIF2:GDP
+REACT_776	Recycling pathway of L1
+REACT_777	Reduction of cytosolic Ca++ levels
+REACT_778	Regulated proteolysis of p75NTR
+REACT_779	Regulation of AMPK activity via LKB1
+REACT_780	Regulation of APC/C activators between G1/S and early anaphase
+REACT_781	Regulation of Apoptosis
+REACT_782	Regulation of Commissural axon pathfinding by Slit and Robo
+REACT_783	Regulation of DNA replication
+REACT_784	Regulation of Glucokinase by Glucokinase Regulatory Protein
+REACT_785	Regulation of IFNA signaling
+REACT_786	Regulation of IFNG signaling
+REACT_787	Regulation of Insulin Secretion
+REACT_788	Regulation of Insulin Secretion by Acetylcholine
+REACT_789	Regulation of Insulin Secretion by Fatty Acids Bound to GPR40 (FFAR1)
+REACT_790	Regulation of Insulin Secretion by Free Fatty Acids
+REACT_791	Regulation of Insulin Secretion by Glucagon-like Peptide-1
+REACT_792	Regulation of Insulin-like Growth Factor (IGF) Activity by Insulin-like Growth Factor Binding Proteins (IGFBPs)
+REACT_793	Regulation of Lipid Metabolism by Peroxisome proliferator-activated receptor alpha (PPARalpha)
+REACT_794	Regulation of PAK-2p34 activity by PS-GAP/RHG10
+REACT_795	Regulation of Rheb GTPase activity by AMPK
+REACT_796	Regulation of Water Balance by Renal Aquaporins
+REACT_797	Regulation of activated PAK-2p34 by proteasome mediated degradation
+REACT_798	Regulation of beta-cell development
+REACT_799	Regulation of cytoskeletal remodeling and cell spreading by IPP complex components
+REACT_800	Regulation of gap junction activity
+REACT_801	Regulation of gene expression in beta cells
+REACT_802	Regulation of gene expression in early pancreatic precursor cells
+REACT_803	Regulation of gene expression in endocrine-committed (NEUROG3+) progenitor cells
+REACT_804	Regulation of gene expression in late stage (branching morphogenesis) pancreatic bud precursor cells
+REACT_805	Regulation of mRNA Stability by Proteins that Bind AU-rich Elements
+REACT_806	Regulation of mitotic cell cycle
+REACT_807	Regulation of ornithine decarboxylase (ODC)
+REACT_808	Regulation of pyruvate dehydrogenase (PDH) complex
+REACT_809	Regulation of signaling by CBL
+REACT_810	Regulation of the Fanconi anemia pathway
+REACT_811	Regulation of thyroid hormone activity
+REACT_812	Regulatory RNA pathways
+REACT_813	Relaxin receptors
+REACT_814	Release
+REACT_815	Release of apoptotic factors from the mitochondria
+REACT_816	Release of eIF4E
+REACT_817	Removal of DNA patch containing abasic residue
+REACT_818	Removal of aminoterminal propeptides from gamma-carboxylated proteins
+REACT_819	Removal of licensing factors from origins
+REACT_820	Removal of the Flap Intermediate
+REACT_821	Removal of the Flap Intermediate from the C-strand
+REACT_822	Repair synthesis for gap-filling by DNA polymerase in TC-NER
+REACT_823	Repair synthesis of patch ~27-30 bases long  by DNA polymerase
+REACT_824	Resolution of AP sites via the multiple-nucleotide patch replacement pathway
+REACT_825	Resolution of AP sites via the single-nucleotide replacement pathway
+REACT_826	Resolution of Abasic Sites (AP sites)
+REACT_827	Resolution of D-loop structures
+REACT_828	Resolution of D-loop structures through Holliday junction intermediates
+REACT_829	Respiratory electron transport
+REACT_830	Respiratory electron transport, ATP synthesis by chemiosmotic coupling, and heat production by uncoupling proteins.
+REACT_831	Response to elevated platelet cytosolic Ca2+
+REACT_832	Retrograde neurotrophin signalling
+REACT_833	Reuptake of GABA
+REACT_834	Rev-mediated nuclear export of HIV-1 RNA
+REACT_835	Reversal of Alkylation Damage By DNA Dioxygenases
+REACT_836	Reverse Transcription of HIV RNA
+REACT_837	Rhesus glycoproteins mediate ammonium transport.
+REACT_838	Rho GTPase cycle
+REACT_839	Ribosomal scanning and start codon recognition
+REACT_840	Role of Abl in Robo-Slit signaling
+REACT_841	Role of DCC in regulating apoptosis
+REACT_842	Role of second messengers in netrin-1 signaling
+REACT_843	S Phase
+REACT_844	S6K1 signalling
+REACT_845	S6K1-mediated signalling
+REACT_846	SCF(Skp2)-mediated degradation of p27/p21
+REACT_847	SCF-beta-TrCP mediated degradation of Emi1
+REACT_848	SEMA3A-Plexin repulsion signaling by inhibiting Integrin adhesion
+REACT_849	SHC activation
+REACT_850	SHC-mediated cascade
+REACT_851	SHC-mediated signalling
+REACT_852	SHC-related events
+REACT_853	SLBP Dependent Processing of Replication-Dependent Histone Pre-mRNAs
+REACT_854	SLBP independent Processing of Histone Pre-mRNAs
+REACT_855	SLC-mediated transmembrane transport
+REACT_856	SMAC binds to IAPs
+REACT_857	SMAC-mediated apoptotic response
+REACT_858	SMAC-mediated dissociation of IAP:caspase complexes
+REACT_859	SOS-mediated signalling
+REACT_860	Sema3A PAK dependent Axon repulsion
+REACT_861	Sema4D in semaphorin signaling
+REACT_862	Sema4D induced cell migration and growth-cone collapse
+REACT_863	Sema4D mediated inhibition of cell attachment and migration
+REACT_864	Semaphorin interactions
+REACT_865	Serotonin Neurotransmitter Release Cycle
+REACT_866	Serotonin and melatonin biosynthesis
+REACT_867	Serotonin clearance from the synaptic cleft
+REACT_868	Serotonin receptors
+REACT_869	Shc events in EGFR signaling
+REACT_870	Signal amplification
+REACT_871	Signal attenuation
+REACT_872	Signal regulatory protein (SIRP) family interactions
+REACT_873	Signal transduction by L1
+REACT_874	Signaling by BMP
+REACT_875	Signaling by EGFR
+REACT_876	Signaling by FGFR
+REACT_877	Signaling by GPCR
+REACT_878	Signaling by Insulin receptor
+REACT_879	Signaling by Interleukins
+REACT_880	Signaling by Notch
+REACT_881	Signaling by PDGF
+REACT_882	Signaling by Rho GTPases
+REACT_883	Signaling by Robo receptor
+REACT_884	Signaling by TGF beta
+REACT_885	Signaling by VEGF
+REACT_886	Signaling by Wnt
+REACT_887	Signaling in Immune system
+REACT_888	Signalling by NGF
+REACT_889	Signalling to ERK5
+REACT_890	Signalling to ERKs
+REACT_891	Signalling to RAS
+REACT_892	Signalling to STAT3
+REACT_893	Signalling to p38 via RIT and RIN
+REACT_894	Smooth Muscle Contraction
+REACT_895	Sodium-coupled phosphate cotransporters
+REACT_896	Sodium-coupled sulphate, di- and tri-carboxylate transporters
+REACT_897	Sodium/Calcium exchangers
+REACT_898	Sodium/Proton exchangers
+REACT_899	Sphingolipid metabolism
+REACT_900	Stabilization of mRNA by HuR
+REACT_901	Stabilization of p53
+REACT_902	Steroid hormones
+REACT_903	Sterols are 12-hydroxylated by CYP8B1
+REACT_904	Stimulation of the cell death response by PAK-2p34
+REACT_905	Striated Muscle Contraction
+REACT_906	Switching of origins to a post-replicative state
+REACT_907	Synaptic Transmission
+REACT_908	Synthesis and interconversion of nucleotide di- and triphosphates
+REACT_909	Synthesis of DNA
+REACT_910	Synthesis of Dolichyl-phosphate
+REACT_911	Synthesis of Dopamine
+REACT_912	Synthesis of GDP-mannose
+REACT_913	Synthesis of Ketone Bodies
+REACT_914	Synthesis of UDP-N-acetyl-glucosamine
+REACT_915	Synthesis of bile acids and bile salts
+REACT_916	Synthesis of bile acids and bile salts via 24-hydroxycholesterol
+REACT_917	Synthesis of bile acids and bile salts via 27-hydroxycholesterol
+REACT_918	Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol
+REACT_919	Synthesis of dolichyl-phosphate mannose
+REACT_920	Synthesis of dolichyl-phosphate-glucose
+REACT_921	Synthesis of glycosylphosphatidylinositol (GPI)
+REACT_922	Synthesis of substrates in N-glycan biosythesis
+REACT_923	Synthesis of very long-chain fatty acyl-CoAs
+REACT_924	Synthesis, Secretion, and Deacylation of Ghrelin
+REACT_925	Synthesis, Secretion, and Inactivation of Glucagon-like Peptide-1 (GLP-1)
+REACT_926	Synthesis, Secretion, and Inactivation of Glucose-dependent Insulinotropic Polypeptide (GIP)
+REACT_927	TAK1 activates NFkB by phosphorylation and activation of IKKs complex
+REACT_928	TCR signaling
+REACT_929	TNF signaling
+REACT_930	TRAF3-dependent IRF activation pathway
+REACT_931	TRAF6 Mediated Induction of proinflammatory cytokines
+REACT_932	TRAF6 mediated IRF7 activation
+REACT_933	TRAF6 mediated IRF7 activation in TLR7/8 or 9 signaling
+REACT_934	TRAF6 mediated NF-kB activation
+REACT_935	TRAF6 mediated induction of NFkB and MAP kinases upon TLR7/8 or 9 activation
+REACT_936	TRAF6 mediated induction of TAK1 complex
+REACT_937	TRAIL  signaling
+REACT_938	TRKA activation by NGF
+REACT_939	Tachykinin receptors bind tachykinins
+REACT_940	Tat-mediated HIV-1 elongation arrest and recovery
+REACT_941	Tat-mediated elongation of the HIV-1 transcript
+REACT_942	Telomere C-strand (Lagging Strand) Synthesis
+REACT_943	Telomere C-strand synthesis initiation
+REACT_944	Telomere Extension By Telomerase
+REACT_945	Telomere Maintenance
+REACT_946	Terminal pathway of complement
+REACT_947	The fatty acid cycling model
+REACT_948	The proton buffering model
+REACT_949	The role of Nef in HIV-1 replication and disease pathogenesis
+REACT_950	Thrombin signalling through proteinase activated receptors (PARs)
+REACT_951	Thromboxane signalling through TP receptor
+REACT_952	Thyroxine biosynthesis
+REACT_953	Tie2 Signaling
+REACT_954	Tight junction interactions
+REACT_955	Toll Like Receptor 10 (TLR10) Cascade
+REACT_956	Toll Like Receptor 2 Cascade
+REACT_957	Toll Like Receptor 3 (TLR3) Cascade
+REACT_958	Toll Like Receptor 4 (TLR4) Cascade
+REACT_959	Toll Like Receptor 5 (TLR5) Cascade
+REACT_960	Toll Like Receptor 7/8 (TLR7/8) Cascade
+REACT_961	Toll Like Receptor 9 (TLR9) Cascade
+REACT_962	Toll Like Receptor TLR1:TLR2 Cascade
+REACT_963	Toll Like Receptor TLR6:TLR2 Cascade
+REACT_964	Toll Receptor Cascades
+REACT_965	Trafficking of AMPA receptors
+REACT_966	Trafficking of GluR2-containing AMPA receptors
+REACT_967	Trafficking of dietary sterols
+REACT_968	Transcription
+REACT_969	Transcription from mitochondrial promoters
+REACT_970	Transcription of the HIV genome
+REACT_971	Transcription-coupled NER (TC-NER)
+REACT_972	Transcriptional  activation of  cell cycle inhibitor p21
+REACT_973	Transcriptional Regulation of White Adipocyte Differentiation
+REACT_974	Transcriptional activation of p53 responsive genes
+REACT_975	Transferrin endocytosis and recycling
+REACT_976	Translation
+REACT_977	Translation initiation complex formation
+REACT_978	Translesion synthesis by DNA polymerases bypassing lesion on DNA template
+REACT_979	Translesion synthesis by HREV1
+REACT_980	Translesion synthesis by Pol eta
+REACT_981	Translesion synthesis by Pol zeta
+REACT_982	Translocation of BoNT Light chain
+REACT_983	Translocation of ZAP-70 to Immunological synapse
+REACT_984	Transmembrane transport of small molecules
+REACT_985	Transmission across Chemical Synapses
+REACT_986	Transmission across Electrical Synapses
+REACT_987	Transport of Glycerol from Adipocytes to the Liver by Aquaporins
+REACT_988	Transport of HA trimer, NA tetramer and M2 tetramer from the endoplasmic reticulum to the Golgi Apparatus
+REACT_989	Transport of Mature Transcript to Cytoplasm
+REACT_990	Transport of Mature mRNA Derived from an Intronless Transcript
+REACT_991	Transport of Mature mRNA derived from an Intron-Containing Transcript
+REACT_992	Transport of Mature mRNAs Derived from Intronless Transcripts
+REACT_993	Transport of Notch receptor precursor to golgi
+REACT_994	Transport of Ribonucleoproteins into the Host Nucleus
+REACT_995	Transport of connexins along the secretory pathway
+REACT_996	Transport of connexons to the plasma membrane
+REACT_997	Transport of fatty acids
+REACT_998	Transport of gamma-carboxylated protein precursors from the endoplasmic reticulum to the Golgi apparatus
+REACT_999	Transport of glucose and other sugars, bile salts and organic acids, metal ions and amine compounds
+REACT_1000	Transport of inorganic cations/anions and amino acids/oligopeptides
+REACT_1001	Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane
+REACT_1002	Transport of nucleotide sugars
+REACT_1003	Transport of organic anions
+REACT_1004	Transport of the SLBP Dependant Mature mRNA
+REACT_1005	Transport of the SLBP independent Mature mRNA
+REACT_1006	Transport of vitamins, nucleosides, and related molecules
+REACT_1007	Transport to the Golgi and subsequent modification
+REACT_1008	Triglyceride Biosynthesis
+REACT_1009	Tryptophan catabolism
+REACT_1010	Type I hemidesmosome assembly
+REACT_1011	Type II Na+/Pi cotransporters
+REACT_1012	Ubiquitin Mediated Degradation of Phosphorylated Cdc25A
+REACT_1013	Ubiquitin-dependent degradation of Cyclin D
+REACT_1014	Ubiquitin-dependent degradation of Cyclin D1
+REACT_1015	Unblocking of NMDA receptor, glutamate binding and activation
+REACT_1016	Uncoating of the HIV Virion
+REACT_1017	Uncoating of the Influenza Virion
+REACT_1018	Unfolded Protein Response
+REACT_1019	Unwinding of DNA
+REACT_1020	Urea cycle
+REACT_1021	Utilization of Ketone Bodies
+REACT_1022	VEGF binds to VEGFR leading to receptor dimerization
+REACT_1023	VEGF ligand-receptor interactions
+REACT_1024	Vasopressin-like receptors
+REACT_1025	Vif-mediated degradation of APOBEC3G
+REACT_1026	Viral Messenger RNA Synthesis
+REACT_1027	Viral RNP Complexes in the Host Cell Nucleus
+REACT_1028	Viral dsRNA:TLR3:TRIF Complex Activates RIP1
+REACT_1029	Viral dsRNA:TLR3:TRIF Complex Activates TBK1/IKK epsilon
+REACT_1030	Viral mRNA Translation
+REACT_1031	Virus Assembly and Release
+REACT_1032	Vitamin A uptake in enterocytes
+REACT_1033	Vitamin B1 (thiamin) metabolism
+REACT_1034	Vitamin B2 (riboflavin) metabolism
+REACT_1035	Vitamin B5 (pantothenate) metabolism
+REACT_1036	Vitamin C (ascorbate) metabolism
+REACT_1037	Vitamin D (calciferol) metabolism
+REACT_1038	Vitamins
+REACT_1039	Vitamins B6 activation to pyridoxal phosphate
+REACT_1040	Vpr-mediated induction of apoptosis by mitochondrial outer membrane permeabilization
+REACT_1041	Vpr-mediated nuclear import of PICs
+REACT_1042	Vpu mediated degradation of CD4
+REACT_1043	Xenobiotics
+REACT_1044	Zinc efflux and compartmentalization by the SLC30 family
+REACT_1045	Zinc influx into cells by the SLC39 gene family
+REACT_1046	Zinc transporters
+REACT_1047	activated TAK1 mediates p38 MAPK activation
+REACT_1048	c-src mediated regulation of Cx43 function and closure of gap junctions
+REACT_1049	cGMP effects
+REACT_1050	cRNA Synthesis
+REACT_1051	eNOS activation
+REACT_1052	eNOS activation and regulation
+REACT_1053	mRNA 3'-end processing
+REACT_1054	mRNA Capping
+REACT_1055	mRNA Decay by 3' to 5' Exoribonuclease
+REACT_1056	mRNA Decay by 5' to 3' Exoribonuclease
+REACT_1057	mRNA Editing
+REACT_1058	mRNA Editing: A to I Conversion
+REACT_1059	mRNA Editing: C to U Conversion
+REACT_1060	mRNA Processing
+REACT_1061	mRNA Splicing
+REACT_1062	mRNA Splicing - Major Pathway
+REACT_1063	mRNA Splicing - Minor Pathway
+REACT_1064	mTOR signalling
+REACT_1065	mTORC1-mediated signalling
+REACT_1066	mitochondrial fatty acid beta-oxidation of saturated fatty acids
+REACT_1067	mitochondrial fatty acid beta-oxidation of unsaturated fatty acids
+REACT_1068	p130Cas linkage to MAPK signaling for integrins
+REACT_1069	p38MAPK events
+REACT_1070	p53-Dependent G1 DNA Damage Response
+REACT_1071	p53-Dependent G1/S DNA damage checkpoint
+REACT_1072	p53-Independent DNA Damage Response
+REACT_1073	p53-Independent G1/S DNA damage checkpoint
+REACT_1074	p75 NTR receptor-mediated signalling
+REACT_1075	p75NTR negatively regulates cell cycle via SC1
+REACT_1076	p75NTR recruits signalling complexes
+REACT_1077	p75NTR regulates axonogenesis
+REACT_1078	p75NTR signals via NF-kB
+REACT_1079	phospho-PLA2 pathway
+REACT_1080	snRNP Assembly
+REACT_1081	tRNA Aminoacylation
+REACT_1082	trans-Golgi Network Vesicle Budding
+REACT_1083	vRNA Synthesis
+REACT_1084	vRNP Assembly
+REACT_1085	vWF interaction with collagen

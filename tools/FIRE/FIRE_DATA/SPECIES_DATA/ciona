@@ -1,0 +1,10 @@
+fastafile_dna	FIRE_DATA/CIONA/SEQUENCES/ciona_u_1000_0.fa
+seqlen_dna	1000
+rightlabel_dna	0
+leftlabel_dna	-1000
+fastafile_rna	FIRE_DATA/CIONA/SEQUENCES/ciona_3_0_300.fa
+seqlen_rna	500
+rightlabel_rna	500
+leftlabel_rna	0
+goindex	FIRE_DATA/CIONA/ANNOTATIONS/ciona_go_index.txt
+gonames	FIRE_DATA/CIONA/ANNOTATIONS/ciona_go_names.txt
