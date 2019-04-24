@@ -2,6 +2,8 @@
 
 ChIPseeqer is a computational framework for the analysis of ChIP-seq datasets.
 
+![ChIPseeqer](docs/images/ChIPseeqer.png)
+
 It includes quality control tools for the raw data and peak detection.
 
 Moreover, it offers:
@@ -23,9 +25,6 @@ please see the file called LICENSE.
 
 ## Download
 
-ChIPseeqer is available at:
-[http://physiology.med.cornell.edu/faculty/elemento/lab/CS_files/ChIPseeqer-2.0.tar.gz](http://physiology.med.cornell.edu/faculty/elemento/lab/CS_files/ChIPseeqer-2.0.tar.gz)
-
 Annotation data are available at:
 
 [http://physiology.med.cornell.edu/faculty/elemento/lab/CS_files/](http://physiology.med.cornell.edu/faculty/elemento/lab/CS_files/)
@@ -42,15 +41,13 @@ ChIPseeqer is fully documented online at:
 
 ## Authors
 
-The ChIPseeqer software has been developed in the Elemento lab, at the Institute
-of Computational Biology of Weill Cornell Medical College 
-(http://physiology.med.cornell.edu/faculty/elemento/lab/), by:
+The ChIPseeqer software has been developed in the [Elemento lab](http://physiology.med.cornell.edu/faculty/elemento/lab/), at the Institute of Computational Biology of Weill Cornell Medical College, by:
 
-- Eugenia Giannopoulou, PhD	(eug2002@med.cornell.edu)
-- Olivier Elemento, PhD (ole2001@med.cornell.edu)
+- Eugenia Giannopoulou, Ph.D. (eug2002@med.cornell.edu)
+- Olivier Elemento, Ph.D. (ole2001@med.cornell.edu)
 
 ## Contact
 
 If you have any questions, bug reports or features suggestions please contact:
 
-- Eugenia Giannopoulou (eug2002@med.cornell.edu)
+- Eugenia Giannopoulou, Ph.D. (eug2002@med.cornell.edu)
