@@ -1,0 +1,139 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+#use Fasta;
+use Getopt::Long;
+use Sets;
+use IO::Zlib;
+#use strict;
+
+# variables to store input 
+my $peakfile	= undef;
+my $fastafile	= undef;
+
+# variable to store options
+my $format		= "sam"; #can be sam, eland, exteland 
+my $guiVersion	= 0;
+my $verbose		= 0;
+my $qcType		= "all"; #can be all, showUnique, showGCRich
+
+# variables to store lines and line parts
+my $inputLine	= undef;
+my $sequence	= undef;
+
+# variables to store counts
+my $seqGCSum			= undef;
+my $totalGCSum			= undef;
+my $avgGC				= undef;
+my $seqATSum			= undef;
+my $totalATSum			= undef;
+my $avgAT				= undef;
+my $prevC				= undef;
+my $countCG				= undef;
+
+# arrays
+my @contents	= ();
+my @lineParts	= ();
+my @seqChars	= ();
+my @CGtable		= ();
+my @ATtable		= ();
+
+# hashes and hashes-related variables
+my %positionsHash	= ();
+
+my $posKey			= undef;
+
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerGCContent [ --files=FILES --datafolder=DIR ] where \n
+	--peakfile=FILE	specifies the peakfile
+	--fastafile=FILE	points to the genome sequence file
+	\n";
+}
+
+# handling given options
+GetOptions("format=s"	=> \$format,
+"peakfile=s"			=> \$peakfile,
+"qcType=s"				=> \$qcType,
+"guiVersion=s"			=> \$guiVersion,
+"fastafile=s"			=> \$fastafile,
+"verbose=s"				=> \$verbose);
+
+#
+# Get sequences for the input peaks 
+#
+$todo = "$ENV{CHIPSEEQERDIR}/GetSubstringsIdx -intervals $peakfile -fastafile $fastafile -show_seq_only 1 ";
+
+$todo .= "> $peakfile.trueseq";
+
+if ($verbose == 1) {
+	print STDERR "Exec: $todo\n";
+}
+
+print "Extracting sequences for $peakfile from $fastafile ... ";
+system($todo) == 0 or die "Cannot exec GetSubstrings\n";
+print "Done.\n";
+
+
+#
+# open peaksfile
+#
+open(IN, "$peakfile.trueseq") or die "can't open file $peakfile.trueseq: $!";
+
+while ($inputline = <IN>) {
+	chomp $inputLine;
+	#@lineParts	= split /[\t]/, $inputLine, -1
+	
+	$sequence	= $inputline;
+	
+	@seqChars	= split '', $sequence;
+	
+	$seqGCSum	= 0;
+	#$seqATSum	= 0;
+	$prevC		= 0;
+	$countCG	= 0;
+	
+	for($i=0; $i<length($sequence); $i++) {
+		
+		my $current = $seqChars[$i];
+		
+		# count Gs and Cs
+		if (($current eq "C") || ($current eq "G")) {
+			$seqGCSum++;
+		}
+		
+		#if (($current eq "A") || ($current eq "T")) {
+		#	$seqATSum++;
+		#}
+		
+		if($prevC == 0) {
+			if($current eq "C") {
+				$prevC = 1;
+			}
+		}
+		else {
+			if($current eq "G") {
+				$countCG++;
+				$prevC = 0;
+			}
+			elsif($current eq "C") {
+				$prevC = 1;
+			}
+			else {
+				$prevC = 0;
+			}
+		}
+	}
+	
+	my $l = length($sequence);
+	my $frac = sprintf("%3.1f", 100 * $seqGCSum/$l);
+	
+	#print "$frac\n";
+	#print "$seqGCSum\t";
+	print "$countCG\n";
+	
+}# end of while
+
+close IN;

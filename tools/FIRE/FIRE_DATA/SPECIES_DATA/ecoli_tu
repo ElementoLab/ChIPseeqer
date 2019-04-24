@@ -1,0 +1,9 @@
+fastafile_dna	FIRE_DATA/ECOLI/SEQUENCES/Ecoli_TU_upstream_200bp.fa
+seqlen_dna	200
+rightlabel_dna	0
+leftlabel_dna	-200
+fastafile_rna	FIRE_DATA/ECOLI/SEQUENCES/Ecoli_TU_downstream_200bp.fa
+seqlen_rna	200
+rightlabel_rna	200
+leftlabel_rna	0
+acelibrary_dna	FIRE_DATA/ECOLI/MOTIFNAMES/UPSTREAM/*.ace

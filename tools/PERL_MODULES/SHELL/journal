@@ -1,0 +1,10 @@
+#!/bin/bash
+# Script RunVim
+osascript  <<EOF
+tell app "Terminal"
+  set number of rows of first window to 34
+  set number of columns of first window to 96
+  set custom title of first window to "Journal"
+end tell
+EOF
+emacs ~/Desktop/journal.org

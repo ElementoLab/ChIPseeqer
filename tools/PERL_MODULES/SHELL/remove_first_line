@@ -1,0 +1,2 @@
+#!/bin/bash
+vi $1 -s ~/PERL_MODULES/SHELL/remove_first_line.script

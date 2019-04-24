@@ -1,0 +1,1368 @@
+b0019	H-NS_Down	NhaR_Up
+b0032	ArgR_Down	IHF_Up	IHF_Down	PepA_Down	PurR_Down
+b0033	ArgR_Down	IHF_Up	IHF_Down	PepA_Down	PurR_Down
+b0034	CRP_Up	FNR_Up	H-NS_Down	NarL_Down
+b0035	ArcA_Up	CRP_Up	CaiF_Up	FNR_Up	IHF_Down
+b0036	ArcA_Up	CRP_Up	CaiF_Up	FNR_Up	IHF_Down
+b0037	ArcA_Up	CRP_Up	CaiF_Up	FNR_Up	IHF_Down
+b0038	ArcA_Up	CRP_Up	CaiF_Up	FNR_Up	IHF_Down
+b0039	ArcA_Up	CRP_Up	CaiF_Up	FNR_Up	IHF_Down
+b0040	ArcA_Up	CRP_Up	CaiF_Up	FNR_Up	IHF_Down
+b0041	CRP_Up	CaiF_Up	FNR_Up
+b0042	CRP_Up	CaiF_Up	FNR_Up
+b0043	CRP_Up	CaiF_Up	FNR_Up
+b0044	CRP_Up	CaiF_Up	FNR_Up
+b0049	Fis_Up
+b0050	Fis_Up
+b0051	Fis_Up
+b0052	Fis_Up
+b0060	LexA_Down
+b0061	AraC_Up	AraC_Down	CRP_Up
+b0062	AraC_Up	AraC_Down	CRP_Up
+b0063	AraC_Up	AraC_Down	CRP_Up
+b0064	AraC_Up	AraC_Down	CRP_Up
+b0071	LeuO_Up
+b0072	LeuO_Up
+b0073	LeuO_Up
+b0074	LeuO_Up
+b0075	LeuO_Up
+b0077	H-NS_Down	Lrp_Up
+b0078	H-NS_Down	Lrp_Up
+b0093	SdiA_Up	SdiA_Down
+b0094	RcsAB_Up	SdiA_Down
+b0095	RcsAB_Up	SdiA_Down
+b0112	TyrR_Down
+b0113	CRP_Up	FNR_Up	FNR_Down	PdhR_Down
+b0114	ArcA_Down	CRP_Up	FNR_Up	FNR_Down	PdhR_Down
+b0115	ArcA_Down	CRP_Up	FNR_Up	FNR_Down	PdhR_Down
+b0116	ArcA_Down	CRP_Up	CRP_Down	FNR_Up	FNR_Down	Fis_Up	PdhR_Down
+b0118	ArcA_Down	CRP_Up	Fis_Down	FruR_Down
+b0123	CueR_Up
+b0124	CRP_Down	IHF_Up
+b0125	CRP_Up	IHF_Down
+b0139	IHF_Up
+b0140	IHF_Up
+b0150	Fur_Down
+b0151	Fur_Down
+b0152	Fur_Down
+b0153	Fur_Down
+b0154	PhoP_Up
+b0156	IscR_Down
+b0161	CpxR_Up	H-NS_Down
+b0162	CdaR_Up
+b0178	CpxR_Up	GadE_Up
+b0179	CpxR_Up	GadE_Up
+b0180	CpxR_Up	GadE_Up
+b0181	CpxR_Up	GadE_Up
+b0197	MetJ_Down
+b0198	MetJ_Down
+b0199	MetJ_Down
+b0201	Fis_Up	H-NS_Down	Lrp_Down
+b0202	Fis_Up	H-NS_Down	Lrp_Down
+b0203	Fis_Up	H-NS_Down	Lrp_Down
+b0204	Fis_Up	H-NS_Down	Lrp_Down
+b0205	Fis_Up	H-NS_Down	Lrp_Down
+b0216	Fis_Up
+b0221	ArcA_Down	FadR_Down
+b0237	CsgD_Down
+b0241	PhoB_Up
+b0244	Fis_Up
+b0273	ArgR_Down
+b0311	ArcA_Down	BetI_Down
+b0312	ArcA_Down	BetI_Down
+b0313	ArcA_Down	BetI_Down
+b0314	ArcA_Down	BetI_Down
+b0330	CRP_Up	PrpR_Down
+b0331	CRP_Up	PrpR_Up
+b0333	CRP_Up	PrpR_Up
+b0334	CRP_Up	PrpR_Up
+b0335	CRP_Up	PrpR_Up
+b0336	Nac_Up	PurR_Down
+b0337	Nac_Up	PurR_Down
+b0338	CynR_Down
+b0339	CynR_Up
+b0340	CynR_Up
+b0341	CynR_Up
+b0342	CRP_Up	CRP_Down	H-NS_Down	LacI_Down
+b0343	CRP_Up	CRP_Down	H-NS_Down	LacI_Down
+b0344	CRP_Up	CRP_Down	H-NS_Down	LacI_Down
+b0347	CRP_Up	MhpR_Up
+b0348	CRP_Up	MhpR_Up
+b0349	CRP_Up	MhpR_Up
+b0350	CRP_Up	MhpR_Up
+b0351	CRP_Up	MhpR_Up
+b0352	CRP_Up	MhpR_Up
+b0365	Cbl_Up	CysB_Up
+b0366	Cbl_Up	CysB_Up
+b0367	Cbl_Up	CysB_Up
+b0368	Cbl_Up	CysB_Up
+b0383	PhoB_Up
+b0384	PhoB_Up
+b0385	CsgD_Up
+b0388	TrpR_Down	TyrR_Down
+b0389	TrpR_Down	TyrR_Down
+b0390	TrpR_Down	TyrR_Down
+b0396	AraC_Up	CRP_Up	CRP_Down
+b0399	PhoB_Up
+b0400	PhoB_Up
+b0403	MalT_Up
+b0405	Fis_Up
+b0411	CRP_Up	CRP_Down	CytR_Up	CytR_Down	DeoR_Down
+b0428	ArcA_Down	CRP_Up	FNR_Down	Fur_Down	GadE_Up
+b0429	ArcA_Down	CRP_Up	FNR_Down	Fur_Down	GadE_Up
+b0430	ArcA_Down	CRP_Up	FNR_Down	Fur_Down	GadE_Up
+b0431	ArcA_Down	CRP_Up	FNR_Down	Fur_Down	GadE_Up
+b0432	ArcA_Down	CRP_Up	FNR_Down	Fur_Down	GadE_Up
+b0435	H-NS_Down	OmpR_Down
+b0439	GadX_Up
+b0440	CRP_Up	Fis_Down
+b0441	CpxR_Up
+b0450	GadX_Up	NtrC_Up
+b0451	GadX_Up	NtrC_Up
+b0460	CpxR_Up
+b0461	CpxR_Up
+b0462	AcrR_Down	MarA_Up	PhoP_Down	Rob_Up	SoxS_Up
+b0463	AcrR_Down	MarA_Up	PhoP_Down	Rob_Up	SoxS_Up
+b0464	AcrR_Down
+b0475	OxyR_Up
+b0484	CueR_Up
+b0485	GadX_Up
+b0486	GadX_Up
+b0504	AllR_Down
+b0505	AllR_Down
+b0507	AllR_Down
+b0508	AllR_Down
+b0509	AllR_Down
+b0510	AllR_Down
+b0511	AllR_Down
+b0512	AllR_Down
+b0513	AllR_Down
+b0514	AllR_Down
+b0515	AllS_Up
+b0516	AllS_Up
+b0517	AllS_Up
+b0522	PurR_Down
+b0523	PurR_Down
+b0536	Fis_Up
+b0553	CRP_Up	IHF_Down	OmpR_Down
+b0557	PhoP_Up
+b0564	H-NS_Down
+b0570	CusR_Up
+b0571	CusR_Up
+b0572	CusR_Up
+b0573	CusR_Up
+b0574	CusR_Up
+b0575	CusR_Up
+b0578	MarA_Up
+b0583	CRP_Up	Fur_Down
+b0584	CRP_Up	Fur_Down
+b0585	FNR_Up	Fur_Down
+b0586	FNR_Up	Fur_Down
+b0587	FNR_Up	Fur_Down
+b0588	Fur_Down
+b0589	Fur_Down
+b0590	Fur_Down
+b0591	Fur_Up	Fur_Down
+b0592	Fur_Down
+b0593	CRP_Up	Fur_Down
+b0594	CRP_Up	Fur_Down
+b0595	CRP_Up	Fur_Down
+b0596	CRP_Up	Fur_Down
+b0597	CRP_Up	Fur_Down
+b0598	CRP_Up
+b0605	MetJ_Down	OxyR_Up
+b0606	MetJ_Down	OxyR_Up
+b0621	ArcA_Up	FNR_Up
+b0622	PhoP_Up
+b0652	FlhDC_Up
+b0653	FlhDC_Up
+b0654	FlhDC_Up
+b0655	FlhDC_Up
+b0664	Fis_Up
+b0665	Fis_Up
+b0666	Fis_Up
+b0668	Fis_Up
+b0670	Fis_Up
+b0672	Fis_Up
+b0673	Fis_Up
+b0674	GadX_Up
+b0675	CRP_Up	CRP_Down	NagC_Down
+b0676	CRP_Up	CRP_Down	NagC_Down
+b0677	CRP_Up	CRP_Down	NagC_Down	PhoP_Up
+b0678	CRP_Up	CRP_Down	NagC_Down
+b0679	CRP_Up	CRP_Down	NagC_Down
+b0683	CRP_Up	Fur_Down	OxyR_Up	SoxS_Up
+b0684	SoxS_Up
+b0687	HU_Down
+b0688	HU_Down
+b0696	KdpE_Up
+b0697	KdpE_Up
+b0698	KdpE_Up
+b0708	LexA_Down
+b0720	ArcA_Down	CRP_Up	IHF_Up
+b0721	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up
+b0722	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up
+b0723	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up
+b0724	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up
+b0726	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up	IHF_Down
+b0727	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up	IHF_Down
+b0728	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up	IHF_Down
+b0729	ArcA_Up	ArcA_Down	CRP_Up	FNR_Down	Fur_Up	IHF_Down
+b0730	MngR_Down
+b0731	MngR_Down
+b0732	MngR_Down
+b0733	ArcA_Up	FNR_Up	FNR_Down	FruR_Up	H-NS_Down
+b0734	ArcA_Up	FNR_Up	FNR_Down	FruR_Up	H-NS_Down
+b0743	Fis_Up
+b0744	Fis_Up
+b0745	Fis_Up
+b0754	CpxR_Up	TyrR_Down
+b0755	Fur_Down
+b0756	CRP_Up	CRP_Down	GalR_Up	GalR_Down	GalS_Up	GalS_Down	H-NS_Down	HU_Down
+b0757	CRP_Up	CRP_Down	GalR_Up	GalR_Down	GalS_Up	GalS_Down	H-NS_Down	HU_Down
+b0758	CRP_Up	CRP_Down	GalR_Up	GalR_Down	GalS_Up	GalS_Down	H-NS_Down	HU_Down
+b0759	CRP_Up	CRP_Down	GalR_Up	GalR_Down	GalS_Up	GalS_Down	H-NS_Down	HU_Down
+b0763	CRP_Up	ModE_Down
+b0764	CRP_Up	ModE_Down
+b0765	CRP_Up	ModE_Down
+b0774	BirA_Down
+b0775	BirA_Down
+b0776	BirA_Down
+b0777	BirA_Down
+b0778	BirA_Down
+b0779	LexA_Down
+b0781	CueR_Down	EnvY_Up	FNR_Up	ModE_Up
+b0782	CueR_Down	EnvY_Up	FNR_Up	ModE_Up
+b0783	CueR_Down	EnvY_Up	FNR_Up	ModE_Up
+b0784	CueR_Down	EnvY_Up	FNR_Up	ModE_Up
+b0785	CueR_Down	EnvY_Up	FNR_Up	ModE_Up
+b0799	LexA_Down
+b0805	CRP_Up	Fur_Down
+b0809	Fis_Down	IHF_Up	NtrC_Up	NtrC_Down
+b0810	IHF_Up	NtrC_Up	NtrC_Down
+b0811	IHF_Up	NtrC_Up	NtrC_Down
+b0812	IHF_Up	OxyR_Up
+b0814	FNR_Down
+b0819	Rob_Up
+b0826	ArcA_Up	FNR_Down	NarL_Up
+b0827	ArcA_Up	FNR_Down	NarL_Up
+b0839	BolA_Up	BolA_Down
+b0841	PhoP_Up
+b0849	OxyR_Up
+b0850	SoxS_Up
+b0851	SoxS_Up
+b0852	SoxS_Up
+b0853	SoxS_Up
+b0854	NtrC_Up
+b0855	NtrC_Up
+b0856	NtrC_Up
+b0857	NtrC_Up
+b0871	MarA_Up	SoxS_Up
+b0872	FNR_Up	NarL_Up	NarP_Up
+b0873	FNR_Up	NarL_Up	NarP_Up
+b0880	H-NS_Up
+b0886	ArcA_Up	FNR_Up	NarL_Up
+b0887	ArcA_Up	FNR_Up	NarL_Up
+b0889	GadE_Up	Lrp_Down
+b0890	LexA_Down
+b0894	FNR_Up	IHF_Down	ModE_Down	NarL_Down
+b0895	FNR_Up	IHF_Down	ModE_Down	NarL_Down
+b0896	FNR_Up	IHF_Down	ModE_Down	NarL_Down
+b0897	BaeR_Up	FNR_Down
+b0903	ArcA_Up	ArcA_Down	CRP_Up	FNR_Up	IHF_Up	NarL_Down
+b0904	ArcA_Up	ArcA_Down	CRP_Up	FNR_Up	IHF_Up	NarL_Down
+b0907	CRP_Down	Lrp_Up
+b0908	CRP_Down	Lrp_Up
+b0912	IHF_Down
+b0921	H-NS_Up
+b0922	H-NS_Up
+b0923	H-NS_Up
+b0924	H-NS_Up
+b0929	CRP_Up	CpxR_Down	EnvY_Up	Fur_Up	IHF_Up	IHF_Down	Lrp_Up	OmpR_Up	OmpR_Down
+b0931	CRP_Down	NadR_Down
+b0933	Cbl_Up	CysB_Down	FNR_Up	IHF_Up	IHF_Down
+b0934	Cbl_Up	CysB_Down	FNR_Up	IHF_Up	IHF_Down
+b0935	Cbl_Up	CysB_Down	FNR_Up	IHF_Up	IHF_Down
+b0936	Cbl_Up	CysB_Down	FNR_Up	IHF_Up	IHF_Down
+b0937	Cbl_Up	CysB_Down	FNR_Up	IHF_Up	IHF_Down
+b0945	PurR_Down
+b0950	MarA_Up	SoxS_Up
+b0951	MarA_Up	SoxS_Up
+b0954	FabR_Down	FadR_Up
+b0957	CRP_Up
+b0958	LexA_Down
+b0970	CpxR_Up
+b0971	Fis_Up
+b0972	AppY_Up	ArcA_Up	IscR_Down	NarL_Down	NarP_Down
+b0973	AppY_Up	ArcA_Up	IscR_Down	NarL_Down	NarP_Down
+b0974	AppY_Up	ArcA_Up	IscR_Down	NarL_Down	NarP_Down
+b0975	AppY_Up	ArcA_Up	IscR_Down	NarL_Down	NarP_Down
+b0976	AppY_Up	ArcA_Up	IscR_Down	NarL_Down	NarP_Down
+b0977	AppY_Up	ArcA_Up	IscR_Down	NarL_Down	NarP_Down
+b0978	AppY_Up	ArcA_Up
+b0979	AppY_Up	ArcA_Up
+b0980	AppY_Up	ArcA_Up
+b0995	TorR_Down
+b0996	NarL_Down	TorR_Up
+b0997	NarL_Down	TorR_Up
+b0998	NarL_Down	TorR_Up
+b1002	CRP_Up
+b1006	ArcA_Up	NtrC_Up	PhoP_Up
+b1007	ArcA_Up	NtrC_Up	PhoP_Up
+b1008	ArcA_Up	NtrC_Up	PhoP_Up
+b1009	ArcA_Up	NtrC_Up	PhoP_Up
+b1010	ArcA_Up	NtrC_Up	PhoP_Up
+b1011	ArcA_Up	NtrC_Up	PhoP_Up
+b1012	ArcA_Up	NtrC_Up	PhoP_Up
+b1014	MarA_Up	PutA_Down
+b1015	CRP_Down
+b1020	PhoB_Up
+b1021	NhaR_Up
+b1022	NhaR_Up
+b1023	NhaR_Up
+b1024	NhaR_Up
+b1032	Fis_Up
+b1037	CRP_Up	CpxR_Down	CsgD_Up	OmpR_Up	RcsAB_Down
+b1038	CRP_Up	CpxR_Down	CsgD_Up	OmpR_Up	RcsAB_Down
+b1039	CRP_Up	CpxR_Down	CsgD_Up	OmpR_Up	RcsAB_Down
+b1040	CRP_Up	CpxR_Down	CsgD_Up	OmpR_Up	RcsAB_Down
+b1041	CpxR_Down	CsgD_Up
+b1042	CpxR_Down	CsgD_Up
+b1043	CpxR_Down	CsgD_Up
+b1062	PurR_Down
+b1070	FlhDC_Up
+b1071	FlhDC_Up
+b1072	FlhDC_Up
+b1073	FlhDC_Up
+b1074	FlhDC_Up
+b1075	FlhDC_Up
+b1076	FlhDC_Up
+b1077	FlhDC_Up
+b1078	FlhDC_Up
+b1079	FlhDC_Up
+b1080	FlhDC_Up
+b1081	FlhDC_Up
+b1101	ArcA_Down	CRP_Up	DgsA_Down	Fis_Up	Fis_Down
+b1102	Fur_Down
+b1109	ArcA_Up	FNR_Down	Fis_Up	Fis_Down	IHF_Down
+b1113	CpxR_Up
+b1127	FNR_Up
+b1129	PhoP_Up	PhoP_Down
+b1130	PhoP_Up	PhoP_Down
+b1131	PurR_Down
+b1132	PurR_Down
+b1136	ArcA_Down	FruR_Up
+b1182	CRP_Up	FNR_Up	H-NS_Up	H-NS_Down	SlyA_Up
+b1183	LexA_Down
+b1184	LexA_Down
+b1189	CRP_Up	CRP_Down	Lrp_Up	Lrp_Down
+b1190	CRP_Up	CRP_Down	Lrp_Up	Lrp_Down
+b1194	FlhDC_Up
+b1198	DhaR_Up
+b1199	DhaR_Up
+b1200	DhaR_Up
+b1201	DhaR_Down
+b1207	PurR_Down
+b1210	ArcA_Up	FNR_Down	IHF_Up
+b1211	ArcA_Up	FNR_Down	IHF_Up
+b1212	ArcA_Up	FNR_Down	IHF_Up
+b1220	FNR_Down
+b1221	FNR_Down	ModE_Up
+b1222	FNR_Down	ModE_Up
+b1223	FNR_Up	IHF_Up	NarL_Up
+b1224	FNR_Up	IHF_Up	NarL_Up
+b1225	FNR_Up	IHF_Up	NarL_Up
+b1226	FNR_Up	IHF_Up	NarL_Up
+b1227	FNR_Up	IHF_Up	NarL_Up
+b1229	Fis_Up
+b1230	Fis_Up
+b1231	Fis_Up
+b1237	CspA_Up	Fis_Up	GadX_Up	H-NS_Down
+b1241	FNR_Up	Fis_Up	FruR_Down	NarL_Down
+b1243	ArcA_Down	Lrp_Down	ModE_Down
+b1244	ArcA_Down	Lrp_Down	ModE_Down
+b1245	ArcA_Down	Lrp_Down	ModE_Down
+b1246	ArcA_Down	Lrp_Down	ModE_Down
+b1247	ArcA_Down	Lrp_Down	ModE_Down
+b1252	Fur_Up	Fur_Down
+b1256	FNR_Up
+b1257	H-NS_Down
+b1258	H-NS_Down
+b1259	H-NS_Down
+b1260	TrpR_Down
+b1261	TrpR_Down
+b1262	TrpR_Down
+b1263	TrpR_Down
+b1264	TrpR_Down
+b1265	TrpR_Down
+b1272	CRP_Down
+b1274	Fis_Up	Fis_Down
+b1275	CysB_Down
+b1276	ArcA_Down	CRP_Up	FNR_Down	FruR_Up
+b1277	SoxS_Up
+b1283	RcsAB_Up
+b1303	PspF_Down
+b1304	IHF_Up	PspF_Up
+b1305	IHF_Up	PspF_Up
+b1306	IHF_Up	PspF_Up
+b1307	IHF_Up	PspF_Up
+b1308	IHF_Up	PspF_Up
+b1323	TyrR_Down
+b1324	ArcA_Down	FNR_Down
+b1334	ArcA_Down	FNR_Down
+b1379	CysB_Down
+b1384	CRP_Up
+b1385	FeaR_Up
+b1387	CRP_Up	IHF_Up	PaaX_Down
+b1388	CRP_Up	IHF_Up	PaaX_Down
+b1389	CRP_Up	IHF_Up	PaaX_Down
+b1390	CRP_Up	IHF_Up	PaaX_Down
+b1391	CRP_Up	IHF_Up	PaaX_Down
+b1392	CRP_Up	IHF_Up	PaaX_Down
+b1393	CRP_Up	IHF_Up	PaaX_Down
+b1394	CRP_Up	IHF_Up	PaaX_Down
+b1395	CRP_Up	IHF_Up	PaaX_Down
+b1396	CRP_Up	IHF_Up	PaaX_Down
+b1397	CRP_Up	IHF_Up	PaaX_Down
+b1398	CRP_Up	IHF_Up	PaaX_Down
+b1415	ArcA_Down	CRP_Up	DnaA_Down	FNR_Down
+b1429	NsrR_Down
+b1430	NsrR_Down
+b1474	FNR_Up	FNR_Down	NarL_Up	NarP_Down
+b1475	FNR_Up	FNR_Down	NarL_Up	NarP_Down
+b1476	FNR_Up	FNR_Down	NarL_Up	NarP_Down
+b1480	Fis_Up	IHF_Up	OmpR_Down	RcsAB_Up
+b1481	RcsAB_Up
+b1482	H-NS_Down	Lrp_Up	Lrp_Down	NhaR_Up	RcsAB_Up
+b1483	NtrC_Up
+b1484	NtrC_Up
+b1485	NtrC_Up
+b1486	NtrC_Up
+b1487	NtrC_Up
+b1488	NtrC_Up
+b1492	CRP_Down	GadE_Up	GadW_Down	GadX_Up	H-NS_Down
+b1493	CRP_Down	GadE_Up	GadW_Down	GadX_Up	H-NS_Down
+b1507	HipB_Down	IHF_Up
+b1508	HipB_Down	IHF_Up
+b1513	CRP_Up	LsrR_Down
+b1514	CRP_Up	LsrR_Down
+b1515	CRP_Up	LsrR_Down
+b1516	CRP_Up	LsrR_Down
+b1517	CRP_Up	LsrR_Down
+b1518	CRP_Up	LsrR_Down
+b1521	CRP_Up	ExuR_Down
+b1528	ArcA_Down
+b1530	CRP_Up	Fis_Up	MarA_Up	MarR_Down	Rob_Up	SoxS_Up
+b1531	CRP_Up	Fis_Up	MarA_Up	MarR_Down	Rob_Up	SoxS_Up
+b1532	CRP_Up	Fis_Up	MarA_Up	MarR_Down	Rob_Up	SoxS_Up
+b1535	CpxR_Up
+b1546	Fur_Down
+b1547	Fur_Down
+b1548	Fur_Down
+b1575	DicA_Down
+b1576	DicA_Down
+b1577	DicA_Down
+b1578	DicA_Down
+b1579	DicA_Down
+b1587	FNR_Up
+b1588	FNR_Up
+b1589	FNR_Up
+b1590	FNR_Up
+b1591	FNR_Up
+b1594	CRP_Up	CRP_Down	DgsA_Down
+b1597	PhoB_Up
+b1608	PhoP_Up
+b1609	PhoP_Up
+b1611	ArcA_Down	MarA_Up	Rob_Up	SoxR_Up	SoxS_Up
+b1612	ArcA_Down	CRP_Up	FNR_Down
+b1615	CRP_Up	UidR_Down	UxuR_Down
+b1616	CRP_Up	UidR_Down	UxuR_Down
+b1617	CRP_Up	UidR_Down	UxuR_Down
+b1618	UidR_Down
+b1620	CRP_Down	MalI_Down
+b1621	CRP_Up	CRP_Down	MalI_Down
+b1622	CRP_Up	CRP_Down	MalI_Down
+b1634	OmpR_Up
+b1641	PhoP_Up	PhoP_Down
+b1656	CRP_Down	Fur_Up	H-NS_Down	IHF_Down
+b1658	Fur_Down	PurR_Down
+b1676	FruR_Down
+b1679	Fur_Down	IHF_Up	IscR_Up	OxyR_Up
+b1680	Fur_Down	IHF_Up	IscR_Up	OxyR_Up
+b1681	Fur_Down	IHF_Up	IscR_Up	OxyR_Up
+b1682	Fur_Down	IHF_Up	IscR_Up	OxyR_Up
+b1683	Fur_Down	IHF_Up	IscR_Up	OxyR_Up
+b1684	Fur_Down	IHF_Up	IscR_Up	OxyR_Up
+b1702	FruR_Up
+b1704	TrpR_Down
+b1706	IscR_Up
+b1712	IHF_Down
+b1715	FNR_Down
+b1716	FNR_Down
+b1728	LexA_Down
+b1733	CRP_Up	ChbR_Up	ChbR_Down	NagC_Down
+b1734	CRP_Up	ChbR_Up	ChbR_Down	NagC_Down
+b1735	CRP_Up	ChbR_Up	ChbR_Down	NagC_Down
+b1736	CRP_Up	ChbR_Up	ChbR_Down	NagC_Down
+b1737	CRP_Up	ChbR_Up	ChbR_Down	NagC_Down
+b1738	CRP_Up	ChbR_Up	ChbR_Down	NagC_Down
+b1739	Fis_Down	IHF_Down
+b1743	BaeR_Up	CpxR_Up
+b1744	ArgR_Up	NtrC_Up
+b1745	ArgR_Up	NtrC_Up
+b1746	ArgR_Up	NtrC_Up
+b1747	ArgR_Up	NtrC_Up
+b1748	ArgR_Up	NtrC_Up
+b1761	CRP_Down	Nac_Down
+b1779	CRP_Up	FruR_Down
+b1783	NtrC_Up
+b1784	NtrC_Up
+b1805	ArcA_Down	CRP_Up	FadR_Down
+b1814	Lrp_Down
+b1817	CRP_Up	DgsA_Down	NagC_Down
+b1818	CRP_Up	DgsA_Down	NagC_Down
+b1819	CRP_Up	DgsA_Down	NagC_Down
+b1826	PhoP_Up
+b1846	CpxR_Up
+b1850	FruR_Down	GntR_Down	KdgR_Down	PhoB_Down
+b1851	FruR_Down	GntR_Down
+b1852	MarA_Up	Rob_Up	SoxS_Up
+b1857	Zur_Down
+b1858	Zur_Down
+b1859	Zur_Down
+b1860	LexA_Down
+b1861	LexA_Down
+b1878	FlhDC_Up
+b1879	FlhDC_Up
+b1880	FlhDC_Up
+b1881	FNR_Up
+b1882	FNR_Up
+b1883	FNR_Up
+b1884	FNR_Up
+b1885	FNR_Up
+b1886	FNR_Up
+b1887	CpxR_Down
+b1888	CpxR_Down
+b1889	CpxR_Down
+b1890	CpxR_Down
+b1891	CRP_Up	Fur_Down	H-NS_Up	HdfR_Down	IHF_Down	LrhA_Down	OmpR_Down	QseB_Up	RcsAB_Down
+b1892	CRP_Up	Fur_Down	H-NS_Up	HdfR_Down	IHF_Down	LrhA_Down	OmpR_Down	QseB_Up	RcsAB_Down
+b1900	AraC_Up	CRP_Up
+b1901	AraC_Up	CRP_Up
+b1902	CpxR_Up
+b1904	FNR_Up	FlhDC_Up
+b1907	HU_Down	IHF_Down	TyrR_Up	TyrR_Down
+b1913	LexA_Down
+b1914	LexA_Down
+b1920	FlhDC_Up	H-NS_Up
+b1921	FlhDC_Up	H-NS_Up
+b1922	FlhDC_Up	H-NS_Up
+b1923	GadE_Up	H-NS_Up
+b1924	FlhDC_Up
+b1925	FlhDC_Up
+b1926	FlhDC_Up
+b1937	FlhDC_Up
+b1938	FlhDC_Up
+b1939	FlhDC_Up
+b1940	FlhDC_Up
+b1941	FlhDC_Up
+b1942	FlhDC_Up
+b1943	FlhDC_Up
+b1944	FlhDC_Up
+b1945	FlhDC_Up
+b1946	FlhDC_Up
+b1947	FlhDC_Up
+b1948	FlhDC_Up
+b1949	FlhDC_Up
+b1950	FlhDC_Up
+b1951	GadE_Up	H-NS_Down	RcsAB_Up
+b1973	Fur_Up	SoxS_Up
+b1987	CysB_Up	NtrC_Up
+b1988	Nac_Down	NtrC_Up
+b2000	OxyR_Down
+b2029	GadE_Up
+b2058	RcsAB_Up
+b2059	RcsAB_Up
+b2060	RcsAB_Up
+b2061	RcsAB_Up
+b2062	RcsAB_Up
+b2068	Ada_Up
+b2074	BaeR_Up	CpxR_Up
+b2075	BaeR_Up	CpxR_Up
+b2076	BaeR_Up	CpxR_Up
+b2077	BaeR_Up	CpxR_Up
+b2078	BaeR_Up	CpxR_Up
+b2079	BaeR_Up	CpxR_Up
+b2091	ArcA_Down	CRP_Up	GatR_Down
+b2092	ArcA_Down	CRP_Up	GatR_Down
+b2093	ArcA_Down	CRP_Up	GatR_Down
+b2094	ArcA_Down	CRP_Up	GatR_Down
+b2095	ArcA_Down	CRP_Up	GatR_Down
+b2096	ArcA_Down	CRP_Up	GatR_Down
+b2143	CRP_Up	CRP_Down	CytR_Down
+b2148	CRP_Up	Fis_Down	FlhDC_Down	GalR_Down	GalS_Down
+b2149	CRP_Up	Fis_Down	FlhDC_Down	GalR_Down	GalS_Down
+b2150	CRP_Up	FlhDC_Down	GalR_Down	GalS_Down
+b2151	CRP_Up	GalR_Down	GalS_Down
+b2155	CRP_Up	Fur_Down
+b2159	MarA_Up	Rob_Up	SoxS_Up
+b2163	FNR_Down	IHF_Up	Lrp_Up	YeiL_Up
+b2167	FruR_Down
+b2168	FruR_Down
+b2169	FruR_Down
+b2189	Fis_Up
+b2194	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2195	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2196	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2197	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2198	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2199	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2200	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2201	FNR_Up	FlhDC_Up	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2202	FNR_Up	FlhDC_Up	IscR_Down	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2203	FNR_Up	FlhDC_Up	IscR_Down	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2204	FNR_Up	FlhDC_Up	IscR_Down	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2205	FNR_Up	FlhDC_Up	IscR_Down	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2206	FNR_Up	FlhDC_Up	IscR_Down	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2207	FNR_Up	FlhDC_Up	IscR_Down	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2208	FNR_Up	FlhDC_Up	IscR_Down	ModE_Up	NarL_Down	NarP_Up	NarP_Down
+b2212	Ada_Up	Ada_Down
+b2213	Ada_Up	Ada_Down
+b2215	CpxR_Up	EnvY_Up	IHF_Down	Lrp_Down	OmpR_Up
+b2221	AtoC_Up
+b2222	AtoC_Up
+b2223	AtoC_Up
+b2224	AtoC_Up
+b2231	CRP_Up	CspA_Up	Fis_Down
+b2232	CRP_Up
+b2234	ArgP_Up	CRP_Up	DnaA_Up	Fis_Up
+b2235	ArgP_Up	CRP_Up	DnaA_Up	Fis_Up
+b2237	MarA_Up	Rob_Up	SoxS_Up
+b2239	CRP_Up	FNR_Up	GlpR_Down	IHF_Down
+b2240	CRP_Up	FNR_Up	GlpR_Down	IHF_Down
+b2241	ArcA_Down	CRP_Up	FNR_Up	FlhDC_Up	GlpR_Down
+b2242	ArcA_Down	CRP_Up	FNR_Up	FlhDC_Up	GlpR_Down
+b2243	ArcA_Down	CRP_Up	FNR_Up	FlhDC_Up	GlpR_Down
+b2276	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2277	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2278	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2279	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2280	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2281	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2282	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2283	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2284	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2285	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2286	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2287	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2288	ArcA_Down	FNR_Down	Fis_Up	IHF_Down	NarL_Up
+b2289	LrhA_Up
+b2296	ArcA_Up	FNR_Up
+b2306	NtrC_Up
+b2307	NtrC_Up
+b2308	NtrC_Up
+b2309	NtrC_Up
+b2310	NtrC_Up
+b2311	PurR_Down
+b2312	PurR_Down
+b2313	PurR_Down
+b2323	FabR_Down	FadR_Up
+b2341	ArcA_Down	FadR_Down
+b2342	ArcA_Down	FadR_Down
+b2344		CRP_Down	FadR_Down	OmpR_Down	PhoP_Up
+b2348	Fis_Up
+b2364	DsdC_Down
+b2365	CRP_Up	DsdC_Up
+b2366	CRP_Up	DsdC_Up
+b2367	EvgA_Up	FNR_Up
+b2368	EvgA_Up	FNR_Up
+b2369	EvgA_Up
+b2370	EvgA_Up
+b2388	FruR_Down
+b2392	Fur_Down	MntR_Down
+b2393	CRP_Up	CytR_Down	Nac_Up
+b2396	Fis_Up
+b2397	Fis_Up
+b2401	Fis_Up
+b2402	Fis_Up
+b2403	Fis_Up
+b2404	Fis_Up
+b2406	XapR_Up
+b2407	XapR_Up
+b2414	CysB_Up
+b2415	CRP_Up	CRP_Down	DgsA_Down	FruR_Up	FruR_Down
+b2416	CRP_Up	CRP_Down	DgsA_Down	FruR_Up	FruR_Down
+b2417	CRP_Up	CRP_Down	DgsA_Down	FruR_Up	FruR_Down
+b2421	CysB_Up
+b2422	CysB_Up
+b2423	CysB_Up
+b2424	CysB_Up
+b2425	CysB_Up
+b2435	IHF_Down
+b2436	IHF_Down
+b2470	BaeR_Up	CpxR_Up	EvgA_Up
+b2476	PurR_Down
+b2481	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2482	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2483	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2484	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2485	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2486	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2487	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2488	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2489	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2490	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2491	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2492	CRP_Up	FNR_Down	FhlA_Up	HyfR_Up
+b2497	FNR_Up
+b2498	FNR_Up
+b2499	FNR_Down	PurR_Down
+b2500	FNR_Down	PurR_Down
+b2507	CRP_Up	DnaA_Down	Fis_Up	PurR_Down
+b2508	CRP_Up	DnaA_Down	Fis_Up	PurR_Down
+b2509	CRP_Down
+b2528	IscR_Down
+b2529	IscR_Down
+b2530	IscR_Down
+b2531	IscR_Down
+b2535	CRP_Up	H-NS_Up
+b2537	HcaR_Down
+b2538	HcaR_Up
+b2539	HcaR_Up
+b2540	HcaR_Up
+b2541	HcaR_Up
+b2542	HcaR_Up
+b2551	MetR_Up	PurR_Down
+b2552	FNR_Down	NsrR_Down
+b2553	PurR_Down
+b2557	PurR_Down
+b2558	Rob_Up
+b2570	CpxR_Down
+b2571	CpxR_Down
+b2572	CpxR_Down
+b2573	CpxR_Down
+b2574	NadR_Down
+b2579	ArcA_Up	CRP_Up	FNR_Up	FNR_Down	PdhR_Down
+b2580	CpxR_Down
+b2582	OxyR_Up
+b2588	Fis_Up	H-NS_Down	Lrp_Down
+b2589	Fis_Up	H-NS_Down	Lrp_Down
+b2590	Fis_Up	H-NS_Down	Lrp_Down
+b2591	Fis_Up	H-NS_Down	Lrp_Down
+b2600	TyrR_Down
+b2601	TyrR_Down
+b2606	FNR_Down
+b2607	FNR_Down
+b2608	FNR_Down
+b2609	FNR_Down
+b2614	CRP_Up
+b2616	LexA_Down
+b2617	CpxR_Down
+b2659	CRP_Up	CsiR_Down	H-NS_Up	Lrp_Up
+b2660	CRP_Up	CsiR_Down	H-NS_Up	Lrp_Up
+b2661	CRP_Up	CsiR_Down	H-NS_Up	Lrp_Up	Nac_Up
+b2662	CRP_Up	CsiR_Down	H-NS_Up	Lrp_Up	Nac_Up
+b2663	CRP_Up	CsiR_Down	H-NS_Up	Lrp_Up	Nac_Up
+b2669	H-NS_Down	Lrp_Up
+b2671	Fur_Down
+b2673	Fur_Down
+b2674	Fur_Down
+b2675	Fur_Down
+b2676	Fur_Down
+b2677	H-NS_Down
+b2678	H-NS_Down
+b2679	H-NS_Down
+b2684	MprA_Down
+b2685	MprA_Down
+b2686	MprA_Down
+b2697	AlaS_Down
+b2698	LexA_Down
+b2699	LexA_Down
+b2702	CRP_Up	GutM_Up	GutR_Down
+b2703	CRP_Up	GutM_Up	GutR_Down
+b2704	CRP_Up	GutM_Up	GutR_Down
+b2705	CRP_Up	GutM_Up	GutR_Down
+b2706	CRP_Up	GutM_Up	GutR_Down
+b2707	CRP_Up	GutM_Up	GutR_Down
+b2708	CRP_Up	GutM_Up	GutR_Down
+b2709	NorR_Down
+b2710	FNR_Down	IHF_Up	IHF_Down	NarL_Down	NarP_Down	NorR_Up
+b2711	FNR_Down	IHF_Up	IHF_Down	NarL_Down	NarP_Down	NorR_Up
+b2712	FhlA_Up	FlhDC_Up
+b2713	FhlA_Up	FlhDC_Up
+b2714	AscG_Down
+b2715	AscG_Down
+b2716	AscG_Down
+b2717	FhlA_Up	IHF_Up	ModE_Up
+b2718	FhlA_Up	IHF_Up	ModE_Up
+b2719	FhlA_Up	IHF_Up	ModE_Up
+b2720	FhlA_Up	IHF_Up	ModE_Up
+b2721	FhlA_Up	IHF_Up	ModE_Up
+b2722	FhlA_Up	IHF_Up	ModE_Up
+b2723	FhlA_Up	IHF_Up	ModE_Up
+b2724	FhlA_Up	IHF_Up	ModE_Up
+b2725	FhlA_Up	IHF_Up	ModE_Up
+b2726	FhlA_Up	IHF_Up
+b2727	FNR_Up	FhlA_Up	IHF_Up
+b2728	FNR_Up	FhlA_Up	IHF_Up
+b2729	FNR_Up	FhlA_Up	IHF_Up
+b2730	FNR_Up	FhlA_Up	IHF_Up
+b2731	FNR_Up	FhlA_Up	IHF_Up
+b2732	FNR_Down	NsrR_Down
+b2737	FlhDC_Up
+b2741	ArcA_Down	CRP_Up	CRP_Down	GadX_Up
+b2750	CysB_Up
+b2751	CysB_Up
+b2752	CysB_Up
+b2762	CysB_Up	IHF_Up
+b2763	CysB_Up	IHF_Up
+b2764	CysB_Up	IHF_Up
+b2781	Fis_Up
+b2782	CRP_Up	Fis_Up	H-NS_Up
+b2783	CRP_Up	Fis_Up	H-NS_Up
+b2784	CRP_Up	H-NS_Up
+b2787	CdaR_Up
+b2788	CdaR_Up
+b2789	CdaR_Up
+b2799	CRP_Up	FucR_Up
+b2800	CRP_Up	FucR_Up
+b2801	CRP_Up	FucR_Up
+b2802	CRP_Up	FucR_Up
+b2803	CRP_Up	FucR_Up
+b2804	CRP_Up	FucR_Up
+b2805	CRP_Up	FucR_Up
+b2808	GcvA_Down
+b2818	ArgR_Down
+b2822	FlhDC_Up
+b2823	FlhDC_Up
+b2824	FlhDC_Up
+b2825	FlhDC_Up
+b2826	FlhDC_Up
+b2838	LysR_Up
+b2839	LysR_Down
+b2841	AraC_Up	CRP_Up
+b2864	Fis_Up
+b2866	FNR_Up
+b2867	FNR_Up
+b2868	FNR_Up
+b2893	CpxR_Up
+b2895	SoxS_Up
+b2903	FNR_Up	GcvA_Up	GcvA_Down	Lrp_Up	PurR_Down
+b2904	FNR_Up	GcvA_Up	GcvA_Down	Lrp_Up	PurR_Down
+b2905	FNR_Up	GcvA_Up	GcvA_Down	Lrp_Up	PurR_Down
+b2913	CRP_Up	Lrp_Up	Lrp_Down	Nac_Down
+b2916	PhoB_Up
+b2917	FNR_Up
+b2918	FNR_Up
+b2919	FNR_Up
+b2920	FNR_Up
+b2925	CRP_Up	FruR_Down
+b2926	CRP_Up	FruR_Down
+b2927	CRP_Up	FruR_Down
+b2937	PurR_Down
+b2938	PurR_Down
+b2942	CRP_Down	MetJ_Down
+b2943	CRP_Up	GalR_Down	GalS_Down
+b2957	CRP_Up	FNR_Up
+b2964	CRP_Up	CRP_Down	CytR_Down	DeoR_Down
+b2965	CRP_Down
+b2967	Fis_Up
+b2975	ArcA_Down	GlcC_Up	IHF_Up
+b2976	ArcA_Down	GlcC_Up	IHF_Up
+b2977	ArcA_Down	GlcC_Up	IHF_Up
+b2979	ArcA_Down	GlcC_Up	IHF_Up
+b2980	CRP_Up	GlcC_Down
+b2987	PhoB_Down
+b2990	ArcA_Down	NarL_Down
+b2991	ArcA_Down	NarL_Down
+b2992	ArcA_Down	NarL_Down
+b2993	ArcA_Down	NarL_Down
+b2994	ArcA_Down	NarL_Down
+b2995	ArcA_Down	NarL_Down
+b2996	ArcA_Down	NarL_Down
+b2997	ArcA_Down	NarL_Down
+b3005	Fur_Down
+b3006	Fur_Down
+b3008	MetJ_Down
+b3025	QseB_Up
+b3026	QseB_Up
+b3049	CRP_Up
+b3057	CpxR_Up
+b3065	LexA_Down
+b3066	LexA_Down
+b3067	LexA_Down
+b3071	FNR_Up
+b3072	FNR_Up
+b3073	Fis_Up	Fis_Down	IHF_Up	IHF_Down	NtrC_Up
+b3076	CRP_Up	EbgR_Down
+b3077	CRP_Up	EbgR_Down
+b3091	CRP_Up	ExuR_Down	FNR_Up
+b3092	CRP_Up	ExuR_Down	FNR_Up
+b3093	CRP_Up	ExuR_Down
+b3094	ExuR_Down
+b3095	CpxR_Up
+b3096	CpxR_Up
+b3113	CRP_Up	FNR_Up	IHF_Up	TdcA_Up	TdcR_Up
+b3114	CRP_Up	FNR_Up	IHF_Up	TdcA_Up	TdcR_Up
+b3115	CRP_Up	FNR_Up	IHF_Up	TdcA_Up	TdcR_Up
+b3116	CRP_Up	FNR_Up	IHF_Up	TdcA_Up	TdcR_Up
+b3117	CRP_Up	FNR_Up	IHF_Up	TdcA_Up	TdcR_Up
+b3118	CRP_Up	FNR_Up	IHF_Up	TdcA_Up	TdcR_Up
+b3123	CdaR_Up	FNR_Up	Fis_Up	Fis_Down
+b3124	CdaR_Up	FNR_Up
+b3125	CdaR_Up	FNR_Up
+b3126	CdaR_Up	FNR_Up
+b3127	CdaR_Up	FNR_Up
+b3128	CdaR_Up
+b3131	AgaR_Down
+b3132	AgaR_Down	CRP_Up
+b3133	AgaR_Down	CRP_Up
+b3134	AgaR_Down	CRP_Up
+b3135	AgaR_Down	CRP_Up
+b3136	AgaR_Down
+b3137	AgaR_Down
+b3138	AgaR_Down
+b3139	AgaR_Down
+b3140	AgaR_Down
+b3141	AgaR_Down
+b3161	HU_Down	IHF_Down	TrpR_Down	TyrR_Up
+b3164	ArgR_Down	CRP_Down	Fis_Up
+b3165	ArgR_Down	CRP_Down	Fis_Up
+b3166	ArgR_Down	CRP_Down	Fis_Up
+b3167	ArgR_Down	CRP_Down	Fis_Up
+b3168	ArgR_Down	CRP_Down	Fis_Up
+b3169	ArgR_Down	CRP_Down	Fis_Up
+b3170	ArgR_Down	CRP_Down	Fis_Up
+b3171	ArgR_Down	CRP_Down	Fis_Up
+b3172	ArgR_Down	CRP_Up
+b3207	PhoP_Up
+b3212	ArgR_Down	CRP_Down	FNR_Down	GadE_Up	IHF_Up	Lrp_Up	Nac_Down
+b3213	ArgR_Down	CRP_Down	FNR_Down	GadE_Up	IHF_Up	Lrp_Up	Nac_Down
+b3214	ArgR_Down	CRP_Down	FNR_Down	GadE_Up	IHF_Up	Lrp_Up	Nac_Down
+b3221	CRP_Up	NanR_Down
+b3222	CRP_Up	NanR_Down
+b3223	CRP_Up	NanR_Down
+b3224	CRP_Up	NanR_Down
+b3225	CRP_Up	NanR_Down
+b3227	IHF_Up	PhoP_Down
+b3230	FNR_Down
+b3231	FNR_Down
+b3236	ArcA_Down	CRP_Up	FlhDC_Down
+b3237	ArgR_Down
+b3247	FlhDC_Up
+b3248	FlhDC_Up
+b3249	FlhDC_Up
+b3250	FlhDC_Up
+b3251	FlhDC_Up
+b3260	CRP_Up	CRP_Down	Fis_Down	IHF_Up
+b3261	CRP_Up	CRP_Down	Fis_Down	IHF_Up
+b3265	FNR_Up
+b3266	FNR_Up
+b3268	NtrC_Up
+b3269	NtrC_Up
+b3270	NtrC_Up
+b3271	NtrC_Up
+b3272	Fis_Up	H-NS_Down	Lrp_Down
+b3273	Fis_Up	H-NS_Down	Lrp_Down
+b3274	Fis_Up	H-NS_Down	Lrp_Down
+b3275	Fis_Up	H-NS_Down	Lrp_Down
+b3276	Fis_Up	H-NS_Down	Lrp_Down
+b3277	Fis_Up	H-NS_Down	Lrp_Down
+b3278	Fis_Up	H-NS_Down	Lrp_Down
+b3311	ArcA_Down	FNR_Up
+b3312	ArcA_Down	FNR_Up
+b3313	ArcA_Down	FNR_Up
+b3314	ArcA_Down	FNR_Up
+b3315	ArcA_Down	FNR_Up
+b3316	ArcA_Down	FNR_Up
+b3317	ArcA_Down	FNR_Up
+b3318	ArcA_Down	FNR_Up
+b3319	ArcA_Down	FNR_Up
+b3320	ArcA_Down	FNR_Up
+b3321	ArcA_Down	FNR_Up
+b3322	H-NS_Down
+b3323	H-NS_Down
+b3324	H-NS_Down
+b3325	H-NS_Down
+b3326	H-NS_Down
+b3327	H-NS_Down
+b3328	H-NS_Down
+b3329	H-NS_Down
+b3330	H-NS_Down
+b3331	H-NS_Down
+b3332	H-NS_Down
+b3333	H-NS_Down
+b3334	H-NS_Down
+b3335	H-NS_Down
+b3338	H-NS_Down
+b3356	CRP_Up	CRP_Down
+b3357	CRP_Up	CRP_Down
+b3359	ArgR_Down	PhoP_Down
+b3363	CRP_Up	CRP_Down	CpxR_Up	CytR_Down
+b3365	CRP_Down	FNR_Up	Fis_Down	FruR_Down	H-NS_Down	IHF_Down	NarL_Up	NarP_Up
+b3366	CRP_Down	FNR_Up	Fis_Down	FruR_Down	H-NS_Down	IHF_Down	NarL_Up	NarP_Up
+b3367	CRP_Down	FNR_Up	Fis_Down	FruR_Down	H-NS_Down	IHF_Down	NarL_Up	NarP_Up
+b3368	CRP_Down	FNR_Up	Fis_Down	FruR_Down	H-NS_Down	IHF_Down	NarL_Up	NarP_Up
+b3403	FruR_Up
+b3404	CRP_Up	CRP_Down	IHF_Down
+b3405	CRP_Up	CRP_Down	IHF_Down
+b3408	FNR_Up	Fur_Down
+b3409	FNR_Up	Fur_Down
+b3413	CRP_Up	GntR_Down
+b3414	CRP_Up	GntR_Down	IscR_Down
+b3415	CRP_Up	GntR_Down
+b3416	FNR_Up	MalT_Up
+b3417	FNR_Up	MalT_Up
+b3418	CRP_Up	DgsA_Down	Lrp_Up
+b3421	IHF_Up	RtcR_Up
+b3423	CRP_Up
+b3424	CRP_Up
+b3425	CRP_Up
+b3426	ArcA_Down	CRP_Up	GlpR_Down
+b3428	CRP_Up
+b3429	CRP_Up
+b3430	CRP_Up
+b3437	CRP_Up	GntR_Down	IdnR_Down
+b3441	Fur_Down
+b3449	CRP_Up	PhoB_Up	PhoB_Down
+b3450	CRP_Up	PhoB_Up	PhoB_Down
+b3451	CRP_Up	PhoB_Up	PhoB_Down
+b3452	CRP_Up	PhoB_Up	PhoB_Down
+b3453	CRP_Up	PhoB_Up	PhoB_Down
+b3454	Lrp_Down
+b3455	Lrp_Down
+b3456	Lrp_Down
+b3457	Lrp_Down
+b3458	Lrp_Down
+b3460	Lrp_Down
+b3461	CRP_Up	CRP_Down	CytR_Down	DnaA_Down	IHF_Up
+b3469	ZntR_Up
+b3476	FNR_Up	NarL_Down	NikR_Down
+b3477	FNR_Up	NarL_Down	NikR_Down
+b3478	FNR_Up	NarL_Down	NikR_Down
+b3479	FNR_Up	NarL_Down	NikR_Down
+b3480	FNR_Up	NarL_Down	NikR_Down
+b3481	FNR_Up	NarL_Down	NikR_Down
+b3493	FNR_Up
+b3495	FadR_Down
+b3500	OxyR_Up
+b3506	AlpA_Up	MarA_Down
+b3509	GadE_Up	GadX_Up	H-NS_Down	MarA_Down	TorR_Up
+b3510	GadE_Up	GadX_Up	H-NS_Down	MarA_Down	TorR_Up
+b3511	GadE_Up	GadX_Up	H-NS_Down
+b3512	EvgA_Up	GadE_Up	YdeO_Up
+b3515	FNR_Down
+b3516	ArcA_Up	CRP_Down	FNR_Down	GadE_Up	GadW_Down	GadX_Up	H-NS_Down	TorR_Down
+b3517	ArcA_Up	CRP_Down	FNR_Down	GadE_Up	GadW_Down	GadX_Up	H-NS_Down	TorR_Down
+b3525	FlhDC_Up
+b3528	ArcA_Down	CRP_Up	DcuR_Up
+b3531	FNR_Up
+b3532	FNR_Up
+b3540	FNR_Down	IHF_Up
+b3541	FNR_Down	IHF_Up
+b3542	FNR_Down	IHF_Up
+b3543	FNR_Down	IHF_Up
+b3544	FNR_Down	IHF_Up
+b3545	Fis_Up
+b3558	LexA_Down
+b3564	CRP_Up	XylR_Up
+b3565	CRP_Up	XylR_Up
+b3566	CRP_Up	Fis_Down	XylR_Up
+b3567	CRP_Up	Fis_Down	XylR_Up
+b3568	CRP_Up	Fis_Down	XylR_Up
+b3569	ArcA_Up	CRP_Up	Fis_Down	XylR_Up
+b3571	CRP_Up	MalT_Up	PhoP_Up
+b3574	CRP_Down	IHF_Down
+b3575	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3576	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3577	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3578	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3579	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3580	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3581	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3582	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3583	CRP_Up	CRP_Down	IHF_Up	YiaJ_Down
+b3588	CRP_Up	Fis_Down
+b3599	CRP_Up	Fis_Down	FruR_Down	MtlR_Down
+b3600	CRP_Up	Fis_Down	FruR_Down	MtlR_Down
+b3601	CRP_Up	Fis_Down	FruR_Down	MtlR_Down
+b3603	ArcA_Down	LldR_Down	PdhR_Up
+b3604	ArcA_Down	LldR_Down	PdhR_Up
+b3605	ArcA_Down	LldR_Down	PdhR_Up
+b3616	Lrp_Up
+b3617	Lrp_Up
+b3666	CRP_Up	UhpA_Up
+b3670	CRP_Up
+b3671	CRP_Up
+b3672	CRP_Up
+b3686	IHF_Up
+b3688	CpxR_Up
+b3699	Fis_Down
+b3700	ArgP_Up	DnaA_Down
+b3701	ArgP_Up	DnaA_Down
+b3702	ArgP_Up	DnaA_Down
+b3707	CRP_Up	TorR_Up
+b3708	CRP_Up	TorR_Up
+b3709	CRP_Up	TorR_Up
+b3721	CRP_Up	Fis_Down	H-NS_Down
+b3722	CRP_Up	Fis_Down	H-NS_Down
+b3723	CRP_Up	Fis_Down	H-NS_Down
+b3724	FNR_Up	IHF_Up	PhoB_Up
+b3725	FNR_Up	IHF_Up	PhoB_Up
+b3726	FNR_Up	IHF_Up	PhoB_Up
+b3727	FNR_Up	IHF_Up	PhoB_Up
+b3728	FNR_Up	IHF_Up	PhoB_Up
+b3729	NagC_Up	NagC_Down
+b3730	NagC_Up	NagC_Down
+b3741	AsnC_Down	Nac_Down
+b3742	AsnC_Down	Nac_Down
+b3743	AsnC_Down	Nac_Down
+b3744	AsnC_Up
+b3748	CRP_Up	RbsR_Down
+b3749	CRP_Up	RbsR_Down
+b3750	CRP_Up	RbsR_Down
+b3751	CRP_Up	RbsR_Down
+b3752	CRP_Up	RbsR_Down
+b3753	CRP_Up	RbsR_Down
+b3756	Fis_Up	H-NS_Down	Lrp_Down
+b3757	Fis_Up	H-NS_Down	Lrp_Down
+b3758	Fis_Up	H-NS_Down	Lrp_Down
+b3759	Fis_Up	H-NS_Down	Lrp_Down
+b3766	IHF_Up	IHF_Down	Lrp_Down
+b3769	IHF_Up	IHF_Down	Lrp_Down
+b3770	IHF_Up	IHF_Down	Lrp_Down
+b3771	IHF_Up	IHF_Down	Lrp_Down
+b3772	IHF_Up	IHF_Down	Lrp_Down
+b3773	IlvY_Down
+b3774	IlvY_Up
+b3781	CRP_Down
+b3796	Fis_Up
+b3797	Fis_Up
+b3798	Fis_Up
+b3799	Fis_Up
+b3800	Rob_Up
+b3806	CRP_Down
+b3813	LexA_Down
+b3828	MetJ_Down	MetR_Down
+b3829	MetJ_Down	MetR_Up
+b3830	FNR_Down
+b3831	CRP_Up	CytR_Down
+b3845	ArcA_Down	FadR_Down
+b3846	ArcA_Down	FadR_Down
+b3851	Fis_Up	Lrp_Down
+b3852	Fis_Up	Lrp_Down
+b3853	Fis_Up	Lrp_Down
+b3854	Fis_Up	Lrp_Down
+b3855	Fis_Up	Lrp_Down
+b3859	CpxR_Up
+b3860	CpxR_Up
+b3863	DnaA_Up
+b3864	CRP_Down
+b3868	CRP_Up	CRP_Down	Fis_Up	NtrC_Up	NtrC_Down
+b3869	CRP_Up	CRP_Down	Fis_Up	NtrC_Up	NtrC_Down
+b3870	CRP_Up	CRP_Down	Fis_Up	NtrC_Up	NtrC_Down
+b3902	CRP_Up	RhaS_Up
+b3903	CRP_Up	RhaS_Up
+b3904	CRP_Up	RhaS_Up
+b3905	CRP_Up	RhaR_Up
+b3906	CRP_Up	RhaR_Up
+b3907	ArcA_Down	CRP_Up	RhaS_Up
+b3908	ArcA_Down	CRP_Up	FNR_Down	Fur_Down	IHF_Down	MarA_Up	Rob_Up	SoxS_Up
+b3911	CpxR_Up
+b3912	CpxR_Up
+b3916	FruR_Down
+b3924	MarA_Up	SoxS_Up
+b3925	CRP_Up	GlpR_Down
+b3926	CRP_Up	GlpR_Down
+b3927	CRP_Up	GlpR_Down
+b3934	CRP_Up	CytR_Up	CytR_Down
+b3938	Fur_Down
+b3939	MetJ_Down	PhoP_Up
+b3940	MetJ_Down	PhoP_Up
+b3941	MetJ_Down
+b3942	FNR_Up	OxyR_Up
+b3957	ArgR_Down
+b3958	ArgR_Down
+b3959	ArgR_Down
+b3960	ArgR_Down
+b3961	CRP_Up	OxyR_Down
+b3965	Fis_Up
+b3968	Fis_Up	H-NS_Down	Lrp_Down
+b3969	Fis_Up	H-NS_Down	Lrp_Down
+b3970	Fis_Up	H-NS_Down	Lrp_Down
+b3971	Fis_Up	H-NS_Down	Lrp_Down
+b3976	Fis_Up
+b3977	Fis_Up
+b3978	Fis_Up
+b3979	Fis_Up
+b3980	Fis_Up
+b4000	CRP_Up	Fis_Up
+b4002	ZraR_Up
+b4003	CRP_Up	ZraR_Up
+b4004	CRP_Up	ZraR_Up
+b4005	PhoP_Up	PurR_Down
+b4006	PhoP_Up	PurR_Down
+b4007	Fis_Up	Lrp_Down
+b4008	Fis_Up	Lrp_Down
+b4009	Fis_Up	Lrp_Down
+b4010	Fis_Up	Lrp_Down
+b4013	MetJ_Down	MetR_Up
+b4014	ArcA_Down	CRP_Down	FruR_Up	IHF_Up	IclR_Down
+b4015	ArcA_Down	CRP_Down	FruR_Up	IHF_Up	IclR_Down
+b4016	ArcA_Down	CRP_Down	FruR_Up	IHF_Up	IclR_Down
+b4018	FadR_Up	IclR_Down
+b4019	Fur_Down	MetR_Up
+b4026	IHF_Up	RcsAB_Up
+b4027	IHF_Up	RcsAB_Up
+b4028	IHF_Up	RcsAB_Up
+b4029	IHF_Up	RcsAB_Up
+b4030	CRP_Down	PhoB_Up
+b4032	CRP_Up	MalT_Up
+b4033	CRP_Up	MalT_Up
+b4034	CRP_Up	MalT_Up
+b4035	CRP_Up	MalT_Up
+b4036	CRP_Up	MalT_Up
+b4037	CRP_Up	MalT_Up
+b4039	ArcA_Down	FNR_Down	IHF_Down	NarL_Down
+b4040	ArcA_Down	FNR_Down	IHF_Down	NarL_Down
+b4043	LexA_Down
+b4044	LexA_Down
+b4050	IHF_Up	PspF_Up
+b4054	TyrR_Down
+b4058	ArcA_Down	LexA_Down
+b4059	ArcA_Down	LexA_Down
+b4062	SoxR_Up	SoxS_Down
+b4063	SoxR_Down
+b4067	CRP_Up	Fis_Down	IHF_Up	IHF_Down
+b4068	CRP_Up	Fis_Down	IHF_Up	IHF_Down
+b4069	CRP_Up	Fis_Down	IHF_Up	IHF_Down
+b4070	FNR_Up	Fis_Down	FlhDC_Up	IHF_Up	IHF_Down	NarL_Up	NarL_Down	NarP_Up
+b4071	FNR_Up	Fis_Down	FlhDC_Up	IHF_Up	IHF_Down	NarL_Up	NarL_Down	NarP_Up
+b4072	FNR_Up	Fis_Down	FlhDC_Up	IHF_Up	IHF_Down	NarL_Up	NarL_Down	NarP_Up
+b4073	FNR_Up	Fis_Down	FlhDC_Up	IHF_Up	IHF_Down	NarL_Up	NarL_Down	NarP_Up
+b4074	FNR_Up	Fis_Down	FlhDC_Up	IHF_Up	IHF_Down	NarL_Up	NarL_Down	NarP_Up
+b4075	FNR_Up	Fis_Down	FlhDC_Up	IHF_Up	IHF_Down	NarL_Up	NarL_Down	NarP_Up
+b4076	FNR_Up	Fis_Down	FlhDC_Up	IHF_Up	IHF_Down	NarL_Up	NarL_Down	NarP_Up
+b4079	FNR_Up	FhlA_Up	NarL_Down	NarP_Up
+b4085	AlsR_Down
+b4086	AlsR_Down
+b4087	AlsR_Down
+b4088	AlsR_Down
+b4089	AlsR_Down
+b4090	AlsR_Down
+b4092	PhoB_Up
+b4093	PhoB_Up
+b4094	PhoB_Up
+b4095	PhoB_Up
+b4096	PhoB_Up
+b4097	PhoB_Up
+b4098	PhoB_Up
+b4099	PhoB_Up
+b4100	PhoB_Up
+b4101	PhoB_Up
+b4102	PhoB_Up
+b4104	PhoB_Up
+b4105	PhoB_Up
+b4106	PhoB_Up
+b4111	CRP_Up	CRP_Down	Fis_Up
+b4117	AdiY_Up	H-NS_Down	IHF_Up
+b4118	CRP_Up	MelR_Up	MelR_Down
+b4119	CRP_Up	MelR_Up	MelR_Down
+b4120	CRP_Up	MelR_Up	MelR_Down
+b4122	ArcA_Up	CRP_Up	DcuR_Up	FNR_Up	Fis_Down	Fur_Up	NarL_Down
+b4123	CRP_Up	DcuR_Up	FNR_Up	NarL_Down
+b4124	FNR_Up	NarL_Down
+b4125	FNR_Up	NarL_Down
+b4129	Lrp_Down
+b4131	ArcA_Down	CadC_Up	GadE_Up	GadX_Up	H-NS_Down
+b4132	ArcA_Down	CadC_Up	GadE_Up	GadX_Up	H-NS_Down
+b4133	CadC_Up	FNR_Up
+b4134	Fis_Up
+b4138	CRP_Up	FNR_Up	NarL_Down
+b4139	CRP_Up	FNR_Up	NarL_Down
+b4150	BolA_Up	BolA_Down
+b4151	DcuR_Up	FNR_Up	NarL_Down
+b4152	DcuR_Up	FNR_Up	NarL_Down
+b4153	DcuR_Up	FNR_Up	NarL_Down
+b4154	DcuR_Up	FNR_Up	NarL_Down
+b4159	CpxR_Down
+b4160	CpxR_Down
+b4177	GadE_Up	MarA_Down	PurR_Down
+b4187	Ada_Up	Lrp_Down
+b4192	IHF_Down	UlaR_Down
+b4193	CRP_Up	IHF_Down	UlaR_Down
+b4194	CRP_Up	IHF_Down	UlaR_Down
+b4195	CRP_Up	IHF_Down	UlaR_Down
+b4196	CRP_Up	IHF_Down	UlaR_Down
+b4197	CRP_Up	IHF_Down	UlaR_Down
+b4198	CRP_Up	IHF_Down	UlaR_Down
+b4209	NsrR_Down
+b4213	CRP_Up
+b4233	CRP_Up
+b4237	FNR_Up
+b4238	FNR_Up
+b4239	ArcA_Up	CRP_Up	CRP_Down	TreR_Down
+b4240	ArcA_Up	CRP_Up	CRP_Down	TreR_Down
+b4241	PhoP_Down
+b4242	PhoP_Up
+b4254	ArgR_Down
+b4264	CRP_Up	GntR_Down	IdnR_Up
+b4265	CRP_Up	GntR_Down	IdnR_Up
+b4266	CRP_Up	GntR_Down	IdnR_Up
+b4267	CRP_Up	GntR_Down	IdnR_Up
+b4268	CRP_Up	GntR_Down	IdnR_Up
+b4270	Fis_Up
+b4287	CRP_Up	Fur_Down
+b4288	CRP_Up	Fur_Down
+b4289	CRP_Up	Fur_Down
+b4290	CRP_Up	Fur_Down
+b4291	CRP_Up	Fur_Down
+b4292	Fur_Down
+b4293	Fur_Down
+b4310	CRP_Up	NagC_Down	NanR_Down
+b4311	CRP_Up	NagC_Down	NanR_Down
+b4312	H-NS_Down
+b4313	H-NS_Down	LrhA_Up	Lrp_Up
+b4314	H-NS_Up	IHF_Up	Lrp_Up
+b4315	H-NS_Up	IHF_Up	Lrp_Up
+b4316	H-NS_Up	IHF_Up	Lrp_Up
+b4317	H-NS_Up	IHF_Up	Lrp_Up
+b4318	H-NS_Up	IHF_Up	Lrp_Up
+b4319	H-NS_Up	IHF_Up	Lrp_Up
+b4320	H-NS_Up	IHF_Up	Lrp_Up
+b4321	CRP_Up	UxuR_Down
+b4322	CRP_Up	ExuR_Down	UxuR_Down
+b4323	CRP_Up	ExuR_Down	UxuR_Down
+b4324	CRP_Up	ExuR_Down	UxuR_Down
+b4326	FNR_Up
+b4355	CpxR_Down
+b4367	Fur_Down
+b4368	Fis_Up
+b4369	Fis_Up
+b4370	Fis_Up
+b4376	CRP_Down	IHF_Down	Lrp_Down
+b4381	CRP_Up	CRP_Down	CytR_Down	DeoR_Down	Fis_Up	ModE_Down
+b4382	CRP_Up	CRP_Down	CytR_Down	DeoR_Down	Fis_Up	ModE_Down
+b4383	CRP_Up	CRP_Down	CytR_Down	DeoR_Down	Fis_Up	ModE_Down
+b4384	CRP_Up	CRP_Down	CytR_Down	DeoR_Down	Fis_Up	ModE_Down
+b4393	TrpR_Down
+b4396	MarA_Down
+b4401	FNR_Up	FNR_Down
+b4439	H-NS_Down	HU_Up	IHF_Down	Lrp_Down	MarA_Up	OmpR_Up	Rob_Up	SoxS_Up
+b4443	GcvA_Up
+b4444	OmpR_Up
+b4445	OmpR_Up
+b4451	Fur_Down
+b4460	AraC_Up	CRP_Up
+b4467	ArcA_Down	GlcC_Up	IHF_Up
+b4468	ArcA_Down	GlcC_Up	IHF_Up
+b4471	CRP_Up	FNR_Up	IHF_Up	TdcA_Up	TdcR_Up
+b4475	IHF_Up	RtcR_Up
+b4476	CRP_Up	GntR_Down	IdnR_Down
+b4484	CpxR_Up
+b4511	FNR_Up	Fur_Down
+b4513	KdpE_Up
+b4592	AppY_Up	ArcA_Up
+b4613	LexA_Down
+b4617	LexA_Down
+b4618	LexA_Down

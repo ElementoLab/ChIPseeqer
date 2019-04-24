@@ -1,0 +1,26 @@
+#!/bin/bash
+c=1
+for f in $1;
+do
+rm mimi$c
+let c=$c+1
+done
+
+c=1
+for f in $1;
+do
+#echo "f=$f"
+let d=$c+1
+if [[ $c != 1 ]]
+then
+echo "c=$c, $p $f > mimi$c"
+perl ~/PERL_MODULES/SCRIPTS/synchronize_and_concatenate_rows_matrix2_on_matrix1.pl $p $f > mimi$c
+else
+cp $f mimi$c
+fi
+p=mimi$c
+let c=$c+1
+done
+let c=$c-1
+mv mimi$c $2
+\rm mimi*

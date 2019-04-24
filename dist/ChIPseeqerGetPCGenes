@@ -1,0 +1,96 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+# variables to store options
+my $projFile	= undef;
+my $pcNum		= undef;
+my $thres		= undef;
+
+# other variables
+my $pcColumns	= undef;
+my $idx			= undef;
+my $projdir		= undef;
+
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerGetPCGenes --$projFile=FILE\n";
+}
+
+# handling given options
+GetOptions("projFile=s"		=> \$projFile,
+"pcNum=s"			=> \$pcNum,
+"thres=s"			=> \$thres);
+
+
+if (!defined($projFile)) {
+	die("Must provide --projFile=FILE\n");
+}
+
+if (!defined($thres)) {
+	die("Must provide --thres=NUMBER\n");
+}
+
+# get projFile directory
+$idx		= rindex($projFile, "/");
+$projdir	= substr $projFile, 0, $idx+1;  
+
+# delete previous files
+#system("rm $projdir\*.proj.PC*");
+
+#
+# open projFile and store values for each PC in separate files
+#
+open(IN, "$projFile") or die "Can't open file $projFile.";
+
+while (my $line = <IN>) {
+	
+	chomp $line;
+	
+	next if $line =~ /^GENE/;
+	
+	my @a = split /\t/, $line, -1;
+
+	$a = @a;
+	
+	#
+	# Check if the pcNum is set and create files only for the pcNum PCs. 
+	# If it isn't, create files for all PCs.
+	#
+	if (defined($pcNum)) {
+		if($pcNum < $a) {
+			$pcColumns = $pcNum;
+		}
+		else {
+			die "Select for --pcNum a number smaller than $a.";
+		}
+	}
+	else {
+		$pcColumns = $a-1;
+	}
+	
+	# Store in files
+	for(my $i=1; $i<=$pcColumns; $i++) {
+		open PC, ">>$projFile.PC$i";
+		
+		if($a[$i] > $thres) {
+			print PC "$a[0]\t$a[$i]\n";
+		}
+		close PC;
+	}
+}
+close IN;
+
+
+for(my $i=1; $i<=$pcColumns; $i++) {
+	open PC, "$projFile.PC$i";
+	system("cat $projFile.PC$i | sort -k 2 -n -r > $projFile.PC$i.transcripts.txt");
+	unlink "$projFile.PC$i";
+	close PC;
+}
+

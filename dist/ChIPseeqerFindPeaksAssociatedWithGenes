@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+use lib "$ENV{CHIPSEEQERDIR}";
+use Sets;
+use strict;
+
+
+#
+# this program takes a list of NMs as input, and output all CSAnnotate peaks associated with these NMs ....
+#
+
+use Getopt::Long;
+
+my $genelist = undef;
+my $peakfile = undef;
+
+if (@ARGV == 0) {
+  die "Args --genelist=FILE --peakfile=FILE\n";
+}
+GetOptions("genelist=s" => \$genelist,
+           "peakfile=s" => \$peakfile);
+
+
+# load gene list
+open IN, $genelist or die "Cannot open $genelist";
+my %GENES = ();
+while (my $l = <IN>) {
+  chomp $l;
+  my @a = split /\t/, $l, -1;
+  $GENES{$a[0]} = 1;
+}
+close IN;
+
+# load peak data
+my %PEAKDATA = ();
+open IN, $peakfile or die "Cannot open $peakfile\n";
+while (my $l = <IN>) {
+  chomp $l;
+  my @a = split /\t/, $l, -1;
+  my $c = shift @a;
+  my $i = shift @a;
+  my $j = shift @a;
+  $PEAKDATA{"$c\t$i\t$j"} = \@a;
+}
+close IN;
+
+
+
+my $infile = "$peakfile.RefGene.GP";
+open IN, $infile or die "Cannot open $infile; maybe you did not run ChIPseeqerAnnotate ? ";
+my %PEAKS = ();
+while (my $l = <IN>) {
+  chomp $l;
+  my @a = split /\t/, $l, -1;
+  for (my $i=4; $i<@a; $i++) {
+    my @b = split /[\-\:]/, $a[$i];
+    my $g = $b[4];
+    #print "$a[$i]\t$g\n";
+    if (defined($GENES{$g})) {
+      $PEAKS{"$a[0]\t$a[1]\t$a[2]"} = 1;
+    }
+  }
+}
+close IN;
+
+foreach my $p (keys(%PEAKS)) {
+  
+  print "$p\t" . join("\t", @{$PEAKDATA{$p}}) . "\n";
+
+}

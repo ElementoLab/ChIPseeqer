@@ -1,0 +1,277 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use CommonPaths;
+use Getopt::Long;
+use Tie::File;
+use Table;
+use Sets;
+use strict;
+use Time::HiRes qw(gettimeofday tv_interval);
+
+my $peakfile	= undef;
+my $db			= "refSeq";		# could be refSeq, AceView, Ensembl, UCSCGenes
+my $genome		= "hg18";		# could be hg18, mm9, dm3, sacser
+my $chrdata		= undef;
+my $CpGislands	= undef;
+my $lenuP       = 2000;
+my $lendP       = 2000;
+my $lenuDW      = 2000;
+my $lendDW      = 2000;
+
+my $peaks_num	= undef;
+my $proms_num	= undef;
+my $dw_num		= undef;
+my $exons_num	= undef;
+my $introns_num	= undef;
+my $distal_num	= undef;
+my $inter_num	= undef;
+
+my $cpg_num		= undef;
+
+my $avg_peaks_size	= undef;
+my $tmp_peaks_size	= undef;
+my $size			= undef;
+
+my @all_peaks_num	= undef;
+my @all_lines_num	= undef;
+my @all_files_tmp	= undef;
+my @all_files		= undef;
+my @cpgfile			= undef;
+
+my $promoters_file	= undef;
+my $dw_file			= undef;
+my $exons_file		= undef;
+my $introns_file	= undef;
+my $distal_file		= undef;
+my $intergenic_file	= undef;
+
+my $iterations	= 10;
+my $randmode	= "default";	# Can be "gendist", for genomic distribution: to preserve the same distribution of peaks in promoters/exons/etc
+# or "CGI", for CpG islands: to preserve the same fraction of peaks overlapping with CpG islands
+# or "default", for creating totally random regions
+
+my $verbose		= 0;
+my $prefix		= undef;
+my $outdir		= undef;
+my $fromgui		= 0;
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerCreateRandomRegions --peakfile=FILE --prefix=STR\n";
+}
+
+GetOptions("peakfile=s"  => \$peakfile,
+"db=s"			=> \$db,
+"genome=s"		=> \$genome,
+"lenuP=s"		=> \$lenuP,
+"lendP=s"		=> \$lendP,
+"lenuDW=s"		=> \$lenuDW,
+"lendDW=s"		=> \$lendDW,
+"prefix=s"		=> \$prefix,
+"outdir=s"		=> \$outdir,
+"iterations=s"	=> \$iterations,
+"randmode=s"	=> \$randmode,
+"verbose=s"		=> \$verbose,
+"fromgui=s"		=> \$fromgui);
+
+if (defined($outdir)) {
+	$prefix = "$outdir/$prefix";
+}
+
+if ($genome eq "sacser") {
+	$db				= "sgd";
+}
+
+$chrdata	= "$ENV{CHIPSEEQERDIR}/DATA/$genome.chrdata";
+
+$promoters_file		= "$ENV{CHIPSEEQERDIR}/DATA/$genome/prioritized/$db.u$lenuP\_d$lendP.promoters";
+$dw_file			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/prioritized/$db.u$lenuDW\_d$lendDW.DOWNEXTR";
+$exons_file			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/prioritized/$db.exons";
+$introns_file		= "$ENV{CHIPSEEQERDIR}/DATA/$genome/prioritized/$db.introns";
+$distal_file		= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.DISTAL_2-50kb";
+$intergenic_file	= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.INTERGENIC_gt50kb";
+
+$CpGislands			= $CommonPaths::HG18_CpGislands;
+
+#
+# Estimate average peak size; we use it to extract the random peak regions. We need it in both randmodes
+#
+open IN, "$peakfile";
+
+while (my $l = <IN>) {
+	chomp $l;
+	my @a = split /\t/, $l, -1;
+	
+	$tmp_peaks_size += $a[2] - $a[1];
+	$peaks_num += 1;
+}
+close IN;
+
+# compute the avg peaks size
+$avg_peaks_size = sprintf("%3.f", $tmp_peaks_size/$peaks_num);
+
+if($randmode eq "gendist") {
+	
+	#
+	# Run CSAnnotate to get percentages of peaks in genomic categories
+	#
+	my $todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate --targets=$peakfile --db=$db --genome=$genome --lenuP=$lenuP --lendP=$lendP --lenuDW=$lenuDW --lendDW=$lendDW --fromgui=$fromgui --print_stats=0";
+	if ($verbose == 1){ 
+		print "$todo\n";
+	}
+	print "Running ChIPseeqerAnnotate ...\n";
+	system($todo) == 0 or die "Cannot exec $ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate\n";
+	
+	# if the stats file exists
+	if (-e "$peakfile.$db.GP.stats") {	
+		
+		open IN, "$peakfile.$db.GP.stats";
+		
+		while (my $l = <IN>) {
+			chomp $l;
+			my @a = split /\t/, $l, -1;
+			
+			push(@all_peaks_num, $a[1]);		
+		}
+		close IN;
+		
+		#$peaks_num		= "$all_peaks_num[1]";
+		$proms_num		= "$all_peaks_num[2]";
+		$dw_num			= "$all_peaks_num[3]";
+		$exons_num		= "$all_peaks_num[4]";
+		$introns_num	= "$all_peaks_num[5]";
+		$distal_num		= "$all_peaks_num[6]";
+		$inter_num		= "$all_peaks_num[7]";
+	}
+	
+	# Now that CSAnnotate run...
+		
+	push(@all_files_tmp, $promoters_file, $dw_file, $exons_file, $introns_file, $distal_file, $intergenic_file);
+	push(@all_files, 'promoters', 'DOWNEXTR', 'exons', 'introns', 'distal', 'intergenic');
+	
+	#
+	# Extract random promoters/dw/introns/exons for $iterations
+	#
+	$size = @all_files_tmp;
+	
+	my $t0 = [gettimeofday];
+	
+	for(my $j=0; $j<$iterations; $j++) {
+		print &CreateRandomRegions($j);
+	} #end of iterations
+	
+	my $t1 = [gettimeofday];
+	my $t0_t1 = tv_interval $t0, $t1;
+	
+	print "\nELAPSED TIME: $t0_t1\n";
+	
+	#
+	# Delete all rest of the files. We keep only the $prefix.randompeaks.txt
+	#
+	unlink<$peakfile.*>;
+	unlink<$prefix.*.tmp>;
+}
+elsif($randmode eq "CGI") {
+	if ($genome ne "hg18") {
+		die("This mode is currently only supported for hg18");
+	}
+	else {
+		
+		#
+		# Cleanup file from weird chromosomes
+		#
+		open CPG, ">$peakfile.cpgislands";
+		
+		open(FCPG, $CpGislands) or die "Can't open $CpGislands: $!\n";
+		while(my $l = <FCPG>){
+			chomp $l;
+			my @a = split /\t/, $l, -1;
+			next if $a[0] =~ m/_/;
+			print CPG "$l\n";
+		}
+		close CPG;
+		
+		
+		# Extract random peaks
+		my $todo = "$ENV{CHIPSEEQERDIR}/GetRandomRegionsCpG -intervals1 $peakfile -intervals2 $peakfile.cpgislands ";
+		
+		$todo .= "-chrdata $chrdata ";
+		
+		$todo .= " > $prefix.randompeaks.cpg.txt";
+		
+		if ($verbose == 1) {
+			print "Exec: $todo\n";
+		}
+		
+		print "Extracting randomly selected regions for $peakfile ... ";
+		system($todo) == 0 or die "Cannot exec $todo\n";
+		print "Done.\n";
+		
+	}
+}
+elsif($randmode eq "default") {
+	
+	for(my $j=0; $j<$iterations; $j++) {
+		
+		# Extract random peaks
+		my $todo = "$ENV{CHIPSEEQERDIR}/GetRandomRegions -intervals $peakfile -randomize 1 -seed 0 -length $avg_peaks_size ";
+		
+		if(defined($genome)) {
+			$todo .= "-genome $genome ";
+		}
+		
+		if(defined($chrdata)) {
+			$todo .= "-chrdata $chrdata ";
+		}
+		
+		$todo .= " > $prefix.random.$j.peaks.txt";
+		
+		if ($verbose == 1) {
+			print "Exec: $todo\n";
+		}
+		
+		print "Extracting randomly selected regions for $peakfile ($j iteration)... ";
+		system($todo) == 0 or die "Cannot exec $todo\n";
+		print "Done.\n";
+	} #end of iterations
+}
+
+sub CreateRandomRegions {
+	
+	my ($j) = @_;	
+	
+	for(my $i=1; $i<$size; $i++) {
+		
+		my $todo = "$ENV{CHIPSEEQERDIR}/GetRandomRegionsFromFile -intervals1 $peakfile.$db.GP.$all_files[$i] -intervals2 $all_files_tmp[$i] ";
+		
+		$todo .= "-chrdata $chrdata ";
+		
+		if($i<$size-2) {
+			$todo .= "-hasid2 0";
+		}
+		else {
+			$todo .= "-hasid2 0 ";
+		}
+		
+		$todo .= " > $peakfile.random.$all_files[$i].$j.peaks.txt";
+		
+		if ($verbose == 1) {
+			print "Exec: $todo\n";
+		}
+		
+		print "Extracting randomly selected regions for $all_files[$i]... ";
+		system($todo) == 0 or die "Cannot exec $todo\n";
+		print "Done.\n";
+	}
+	
+	my $todo = "cat $peakfile.random.*.$j.* | sort -u > $prefix.randompeaks.$j.txt";
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	
+	# if the output file exists
+	if (-e "$prefix.randompeaks.$j.txt") {	
+		print "New file with random peaks created ($prefix.randompeaks.$j.txt)\n.";
+	}
+}
+

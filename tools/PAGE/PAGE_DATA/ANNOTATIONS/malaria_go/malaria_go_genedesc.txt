@@ -1,0 +1,2208 @@
+		
+MAL13P1.106	MAL13P1.106	hypothetical protein
+MAL13P1.114	MAL13P1.114	hypothetical protein, conserved
+MAL13P1.118	MAL13P1.118	cAMP-specific 3',5'-cyclic phosphodiesterase 4D, putative
+MAL13P1.119	MAL13P1.119	cAMP-specific 3',5'-cyclic phosphodiesterase 4B, putative
+MAL13P1.120	MAL13P1.120	splicing factor, putative
+MAL13P1.121	MAL13P1.121	hypothetical protein, conserved
+MAL13P1.126	MAL13P1.126	hypothetical protein, conserved
+MAL13P1.129	MAL13P1.129	hypothetical protein, conserved
+MAL13P1.130	MAL13P1.130	hypothetical protein, conserved
+MAL13P1.131	MAL13P1.131	hypothetical protein, conserved
+MAL13P1.132	MAL13P1.132	microfibril-associated protein homologue, putative
+MAL13P1.133	MAL13P1.133	hypothetical protein, conserved
+MAL13P1.134	MAL13P1.134	helicase, putative
+MAL13P1.135	MAL13P1.135	snare protein homologue, putative
+MAL13P1.14	MAL13P1.14	ATP-dependent DEAD box helicase, putative
+MAL13P1.146	MAL13P1.146	AMP deaminase, putative
+MAL13P1.148	MAL13P1.148	P. falciparum myosin
+MAL13P1.150	MAL13P1.150	hypothetical protein, conerved
+MAL13P1.16	MAL13P1.16	synaptobrevin-like protein, putative
+MAL13P1.160	MAL13P1.160	hypothetical protein, conserved
+MAL13P1.161	MAL13P1.161	hypothetical protein, conserved
+MAL13P1.162	MAL13P1.162	DNAJ-like protein, putative
+MAL13P1.163	MAL13P1.163	er lumen protein retaining receptor 1, putative
+MAL13P1.167	MAL13P1.167	signal peptidase, putative
+MAL13P1.171	MAL13P1.171	transmembrane protein Tmp21 homologue, putative
+MAL13P1.176	MAL13P1.176	Plasmodium falciparum reticulocyte binding protein 2, homolog b
+MAL13P1.186	DOXP synthase	1-deoxy-D-xylulose 5-phosphate synthase
+MAL13P1.190	MAL13P1.190	proteasome regulatory component, putative
+MAL13P1.193	MAL13P1.193	hypothetical protein, conserved
+MAL13P1.196	MAL13P1.196	protein kinase, putative
+MAL13P1.204	MAL13P1.204	exoribonuclease PH, putative
+MAL13P1.206	MAL13P1.206	Na+ -dependent Pi transporter, sodium-dependent phosphate transporter
+MAL13P1.209	MAL13P1.209	60S ribosomal subunit porotein L18, putative
+MAL13P1.212	MAL13P1.212	hypothetical protein, conserved
+MAL13P1.213	MAL13P1.213	transcription activator, putative
+MAL13P1.214	MAL13P1.214	phosphoethanolamine N-methyltransferase, putative
+MAL13P1.216	MAL13P1.216	DNA helicase, putative
+MAL13P1.217	MAL13P1.217	hypothetical protein, conserved
+MAL13P1.218	MAL13P1.218	UDP-N-acetylglucosamine pyrophosphorylase, putative
+MAL13P1.22	MAL13P1.22	DNA ligase 1
+MAL13P1.220	MAL13P1.220	lipoate synthase, putative
+MAL13P1.221	atcasE	aspartate carbamoyltransferase
+MAL13P1.241	MAL13P1.241	GTPase, putative
+MAL13P1.243	MAL13P1.243	elongation factor Tu, putative
+MAL13P1.248	MAL13P1.248	nucleoside diphospahte hydrolase
+MAL13P1.25	MAL13P1.25	hypothetical protein, conserved
+MAL13P1.251	MAL13P1.251	hypothetical protein, conserved
+MAL13P1.253	MAL13P1.253	small nuclear ribonucleoprotein, putative
+MAL13P1.254	MAL13P1.254	hypothetical protein, conserved
+MAL13P1.255	MAL13P1.255	hypothetical protein, conserved
+MAL13P1.256	MAL13P1.256	phosphatidylinositol transfer protein, putative
+MAL13P1.258	MAL13P1.258	hypothetical protein, conserved
+MAL13P1.262	MAL13P1.262	hypothetical protein, conserved
+MAL13P1.271	MAL13P1.271	V-type ATPase, putative
+MAL13P1.274	pfpp5	serine/threonine protein phosphatase pfPp5
+MAL13P1.277	MAL13P1.277	DnaJ-like protein, putative
+MAL13P1.278	MAL13P1.278	Ser/Thr protein kinase
+MAL13P1.279	PfPK5	P. falciparum Protein Kinase 5
+MAL13P1.281	MAL13P1.281	glutamate--tRNA ligase, putative
+MAL13P1.283	MAL13P1.283	TCP-1/cpn60 chaperonin family, putative
+MAL13P1.285	MAL13P1.285	Patatin-like phospholipase, putative
+MAL13P1.289	MAL13P1.289	mitotic control protein dis3 homologue, putative
+MAL13P1.290	MAL13P1.290	high mobility group protein 4, putative
+MAL13P1.294	MAL13P1.294	GTP-binding protein, putative
+MAL13P1.297	MAL13P1.297	ADP-ribosylation factor, putative
+MAL13P1.300	MAL13P1.300	hypothetical protein, conserved
+MAL13P1.303	MAL13P1.303	polyadenylate binding protein, putative
+MAL13P1.304	MAL13P1.304	malaria antigen
+MAL13P1.322	MAL13P1.322	splicing factor, putative
+MAL13P1.324	MAL13P1.324	aldo-keto reductase, putative
+MAL13P1.326	MAL13P1.326	ferrochelatase, putative
+MAL13P1.327	MAL13P1.327	Ribosomal protein S17 homologue, putative
+MAL13P1.328	MAL13P1.328	hypothetical protein, conserved
+MAL13P1.329	MAL13P1.329	hypothetical protein, conserved
+MAL13P1.332	MAL13P1.332	hypothetical protein, conserved
+MAL13P1.335	MAL13P1.335	phosphatidylserine synthase i; putative
+MAL13P1.338	MAL13P1.338	u1 small nuclear ribonucleoprotein, putative
+MAL13P1.340	MAL13P1.340	hypothetical protein, conserved
+MAL13P1.342	MAL13P1.342	hypothetical protein, conserved
+MAL13P1.343	MAL13P1.343	proteasome regulatory subunit, putative
+MAL13P1.346	MAL13P1.346	DNA repair endonuclease
+MAL13P1.35	MAL13P1.35	u1 small nuclear ribonucleoprotein a, putative
+MAL13P1.351	MAL13P1.351	hypothetical protein, conserved
+MAL13P1.44	MAL13P1.44	protein phosphatase 2c-like protein, putative
+MAL13P1.47	MAL13P1.47	mitochondrial ATP synthase delta subunit, putative
+MAL13P1.49	MAL13P1.49	hypothetical protein, conserved
+MAL13P1.55	MAL13P1.55	cytochrome c2 precursor,putative
+MAL13P1.56	MAL13P1.56	m1-family aminopeptidase
+MAL13P1.59	MAL13P1.59	hypothetical protein, conserved in P. falciparum
+MAL13P1.61	MAL13P1.61	hypothetical protein, conserved in P. falciparum
+MAL13P1.62	MAL13P1.62	hypothetical protein
+MAL13P1.63	MAL13P1.63	Plasmodium falciparum asparagine-rich protein
+MAL13P1.64	MAL13P1.64	ubiquitin-like protein nedd8 homologue, putative
+MAL13P1.67	MAL13P1.67	methionyl-tRNA formyltransferase, putative
+MAL13P1.68	MAL13P1.68	peptidyl-prolyl cis-trans isomerase, putative
+MAL13P1.69	MAL13P1.69	septum formation protein MAF homologue, putative
+MAL13P1.70	MAL13P1.70	hypothetical protein, conserved
+MAL13P1.75	MAL13P1.75	hypothetical protein, conserved
+MAL13P1.76	MAL13P1.76	TFIIH basal transcription factor subunit
+MAL13P1.82	MAL13P1.82	phosphatidylinositol synthase, putative
+MAL13P1.87	MAL13P1.87	sec20 homolog, putative
+MAL13P1.92	MAL13P1.92	40S ribosomal protein S15, putative
+MAL13P1.95	MAL13P1.95	ferredoxin
+MAL13P1.96	MAL13P1.96	chromosome segregation protein, putative
+MAL7P1.100	Pfnek-4	serine/threonine protein kinase, Pfnek-4
+MAL7P1.104	MAL7P1.104	3'-5' exoribonuclease Csl4 homolog, putative
+MAL7P1.113	MAL7P1.113	DEAD box helicase, putative
+MAL7P1.118	MAL7P1.118	PelOta protein homologue, putative
+MAL7P1.119	MAL7P1.119	hypothetical protein, conserved
+MAL7P1.12	MAL7P1.12	erythrocyte membrane-associated antigen
+MAL7P1.122	MAL7P1.122	conserved GTP-binding protein, putative
+MAL7P1.130	MAL7P1.130	3-demethylubiquinone-9 3-methyltransferase-like protein, putative
+MAL7P1.137	MAL7P1.137	kelch protein, putative
+MAL7P1.139	MAL7P1.139	mago nashi protein homolog, putative
+MAL7P1.141	MAL7P1.141	hypothetical protein, conserved
+MAL7P1.144	MAL7P1.144	protein kinase, putative
+MAL7P1.145	MAL7P1.145	mismatch repair protein pms1 homologue, putative
+MAL7P1.147	MAL7P1.147	ubiquitin carboxyl-terminal hydrolase, putative
+MAL7P1.149	MAL7P1.149	hypothetical protein, conserved
+MAL7P1.150	MAL7P1.150	cysteine desulfurase, putative
+MAL7P1.151	MAL7P1.151	modification methylase-like protein, putative
+MAL7P1.157	MAL7P1.157	hypothetical protein, conserved
+MAL7P1.158	MAL7P1.158	signal recognition particle, putative
+MAL7P1.159	PfAOP	antioxidant protein, putative
+MAL7P1.161	MAL7P1.161	dynein light chain, putative
+MAL7P1.163	MAL7P1.163	hypothetical protein, conserved
+MAL7P1.164	MAL7P1.164	adapter-related protein, putative
+MAL7P1.178	MAL7P1.178	hypothetical protein, conserved in P.falciparum
+MAL7P1.184	RIF_MAL7P1.184	rifin
+MAL7P1.185	RIF_MAL7P1.185	rifin
+MAL7P1.186	MAL7P1.186	VAR-like erythrocyte membrane protein 1
+MAL7P1.187	VAR_MAL7P1.187	erythrocyte membrane protein 1 (PfEMP1)
+MAL7P1.20	MAL7P1.20	peptide chain release factor, putative
+MAL7P1.21	MAL7P1.21	origin recognition complex subunit, putative
+MAL7P1.23	MAL7P1.23	RAP protein, putative
+MAL7P1.26	MAL7P1.26	O-sialoglycoprotein endopeptidase, putative
+MAL7P1.27	PfCRT	chloroquine resistance transporter
+MAL7P1.31	MAL7P1.31	hypothetical membrane protein, conserved
+MAL7P1.32	MAL7P1.32	hypothetical protein, conserved
+MAL7P1.33	MAL7P1.33	hypothetical protein, conserved
+MAL7P1.37	MAL7P1.37	sin3 associated polypeptide p18-like protein
+MAL7P1.38	MAL7P1.38	regulator of chromosome condensation protein, putative
+MAL7P1.50	VAR_MAL7P1.50	erythrocyte membrane protein 1 (PfEMP1)
+MAL7P1.55	VAR_MAL7P1.55	erythrocyte membrane protein 1 (PfEMP1)
+MAL7P1.56	VAR_MAL7P1.56	erythrocyte membrane protein 1 (PfEMP1)
+MAL7P1.57	RIF_MAL7P1.57	rifin
+MAL7P1.58	PfMC-2TM_7.2	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 7.2, PfMC-2TM_7.2
+MAL7P1.6	MAL7P1.6	hypothetical protein, conserved in P.falciparum
+MAL7P1.69	MAL7P1.69	calmodulin, putative
+MAL7P1.73	MAL7P1.73	calcium/calmodulin-dependent protein kinase, putative
+MAL7P1.75	MAL7P1.75	mitochondrial ATP synthase F1, epsilon subunit, putative
+MAL7P1.76	MAL7P1.76	hypothetical protein, conserved
+MAL7P1.81	MAL7P1.81	eukaryotictranslation initiation factor 3 37.28 kDa subunit, putative
+MAL7P1.86	MAL7P1.86	transcription initiation factor iie, alpha subunit, putative
+MAL7P1.91	PfEST	exported serine/threonine protein kinase
+MAL7P1.92	MAL7P1.92	cysteine repeat modular protein 2 homologue
+MAL7P1.93	MAL7P1.93	mitochondrial ribosomal protein S8, putative
+MAL7P1.94	MAL7P1.94	prefoldin subunit 3, putative
+MAL8P1.101	MAL8P1.101	hypothetical protein, conserved
+MAL8P1.108	MAL8P1.108	protein phosphatase, putative
+MAL8P1.110	MAL8P1.110	plastid 50S ribosomal protein L33, putative
+MAL8P1.124	MAL8P1.124	hypothetical protein, conserved
+MAL8P1.13	MAL8P1.13	integral membrane protein, conserved
+MAL8P1.131	MAL8P1.131	Gas41 homologue, putative
+MAL8P1.138	MAL8P1.138	hypothetical protein, conserved
+MAL8P1.140	MAL8P1.140	methionine aminopeptidase, putative
+MAL8P1.143	MAL8P1.143	hypothetical protein, conserved
+MAL8P1.161	MAL8P1.161	hypothetical protein, conserved in P.falciparum
+MAL8P1.163	MAL8P1.163	hypothetical protein, conserved in P.falciparum
+MAL8P1.17	MAL8P1.17	disulfide isomerase precursor, putative
+MAL8P1.18	MAL8P1.18	hypothetical protein, conserved
+MAL8P1.19	MAL8P1.19	RNA helicase, putative
+MAL8P1.22	MAL8P1.22	dehydrodolichyl diphosphate synthetase, putative
+MAL8P1.23	MAL8P1.23	ubiquitin-protein ligase 1, putative
+MAL8P1.25	MAL8P1.25	hypothetical protein, conserved
+MAL8P1.26	MAL8P1.26	hypothetical protein, conserved
+MAL8P1.3	MAL8P1.3	integral membrane protein, conserved in P. falciparum
+MAL8P1.32	MAL8P1.32	nucleoside transporter, putative
+MAL8P1.35	MAL8P1.35	exonuclease, putative
+MAL8P1.37	MAL8P1.37	lipoate-protein ligase, putative
+MAL8P1.40	MAL8P1.40	RNA-binding protein, putative
+MAL8P1.43	MAL8P1.43	u5 snrnp-specific protein, putative
+MAL8P1.45	MAL8P1.45	hypothetical protein, conserved
+MAL8P1.46	MAL8P1.46	outer arm dynein light chain 2
+MAL8P1.48	MAL8P1.48	small nuclear ribonucleoprotein, putative
+MAL8P1.51	MAL8P1.51	protein-transport protein sec61 beta 1 subunit, putative
+MAL8P1.55	MAL8P1.55	hypothetical protein, conserved
+MAL8P1.57	MAL8P1.57	C-13 antigen
+MAL8P1.58	MAL8P1.58	phosphatidylglycerophosphate synthase
+MAL8P1.59	MAL8P1.59	hypothetical protein, conserved
+MAL8P1.61	MAL8P1.61	hypothetical protein, conserved
+MAL8P1.63	MAL8P1.63	hypothetical protein, conserved
+MAL8P1.72	MAL8P1.72	high mobility group protein, putative
+MAL8P1.73	MAL8P1.73	hypothetical protein, conserved
+MAL8P1.76	MAL8P1.76	meiotic recombination protein dmc1-like protein
+MAL8P1.78	MAL8P1.78	small heat shock protein, putative
+MAL8P1.83	MAL8P1.83	eukaryotictranslation initiation factor, putative
+MAL8P1.86	MAL8P1.86	hypothetical protein, conserved
+MAL8P1.9	MAL8P1.9	u6 snRNA-associated sm-like protein, putative
+MAL8P1.92	MAL8P1.92	ATPase, putative
+MAL8P1.94	MAL8P1.94	hypothetical protein
+PF07_0003	RIF_PF07_0003	rifin
+PF07_0005	PF07_0005	lysophospholipases-like protein, putative
+PF07_0027	PF07_0027	DNA-directed RNA polymerase 2 8.2 kDa polypeptide, putative
+PF07_0029	PF07_0029	heat shock protein 86
+PF07_0030	PF07_0030	heat shock protein 86 family protein
+PF07_0031	PF07_0031	heat shock protein 86 family protein
+PF07_0040	PF07_0040	lysophospholipase-like protein, putative
+PF07_0047	PF07_0047	cell division cycle ATPase, putative
+PF07_0048	VAR_PF07_0048	erythrocyte membrane protein 1 (PfEMP1)
+PF07_0049	VAR_PF07_0049	erythrocyte membrane protein 1 (PfEMP1)
+PF07_0050	VAR_PF07_0050	erythrocyte membrane protein 1 (PfEMP1)
+PF07_0051	VAR_PF07_0051	erythrocyte membrane protein 1 (PfEMP1)
+PF07_0057	PF07_0057	transcription elongation factor s-ii, putative
+PF07_0059	PF07_0059	4-nitrophenylphosphatase, putative
+PF07_0062	PF07_0062	GTP-binding translation elongation factor tu family protein, putative
+PF07_0065	PF07_0065	zinc transporter, putative
+PF07_0068	PF07_0068	cysteine desulfurase, putative
+PF07_0070	PF07_0070	drug metabolite transporter
+PF07_0071	PF07_0071	queuine tRNA-ribosyltransferase; putative
+PF07_0072	PfCDPK4	calcium-dependent protein kinase 4
+PF07_0073	PF07_0073	seryl-tRNA synthetase, putative
+PF07_0079	PF07_0079	60S ribosomal protein L11a, putative
+PF07_0080	PF07_0080	40S ribosomal protein S10, putative
+PF07_0081	PF07_0081	hypothetical protein, conserved
+PF07_0085	PF07_0085	ferrodoxin reductase-like protein
+PF07_0087	PF07_0087	hypothetical protein, conserved
+PF07_0088	PF07_0088	40S ribosomal protein S5, putative
+PF07_0089	PF07_0089	hypothetical protein, conserved
+PF07_0091	PF07_0091	cell cycle control protein cwf15 homologue
+PF07_0098	PF07_0098	dynactin 4, putative
+PF07_0100	PF07_0100	hypothetical protein, conserved
+PF07_0103	PF07_0103	chaperone, putative
+PF07_0104	PF07_0104	kinesin-like protein, putative
+PF07_0105	PF07_0105	exonuclease i, putative
+PF07_0109	PF07_0109	hypothetical protein, conserved
+PF07_0112	PF07_0112	proteasome subunit alpha type 5, putative
+PF07_0113	PF07_0113	hypothetical protein, conserved
+PF07_0115	PF07_0115	cation transporting ATPase, cation transporter
+PF07_0117	PF07_0117	eukaryotictranslation initiation factor 2 alpha subunit, putative
+PF07_0123	PF07_0123	mRNA (N6-adenosine)-methyltransferase, putative
+PF07_0129	PfACS5	acyl-coA synthetase, PfACS5
+PF07_0130	stevor_PF07_0130	stevor
+PF07_0132	RIF_PF07_0132	rifin
+PF07_0134	RIF_PF07_0134	rifin
+PF07_0136	RIF_PF07_0136	rifin
+PF07_0138	RIF_PF07_0138	rifin
+PF08_0001	2255.m00020	hypothetical protein
+PF08_0004	PF08_0004	hypothetical protein, conserved
+PF08_0006	PF08_0006	prohibitin, putative
+PF08_0009	PF08_0009	translation initiation factor EIF-2b alpha subunit, putative
+PF08_0011	PF08_0011	leucine -tRNA ligase
+PF08_0014	PF08_0014	plastid 50S ribosomal protein, putative
+PF08_0015	PF08_0015	hypothetical protein, conserved
+PF08_0016	PF08_0016	hypothetical protein, conserved
+PF08_0019	PF08_0019	receptor for activated C kinase homolog, PfRACK
+PF08_0031	PF08_0031	oxoglutarate/malate translocator protein, putative
+PF08_0034	gcn5	histone acetyltransferase Gcn5, putative
+PF08_0039	PF08_0039	ribosomal protein, putative
+PF08_0041	PF08_0041	ribosome biogenesis protein nep1 homologue, putative
+PF08_0042	PF08_0042	ATP-dependent RNA helicase prh1, putative
+PF08_0045	PF08_0045	2-oxoglutarate dehydrogenase e1 component
+PF08_0047	PF08_0047	hypothetical protein, conserved
+PF08_0048	PF08_0048	ATP-dependent helicase, putative
+PF08_0049	PF08_0049	ribonucleoprotein, putative
+PF08_0054	PF08_0054	heat shock 70 kDa protein
+PF08_0055	PF08_0055	u3 small nucleolar ribonucleoprotein protein
+PF08_0056	PF08_0056	zinc finger protein, putative
+PF08_0059	PF08_0059	protein kinase c inhibitor-like protein, putative
+PF08_0060	PF08_0060	asparagine-rich antigen
+PF08_0063	PF08_0063	ClpB protein, putative
+PF08_0066	PF08_0066	lipoamide dehydrogenase, putative
+PF08_0067	PF08_0067	hypothetical protein, conserved
+PF08_0069	PF08_0069	importin beta, putative
+PF08_0071	soD	Fe-superoxide dismutase
+PF08_0075	PF08_0075	60S ribosomal protein L13, putative
+PF08_0076	PF08_0076	40S ribosomal protein S16, putative
+PF08_0077	PF08_0077	GDP-mannose 4,6-dehydratase, putative
+PF08_0078	PF08_0078	hypothetical protein, conserved
+PF08_0085	PF08_0085	ubiquitin-conjugating enzyme, putative
+PF08_0087	PF08_0087	importin alpha, putative
+PF08_0095	PF08_0095	dihydropteroate synthetase
+PF08_0096	PF08_0096	RNA helicase, putative
+PF08_0098	PF08_0098	protein kinase,putative
+PF08_0101	PF08_0101	hypothetical protein, conserved
+PF08_0102	pfa55-14	asparagine-rich antigen Pfa55-14
+PF08_0103	VAR_PF08_0103	erythrocyte membrane protein 1 (PfEMP1)
+PF08_0104	RIF_PF08_0104	rifin
+PF08_0105	RIF_PF08_0105	rifin
+PF08_0106	VAR_PF08_0106	erythrocyte membrane protein 1 (PfEMP1)
+PF08_0107	VAR_PF08_0107	erythrocyte membrane protein 1 (PfEMP1)
+PF08_0110	rab18	PfRab18, GTPase
+PF08_0112	PF08_0112	hypothetical protein, conserved
+PF08_0113	PF08_0113	vacuolar proton-translocating ATPase subunit A, putative
+PF08_0121	PF08_0121	peptidyl-prolyl cis-trans isomerase precursor
+PF08_0125	g-tub	tubulin gamma chain
+PF08_0126	PF08_0126	DNA repair protein rad54, putative
+PF08_0129	PF08_0129	protein phosphatase, putative
+PF08_0130	PF08_0130	wd repeat protein, putative
+PF08_0131	1-cyspxn	1-cys peroxidoxin
+PF08_0132	PF08_0132	glutamate dehydrogenase, putative
+PF08_0136b	PF08_0136b	von willebrand factor a-domain-related protein, putative
+PF08_0137	PF08_0137	hypothetical protein, conserved
+PF08_0138	RIF_PF08_0138	rifin
+PF08_0139	RIF_PF08_0139	rifin
+PF08_0140	VAR_PF08_0140	erythrocyte membrane protein 1 (PfEMP1)
+PF08_0141	VAR_PF08_0141	erythrocyte membrane protein 1 (PfEMP1)
+PF08_0142	VAR_PF08_0142	erythrocyte membrane protein 1 (PfEMP1)
+PF10_0001	PF10_0001	erythrocyte membrane protein 1 (PfEMP1)
+PF10_0002	PF10_0002	rifin
+PF10_0003	PF10_0003	rifin
+PF10_0004	PF10_0004	rifin
+PF10_0005	PF10_0005	rifin
+PF10_0006	PF10_0006	rifin
+PF10_0008	PF10_0008	hypothetical protein
+PF10_0013	PF10_0013	hypothetical protein
+PF10_0015	PF10_0015	acyl CoA binding protein, putative
+PF10_0016	PF10_0016	acyl CoA binding protein, putative
+PF10_0017	PF10_0017	hypothetical protein
+PF10_0019	etramp10.1	early transcribed membrane protein 10.1, etramp 10.1
+PF10_0023	PF10_0023	hypothetical protein
+PF10_0024	PF10_0024	hypothetical protein
+PF10_0025	PF10_0025	PF70 protein
+PF10_0026	PF10_0026	Tryptophan-rich antigen 3, putative
+PF10_0027	PF10_0027	hypothetical protein
+PF10_0028	PF10_0028	RNA binding protein, putative
+PF10_0030	PF10_0030	hypothetical protein
+PF10_0035	PF10_0035	hypothetical protein
+PF10_0036	PF10_0036	N-acetyltransferase, putative
+PF10_0037	PF10_0037	hypothetical protein
+PF10_0038	PF10_0038	ribosomal protein S20e, putative
+PF10_0041	PF10_0041	U5 small nuclear ribonuclear protein, putative
+PF10_0043	PF10_0043	ribosomal protein L13, putative
+PF10_0045	PF10_0045	hypothetical protein
+PF10_0049	PF10_0049	hypothetical protein
+PF10_0050	PF10_0050	hypothetical protein
+PF10_0051	PF10_0051	ADP/ATP carrier protein, putative
+PF10_0053	PF10_0053	tRNA ligase, putative
+PF10_0055	PF10_0055	hypothetical protein
+PF10_0056	PF10_0056	hypothetical protein
+PF10_0059	PF10_0059	hypothetical protein
+PF10_0060	PF10_0060	hypothetical protein
+PF10_0070	PF10_0070	hypothetical protein
+PF10_0071	PF10_0071	rhoGAP protein
+PF10_0075	PF10_0075	asparagine-rich antigen
+PF10_0077	PF10_0077	eukaryotictranslation initiation factor 3 subunit 7, putative
+PF10_0080	PF10_0080	endonuclease, putative
+PF10_0081	PF10_0081	26S proteasome regulatory subunit 4, putative
+PF10_0082	PF10_0082	hypothetical protein
+PF10_0084	PF10_0084	tubulin beta chain, putative
+PF10_0085	PF10_0085	nucleolar protein NOP5, putative
+PF10_0086	PF10_0086	adenylate kinase, putative
+PF10_0087	PF10_0087	diphthine synthase
+PF10_0088	PF10_0088	hypothetical protein
+PF10_0093	PF10_0093	hypothetical protein
+PF10_0095	PF10_0095	hypothetical protein
+PF10_0098	PF10_0098	hypothetical protein
+PF10_0100	PF10_0100	hypothetical protein
+PF10_0103	PF10_0103	eukaryotictranslation initiation factor 2, beta, putative
+PF10_0110	PF10_0110	hypothetical protein
+PF10_0112	PF10_0112	hypothetical protein
+PF10_0114	PF10_0114	DNA repair protein RAD23, putative
+PF10_0115	PF10_0115	QF122 antigen
+PF10_0116	PF10_0116	hypothetical protein
+PF10_0119	PF10_0119	hypothetical protein
+PF10_0120	PF10_0120	ubiquinol-cytochrome c reductase complex subunit, putative
+PF10_0123	PF10_0123	GMP synthetase
+PF10_0125	PF10_0125	metabolite/vitamin transporter
+PF10_0126	PF10_0126	hypothetical protein, conserved
+PF10_0127	PF10_0127	hypothetical protein
+PF10_0130	PF10_0130	hypothetical protein
+PF10_0132	PF10_0132	phospholipase C-like, putative
+PF10_0135	PF10_0135	hypothetical protein
+PF10_0136	PF10_0136	Initiation factor 2 subunit family, putative
+PF10_0137	PF10_0137	GDP-fucose synthase, putative
+PF10_0138	PF10_0138	hypothetical protein
+PF10_0140	PF10_0140	hypothetical protein
+PF10_0141	PF10_0141	cdk7, putative
+PF10_0142	PF10_0142	hypothetical protein
+PF10_0143	PF10_0143	transcriptional activator ADA2, putative
+PF10_0144	PF10_0144	prohibitin, putative
+PF10_0147	PF10_0147	FAD synthetase, putative
+PF10_0149	PF10_0149	cysteine --tRNA ligase, putative
+PF10_0150	PF10_0150	methionine aminopeptidase, putative
+PF10_0153	PF10_0153	hsp60
+PF10_0154	PF10_0154	ribonucleotide reductase small subunit, putative
+PF10_0155	PF10_0155	enolase
+PF10_0157	PF10_0157	hypothetical protein
+PF10_0159	PF10_0159	glycophorin-binding protein 130 precursor
+PF10_0163	PF10_0163	hypothetical protein
+PF10_0164	PF10_0164	early transcribed membrane protein 10.3, etramp10.3
+PF10_0165	PF10_0165	DNA polymerase delta catalytic subunit
+PF10_0166	PF10_0166	hypothetical protein
+PF10_0167	PF10_0167	hypothetical protein
+PF10_0168	PF10_0168	hypothetical protein
+PF10_0169	PF10_0169	phosphomannomutase, putative
+PF10_0173	PF10_0173	hypothetical protein
+PF10_0174	PF10_0174	26s proteasome subunit p55, putative
+PF10_0175	PF10_0175	tRNA pseudouridine synthase, putative
+PF10_0177	PF10_0177	erythrocyte membrane-associated antigen
+PF10_0178	PF10_0178	hypothetical protein
+PF10_0181	PF10_0181	hypothetical protein
+PF10_0186	PF10_0186	hypothetical protein
+PF10_0187	PF10_0187	ribosomal protein L30e, putative
+PF10_0188	PF10_0188	hypothetical protein
+PF10_0189	PF10_0189	hypothetical protein
+PF10_0193	PF10_0193	Autophagy protein, putative
+PF10_0195	PF10_0195	hypothetical protein
+PF10_0196	PF10_0196	cytoplasmic dynein intermediate chain, putative
+PF10_0197	PF10_0197	hypothetical protein
+PF10_0199	PF10_0199	hypothetical protein
+PF10_0200	PF10_0200	ATPase, putative
+PF10_0203	PF10_0203	ADP-ribosylation factor
+PF10_0205	PF10_0205	hypothetical protein
+PF10_0207	PF10_0207	hypothetical protein
+PF10_0209	PF10_0209	RNA helicase, putative
+PF10_0210	PF10_0210	deoxyribose-phosphate aldolase, putative
+PF10_0211	PF10_0211	hypothetical protein
+PF10_0213	PF10_0213	10b antigen, putative
+PF10_0215	PF10_0215	hypothetical protein
+PF10_0216	PF10_0216	hypothetical protein
+PF10_0217	PF10_0217	pre-mRNA splicing factor, putative
+PF10_0218	PF10_0218	citrate synthase, mitochondrial precursor, putative
+PF10_0221	PF10_0221	GcpE protein
+PF10_0222	PF10_0222	hypothetical protein
+PF10_0225	PF10_0225	orotidine-monophosphate-decarboxylase, putative
+PF10_0226	PF10_0226	hypothetical protein, conserved
+PF10_0227	PF10_0227	HORMA domain protein, putative
+PF10_0228	PF10_0228	hypothetical protein, conserved
+PF10_0229	PF10_0229	hypothetical protein, conserved
+PF10_0230	PF10_0230	hypothetical protein, conserved
+PF10_0233	PF10_0233	hypothetical protein
+PF10_0238	PF10_0238	hypothetical protein
+PF10_0240	PF10_0240	hypothetical protein
+PF10_0242	PF10_0242	hypothetical protein
+PF10_0245	PF10_0245	glucosamine--fructose-6-phosphate aminotransferase, putative
+PF10_0246	PF10_0246	hypothetical protein
+PF10_0247	PF10_0247	hypothetical protein
+PF10_0248	PF10_0248	hypothetical protein
+PF10_0250	PF10_0250	hypothetical protein
+PF10_0251	PF10_0251	hypothetical protein
+PF10_0254	PF10_0254	hypothetical protein
+PF10_0257	PF10_0257	hypothetical protein
+PF10_0260	PF10_0260	hypothetical protein
+PF10_0264	PF10_0264	40S ribosomal protein, putative
+PF10_0268	PF10_0268	merozoite capping protein 1
+PF10_0269	PF10_0269	DNA-directed RNA polymerase II, putative
+PF10_0271	PF10_0271	centrin, putative
+PF10_0272	PF10_0272	ribosomal protein L3, putative
+PF10_0273	PF10_0273	DHHC-type zinc finger protein, putative
+PF10_0275	PF10_0275	protoporphyrinogen oxidase, putative
+PF10_0276	PF10_0276	hypothetical protein
+PF10_0277	PF10_0277	hypothetical protein, conserved
+PF10_0278	PF10_0278	BRIX domain containig protein, putative
+PF10_0281	PF10_0281	hypothetical protein
+PF10_0283	PF10_0283	hypothetical protein
+PF10_0287	PF10_0287	hypothetical protein
+PF10_0288	PF10_0288	hypothetical protein
+PF10_0289	PF10_0289	adenosine deaminase, putative
+PF10_0290	PF10_0290	hypothetical protein
+PF10_0293	PF10_0293	transcription factor, putative
+PF10_0294	PF10_0294	RNA helicase, putative
+PF10_0295	PF10_0295	hypothetical protein
+PF10_0298	PF10_0298	26S proteasome subunit, putative
+PF10_0299	PF10_0299	glycoprotease, putative
+PF10_0300	PF10_0300	RNA methyltransferase, putative
+PF10_0301	PF10_0301	calmodulin, putative
+PF10_0302	PF10_0302	ookinete surface protein Pos28-1, putative
+PF10_0303	PF10_0303	25 kDa ookinete surface antigen precursor (pfs25)
+PF10_0308	PF10_0308	OTU-like cysteine protease, putative
+PF10_0311	PF10_0311	protein phosphatase inhibitor, putative
+PF10_0313	PF10_0313	hypothetical protein
+PF10_0314	PF10_0314	asparagine-rich antigen
+PF10_0315	PF10_0315	hypothetical protein
+PF10_0316	PF10_0316	phosphatidyl inositol glycan, class A, putative
+PF10_0317	PF10_0317	Der1-like family, putative
+PF10_0318	PF10_0318	hypothetical protein, conserved
+PF10_0320	PF10_0320	leucine-rich repeat protein 8, LRR8
+PF10_0322	PF10_0322	S-adenosylmethionine decarboxylase-ornithine decarboxylase
+PF10_0323	etramp 10.2	early transcribed membrane protein 10.2, etramp 10.2
+PF10_0325	PF10_0325	haloacid dehalogenase-like hydrolase, putative
+PF10_0327	PF10_0327	Myb2 protein
+PF10_0330	PF10_0330	ubiquitin-conjugating enzyme, putative
+PF10_0331	PF10_0331	Sec1 family protein, putative
+PF10_0332	PF10_0332	ribosomal protein L27, putative
+PF10_0334	PF10_0334	flavoprotein subunit of succinate dehydrogenase
+PF10_0335	PF10_0335	hypothetical protein
+PF10_0337	PF10_0337	ADP-ribosylation factor-like protein
+PF10_0338	PF10_0338	hypothetical protein
+PF10_0340	PF10_0340	methionine --tRNA ligase, putative
+PF10_0341	PF10_0341	hypothetical protein, conserved
+PF10_0343	PF10_0343	S-antigen
+PF10_0345	PF10_0345	merozoite surface protein 3
+PF10_0346	PF10_0346	merozoite surface protein 6
+PF10_0356	PF10_0356	liver stage antigen-1
+PF10_0359	PF10_0359	hypothetical protein
+PF10_0360	PF10_0360	acetyl-coA transporter
+PF10_0362	PF10_0362	DNA polymerase zeta catalytic subunit, putative
+PF10_0363	PF10_0363	pyruvate kinase, putative
+PF10_0365	PF10_0365	hypothetical protein
+PF10_0366	PF10_0366	ADP/ATP transporter on adenylate translocase
+PF10_0368	PF10_0368	dynamin protein, putative
+PF10_0369	PF10_0369	helicase, putative
+PF10_0371	PF10_0371	hypothetical protein
+PF10_0372	PF10_0372	Antigen UB05
+PF10_0374	PF10_0374	Pf 11-1 protein
+PF10_0375	PF10_0375	hypothetical protein
+PF10_0376	PF10_0376	hypothetical protein
+PF10_0377	PF10_0377	hypothetical protein
+PF10_0379	PF10_0379	phospholipase, putative
+PF10_0380	PF10_0380	trophozoite antigen R45, putative
+PF10_0383	PF10_0383	hypothetical protein, conserved
+PF10_0386	PF10_0386	hypothetical protein
+PF10_0387	PF10_0387	hypothetical protein
+PF10_0390	PfMC-2TM_10	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 10, PfMC-2TM_10
+PF10_0392	PF10_0392	hypothetical protein
+PF10_0393	PF10_0393	rifin
+PF10_0394	PF10_0394	rifin
+PF10_0395	PF10_0395	stevor, putative
+PF10_0396	PF10_0396	rifin
+PF10_0397	PF10_0397	rifin
+PF10_0398	PF10_0398	rifin
+PF10_0399	PF10_0399	rifin
+PF10_0400	PF10_0400	rifin
+PF10_0401	PF10_0401	rifin
+PF10_0402	PF10_0402	rifin
+PF10_0403	PF10_0403	rifin
+PF10_0404	PF10_0404	rifin
+PF10_0405	PF10_0405	rifin
+PF10_0406	VAR_PF10_0406	erythrocyte membrane protein 1 (PfEMP1)
+PF10_0407	PF10_0407	dihydrolipoamide acetyltransferase, putative
+PF11_0007	PF11_0007	erythrocyte membrane protein 1 (PfEMP1)
+PF11_0008	PF11_0008	erythrocyte membrane protein 1 (PfEMP1)
+PF11_0009	PF11_0009	rifin
+PF11_0010	PF11_0010	rifin
+PF11_0011	PF11_0011	rifin
+PF11_0013	PF11_0013	stevor, putative, degenerate
+PF11_0014	PfMC-2TM_11.1	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 11.1, PfMC-2TM_11.1
+PF11_0020	PF11_0020	rifin
+PF11_0021	PF11_0021	rifin
+PF11_0023	PF11_0023	hypothetical protein
+PF11_0025	PfMC-2TM_11.2	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 11.2
+PF11_0036	PF11_0036	hypothetical protein, conserved
+PF11_0037	PF11_0037	hypothetical protein
+PF11_0038	PF11_0038	hypothetical protein
+PF11_0039	PF11_0039	early transcribed membrane protein 11.1, etramp11.1
+PF11_0040	PF11_0040	early transcribed membrane protein 11.2, etramp11.2
+PF11_0042	PF11_0042	hypothetical protein
+PF11_0043	PF11_0043	60S acidic ribosomal protein p1, putative
+PF11_0044	PF11_0044	hypothetical protein
+PF11_0045	PF11_0045	hypothetical protein
+PF11_0046	PF11_0046	hypothetical protein
+PF11_0048	PF11_0048	casein kinase II beta chain, putative
+PF11_0049	PF11_0049	hypothetical protein, conserved
+PF11_0051	PF11_0051	phenylalanine --tRNA ligase, putative
+PF11_0052	PF11_0052	syntaxin, putative
+PF11_0053	PF11_0053	PfSNF2L
+PF11_0055	PF11_0055	hypothetical protein
+PF11_0059	PF11_0059	metabolite/drug transporter
+PF11_0064	PF11_0064	hypothetical protein
+PF11_0065	PF11_0065	ribosomal protein S4, putative
+PF11_0066	PF11_0066	caltractin (centrin), putative
+PF11_0067	PF11_0067	hypothetical protein
+PF11_0068	PF11_0068	hypothetical protein, conserved
+PF11_0069	PF11_0069	hypothetical protein
+PF11_0071	PF11_0071	RuvB DNA helicase, putative
+PF11_0072	PF11_0072	hypothetical protein
+PF11_0073	PF11_0073	hypothetical protein
+PF11_0074	PF11_0074	exonuclease, putative
+PF11_0076	PF11_0076	hypothetical protein
+PF11_0083	PF11_0083	nucleic acid binding factor, putative
+PF11_0087	PF11_0087	Rad51 homolog, putative
+PF11_0092	PF11_0092	hypothetical protein
+PF11_0096	PF11_0096	casein kinase II, alpha subunit, putative
+PF11_0097	PF11_0097	succinyl-CoA synthetase alpha subunit, putative
+PF11_0098	PF11_0098	endoplasmic reticulum-resident calcium binding protein
+PF11_0099	PF11_0099	heat shock protein DnaJ homologue Pfj2
+PF11_0106	PF11_0106	60S Ribosomal protein L36, putative
+PF11_0107	PF11_0107	hypothetical protein
+PF11_0110	PF11_0110	hypothetical protein
+PF11_0112	PF11_0112	vacuolar sorting protein 35, putative
+PF11_0113	PF11_0113	ribosomal protein L11, putative
+PF11_0114	PF11_0114	actin-like protein homolog, ALP1 homolog
+PF11_0117	PF11_0117	replication factor C subunit 5, putative
+PF11_0119	PF11_0119	syntaxin, putative
+PF11_0128	PF11_0128	coq4 homolog, putative
+PF11_0135	PF11_0135	hypothetical protein
+PF11_0139	PF11_0139	protein tyrosine phosphatase, putative
+PF11_0141	PF11_0141	UDP-galactose transporter, putative
+PF11_0142	PF11_0142	hypothetical protein, conserved
+PF11_0145	PF11_0145	glyoxalase I, putative
+PF11_0146	PF11_0146	hypothetical protein
+PF11_0147	PfMAP2	mitogen-activated protein kinase 2,
+PF11_0149	PF11_0149	hypothetical protein
+PF11_0150	PF11_0150	rhomboid protease, putative
+PF11_0161	PF11_0161	falcipain-2 precursor, putative
+PF11_0162	PF11_0162	falcipain-3
+PF11_0164	PF11_0164	peptidyl-prolyl cis-trans isomerase
+PF11_0165	PF11_0165	falcipain 2 precursor
+PF11_0167	PF11_0167	hypothetical protein
+PF11_0170	PF11_0170	cyclophilin, putative
+PF11_0171	PF11_0171	hypothetical protein
+PF11_0172	PF11_0172	folate/biopterin transporter, putative
+PF11_0173	PF11_0173	oligosacharyl transferase STT3 subunit, putative
+PF11_0175	PF11_0175	heat shock protein 101, putative
+PF11_0176	PF11_0176	hypothetical protein
+PF11_0178	PF11_0178	hypothetical protein
+PF11_0179	PF11_0179	hypothetical protein
+PF11_0180	PF11_0180	hypothetical protein
+PF11_0181	PF11_0181	tyrosine --tRNA ligase, putative
+PF11_0183	PF11_0183	GTP-binding nuclear protein ran/tc4
+PF11_0184	PF11_0184	DNA mismatch repair protein MLH1, putative
+PF11_0185	PF11_0185	hypothetical protein
+PF11_0187	PF11_0187	clathrin assembly protein AP19, putative
+PF11_0188	PF11_0188	heat shock protein 90, putative
+PF11_0197	PF11_0197	hypothetical protein
+PF11_0198	PF11_0198	hypothetical protein, conserved
+PF11_0200	PF11_0200	U2 snRNP auxiliary factor, small subunit, putative
+PF11_0202	PF11_0202	clathrin coat assembly protein, putative
+PF11_0208	PF11_0208	phosphoglycerate mutase, putative
+PF11_0209	PF11_0209	hypothetical protein
+PF11_0211	PF11_0211	hypothetical protein, conserved
+PF11_0212	PF11_0212	hypothetical protein
+PF11_0213	PF11_0213	hypothetical protein
+PF11_0215	PF11_0215	hypothetical protein
+PF11_0217	PF11_0217	hypothetical protein
+PF11_0218	PF11_0218	hypothetical protein
+PF11_0224	PF11_0224	circumsporozoite-related antigen
+PF11_0225	PF11_0225	PfGCN20
+PF11_0230	PF11_0230	hypothetical protein
+PF11_0231	PF11_0231	hypothetical protein
+PF11_0235	PF11_0235	hypothetical protein
+PF11_0238	PF11_0238	hypothetical protein
+PF11_0242	PF11_0242	protein kinase
+PF11_0244	PF11_0244	hypothetical protein
+PF11_0245	PF11_0245	translation elongation factor EF-1, subunit alpha, putative
+PF11_0246	PF11_0246	hypothetical protein
+PF11_0250	PF11_0250	high mobility group-like protein NHP2, putative
+PF11_0251	PF11_0251	endoplasmic reticulum oxidoreductin, putative
+PF11_0256	PF11_0256	pyruvate dehydrogenase E1 component, alpha subunit, putative
+PF11_0257	PF11_0257	ethanolamine kinase, putative
+PF11_0258	PF11_0258	co-chaperone GrpE, putative
+PF11_0260	PF11_0260	ribosomal protein L35, putative
+PF11_0261	PF11_0261	hypothetical protein
+PF11_0262	PF11_0262	hypothetical protein
+PF11_0263	PF11_0263	hypothetical protein
+PF11_0264	PF11_0264	DNA-dependent RNA polymerase
+PF11_0265	PF11_0265	mitochondrial import inner membrane translocase, putative
+PF11_0266	PF11_0266	small nuclear ribonucleoprotein D1, putative
+PF11_0270	PF11_0270	threonine --tRNA ligase, putative
+PF11_0271	PF11_0271	hypothetical protein, conserved
+PF11_0272	PF11_0272	ribosomal protein S18, putative
+PF11_0278	PF11_0278	hypothetical protein
+PF11_0280	PF11_0280	small nuclear ribonucleoprotein F, putative
+PF11_0282	PF11_0282	deoxyuridine 5'-triphosphate nucleotidohydrolase, putative
+PF11_0283	PF11_0283	hypothetical protein
+PF11_0284	PF11_0284	methyltransferase, putative
+PF11_0285	PF11_0285	hypothetical protein
+PF11_0286	PF11_0286	hypothetical protein, conserved
+PF11_0293	PF11_0293	multiprotein bridging factor type 1, putative
+PF11_0295	PF11_0295	farnesyl pyrophosphate synthase, putative
+PF11_0301	PF11_0301	spermidine synthase
+PF11_0303	PF11_0303	26S proteasome regulatory complex subunit, putative
+PF11_0304	PF11_0304	hypothetical protein
+PF11_0306	PF11_0306	A/G-specific adenine glycosylase, putative
+PF11_0307	PF11_0307	hypothetical protein
+PF11_0309	PF11_0309	hypothetical protein
+PF11_0310	PF11_0310	transporter putative
+PF11_0311	PF11_0311	N-acetyl glucosamine phosphate mutase, putative
+PF11_0312	PF11_0312	ribosomal protein L38e
+PF11_0313	PF11_0313	ribosomal phosphoprotein P0
+PF11_0314	PF11_0314	26S protease subunit regulatory subunit 6a, putative
+PF11_0317	PF11_0317	structural maintenance of chromosome protein, putative
+PF11_0319	PF11_0319	hypothetical protein
+PF11_0321	PF11_0321	hypothetical protein
+PF11_0323	PF11_0323	hypothetical protein
+PF11_0324	PF11_0324	hypothetical protein
+PF11_0328	PF11_0328	hypothetical protein
+PF11_0331	PF11_0331	t-complex protein 1, alpha subunit, putative
+PF11_0333	PF11_0333	hypothetical protein
+PF11_0335	PF11_0335	hypothetical protein
+PF11_0336	PF11_0336	hypothetical protein, conserved
+PF11_0337	PF11_0337	50S ribosomal protein L2, putative
+PF11_0338	PF11_0338	Aquaglyceroporin
+PF11_0341	PF11_0341	hypothetical protein
+PF11_0343	PF11_0343	hypothetical protein, conserved
+PF11_0344	PF11_0344	apical membrane antigen 1, AMA1
+PF11_0348	PF11_0348	hypothetical protein
+PF11_0351	PF11_0351	heat shock protein hsp70 homologue
+PF11_0352	PF11_0352	protein disulfide isomerase related protein
+PF11_0355	PF11_0355	hypothetical protein
+PF11_0356	PF11_0356	hypothetical protein
+PF11_0358	PF11_0358	DNA-directed RNA polymerase, beta subunit, putative
+PF11_0359	PF11_0359	coatomer delta subunit, putative
+PF11_0361	PF11_0361	hypothetical protein
+PF11_0363	PF11_0363	hypothetical protein
+PF11_0366	PF11_0366	hypothetical protein
+PF11_0367	PF11_0367	hypothetical protein
+PF11_0368	PF11_0368	hypothetical protein
+PF11_0370	PF11_0370	hypothetical protein
+PF11_0372	PF11_0372	hypothetical protein
+PF11_0377	PfCK1	casein kinase 1, PfCK1
+PF11_0381	PF11_0381	subtilisin-like protease 2
+PF11_0382	PF11_0382	ribosomal protein S9, putative
+PF11_0384	PF11_0384	hypothetical protein, conserved
+PF11_0386	PF11_0386	30S ribosomal protein S14, putative
+PF11_0388	PF11_0388	hypothetical protein
+PF11_0393	PF11_0393	hypothetical protein, conserved
+PF11_0394	PF11_0394	hypothetical protein
+PF11_0395	PF11_0395	guanylyl cyclase
+PF11_0396	PF11_0396	Protein phosphatase 2C
+PF11_0397	PF11_0397	hypothetical protein, conserved
+PF11_0400	PF11_0400	hypothetical protein
+PF11_0401	PF11_0401	hypothetical protein
+PF11_0405	PF11_0405	hypothetical protein, conserved
+PF11_0407	PF11_0407	adrenodoxin reductase, putative
+PF11_0409	PF11_0409	hypothetical protein, conserved
+PF11_0412	PF11_0412	Vacuolar ATP synthase subunit F, putative
+PF11_0416	PF11_0416	myosin heavy chain subunit, putative
+PF11_0420	PF11_0420	hypothetical protein
+PF11_0423	PF11_0423	hypothetical protein
+PF11_0427	PF11_0427	dolichyl-phosphate b-D-mannosyltransferase, putative
+PF11_0428	PF11_0428	hypothetical protein, conserved
+PF11_0431	PF11_0431	membrane skeletal protein, putative
+PF11_0432	PF11_0432	hypothetical protein
+PF11_0435	PF11_0435	hypothetical protein
+PF11_0438	PF11_0438	Ribosomal protein, putative
+PF11_0443	PF11_0443	hypothetical protein, conserved
+PF11_0447	PF11_0447	translation initiation factor eIF-1A, putative
+PF11_0450	PF11_0450	hypothetical protein
+PF11_0451	PF11_0451	hypothetical protein
+PF11_0452	PF11_0452	hypothetical protein
+PF11_0453	PF11_0453	hypothetical protein, conserved
+PF11_0454	PF11_0454	Ribosomal protein, 40S subunit, putative
+PF11_0459	PF11_0459	hypothetical protein
+PF11_0461	Rab6	PfRab6, GTPase
+PF11_0463	PF11_0463	coat protein, gamma subunit, putative
+PF11_0464	PF11_0464	serine/threonine protein kinase
+PF11_0465	PF11_0465	dynamin-like protein
+PF11_0466	PF11_0466	transport protein, putative
+PF11_0467	PF11_0467	hypothetical protein
+PF11_0470	PF11_0470	hypothetical protein
+PF11_0472	PF11_0472	hypothetical protein
+PF11_0474	PF11_0474	hypothetical protein, conserved
+PF11_0475	PF11_0475	hypothetical protein
+PF11_0477	PF11_0477	CCAAT-box DNA binding protein subunit B
+PF11_0483	PF11_0483	farnesyltransferase beta subunit, putative
+PF11_0484	PF11_0484	hypothetical protein
+PF11_0485	PF11_0485	mitochondrial ATP-synthase, delta subunit putative
+PF11_0486	PF11_0486	MAEBL, putative
+PF11_0487	PF11_0487	hypothetical protein
+PF11_0490	PF11_0490	hypothetical protein
+PF11_0493	PF11_0493	hypothetical protein
+PF11_0503	PF11_0503	hypothetical protein
+PF11_0505	PF11_0505	hypothetical protein
+PF11_0507	PF11_0507	antigen 332, putative
+PF11_0510	PF11_0510	protein kinase, FIKK family
+PF11_0512	PF11_0512	ring-infected erythrocyte surface antigen 2, RESA-2 -malaria parasite (Plasmodium falciparum)-related
+PF11_0515	PF11_0515	rifin
+PF11_0516	PF11_0516	stevor, putative
+PF11_0517	PF11_0517	rifin
+PF11_0519	PF11_0519	rifin
+PF11_0520	PF11_0520	rifin
+PF11_0521	PF11_0521	erythrocyte membrane protein 1 (PfEMP1)
+PF11_0525	PF11_0525	hypothetical protein
+PF11_0529	PF11_0529	rifin
+PF13_0003	VAR_PF13_0003	erythrocyte membrane protein 1 (PfEMP1)
+PF13_0004	RIF_PF13_0004	rifin
+PF13_0005	RIF_PF13_0005	rifin
+PF13_0006	RIF_PF13_0006	rifin
+PF13_0010	gbph2	Gbph2
+PF13_0011	pfg27-25	plasmodium falciparum gamete antigen 27/25
+PF13_0012	ETRAMP 13	early transcribed membrane protein 13, ETRAMP13
+PF13_0013	PF13_0013	PBS lyase HEAT-like repeat domain protein
+PF13_0014	PF13_0014	40S ribosomal protein S7 homologue, putative
+PF13_0016	PF13_0016	methyl transferase-like protein, putative
+PF13_0019	PF13_0019	sodium/hydrogen exchanger, Na+, H+ antiporter
+PF13_0021	PF13_0021	small heat shock protein, putative
+PF13_0022	cyc-4	cyclin 4
+PF13_0023	PF13_0023	DNA-directed RNA polymerase 2, putative
+PF13_0025	PF13_0025	hypothetical protein, conserved
+PF13_0032	PF13_0032	hydrolase, putative
+PF13_0033	PF13_0033	26S proteasome regulatory subunit, putative
+PF13_0034	PF13_0034	vacuolar ATP synthase subunit h, putative
+PF13_0036	PF13_0036	DNAJ protein, putative
+PF13_0037	PF13_0037	DEAD box helicase, putative
+PF13_0039	PF13_0039	hypothetical protein, conserved
+PF13_0040	PF13_0040	DNA-directed RNA polymerase alpha chain, putative
+PF13_0042	PF13_0042	fork head domain protein, putative
+PF13_0043	PF13_0043	CCAAT-binding transcription factor, putative
+PF13_0044	cpsSII	carbamoyl phosphate synthetase, putative
+PF13_0045	PF13_0045	40S ribosomal protein S27, putative
+PF13_0049	PF13_0049	60S ribosomal protein L24, putative
+PF13_0051	PF13_0051	snornp protein gar1 homologue, putative
+PF13_0052	PF13_0052	ribosomal RNA methyltransferase, putative
+PF13_0061	PF13_0061	ATP synthase gamma chain, mitochondrial precursor, putative
+PF13_0062	PF13_0062	clathrin-adaptor medium chain, putative
+PF13_0063	PF13_0063	26S proteasome regulatory subunit 7, putative
+PF13_0065	vapA	vacuolar ATP synthase, catalytic subunit a
+PF13_0066	fabD	malonyl coa-acyl carrier protein transacylase precursor
+PF13_0069	PF13_0069	translation initiation factor if-2, putative
+PF13_0070	PF13_0070	branched-chain alpha keto-acid dehydrogenase, putative
+PF13_0077	PF13_0077	DEAD box helicase, putative
+PF13_0082	PF13_0082	cop-coated vesicle membrane protein p24 precursor, putative
+PF13_0083	PfLipL1	lipoate-protein ligase a, putative
+PF13_0084	PF13_0084	ubiquitin-like protein, putative
+PF13_0090	PF13_0090	ADP-ribosylation factor, putative
+PF13_0095	PF13_0095	DNA replication licensing factor mcm4-related
+PF13_0100	PF13_0100	glycerol-3-phosphate acyltransferase, putative
+PF13_0102	PF13_0102	DNAJ-like Sec63 homologue
+PF13_0109	PF13_0109	N2,N2-dimethylguanosine tRNA methyltransferase, putative
+PF13_0119	Rab11a	Rab11a, GTPase
+PF13_0121	PF13_0121	dihydrolipoamide succinyltransferase, putative
+PF13_0122	PF13_0122	cyclophilin, putative
+PF13_0124	PF13_0124	hypothetical protein, conserved
+PF13_0125	PF13_0125	hypothetical protein, conserved
+PF13_0128	fabZ	beta-hydroxyacyl-acp dehydratase precursor
+PF13_0129	PF13_0129	ribosomal protein L6 homologue, putative
+PF13_0130	PF13_0130	vacuolar ATP synthase subunit g, putative
+PF13_0132	PF13_0132	60S ribosomal protein L23a, putative
+PF13_0133	PF13_0133	aspartyl (acid) protease, putative
+PF13_0134	PF13_0134	hypothetical protein, conserved
+PF13_0139	PF13_0139	hypothetical protein, conserved
+PF13_0140	PF13_0140	dihydrofolate synthase/folylpolyglutamate synthase
+PF13_0141	PF13_0141	L-lactate dehydrogenase
+PF13_0142	PF13_0142	u6 snRNA-associated sm-like protein, putative
+PF13_0143	PF13_0143	phosphoribosylpyrophosphate synthetase
+PF13_0144	PF13_0144	oxidoreductase, putative
+PF13_0149	PF13_0149	chromatin assembly factor 1 subunit, putative
+PF13_0150	PF13_0150	DNA-directed RNA polymerase 3 largest subunit
+PF13_0154	PF13_0154	hypothetical protein, conserved
+PF13_0157	PF13_0157	ribose-phosphate pyrophosphokinase, putative
+PF13_0168	PF13_0168	hypothetical protein, conserved
+PF13_0172	PF13_0172	hypothetical protein, conserved
+PF13_0180	PF13_0180	chaperonin, putative
+PF13_0182	PF13_0182	hypothetical protein, conserved
+PF13_0184	PF13_0184	hypothetical protein, conserved
+PF13_0191	PF13_0191	hypothetical protein, conserved
+PF13_0192	PF13_0192	hypothetical protein, conserved
+PF13_0197	MSP7	Merozoite Surface Protein 7 precursor, MSP7
+PF13_0198	PF13_0198	reticulocyte binding protein 2 homolog a
+PF13_0201	PF13_0201	Thrombospondin-related anonymous protein, TRAP
+PF13_0204	PF13_0204	nuclear movement protein, putative
+PF13_0205	PF13_0205	tryptophan--tRNA ligase, putative
+PF13_0211	PF13_0211	calcium-dependent protein kinase
+PF13_0213	PF13_0213	60S ribosomal subunit protein L6e, putative
+PF13_0214	PF13_0214	elongation factor 1-gamma, putative
+PF13_0222	PF13_0222	RNA lariat debranching enzyme, putative
+PF13_0223	PF13_0223	hypothetical protein, conserved
+PF13_0224	PF13_0224	60S ribosomal subunit protein L18, putative
+PF13_0227	PF13_0227	vacuolar ATP synthase subunit D, putative
+PF13_0228	PF13_0228	40S ribosomal subunit protein S6, putative
+PF13_0229	PF13_0229	IRP-like protein
+PF13_0232	PF13_0232	Casein kinase II regulatory subunit, putative
+PF13_0233	PF13_0233	myosin a
+PF13_0242	PF13_0242	isocitrate dehydrogenase (NADP), mitochondrial precursor
+PF13_0247	pfs45-48	transmission blocking target antigen precursor
+PF13_0248	PF13_0248	pf47
+PF13_0251	PF13_0251	DNA topoisomerase III, putative
+PF13_0253	PF13_0253	ethanolamine-phosphate cytidylyltransferase, putative
+PF13_0261	PF13_0261	ATP binding protein, putative
+PF13_0265	PF13_0265	hypothetical protein, conserved
+PF13_0268	PF13_0268	ribosomal protein L17, putative
+PF13_0269	PF13_0269	glycerol kinase, putative
+PF13_0271	PF13_0271	ABC transporter, (heavy metal transporter family)
+PF13_0272	PF13_0272	thioredoxin-related protein, putative
+PF13_0277	PF13_0277	hypothetical protein, conserved
+PF13_0280	ERD2	ER lumen protein retaining receptor
+PF13_0285	PF13_0285	inositol-polyphosphate 5-phosphatase
+PF13_0286	PF13_0286	methyltransferase, putative
+PF13_0287	adsS	adenylosuccinate synthetase
+PF13_0295	PF13_0295	hypothetical protein, conserved
+PF13_0300	PF13_0300	mitochondrial inner membrane translocase, putative
+PF13_0301	PF13_0301	ubiquitin-conjugating enzyme, putative
+PF13_0302	PF13_0302	hypothetical protein, conserved
+PF13_0304	PF13_0304	elongation factor 1 alpha
+PF13_0305	PF13_0305	elongation factor 1 alpha
+PF13_0308	PF13_0308	DNA helicase
+PF13_0312	PF13_0312	peptidase, putative
+PF13_0316	PF13_0316	40S ribosomal protein S13
+PF13_0322	flN	falcilysin
+PF13_0323	PF13_0323	binding protein, putative
+PF13_0324	PF13_0324	Sec24 subunit, putative
+PF13_0326	PF13_0326	actin-depolymerizing factor, putative
+PF13_0330	PF13_0330	ATP-dependent DNA helicase, putative
+PF13_0334	PF13_0334	polynucleotide kinase, putative
+PF13_0340	PF13_0340	exosome complex exonuclease, putative
+PF13_0341	PF13_0341	DNA-directed RNA polymerase 2, putative
+PF13_0344	PF13_0344	UBA/THIF-type NAD/FAD binding protein, putative
+PF13_0345	PF13_0345	aminomethyltransferase, mitochondrial precursor
+PF13_0346	PF13_0346	ubiquitin/ribosomal fusion protein uba52 homologue, putative
+PF13_0353	PF13_0353	NADH-cytochrome b5 reductase, putative
+PF13_0354	PF13_0354	alanine--tRNA ligase, putative
+PF13_0355	PF13_0355	hypothetical protein, conserved
+PF13_0358	PF13_0358	mitochondrial import inner membrane translocase, putative
+PF13_0361	PF13_0361	hypothetical protein, conserved
+PF14_0002	PF14_0002	rifin
+PF14_0003	PF14_0003	rifin
+PF14_0004	PF14_0004	rifin
+PF14_0005	PF14_0005	rifin
+PF14_0006	PF14_0006	rifin
+PF14_0007	PF14_0007	stevor, putative
+PF14_0008	PF14_0008	rifin
+PF14_0009	PF14_0009	hypothetical protein
+PF14_0010	PF14_0010	glycophorin binding protein-related antigen
+PF14_0014	PF14_0014	hypothetical protein
+PF14_0015	PF14_0015	aminopeptidase, putative
+PF14_0016	etramp14.1	early transcribed membrane protein 14.1, etramp14.1
+PF14_0017	PF14_0017	lysophospholipase, putative
+PF14_0018	PF14_0018	hypothetical protein
+PF14_0020	PF14_0020	choline kinase, putative
+PF14_0022	PF14_0022	exopolyphosphatase, putative
+PF14_0023	PF14_0023	hypothetical protein, conserved
+PF14_0024	PF14_0024	hypothetical protein
+PF14_0025	PF14_0025	proteosome subunit, putative
+PF14_0027	PF14_0027	ribosomal S27a, putative
+PF14_0029	PF14_0029	hypothetical protein
+PF14_0030	PF14_0030	hypothetical protein
+PF14_0031	PF14_0031	hypothetical protein
+PF14_0033	PF14_0033	hypothetical protein
+PF14_0034	PF14_0034	hypothetical protein, conserved
+PF14_0035	PF14_0035	hypothetical protein
+PF14_0038	PF14_0038	cytochrome c, putative
+PF14_0040	PF14_0040	hypothetical protein
+PF14_0041	PF14_0041	ribosomal protein L16, putative
+PF14_0045	PF14_0045	hypothetical protein
+PF14_0051	PF14_0051	hypothetical protein, conserved
+PF14_0052	PF14_0052	hypothetical protein, conserved
+PF14_0053	PF14_0053	ribonucleotide reductase small subunit
+PF14_0054	PF14_0054	hypothetical protein, conserved
+PF14_0055	PF14_0055	hypothetical protein, conserved
+PF14_0057	PF14_0057	RNA binding protein, putative
+PF14_0061	PF14_0061	tRNA-dihydrouridine synthase
+PF14_0063	PF14_0063	ATP-dependent Clp protease, putative
+PF14_0065	PF14_0065	hypothetical protein
+PF14_0066	PF14_0066	radical SAM protein, putative
+PF14_0068	PF14_0068	fibrillarin, putative
+PF14_0071	PF14_0071	hypothetical protein
+PF14_0072	PF14_0072	hypothetical protein, conserved
+PF14_0075	PF14_0075	plasmepsin, putative
+PF14_0076	PF14_0076	plasmepsin 1 precursor
+PF14_0077	PF14_0077	plasmepsin 2
+PF14_0083	PF14_0083	ribosomal protein S8e, putative
+PF14_0088	PF14_0088	hypothetical protein
+PF14_0089	PF14_0089	hypothetical protein
+PF14_0091	PF14_0091	hypothetical protein
+PF14_0092	PF14_0092	hypothetical protein
+PF14_0094	PF14_0094	hypothetical protein
+PF14_0100	PF14_0100	cytidine triphosphate synthetase
+PF14_0102	PF14_0102	rhoptry-associated protein 1, RAP1
+PF14_0104	PF14_0104	eukaryotictranslation initiation factor 2 gamma subunit, putative
+PF14_0105	PF14_0105	hypothetical protein
+PF14_0107	PF14_0107	hypothetical protein, conserved
+PF14_0109	PF14_0109	hypothetical protein
+PF14_0112	PF14_0112	POM1, putative
+PF14_0114	PF14_0114	GTP-binding protein, putative
+PF14_0117	PF14_0117	hypothetical protein, conserved
+PF14_0119	PF14_0119	hypothetical protein, conserved
+PF14_0122	PF14_0122	nuclear transport factor 2, putative
+PF14_0123	PF14_0123	hypothetical protein
+PF14_0124	PF14_0124	actin II
+PF14_0125	PF14_0125	deoxyhypusine synthase
+PF14_0126	PF14_0126	hypothetical protein, conserved
+PF14_0127	PF14_0127	N-myristoyltransferase
+PF14_0128	PF14_0128	ubiquitin conjugating enzyme, putative
+PF14_0132	PF14_0132	ribosomal protein S9, putative
+PF14_0133	PF14_0133	ATP-dependent transporter, putative
+PF14_0136	PF14_0136	hypothetical protein, conserved
+PF14_0141	PF14_0141	ribosomal protein L10, putative
+PF14_0142	PF14_0142	serine/threonine protein phosphatase, putative
+PF14_0144	PF14_0144	mRNA capping enzyme, putative
+PF14_0146	PF14_0146	ribonucleoprotein, putative
+PF14_0148	PF14_0148	uracil-DNA glycosylase, putative
+PF14_0150	PF14_0150	RNA polymerase small subunit, putative
+PF14_0153	PF14_0153	hypothetical protein
+PF14_0154	PF14_0154	hypothetical protein
+PF14_0155	PF14_0155	serine C-palmitoyltransferase, putative
+PF14_0158	PF14_0158	hypothetical protein
+PF14_0159	PF14_0159	hypothetical protein, conserved
+PF14_0161	PF14_0161	hypothetical protein, conserved
+PF14_0164	PF14_0164	NADP-specific glutamate dehydrogenase
+PF14_0165	PF14_0165	hypothetical protein
+PF14_0166	PF14_0166	lysine --tRNA ligase, putative
+PF14_0174	PF14_0174	small nucleolar ribonucleoprotein, snoRNP, putative
+PF14_0177	PF14_0177	DNA replication licensing factor MCM2
+PF14_0178	PF14_0178	hypothetical protein
+PF14_0179	PF14_0179	hypothetical protein
+PF14_0181	PF14_0181	calmodulin, putative
+PF14_0183	PF14_0183	RNA helicase, putative
+PF14_0185	PF14_0185	ATP-dependent RNA helicase, putative
+PF14_0187	PF14_0187	glutathione S-transferase
+PF14_0188	PF14_0188	hypothetical protein
+PF14_0192	PF14_0192	glutathione reductase
+PF14_0194	PF14_0194	spliceosome-associated protein, putative
+PF14_0198	PF14_0198	glycine --tRNA ligase, putative
+PF14_0199	PF14_0199	hypothetical protein
+PF14_0201	PF14_0201	surface protein, putative, Pf113
+PF14_0205	PF14_0205	ribosomal protein S25, putative
+PF14_0206	PF14_0206	hypothetical protein
+PF14_0207	PF14_0207	RNA polymerase subunit, putative
+PF14_0208	PF14_0208	hypothetical protein, conserved
+PF14_0211	PF14_0211	hypothetical protein
+PF14_0215	PF14_0215	hypothetical protein
+PF14_0218	PF14_0218	actin-related protein homolog, arp4 homolog
+PF14_0221	PF14_0221	Ran protein, putative
+PF14_0223	PF14_0223	cyclophilin, putative
+PF14_0224	PF14_0224	PP1-like protein serine/threonine phosphatase
+PF14_0225	PF14_0225	hypothetical protein
+PF14_0227	PF14_0227	calcium-dependent protein kinase, putative
+PF14_0230	PF14_0230	Ribosomal protein family L5, putative
+PF14_0231	PF14_0231	ribosomal protein L7a, putative
+PF14_0234	PF14_0234	DNA-directed DNA polymerase, putative
+PF14_0237	PF14_0237	hypothetical protein
+PF14_0240	PF14_0240	ribosomal protein L21e, putative
+PF14_0241	PF14_0241	basictranscription factor 3b, putative
+PF14_0242	PF14_0242	arginine n-methyltransferase, putative
+PF14_0243	PF14_0243	dynein-associated protein, putative
+PF14_0244	PF14_0244	ABC transporter, (EPP family)
+PF14_0245	PF14_0245	hypothetical protein
+PF14_0246	PF14_0246	phosphoenolpyruvate carboxylase, putative
+PF14_0248	PF14_0248	ubiquinol-cytochrome c reductase hinge protein, putative
+PF14_0249	PF14_0249	hypothetical protein
+PF14_0251	PF14_0251	hypothetical protein
+PF14_0253	PF14_0253	hypothetical protein
+PF14_0256	PF14_0256	exosome complex exonuclease rrp41, putative
+PF14_0257	PF14_0257	hypothetical protein, conserved
+PF14_0260	PF14_0260	metabolite/drug transporter
+PF14_0261	PF14_0261	proliferation-associated protein 2g4, putative
+PF14_0262	PF14_0262	hypothetical protein
+PF14_0265	PF14_0265	peptide chain release factor 1, putative
+PF14_0266	PF14_0266	hypothetical protein
+PF14_0269	PF14_0269	hypothetical protein, conserved
+PF14_0270	PF14_0270	ribosomal protein L15, putative
+PF14_0274	PF14_0274	hypothetical protein, conserved
+PF14_0275	PF14_0275	hypothetical protein
+PF14_0276	PF14_0276	ribosomal protein L15, putative
+PF14_0277	PF14_0277	coatamer protein, beta subunit, putative
+PF14_0278	PF14_0278	ATP-dependent DNA helicase, putative
+PF14_0279	PF14_0279	hypothetical protein
+PF14_0280	PF14_0280	phosphotyrosyl phosphatase activator, putative
+PF14_0281	PF14_0281	aspartyl protease, putative
+PF14_0282	PF14_0282	hypothetical protein, conserved
+PF14_0284	PF14_0284	hypothetical protein
+PF14_0285	PF14_0285	exodeoxyribonuclease III, putative
+PF14_0286	PF14_0286	glutamate dehydrogenase, putative
+PF14_0288	PF14_0288	cytochrome c oxidase subunit II precursor, putative
+PF14_0289	PF14_0289	ribosomal protein L17, putative
+PF14_0292	PF14_0292	hypothetical protein, conserved
+PF14_0294	PfMAP1	mitogen-activated protein kinase 1, PfMAP1
+PF14_0295	PF14_0295	ATP-specific succinyl-CoA synthetase beta subunit, putative
+PF14_0296	PF14_0296	ribosomal protein L14, putative
+PF14_0297	PF14_0297	ecto-nucleoside triphosphate diphosphohydrolase 1, putative
+PF14_0298	PF14_0298	hypothetical protein
+PF14_0299	PF14_0299	hypothetical protein
+PF14_0300	PF14_0300	syntaxin, putative
+PF14_0307	PF14_0307	hypothetical protein, conserved
+PF14_0309	PF14_0309	protein-L-isoaspartate O-methyltransferase beta-aspartate methyltransferase, putative
+PF14_0310	PF14_0310	hypothetical protein
+PF14_0313	PF14_0313	hypothetical protein
+PF14_0314	PF14_0314	chromatin assembly factor 1 p55 subunit, putative
+PF14_0318	PF14_0318	hypothetical protein
+PF14_0321	PF14_0321	ABC transporter, putative
+PF14_0323	PF14_0323	calmodulin
+PF14_0324	PF14_0324	hypothetical protein, conserved
+PF14_0327	PF14_0327	methionine aminopeptidase, type II, putative
+PF14_0328	PF14_0328	mitochondrial import inner membrane translocase subunit tim17, putative
+PF14_0329	PF14_0329	hypothetical protein, conserved
+PF14_0331	PF14_0331	cytochrome c oxidase assembly protein, putative
+PF14_0335	PF14_0335	hypothetical protein, conserved
+PF14_0341	PF14_0341	glucose-6-phosphate isomerase
+PF14_0342	PF14_0342	ion channel, putative
+PF14_0346	PF14_0346	cGMP-dependent protein kinase 1, beta isozyme, putative
+PF14_0348	PF14_0348	ATP-dependent Clp protease proteolytic subunit, putative
+PF14_0349	PF14_0349	histidine triad protein, putative
+PF14_0350	PF14_0350	hypothetical protein
+PF14_0351	PF14_0351	hypothetical protein
+PF14_0355	PF14_0355	hypothetical protein
+PF14_0357	PF14_0357	acetyl CoA synthetase, putative
+PF14_0358	PF14_0358	41-2 protein antigen precursor
+PF14_0359	PF14_0359	hypothetical protein, conserved
+PF14_0361	PF14_0361	translocation protein sec62, putative
+PF14_0362	PF14_0362	hypothetical protein
+PF14_0364	PF14_0364	cleavage and polyadenylation specifity factor protein, putative
+PF14_0367	PF14_0367	hypothetical protein
+PF14_0368	PF14_0368	2-Cys peroxiredoxin
+PF14_0369	PF14_0369	hypothetical protein
+PF14_0370	PF14_0370	RNA helicase, putative
+PF14_0372	PF14_0372	hypothetical protein
+PF14_0373	PF14_0373	iron-sulphur protein subunit of the cytochrome bc1 complex
+PF14_0375	PF14_0375	hypothetical protein
+PF14_0376	PF14_0376	hypothetical protein
+PF14_0377	PF14_0377	vesicle-associated membrane protein, putative
+PF14_0378	PF14_0378	triose-phosphate isomerase
+PF14_0381	PF14_0381	delta-aminolevulinic acid dehydratase
+PF14_0382	PF14_0382	metalloendopeptidase, putative
+PF14_0387	PF14_0387	metabolite/drug transporter
+PF14_0391	PF14_0391	ribosomal protein L1, putative
+PF14_0392	PF14_0392	Ser/Thr protein kinase, putative
+PF14_0393	PF14_0393	structure specific recognition protein, putative
+PF14_0394	PF14_0394	hypothetical protein
+PF14_0395	PF14_0395	hypothetical protein, conserved
+PF14_0397	PF14_0397	hypothetical protein, conserved
+PF14_0399	PF14_0399	ADP-ribosylation-like factor, putative
+PF14_0400	PF14_0400	hypothetical protein, conserved
+PF14_0401	PF14_0401	methionine --tRNA ligase, putative
+PF14_0403	PF14_0403	protein prenyltransferase alpha subunit, putative
+PF14_0404	PF14_0404	hypothetical protein
+PF14_0408	PF14_0408	Ser/Thr protein kinase, putative
+PF14_0411	PF14_0411	small nuclear ribonuclear protein, putative
+PF14_0414	PF14_0414	hypothetical protein, conserved
+PF14_0415	PF14_0415	dephospho-CoA kinase, putative
+PF14_0417	PF14_0417	heat shock protein, putative
+PF14_0422	PF14_0422	hypothetical protein
+PF14_0423	PF14_0423	Ser/Thr protein kinase, putative
+PF14_0424	PF14_0424	hypothetical protein
+PF14_0425	PF14_0425	fructose-bisphosphate aldolase
+PF14_0428	PF14_0428	histidine --tRNA ligase, putative
+PF14_0429	PF14_0429	RNA helicase, putative
+PF14_0431	PfLAMMER	serine/threonine kinase-1, PfLammer
+PF14_0435	PF14_0435	hypothetical protein
+PF14_0436	PF14_0436	helicase, truncated, putative
+PF14_0437	PF14_0437	helicase, truncated, putative
+PF14_0439	PF14_0439	leucine aminopeptidase, putative
+PF14_0440	PF14_0440	hypothetical protein
+PF14_0441	PF14_0441	pyruvate dehydrogenase E1 beta subunit, putative
+PF14_0443	PF14_0443	centrin, putative
+PF14_0444	PF14_0444	hypothetical protein
+PF14_0447	PF14_0447	glutaminyl-peptide cyclotransferase
+PF14_0448	PF14_0448	ribosomal protein S2, putative
+PF14_0451	PF14_0451	mitochondrial ribosomal protein S14 precursor, putative
+PF14_0453	PF14_0453	hypothetical protein
+PF14_0455	PfMDR2	multidrug resistance protein 2 (heavy metal transport family)
+PF14_0456	PF14_0456	hypothetical protein, conserved
+PF14_0458	PF14_0458	hypothetical protein
+PF14_0462	PF14_0462	SEL-1 protein, putative
+PF14_0463	PF14_0463	chloroquine resistance marker protein
+PF14_0464	PF14_0464	hypothetical protein
+PF14_0469	PF14_0469	transcription factor IIIb subunit, putative
+PF14_0470	PF14_0470	hypothetical protein
+PF14_0476	PF14_0476	serine/threonine protein kinase, putative
+PF14_0477	PF14_0477	signal recognition particle 54 kDa protein, putative
+PF14_0481	PF14_0481	hypothetical protein, conserved
+PF14_0482	PF14_0482	hypothetical protein, conserved
+PF14_0483	PF14_0483	hypothetical protein
+PF14_0484	PF14_0484	acetyl-CoA acetyltransferase, putative
+PF14_0486	PF14_0486	elongation factor 2
+PF14_0492	PF14_0492	protein phosphatase 2b regulatory subunit, putative
+PF14_0493	PF14_0493	sortilin, putative
+PF14_0494	PF14_0494	hypothetical protein, conserved
+PF14_0495	PF14_0495	hypothetical protein
+PF14_0498	PF14_0498	hypothetical protein
+PF14_0503	PF14_0503	hypothetical protein
+PF14_0508	PF14_0508	pyridine nucleotide transhydrogenase, putative
+PF14_0511	PF14_0511	glucose-6-phosphatedehydrogenase-6-phosphogluco no lactonase
+PF14_0513	PF14_0513	RNA binding protein, putative
+PF14_0515	PF14_0515	hypothetical protein
+PF14_0516	PF14_0516	serine/threonine-protein kinase
+PF14_0517	PF14_0517	peptidase, putative
+PF14_0518	PF14_0518	nifU protein, putative
+PF14_0519	PF14_0519	ribosomal protein S11, putative
+PF14_0520	PF14_0520	6-phosphogluconate dehydrogenase, decarboxylating, putative
+PF14_0523	PF14_0523	protein phosphatase 2C, putative
+PF14_0526	PF14_0526	hypothetical protein, conserved
+PF14_0528	PF14_0528	hemolysin, putative
+PF14_0529	PF14_0529	gamma-adaptin, putative
+PF14_0530	PF14_0530	ferlin, putative
+PF14_0533	PF14_0533	hypothetical protein
+PF14_0536	PF14_0536	hypothetical protein
+PF14_0541	PF14_0541	V-type H(+)-translocating pyrophosphatase, putative
+PF14_0542	PF14_0542	hypothetical protein, conserved
+PF14_0543	mSPP	signal peptide peptidase, mSPP
+PF14_0545	PF14_0545	thioredoxin
+PF14_0546	PF14_0546	hypothetical protein, conserved
+PF14_0547	PF14_0547	hypothetical protein
+PF14_0548	PF14_0548	ATPase, putative
+PF14_0553	PF14_0553	cysteine proteinase falcipain-1
+PF14_0554	PF14_0554	hypothetical protein
+PF14_0555	PF14_0555	hypothetical protein
+PF14_0562	PF14_0562	hypothetical protein
+PF14_0563	PF14_0563	DEAD-box RNA helicase, putative
+PF14_0564	PF14_0564	hypothetical protein, conserved
+PF14_0566	PF14_0566	hypothetical protein
+PF14_0567	PF14_0567	hypothetical protein
+PF14_0568	PF14_0568	hypothetical protein
+PF14_0570	PF14_0570	pyridoxamine-phosphate oxidase
+PF14_0572	PF14_0572	hypothetical protein
+PF14_0579	PF14_0579	ribosomal protein L27, putative
+PF14_0581	PF14_0581	ribosomal protein S10, putative
+PF14_0584	PF14_0584	ribosomal protein S4, putative
+PF14_0585	PF14_0585	ribosomal protein S28e, putative
+PF14_0589	PF14_0589	valine -tRNA ligase, putative
+PF14_0596	PF14_0596	hypothetical protein
+PF14_0597	PF14_0597	cytochrome c1 precursor, putative
+PF14_0598	PF14_0598	glyceraldehyde-3-phosphate dehydrogenase
+PF14_0601	PF14_0601	replication factor C3
+PF14_0602	PF14_0602	DNA polymerase alpha subunit, putative
+PF14_0605	PF14_0605	cyclin, putative
+PF14_0606	PF14_0606	hypothetical protein, conserved
+PF14_0607	PF14_0607	hypothetical protein
+PF14_0612	PF14_0612	hypothetical protein
+PF14_0613	PF14_0613	hypothetical protein
+PF14_0615	PF14_0615	ATP synthase (C/AC39) subunit, putative
+PF14_0616	PF14_0616	i-AAA protease, putative
+PF14_0617	PF14_0617	hypothetical protein
+PF14_0625	PF14_0625	hypothetical protein
+PF14_0627	PF14_0627	ribosomal protein S3, putative
+PF14_0630	PF14_0630	protein serine/threonine phosphatase
+PF14_0632	PF14_0632	26S proteasome subunit, putative
+PF14_0635	PF14_0635	RNA binding protein, putative
+PF14_0637	PF14_0637	rhoptry protein, putative
+PF14_0638	PF14_0638	hypothetical protein
+PF14_0639	PF14_0639	DNA-3-methyladenine glycosylase, putative
+PF14_0641	PF14_0641	1-deoxy-D-xylulose 5-phosphate reductoisomerase
+PF14_0642	PF14_0642	hypothetical protein
+PF14_0643	PF14_0643	hypothetical protein, conserved
+PF14_0653	PF14_0653	hypothetical protein
+PF14_0654	PF14_0654	aminophospholipid transporting P_ATPase, putative
+PF14_0655	PF14_0655	RNA helicase-1, putative
+PF14_0656	PF14_0656	U2 snRNP auxiliary factor, putative
+PF14_0658	PF14_0658	translation initiation factor EF-1, putative
+PF14_0659	PF14_0659	hypothetical protein
+PF14_0661	PF14_0661	hypothetical protein, conserved
+PF14_0662	PF14_0662	hypothetical protein
+PF14_0664	PF14_0664	biotin carboxylase subunit of acetyl CoA carboxylase, putative
+PF14_0668	PF14_0668	hypothetical protein
+PF14_0671	PF14_0671	hypothetical protein
+PF14_0672	PF14_0672	cyclic nucleotide phosphodiesterase, putative
+PF14_0675	PF14_0675	reticulocyte binding protein 2 homolog B, putative
+PF14_0677	PF14_0677	RNA 3'-Terminal Phosphate Cyclase-like protein, putative
+PF14_0678	PF14_0678	exported protein 2
+PF14_0679	PF14_0679	inorganic anion exchanger, inorganic anion antiporter
+PF14_0680	PF14_0680	hypothetical protein
+PF14_0681	PF14_0681	diacylglycerol kinase, putative
+PF14_0682	PF14_0682	hypothetical protein
+PF14_0688	PF14_0688	hypothetical protein, conserved
+PF14_0689	PF14_0689	hypothetical protein
+PF14_0690	PF14_0690	histone deactylase, putative
+PF14_0691	PF14_0691	hypothetical protein
+PF14_0694	PF14_0694	protein disulfide isomerase, putative
+PF14_0695	PF14_0695	DNA-directed RNA polymerase, alpha subunit, truncated, putative
+PF14_0696	PF14_0696	hypothetical protein
+PF14_0697	PF14_0697	dihydroorotase, putative
+PF14_0698	PF14_0698	hypothetical protein
+PF14_0699	PF14_0699	hypothetical protein, conserved
+PF14_0700	PF14_0700	hypothetical protein, conserved
+PF14_0708	PF14_0708	hypothetical protein
+PF14_0709	PF14_0709	ribosomal protein L20, putative
+PF14_0710	PF14_0710	hypothetical protein
+PF14_0711	PF14_0711	hypothetical protein, conserved
+PF14_0712	PF14_0712	hypothetical protein
+PF14_0714	PF14_0714	hypothetical protein, conserved
+PF14_0716	PF14_0716	Proteosome subunit alpha type 1, putative
+PF14_0721	PF14_0721	cytochrome c oxidase assembly protein, putative
+PF14_0726	PF14_0726	hypothetical protein
+PF14_0728	PF14_0728	hypothetical protein
+PF14_0729	etramp14.2	early transcribed membrane protein 14.2, etramp14.2
+PF14_0730	PF14_0730	hypothetical protein
+PF14_0732	PF14_0732	hypothetical protein
+PF14_0733	PF14_0733	protein kinase, FIKK family
+PF14_0735	PF14_0735	hypothetical protein
+PF14_0736	PF14_0736	hypothetical protein
+PF14_0737	PF14_0737	lysophospholipase, putative
+PF14_0738	PF14_0738	lysophospholipase, putative
+PF14_0740	PF14_0740	hypothetical protein
+PF14_0741	PF14_0741	hypothetical protein
+PF14_0742	PF14_0742	hypothetical protein
+PF14_0743	PF14_0743	hypothetical protein
+PF14_0747	PF14_0747	hypothetical protein
+PF14_0749	PF14_0749	acyl CoA binding protein
+PF14_0751	PF14_0751	fatty acyl coenzyme A synthetase-1, putative
+PF14_0752	PF14_0752	hypothetical protein
+PF14_0753	PF14_0753	hypothetical protein
+PF14_0754	PF14_0754	hypothetical protein
+PF14_0755	PF14_0755	hypothetical protein
+PF14_0756	PF14_0756	hypothetical protein
+PF14_0757	PF14_0757	hypothetical protein
+PF14_0758	PF14_0758	hypothetical protein
+PF14_0759	PF14_0759	hypothetical protein
+PF14_0761	PF14_0761	fatty acyl CoA synthetase 1
+PF14_0762	PF14_0762	hypothetical protein
+PF14_0763	PF14_0763	hypothetical protein
+PF14_0764	PF14_0764	hypothetical protein
+PF14_0766	PF14_0766	rifin
+PF14_0767	PF14_0767	stevor, putative
+PF14_0768	PF14_0768	rifin
+PF14_0769	PF14_0769	rifin
+PF14_0770	PF14_0770	rifin
+PF14_0771	PF14_0771	stevor, putative
+PF14_0772	PF14_0772	rifin
+PFA0005w	VAR_PFA0005w	erythrocyte membrane protein 1 (PfEMP1)
+PFA0010c	RIF_PFA0010c	rifin
+PFA0020w	RIF_PFA0020w	rifin
+PFA0030c	RIF_PFA0030c	rifin
+PFA0040w	RIF_PFA0040w	rifin
+PFA0045c	RIF_PFA0045c	rifin
+PFA0050c	RIF_PFA0050c	rifin
+PFA0080c	RIF_PFA0080c	rifin
+PFA0090c	stevor_PFA0090c	stevor
+PFA0095c	RIF_PFA0095c	rifin
+PFA0105w	stevor_PFA0105w	stevor
+PFA0110w	RESA	ring-infected erythrocyte surface antigen
+PFA0115w	PFA0115w	hypothetical protein
+PFA0190c	PFA0190c	actin-related protein, ARP1
+PFA0200w	PFA0200w	hypothetical protein, conserved
+PFA0220w	PFA0220w	ubiquitin carboxyl-terminal hydrolase, putative
+PFA0225w	lytB	LytB protein
+PFA0290w	PFA0290w	DNA binding protein, putative
+PFA0300c	PFA0300c	vacuolar ATP synthase, putative
+PFA0330w	AARP2	pfAARP2 protein
+PFA0335w	Rab5c	Rab5c, GTPase
+PFA0340w	PFA0340w	2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase, putative
+PFA0345w	PFA0345w	centrin, putative
+PFA0385w	PFA0385w	hypothetical protein, conserved
+PFA0455c	PFA0455c	integral membrane protein, GNS1/SUR4 family, putative
+PFA0460c	PFA0460c	tubulin-specific chaperone a, putative
+PFA0465c	PFA0465c	N-terminal acetyltransferase, putative
+PFA0470c	PFA0470c	cold-shock protein, putative
+PFA0480w	PFA0480w	phenylalanyl-tRNA synthetase beta chain, putative
+PFA0485w	PFA0485w	dolichol kinase
+PFA0495c	PFA0495c	selenocysteine-specific elongation factor selB homologue, putative
+PFA0500w	PFA0500w	human hepatopoietin-like protein, putative
+PFA0505c	PFA0505c	DNA-directed RNA polymerase 2 subunit, putative
+PFA0515w	PFA0515w	phosphatidylinositol-4-phosphate 5-kinase, putative
+PFA0520c	PFA0520c	chromatin assembly factor 1 protein WD40 domain, putative
+PFA0525w	PFA0525w	transcription initiation factor TFIIB, putative
+PFA0535c	PFA0535c	kinesin, putative
+PFA0545c	PFA0545c	replication factor c protein, putative
+PFA0555c	PFA0555c	UMP-CMP kinase, putative
+PFA0580c	PFA0580c	TatD-like deoxyribonuclease, putative
+PFA0610c	PFA0610c	hypothetical protein, conserved in P. falciparum
+PFA0660w	PFA0660w	protein with DNAJ domain, dnj1/sis1 family
+PFA0685c	PfMC-2TM_1.1	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 1.1, PfMC-2TM_1.1
+PFA0700c	PFA0700c	hypothetical protein, conserved in P. falciparum
+PFA0710c	RIF_PFA0710c	rifin
+PFA0715c	PFA0715c	hypothetical protein, conserved in P. falciparum
+PFA0740w	RIF_PFA0740w	rifin
+PFA0745w	RIF_PFA0745w	rifin
+PFA0750w	stevor_PFA0750w	stevor
+PFA0760w	RIF_PFA0760w	rifin
+PFA0765c	VAR_PFA0765c	erythrocyte membrane protein 1 (PfEMP1)
+PFB0010w	PFB0010w	erythrocyte membrane protein 1 (PfEMP1)
+PFB0015c	PFB0015c	rifin
+PFB0020c	PFB0020c	erythrocyte membrane protein 1 (PfEMP1), truncated
+PFB0025c	PFB0025c	stevor, putative
+PFB0030c	PFB0030c	rifin
+PFB0035c	PFB0035c	rifin
+PFB0040c	PFB0040c	rifin
+PFB0050c	PFB0050c	stevor isoform gam beta
+PFB0055c	PFB0055c	rifin
+PFB0060w	PFB0060w	rifin
+PFB0065w	PFB0065w	stevor, putative
+PFB0070w	PFB0070w	hypothetical protein
+PFB0075c	PFB0075c	hypothetical protein
+PFB0080c	PFB0080c	hypothetical protein
+PFB0090c	PFB0090c	DnaJ protein, putative
+PFB0095c	PFB0095c	erythrocyte membrane protein 3
+PFB0105c	PFB0105c	hypothetical protein
+PFB0106c	PFB0106c	hypothetical protein
+PFB0110w	PFB0110w	hypothetical protein
+PFB0120w	PfSEP2	early transcribed membrane protein 2, ETRAMP2
+PFB0130w	PFB0130w	polyprenyl synthetase, putative
+PFB0140w	PFB0140w	hypothetical protein
+PFB0150c	PFB0150c	protein kinase, putative
+PFB0160w	PFB0160w	ERCC1 nucleotide excision repair protein, putative
+PFB0170w	PFB0170w	hypothetical protein, conserved
+PFB0180w	PFB0180w	5'-3' exonuclease, N-terminal resolvase-like domain, putative
+PFB0194w	PFB0194w	hypothetical protein, conserved
+PFB0200c	PFB0200c	aspartate aminotransferase, putative
+PFB0205c	PFB0205c	5'-3' exonuclease, putative
+PFB0210c	PfHT1	hexose transporter, PfHT1
+PFB0215c	PFB0215c	3'-5' exonuclease, putative
+PFB0220w	PFB0220w	UbiE-like methlytransferase, putative
+PFB0240w	PFB0240w	hypothetical protein, conserved
+PFB0245c	PFB0245c	DNA-directed RNA polymerase II 16 kDa subunit, putative
+PFB0260w	PFB0260w	proteasome 26S regulatory subunit, putative
+PFB0265c	PFB0265c	DNA repair endonuclease, putative
+PFB0270w	PFB0270w	hypothetical protein, conserved
+PFB0290c	PFB0290c	transcription factor, putative
+PFB0295w	PFB0295w	adenylosuccinate lyase, putative
+PFB0300c	PFB0300c	merozoite surface protein 2 precursor
+PFB0305c	PFB0305c	merozoite surface protein 5
+PFB0310c	PFB0310c	merozoite surface protein 4
+PFB0320c	PFB0320c	hypothetical protein, conserved
+PFB0330c	PFB0330c	cysteine protease, putative
+PFB0335c	PFB0335c	cysteine protease, putative
+PFB0340c	PFB0340c	cysteine protease, putative
+PFB0345c	PFB0345c	cysteine protease, putative
+PFB0350c	PFB0350c	cysteine protease, putative
+PFB0355c	PFB0355c	cysteine protease, putative
+PFB0360c	PFB0360c	cysteine protease, putative
+PFB0365w	PFB0365w	hypothetical protein, conserved
+PFB0375w	PFB0375w	hypothetical protein
+PFB0380c	PFB0380c	hypothetical protein
+PFB0385w	PFB0385w	acyl carrier protein, putative
+PFB0390w	PFB0390w	ribosome releasing factor, putative
+PFB0395w	PFB0395w	hypothetical protein
+PFB0400w	PFB0400w	Pfs45-48 related protein, putative
+PFB0405w	PFB0405w	transmission-blocking target antigen s230 precursor
+PFB0410c	PFB0410c	phospholipase, putative
+PFB0415c	PFB0415c	hypothetical protein
+PFB0420w	PFB0420w	2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase
+PFB0445c	PFB0445c	helicase, putative
+PFB0450w	PFB0450w	Sec61-gamma subunit of protein translocation complex, putative
+PFB0455w	PFB0455w	ribosomal L37ae protein, putative
+PFB0465c	PFB0465c	monocarboxylate transporter, putative
+PFB0480w	PFB0480w	syntaxin, putative
+PFB0485c	PFB0485c	hypothetical protein
+PFB0500c	PfRab5a	Rab5a, GTPase
+PFB0505c	PFB0505c	beta-ketoacyl-acyl carrier protein synthase III precursor, putative
+PFB0510w	PFB0510w	hypothetical protein
+PFB0520w	PFB0520w	protein kinase, putative
+PFB0545c	PFB0545c	ribosomal protein L7/L12, putative
+PFB0550w	PFB0550w	peptide chain release factor subunit 1, putative
+PFB0555c	PFB0555c	hypothetical protein
+PFB0560w	PFB0560w	hypothetical protein
+PFB0570w	PFB0570w	SPATR-like protein, putative
+PFB0580w	PFB0580w	MATE antiporter, putative
+PFB0585w	PFB0585w	Leu/Phe-tRNA protein transferase, putative
+PFB0590w	PFB0590w	hypothetical protein
+PFB0595w	PFB0595w	heat shock 40 kDa protein, putative
+PFB0600c	PFB0600c	hypothetical protein
+PFB0605w	PFB0605w	Ser/Thr protein kinase, putative
+PFB0635w	PFB0635w	T-complex protein 1, putative
+PFB0640c	PfSec31p	COPII-coated vesicle component, putative
+PFB0645c	PFB0645c	Ribosomal protein L13, putative
+PFB0665w	PFB0665w	Ser/Thr protein kinase, putative
+PFB0670c	PFB0670c	hypothetical protein
+PFB0675w	PFB0675w	hypothetical protein
+PFB0680w	PFB0680w	hypothetical protein
+PFB0685c	PfACS9	acyl-CoA synthetase, PfACS9
+PFB0695c	PFB0695c	acyl-CoA synthetase
+PFB0710c	PFB0710c	hypothetical protein
+PFB0715w	PFB0715w	DNA-directed RNA polymerase II second largest subunit, putative
+PFB0720c	PFB0720c	hypothetical protein, conserved
+PFB0725c	PFB0725c	hypothetical protein
+PFB0730w	PFB0730w	DNA helicase, putative
+PFB0735c	PFB0735c	hypothetical protein
+PFB0745w	PFB0745w	hypothetical protein
+PFB0750w	PFB0750w	vacuolar protein-sorting protein VPS45, putative
+PFB0760w	PFB0760w	MtN3-like protein, putative
+PFB0770c	PFB0770c	hypothetical protein
+PFB0790c	PFB0790c	hypothetical protein
+PFB0795w	PFB0795w	ATP synthase F1, alpha subunit, putative
+PFB0805c	PFB0805c	clathrin coat assembly protein, putative
+PFB0810w	PFB0810w	hypothetical protein
+PFB0814c	PFB0814c	hypothetical protein
+PFB0815w	PfCDPK1	Pf Calcium-dependent protein kinase 1
+PFB0820c	PFB0820c	hypothetical protein
+PFB0830w	PFB0830w	Ribosomal protein S26e, putative
+PFB0840w	PFB0840w	replication factor C, subunit 2
+PFB0845w	PFB0845w	hypothetical protein
+PFB0855c	PFB0855c	hypothetical protein
+PFB0860c	PFB0860c	RNA helicase, putative
+PFB0865w	PFB0865w	small nuclear ribonucleoprotein, putative
+PFB0875c	PFB0875c	Chromatin-binding protein, putative
+PFB0880w	PFB0880w	hypothetical protein, conserved
+PFB0885w	PFB0885w	40S ribosomal protein S30, putative
+PFB0886c	PFB0886c	hypothetical protein
+PFB0888w	PFB0888w	hypothetical protein
+PFB0890c	PFB0890c	pseudouridine synthetase, putative
+PFB0895c	PFB0895c	replication factor C subunit 1, putative
+PFB0900c	PFB0900c	hypothetical protein
+PFB0910w	PFB0910w	hypothetical protein
+PFB0915w	PFB0915w	liver stage antigen 3
+PFB0921c	PFB0921c	hypothetical protein
+PFB0923c	PFB0923c	hypothetical protein
+PFB0930w	PFB0930w	hypothetical protein
+PFB0932w	PFB0932w	hypothetical protein
+PFB0935w	PFB0935w	cytoadherence linked asexual protein 2
+PFB0946c	PFB0946c	hypothetical protein
+PFB0950w	PFB0950w	hypothetical protein
+PFB0953w	PFB0953w	hypothetical protein
+PFB0955w	PFB0955w	stevor, degenerate, putative
+PFB0976w	PFB0976w	hypothetical protein
+PFB0985c	PfMC-2TM_2.2	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 2.2, PfMC-2TM_2.2
+PFB0995w	PFB0995w	hypothetical protein
+PFB1000w	PFB1000w	rifin
+PFB1005w	PFB1005w	rifin
+PFB1010w	PFB1010w	rifin
+PFB1015w	PFB1015w	rifin
+PFB1020w	PFB1020w	stevor, putative
+PFB1035w	PFB1035w	rifin
+PFB1040w	PFB1040w	rifin
+PFB1050w	PFB1050w	rifin
+PFB1055c	PFB1055c	erythrocyte membrane protein 1 (PfEMP1)
+PFC0025c	stevor_PFC0025c	stevor
+PFC0030c	RIF_PFC0030c	rifin
+PFC0035w	RIF_PFC0035w	rifin
+PFC0045w	RIF-like	rifin-like protein
+PFC0050c	PfACS2	acetyl-CoA synethetase, PfACS2
+PFC0055w	PFC0055w	hypothetical protein
+PFC0065c	PFC0065c	alpha/beta hydrolase protein, putative
+PFC0075c	PFC0075c	hypothetical protein, conserved
+PFC0080c	PFC0080c	hypothetical protein
+PFC0100c	PFC0100c	regulatory protein, putative
+PFC0110w	PFC0110w	Cytoadherence linked asexual protein 3.1
+PFC0120w	PFC0120w	Cytoadherence linked asexual protein, 3.2
+PFC0125w	PFC0125w	ABC transporter, (TAP family)
+PFC0140c	PFC0140c	N-ethylmaleimide-sensitive fusion protein, putative
+PFC0155c	PFC0155c	DNA-directed RNA polymerase subunit I, putative
+PFC0160w	PFC0160w	binding protein, putative
+PFC0166w	freD	thioredoxin-like redox-active protein, putative
+PFC0190c	PFC0190c	EH (Eps15 homology) protein
+PFC0200w	PFC0200w	60S Ribosomal protein L44, putative
+PFC0205c	PFC0205c	PfGLP-1, 1-cys-glutaredoxin-like protein-1
+PFC0215c	PFC0215c	hypothetical protein
+PFC0225c	PFC0225c	elongation factor (EF-TS), putative
+PFC0250c	PFC0250c	AP endonuclease (DNA-(apurinic or apyrimidinic site) lyase), putative
+PFC0255c	PFC0255c	ubiquitin-conjugating enzyme E2, putative
+PFC0260w	PFC0260w	hypothetical protein, conserved
+PFC0271c	PFC0271c	glutaredoxin, putative
+PFC0275w	PFC0275w	FAD-dependent glycerol-3-phosphate dehydrogenase, putative
+PFC0285c	PFC0285c	T-complex protein beta subunit, putative
+PFC0290w	PFC0290w	40S ribosomal protein S23, putative
+PFC0295c	PFC0295c	40S ribosomal protein S12, putative
+PFC0300c	PFC0300c	60S ribosomal protein L7, putative
+PFC0310c	PFC0310c	ATP-dependent CLP protease, putative
+PFC0330w	PFC0330w	hypothetical protein, conserved
+PFC0340w	PFC0340w	DNA polymerase delta small subunit, putative
+PFC0350c	PFC0350c	T-complex protein eta subunit, putative
+PFC0365w	PFC0365w	conserved protein, putative
+PFC0380w	PFC0380w	dual-specificity protein phosphatase, putative
+PFC0400w	PFC0400w	60S Acidic ribosomal protein P2
+PFC0416w	PFC0416w	hypothetical protein, conserved
+PFC0420w	PfCDPK3	calcium-dependent protein kinase 3
+PFC0435w	PFC0435w	hypothetical protein, conserved
+PFC0450w	PFC0450w	hypothetical protein, conserved
+PFC0470w	PFC0470w	valine --tRNA ligase, putative
+PFC0520w	PFC0520w	26S proteasome regulatory subunit S14, putative
+PFC0525c	PfGSK-3	glycogen synthase kinase 3
+PFC0535w	PFC0535w	60S ribosomal protein L26, putative
+PFC0555c	PFC0555c	hypothetical protein, conserved
+PFC0575w	PFC0575w	hypothetical protein, conserved
+PFC0580c	PFC0580c	hypothetical protein, conserved
+PFC0590c	PFC0590c	der1-like protein, putative
+PFC0595c	PFC0595c	serine/threonine protein phosphatase, putative
+PFC0635c	PFC0635c	translation initiation factor E4, putative
+PFC0640w	PFC0640w	CSP and TRAP-related protein (CTRP)
+PFC0670c	PFC0670c	hypothetical protein, conserved
+PFC0715c	PFC0715c	hypothetical protein, conserved
+PFC0730w	PFC0730w	conserved protein, putative
+PFC0735w	PFC0735w	40S ribosomal protein S15A, putative
+PFC0770c	PFC0770c	kinesin-related protein, putative
+PFC0775w	PFC0775w	40S ribosomal protein S11, putative
+PFC0785c	PFC0785c	proteasome regulatory protein, putative
+PFC0795w	PFC0795w	hypothetical protein, conserved
+PFC0810c	PFC0810c	hypothetical protein, conserved
+PFC0825c	PFC0825c	cleavage and polyadenylation specificity factor protein, putative
+PFC0831w	PFC0831w	triosephophate isomerase, putative
+PFC0840w	PfATPase7	P-type ATPase, putative
+PFC0845c	PFC0845c	ubiquitin--protein ligase, putative
+PFC0850c	PFC0850c	hypothetical protein, conserved
+PFC0860w	PFC0860w	kinesin, putative
+PFC0865w	PFC0865w	RNA-binding protein, putative
+PFC0900w	PFC0900w	T-complex protein 1 epsilon subunit, putative
+PFC0915w	PFC0915w	ATP-dependent RNA helicase, putative
+PFC0925w	PFC0925w	hypothetical protein, conserved
+PFC0935c	PFC0935c	N-acetylglucosamine-1-phosphate transferase, putative
+PFC0975c	PFC0975c	PFCYP19, cyclophilin, peptidyl-prolyl cis-trans isomerase
+PFC0995c	PFC0995c	diacylglycerol O-acyltransferase, putative
+PFC1020c	PFC1020c	40S ribosomal protein S3A, putative
+PFC1080c	PfMC-2TM_3	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 3, PfMC-2TM_3
+PFC1085c	PFC1085c	hypothetical protein, conserved
+PFC1090w	PFC1090w	hypothetical protein, conserved in P. falciparum
+PFC1105w	stevor_PFC1105w	stevor (3D7-stevorT3-2)
+PFD0005w	VAR_PFD0005w	erythrocyte membrane protein 1 (PfEMP1)
+PFD0015c	RIF_PFD0015c	rifin
+PFD0020c	VAR_PFD0020c	erythrocyte membrane protein 1 (PfEMP1)
+PFD0025w	RIF_PFD0025w	rifin
+PFD0030c	RIF_PFD0030c	rifin
+PFD0035c	stevor_PFD0035c	stevor
+PFD0040c	RIF_PFD0040c	rifin
+PFD0045c	RIF_PFD0045c	rifin
+PFD0050w	RIF_PFD0050w	rifin
+PFD0055w	RIF_PFD0055w	rifin
+PFD0060w	RIF_PFD0060w	rifin
+PFD0065w	stevor pseudogene	stevor pseudogene
+PFD0070c	RIF_PFD0070c	rifin
+PFD0075w	PFD0075w	hypothetical protein, conserved in P. falciparum
+PFD0085c	PfACS6	acyl-Coa synthetase, PfACS6
+PFD0125c	stevor_PFD0125c	stevor
+PFD0135c	RIF truncated_PFD0135c	rifin, truncated
+PFD0165w	PFD0165w	ubiquitin-specific protease, putative
+PFD0180c	PFD0180c	CGI-201 protein, short form
+PFD0207c	PFD0207c	hypothetical protein, conserved
+PFD0230c	PFD0230c	protease, putative
+PFD0245c	PFD0245c	ATP-dependent RNA helicae-like protein, putative
+PFD0260c	PFD0260c	sequestrin
+PFD0265w	PFD0265w	pre-mRNA splicing factor, putative
+PFD0285c	PFD0285c	lysine decarboxylase, putative
+PFD0305c	PFD0305c	vacuolar ATP synthase subunit b
+PFD0311w	PFD0311w	hydroxyacyl glutathione hydrolase, putative
+PFD0390c	PFD0390c	AAA family ATPase, putative
+PFD0420c	PFD0420c	flap exonuclease, putative
+PFD0430c	PFD0430c	MAC/Perforin, putative
+PFD0450c	PFD0450c	pre-mrna splicing factor, putative
+PFD0455w	PFD0455w	ribosomal processing protein, putative
+PFD0462w	PFD0462w	DNAJ protein
+PFD0470c	PFD0470c	replication factor a protein, putative
+PFD0480w	PFD0480w	hypothetical protein, conserved
+PFD0487c	PFD0487c	actin-like protein, putative
+PFD0505c	PFD0505c	protein phosphatase 2C
+PFD0515w	PFD0515w	exosome complex exonuclease rrp4, putative
+PFD0530c	PFD0530c	Hypothetical protein, conserved
+PFD0555c	PFD0555c	hypothetical protein, conserved
+PFD0565c	PFD0565c	RNA helicase, putative
+PFD0615c	VAR_PFD0615c	erythrocyte membrane protein 1 (PfEMP1)
+PFD0620c	RIF truncated_PFD0620c	rifin, truncated
+PFD0625c	VAR_PFD0625c	erythrocyte membrane protein 1 (PfEMP1)
+PFD0630c	VAR_PFD0630c	erythrocyte membrane protein 1 (PfEMP1)
+PFD0635c	VAR_PFD0635c	erythrocyte membrane protein 1 (PfEMP1)
+PFD0640c	RIF_PFD0640c	rifin
+PFD0645w	RIF_PFD0645w	rifin
+PFD0660w	PFD0660w	phosphoglycerate mutase, putative
+PFD0665c	PFD0665c	26s proteasome aaa-ATPase subunit Rpt3, putative
+PFD0675w	PFD0675w	ribosomal protein l10, putative
+PFD0680c	PFD0680c	ubiquitin carboxyl-terminal hydrolase a, putative
+PFD0685c	PFD0685c	chromosome associated protein, putative
+PFD0690c	PFD0690c	hypothetical protein, conserved
+PFD0700c	PFD0700c	RNA binding protein, putative
+PFD0710w	PFD0710w	GTP-binding protein, putative
+PFD0725c	PFD0725c	arsenical pump-driving ATPase, putative
+PFD0745c	PFD0745c	nonclathrin coat protein zeta2-cop-related protein, putative
+PFD0750w	PFD0750w	nuclear cap-binding protein, putative
+PFD0755c	PFD0755c	adenylate kinase 1
+PFD0760c	PFD0760c	hypothetical protein, conserved
+PFD0775c	PFD0775c	hypothetical RNA binding protein
+PFD0780w	PFD0780w	glutamyl-tRNA(Gln) amidotransferase subunit A, putative
+PFD0820w	PFD0820w	hypothetical protein, conserved
+PFD0825c	PFD0825c	RNA-binding protein of pumilio/mpt5 family, putative
+PFD0835c	PFD0835c	LETM1-like protein, putative
+PFD0895c	PFD0895c	Bet3 transport protein, putative
+PFD0950w	PFD0950w	ran binding protein 1
+PFD0960c	PFD0960c	ribosomal protein L7Ae-related protein, putative
+PFD0980w	PFD0980w	holo-(acyl-carrier protein) synthase, putative
+PFD0990w	PFD0990w	ribosome recycling factor, putative
+PFD0995c	VAR_PFD0995c	erythrocyte membrane protein 1 (PfEMP1)
+PFD1000c	VAR_PFD1000c	erythrocyte membrane protein 1 (PfEMP1)
+PFD1005c	VAR_PFD1005c	erythrocyte membrane protein 1 (PfEMP1)
+PFD1010w	RIF_PFD1010w	rifin
+PFD1015c	VAR_PFD1015c	erythrocyte membrane protein 1 (PfEMP1)
+PFD1020c	RIF_PFD1020c	rifin
+PFD1035w	PFD1035w	steroid dehydrogenase kik-i, putative
+PFD1060w	PFD1060w	u5 small nuclear ribonucleoprotein-specific protein, putative
+PFD1070w	PFD1070w	eukaryotic initiation factor, putative
+PFD1090c	PFD1090c	clathrin assembly protein, putative
+PFD1100c	PFD1100c	hypothetical protein, conserved
+PFD1120c	PFD1120c	early transcribed membrane protein 4, ETRAMP4
+PFD1155w	PFD1155w	erythrocyte binding antigen-165
+PFD1165w	PFD1165w	FIKK protein kinase
+PFD1175w	PFD1175w	Plasmodium falciparum trophozoite antigen r45-like protein
+PFD1195c	PFD1195c	hypothetical protein
+PFD1220c	stevor_PFD1220c	stevor
+PFD1230c	RIF_PFD1230c	rifin
+PFD1235w	VAR_PFD1235w	erythrocyte membrane protein 1 (PfEMP1)
+PFD1240w	RIF_PFD1240w	rifin
+PFD1245c	VAR_PFD1245c	erythrocyte membrane protein 1 (PfEMP1)
+PFE0005w	VAR_PFE0005w	erythrocyte membrane protein 1 (PfEMP1)
+PFE0020c	RIF_PFE0020c	rifin
+PFE0025c	RIF_PFE0025c	rifin
+PFE0030c	stevor, degenerate	stevor pseudogene
+PFE0055c	PFE0055c	heat shock protein, putative
+PFE0065w	PFE0065w	skeleton binding protein1, PfSBP1
+PFE0075c	RAP3	rhoptry-associated protein 3, RAP3
+PFE0080c	RAP2	rhoptry-associated protein 2, RAP2
+PFE0100w	PFE0100w	hypothetical protein, conserved
+PFE0115c	PFE0115c	hypothetical protein, conserved
+PFE0120c	MSP8	Merozoite Surface Protein 8, MSP8
+PFE0145w	PFE0145w	50S ribosomal subunit protein L28, putative
+PFE0150c	PFE0150c	4-diphosphocytidyl-2c-methyl-D-erythritol kinase (CMK), putative
+PFE0160c	PFE0160c	Ser/Arg-rich splicing factor, putative
+PFE0165w	PFE0165w	actin depolymerizing factor, putative
+PFE0175c	PFE0175c	unconventional myosin pfm-b
+PFE0180w	PFE0180w	hypothetical protein
+PFE0185c	PFE0185c	60S ribosomal subunit protein L31, putative
+PFE0195w	PfATPase3	cation transporting P-ATPase
+PFE0205w	PFE0205w	ATP-dependent helicase, putative
+PFE0215w	PFE0215w	ATP-dependent helicase, putative
+PFE0225w	PFE0225w	3-methyl-2-oxobutanoate dehydrogenase (lipoamide), putative
+PFE0255w	PFE0255w	actin-related protein, putative
+PFE0265c	PFE0265c	hypothetical protein, conserved
+PFE0285c	PFE0285c	ubiquitin-like protein, putative
+PFE0300c	PFE0300c	60S ribosomal subunit protein L24, putative
+PFE0305w	PFE0305w	transcription initiation factor TFiid, TATA-binding protein
+PFE0345c	PFE0345c	hypothetical protein, conserved
+PFE0350c	PFE0350c	60S ribosomal subunit protein L4/L1, putative
+PFE0355c	PFE0355c	serine protease belonging to subtilisin family, putative
+PFE0375w	PFE0375w	cell differentiation protein rcd1, putative
+PFE0405c	PFE0405c	hypothetical protein, conserved
+PFE0410w	PFE0410w	triose or hexose phosphate / phosphate translocator, putative
+PFE0415w	PFE0415w	transcription factor iib, putative
+PFE0420c	PFE0420c	guanidine nucleotide exchange factor, putative
+PFE0430w	PFE0430w	ATP-dependent RNA helicase, putative
+PFE0435c	PFE0435c	single-strand binding protein, putative
+PFE0445c	PFE0445c	SNAP protein (soluble N-ethylmaleimide-sensitive factor Attachment Protein), putative
+PFE0455w	PFE0455w	phosphatase 1 regulatory subunit, putative
+PFE0465c	PFE0465c	RNA polymerase I
+PFE0475w	PFE0475w	asparagine --t RNA ligase, putative
+PFE0480c	PFE0480c	hypothetical protein, conserved
+PFE0485w	PFE0485w	phosphatidylinositol 4-kinase, putative
+PFE0495w	PFE0495w	hypothetical protein, conserved
+PFE0505w	PFE0505w	cyclophilin, putative
+PFE0540w	PFE0540w	WD-repeat potein, putative
+PFE0555w	PFE0555w	stearoyl-CoA desaturase (acyl-CoA desaturase, faty acid desaturase), putative
+PFE0560c	PFE0560c	hypothetical protein, conserved
+PFE0575c	PFE0575c	hypothetical protein, conserved
+PFE0605c	gS	glutathione synthetase
+PFE0630c	PFE0630c	orotate phosphoribosyltransferase, putative
+PFE0660c	PFE0660c	purine nucleotide phosphorylase, putative
+PFE0670w	PFE0670w	hypothetical protein, conserved
+PFE0710w	PFE0710w	hypothetical protein, conserved
+PFE0715w	PFE0715w	asparagine --tRNA ligase, putative
+PFE0765w	PFE0765w	phosphatidylinositol 3-kinase, putative
+PFE0805w	PfATPase1	cation-transporting ATPase 1
+PFE0810c	PFE0810c	40S ribosomal subunit protein S14, putative
+PFE0815w	PFE0815w	hypothetical protein, conserved
+PFE0830c	PFE0830c	hypothetical protein, conserved
+PFE0835w	PFE0835w	ubiquitin carboxyl-terminal hydrolase 2, putative
+PFE0845c	PFE0845c	60S ribosomal subunit protein L8, putative
+PFE0865c	PFE0865c	splicing factor, putative
+PFE0870w	PFE0870w	transcriptional regulator, putative
+PFE0875c	PFE0875c	hypothetical protein, conserved
+PFE0880c	PFE0880c	f-actin capping protein beta subunit, putative
+PFE0905w	PFE0905w	hypothetical protein, conserved
+PFE0925c	PFE0925c	snrnp protein, putative
+PFE1000c	PFE1000c	hypothetical protein, conserved
+PFE1030c	PFE1030c	phosphomethylpyrimidine kinase, putative
+PFE1035c	PFE1035c	BIS(5'-nucleosyl)-tetraphosphatase (diadenosine tetraphosphatase), putative
+PFE1045c	PFE1045c	hypothetical protein, conserved
+PFE1075c	PFE1075c	hypothetical protein, conserved
+PFE1080w	PFE1080w	ribosomal large subunit pseudouridylate synthase, putative
+PFE1115c	PFE1115c	s-adenosylmethionine-dependent methyltransferase, putative
+PFE1125w	PFE1125w	50S ribosomal subunit protein L17, putative
+PFE1135w	PFE1135w	hypothetical protein, conserved
+PFE1150w	PfMDR1	multidrug resistance protein
+PFE1155c	PFE1155c	mitochondrial processing peptidase alpha subunit, putative
+PFE1190c	PFE1190c	hypothetical protein, conserved
+PFE1195w	PFE1195w	karyopherin beta
+PFE1225w	PFE1225w	50S ribosomal subunit protein L12, putative
+PFE1250w	PfACS10_PFE1250w	acetyl-CoA synthetase, PfACS10
+PFE1265w	PFE1265w	G-protein coupled receptor, putative
+PFE1290w	Pfnek-2	serine/threonine-protein kinase. Pfnek-2
+PFE1295c	PFE1295c	hypothetical protein, conserved
+PFE1300w	PFE1300w	hypothetical protein, conserved
+PFE1330c	PFE1330c	hypothetical protein, conserved
+PFE1340w	PFE1340w	transmembrane protein, putative
+PFE1355c	PFE1355c	ubiquitin carboxyl-terminal hydrolase, putative
+PFE1375c	PFE1375c	hypothetical protein, conserved
+PFE1390w	PFE1390w	RNA helicase-1
+PFE1400c	PFE1400c	beta adaptin protein, putative
+PFE1430c	PFE1430c	cyclophilin, putative
+PFE1445c	PFE1445c	hypothetical protein, conserved
+PFE1455w	PFE1455w	sugar transporter, putative
+PFE1460w	PFE1460w	hypothetical protein, conserved
+PFE1470w	PFE1470w	cell cycle regulator protein, putative
+PFE1510c	PFE1510c	phosphoenolpyruvate:phosphate antiporter, putative
+PFE1525w	PFE1525w	hypothetical protein, conserved
+PFE1595c	PFE1595c	hypothetical protein, conserved
+PFE1610w	PFE1610w	hypothetical protein
+PFE1615c	PFE1615c	hypothetical protein
+PFE1630w	RIF_PFE1630w	rifin
+PFF0010w	VAR_PFF0010w	erythrocyte membrane protein 1 (PfEMP1)
+PFF0015c	RIF_PFF0015c	rifin
+PFF0025w	RIF_PFF0025w	rifin
+PFF0035c	RIF_PFF0035c	rifin
+PFF0050c	PFF0050c	hypothetical protein, conserved in Plasmodium, falciparum
+PFF0060w	PfMC-2TM_6	Plasmodium falciparum Maurer's Cleft 2 transmembrane domain protein 6, PfMC-2TM_6
+PFF0100w	PFF0100w	putative ATP dependent RNA helicase
+PFF0115c	PFF0115c	elongation factor G, putative
+PFF0120w	PFF0120w	putative geranylgeranyltransferase
+PFF0155w	PFF0155w	bcs1-like protein, putative
+PFF0160c	PFF0160c	dihydroorotate dehydrogenase, mitochondrial precursor
+PFF0170w	PFF0170w	calcium antiporter, putative
+PFF0215w	PFF0215w	hypothetical protein, conserved
+PFF0225w	PFF0225w	DNA helicase, putative
+PFF0230c	PFF0230c	glyoxalase I, putative
+PFF0245w	PFF0245w	50S ribosomal subunit L24, putative
+PFF0250w	PFF0250w	RNA binding protein, putative
+PFF0270c	PFF0270c	cyclin dependent kinase binding protein, putative
+PFF0285c	PFF0285c	DNA repair protein RAD50, putative
+PFF0290w	PFF0290w	long chain polyunsaturated fatty acid elongation enzyme, putative
+PFF0300w	PFF0300w	RNA-binding protein, putative
+PFF0320c	PFF0320c	polypyrimidine tract binding protein, putative
+PFF0350w	PFF0350w	MYND finger protein, putative
+PFF0360w	PFF0360w	uroporphyrinogen decarboxylase, putative
+PFF0370w	PFF0370w	para-hydroxybenzoate--polyprenyltransferase (4-hydroxybenzoate octaprenyltransferase), putative
+PFF0400w	PFF0400w	hypothetical protein, conserved
+PFF0435w	PFF0435w	ornithine aminotransferase
+PFF0450c	PFF0450c	Zn2+ or Fe2+ permease
+PFF0485c	PFF0485c	zinc finger, putative
+PFF0500c	PFF0500c	step II splicing factor, putative
+PFF0505c	PFF0505c	hypothetical protein, conserved
+PFF0520w	PfCDPK2	calcium-dependent protein kinase
+PFF0530w	PFF0530w	transketolase, putative
+PFF0595c	PFF0595c	leucine-rich repeat protein 5, LRR5
+PFF0615c	PFF0615c	Plasmodium falciparum membrane protein pf12 precursor
+PFF0645c	PFF0645c	integral membrane protein
+PFF0650w	PFF0650w	ribosomal protein L18, putative
+PFF0655c	PFF0655c	adapter-related protein, putative
+PFF0660w	PFF0660w	hypothetical protein, conserved
+PFF0665c	PFF0665c	syntaxin binding protein, putative
+PFF0675c	PFF0675c	myosin-like protein, putative
+PFF0700c	PFF0700c	60S ribosomal protein L19, putative
+PFF0730c	PFF0730c	enoyl-acyl carrier reductase
+PFF0745c	PFF0745c	ribonuclease, putative
+PFF0750w	Pfcrk5	cyclin-dependent protein kinase, predicted
+PFF0760w	PFF0760w	RNA and export factor binding protein, putative
+PFF0775w	PFF0775w	pyridoxal kinase-like protein, putative
+PFF0795w	PFF0795w	hypothetical protein, conserved
+PFF0815w	PFF0815w	malate:quinone oxidoreductase, putative
+PFF0830w	PFF0830w	alpha adaptin-like protein, putative
+PFF0845c	VAR_PFF0845c	erythrocyte membrane protein 1 (PfEMP1)
+PFF0850c	Stevor	stevor
+PFF0855c	RIF_PFF0855c	rifin
+PFF0885w	PFF0885w	60S ribosomal protein L27a, putative
+PFF0895w	PFF0895w	malate dehydrogenase, putative
+PFF0940c	PFF0940c	cell division cycle protein 48 homologue, putative
+PFF0945c	PfACS10_PFF0945c	bi-functional enzyme PfACS10: long-chain fatty-acid Co-A ligase and oxalyl Co-A decarboxylase, putative
+PFF0970w	PFF0970w	splicing factor 3a subunit, putative
+PFF1000w	PFF1000w	cleavage stimulation factor subunit 1-like protein, putative
+PFF1015w	PFF1015w	hypothetical protein, conserved
+PFF1025c	PFF1025c	pyridoxine biosynthetic enzyme pdx1 homologue, putative
+PFF1050w	PFF1050w	nascent polypeptide associated complex alpha chain, putative
+PFF1090c	PFF1090c	hypothetical membrane protein, conserved
+PFF1095w	PFF1095w	leucyl-tRNA synthetase, cytoplasmic, putative
+PFF1105c	PFF1105c	chorismate synthase
+PFF1115w	PFF1115w	ferredoxin--NADP reductase, putative
+PFF1125c	PFF1125c	RNA-binding protein mei2 homologue, putative
+PFF1130c	PfSOD2	superoxide dismutase, PfSOD2
+PFF1135w	PFF1135w	transcription or splicing factor-like protein, putative
+PFF1140c	PFF1140c	ATP-dependent DEAD box helicase, putative
+PFF1150w	PFF1150w	ribonuclease H1 large subunit, putative
+PFF1155w	PFF1155w	hexokinase
+PFF1180w	PFF1180w	anaphase-promoting complex subunit, putative
+PFF1185w	PFF1185w	iswi protein homologue
+PFF1190c	PFF1190c	N-acetylglucosaminyl-phosphatidylinositol de-n-acetylase, putative
+PFF1240w	PFF1240w	poly(A) polymerase PAP, putative
+PFF1275c	FabB/FabF	3-oxoacyl-(acyl-carrier-protein) synthase i/ii
+PFF1330c	PFF1330c	mitochondrial import inner membrane translocase subunit, putative
+PFF1335c	PFF1335c	4-methyl-5(B-hydroxyethyl)-thiazol monophosphate biosynthesis enzyme
+PFF1345w	PFF1345w	transportin
+PFF1350c	PFF1350c	acetyl-coenzyme a synthetase
+PFF1360w	PFF1360w	6-pyruvoyl tetrahydropterin synthase, putative
+PFF1370w	PFF1370w	P. falciparum PK4 protein kinase
+PFF1375c	PFF1375c	ethanolaminephosphotransferase, putative
+PFF1395c	PFF1395c	glutamyl-tRNA(Gln) amidotransferase subunit B, putative
+PFF1415c	PFF1415c	DNAJ domain protein, putative
+PFF1420w	PFF1420w	phosphatidylcholine-sterol acyltransferase precursor, putative
+PFF1425w	PFF1425w	RNA binding protein, putative
+PFF1430c	PFF1430c	amino acid transporter
+PFF1440w	PFF1440w	SET-domain protein, putative
+PFF1445c	PFF1445c	cullin-like protein, putative
+PFF1450w	PFF1450w	sec14-like cytosolic factor or phosphatidylinositol/phosphatidylcholine transfer protein, putative
+PFF1470c	PFF1470c	DNA polymerase epsilon, catalytic subunit a, putative
+PFF1480w	PFF1480w	microtubule-associated protein ytm1 homologue, putative
+PFF1500c	PFF1500c	DEAD/DEAH box ATP-dependent RNA helicase, putative
+PFF1520w	PFF1520w	hypothetical protein, conserved in P. falciparum
+PFF1525c	PFF1525c	hypothetical protein, conserved in P. falciparum
+PFF1530c	PFF1530c	hypothetical protein, conserved in P. falciparum
+PFF1535w	PFF1535w	hypothetical protein, conserved in P. falciparum
+PFF1545w	RIF_PFF1545w	rifin
+PFF1550w	stevor_PFF1550w	stevor
+PFF1555w	RIF_PFF1555w	rifin
+PFF1560c	RIF_PFF1560c	rifin
+PFF1565c	RIF_PFF1565c	rifin
+PFF1570w	RIF_PFF1570w	rifin
+PFF1575w	RIF_PFF1575w	rifin
+PFF1580c	VAR_PFF1580c	erythrocyte membrane protein 1 (PfEMP1)
+PFF1590w	RIF_PFF1590w	rifin
+PFF1595c	VAR_PFF1595c	erythrocyte membrane protein 1 (PfEMP1)
+PFI0005w	VAR_PFI0005w	erythrocyte membrane protein 1 (PfEMP1)
+PFI0010c	RIF_PFI0010c	rifin
+PFI0020w	RIF_PFI0020w	rifin
+PFI0025c	RIF_PFI0025c	rifin
+PFI0030c	RIF_PFI0030c	rifin
+PFI0035c	RIF_PFI0035c	rifin
+PFI0055c	RIF_PFI0055c	rifin
+PFI0075w	RIF_PFI0075w	rifin
+PFI0080w	STEVOR	stevor
+PFI0095c	PFI0095c	protein kinase, putative
+PFI0120c	PFI0120c	protein kinase, FIKK family
+PFI0125c	PFI0125c	protein kinase, FIKK family
+PFI0140w	PFI0140w	hypothetical protein, conserved
+PFI0185w	PFI0185w	hypothetical protein, conserved
+PFI0205w	PFI0205w	hypothetical protein, conserved
+PFI0210c	PFI0210c	hypothetical membrane protein, conserved
+PFI0230c	PFI0230c	bacterial histone-like protein, putative
+PFI0305c	PFI0305c	hypothetical protein, conserved
+PFI0375w	PFI0375w	ribosomal protein L35, putative
+PFI0380c	PFI0380c	formylmethionine deformylase, putative
+PFI0390c	PFI0390c	hypothetical membrane protein, conserved
+PFI0405w	PFI0405w	hypothetical protein, conserved
+PFI0490c	PFI0490c	hypothetical protein, conserved
+PFI0525w	PFI0525w	nucleotide binding protein, putative
+PFI0570w	PFI0570w	GTP-binding protein, putative
+PFI0660c	PFI0660c	protease, putative
+PFI0670w	PFI0670w	hypothetical protein, conserved
+PFI0680c	PFI0680c	hypothetical protein, conserved
+PFI0685w	PFI0685w	pseudouridylate synthase, putative
+PFI0695c	PFI0695c	phospholipid or glycerol acyltransferase, putative
+PFI0700c	PFI0700c	Met-10+ like protein, putative
+PFI0900w	PFI0900w	hypothetical protein, conserved
+PFI0920c	PFI0920c	Dihydrouridine synthase, putative
+PFI0990c	PFI0990c	CS domain protein, putative
+PFI1010w	PFI1010w	hypothetical protein, conserved
+PFI1050c	PFI1050c	Nifu-like protein, putative
+PFI1065c	PFI1065c	hypothetical protein, conserved
+PFI1125c	PFI1125c	3-oxoacyl-(acyl-carrier protein) reductase, putative
+PFI1195c	PFI1195c	Thiamine pyrophosphokinase
+PFI1240c	PFI1240c	prolyl-t-RNA synthase, putative
+PFI1285w	PFI1285w	hypothetical protein, conserved
+PFI1470c	PFI1470c	leucine-rich repeat protein 8, LRR8
+PFI1485c	PFI1485c	diacylglycerol kinase, putative
+PFI1515w	PFI1515w	hypothetical protein, conserved
+PFI1530c	PFI1530c	hypothetical protein, conserved
+PFI1580c	PFI1580c	DHHC-type zinc finger protein, putative
+PFI1585c	PFI1585c	30S ribosomal protein S6-like protein, putative
+PFI1645c	PFI1645c	hypothetical protein, conserved
+PFI1745c	PFI1745c	hypothetical protein, conserved
+PFI1760w	PFI1760w	hypothetical protein, conserved
+PFI1765c	PFI1765c	hypothetical protein
+PFI1795c	PFI1795c	hypothetical protein
+PFI1805w	RIF_PFI1805w	rifin
+PFI1810w	RIF_PFI1810w	rifin
+PFI1815c	RIF_PFI1815c	rifin
+PFI1825w	RIF_PFI1825w	rifin
+PFI1830c	VAR_PFI1830c	erythrocyte membrane protein 1 (PfEMP1)
+PFL0005w	VAR_PFL0005w	erythrocyte membrane protein 1 (PfEMP1)
+PFL0010c	RIF_PFL0010c	rifin
+PFL0015c	RIF_PFL0015c	rifin
+PFL0020w	VAR_PFL0020w	erythrocyte membrane protein 1 (PfEMP1)
+PFL0025c	RIF_PFL0025c	rifin
+PFL0030c	VAR_PFL0030c	erythrocyte membrane protein 1 (PfEMP1)
+PFL0035c	PfACS7	acetyl-CoA synthesase, PfACS7
+PFL0045c	PFL0045c	hypothetical protein, conserved
+PFL0060w	PFL0060w	hypothetical protein, conserved in P. falciparum
+PFL0065w	PFL0065w	hypothetical protein, conserved
+PFL0075w	PFL0075w	XPA binding protein 1, putative
+PFL0085c	PFL0085c	hypothetical protein, conserved
+PFL0100c	PFL0100c	ATP dependent RNA helicase, putative
+PFL0110c	PfmpC	mitochondrial phosphate carrier protein, PfmpC
+PFL0115w	PFL0115w	hypothetical protein, conserved
+PFL0120c	PFL0120c	cyclophilin, putative
+PFL0125c	PFL0125c	hypothetical protein, conserved
+PFL0130c	PFL0130c	hypothetical protein, conserved
+PFL0145c	PFL0145c	high mobility group protein
+PFL0150w	PFL0150w	origin recognition complex 1 protein
+PFL0175c	PFL0175c	hypothetical protein, conserved
+PFL0180w	PFL0180w	cytochrome c1 heme lyase, putative
+PFL0185c	PFL0185c	nucleosome assembly protein 1, putative
+PFL0190w	PFL0190w	ubiquitin-conjugating enzyme e2, putative
+PFL0210c	PFL0210c	eukaryotic initiation factor 5a, putative
+PFL0215c	PFL0215c	hypothetical protein, conserved in P. falciparum
+PFL0220c	PFL0220c	hypothetical protein, conserved
+PFL0240w	PFL0240w	hypothetical protein
+PFL0245w	PFL0245w	hypothetical protein
+PFL0250w	PFL0250w	hypothetical protein, conserved
+PFL0285w	PFL0285w	glyoxalase II family protein, putative
+PFL0295c	PFL0295c	hypothetical protein, conserved
+PFL0310c	PFL0310c	eukaryotictranslation initiation factor 3 subunit 8, putative
+PFL0330c	PFL0330c	DNA-directed RNA polymerase III subunit, putative
+PFL0335c	PFL0335c	eukaryotictranslation initiation factor 5, putative
+PFL0365c	PFL0365c	hypothetical protein, conserved
+PFL0375w	PFL0375w	hypothetical protein
+PFL0380c	PFL0380c	tRNA delta(2)-isopentenylpyrophosphate transferase, putative
+PFL0400w	PFL0400w	50S ribosomal protein L29, putative
+PFL0405w	PFL0405w	hypothetical protein, conserved
+PFL0415w	PFL0415w	acyl carrier protein, mitochondrial precursor, putative
+PFL0430w	PFL0430w	tim10 homologue, putative
+PFL0440c	PFL0440c	hypothetical protein, conserved
+PFL0460w	PFL0460w	u6 snRNA-associated Sm-like protein, putative
+PFL0465c	PFL0465c	Zinc finger transcription factor (krox1)
+PFL0480w	PFL0480w	porphobilinogen deaminase, putative
+PFL0485w	PFL0485w	hypothetical protein, conserved
+PFL0495c	PFL0495c	ABC transporter, (TAP family)
+PFL0500w	PFL0500w	50S ribosomal protein L1, putative
+PFL0505c	PFL0505c	hypothetical protein, conserved
+PFL0540w	PFL0540w	mannosyltransferase, putative
+PFL0545w	PFL0545w	kinesin-related protein, putative
+PFL0560c	PFL0560c	minichromosome maintenance protein, putative
+PFL0565w	PFL0565w	heat shock protein DNAJ homologue Pfj4
+PFL0580w	PFL0580w	DNA replication licensing factor mcm5, putative
+PFL0585w	PFL0585w	PfpUB Plasmodium falciparum polyubiquitin
+PFL0595c	PFL0595c	glutathione peroxidase
+PFL0600w	PFL0600w	hypothetical protein, conserved
+PFL0615w	PFL0615w	hypothetical protein, conserved
+PFL0620c	PfGAT1	glycerol-3-phosphate acytransferase
+PFL0625c	PFL0625c	eukaryotictranslation initiation factor 3 subunit 10, putative
+PFL0630w	PFL0630w	iron-sulfur subunit of succinate dehydrogenase
+PFL0655w	PFL0655w	hypothetical protein, conserved
+PFL0660w	PFL0660w	dynein light chain 1, putative
+PFL0665c	PFL0665c	RNA polymerase subunit 8c, putative
+PFL0670c	PFL0670c	Bi-functional aminoacyl-tRNA synthetase, putative
+PFL0680c	PFL0680c	hypothetical protein, conserved
+PFL0685w	PFL0685w	PIG-O homolog, putative
+PFL0695c	PFL0695c	geranylgeranyl transferase type2 beta subunit, putative
+PFL0700w	PFL0700w	hypothetical protein, conserved
+PFL0705c	PFL0705c	adrenodoxin-type ferredoxin, putative
+PFL0715w	PFL0715w	hypothetical protein, conserved
+PFL0720w	PFL0720w	hypothetical protein, conserved
+PFL0725w	Pftpx2	thioredoxin peroxidase 2
+PFL0730w	PFL0730w	hypothetical protein, conserved
+PFL0735w	PFL0735w	cyclophilin
+PFL0740c	PFL0740c	10 kd chaperonin, putative
+PFL0745c	PFL0745c	hypothetical protein, conserved
+PFL0765w	PFL0765w	hypothetical protein, conserved
+PFL0770w	PFL0770w	seryl-tRNA synthetase, putative
+PFL0775w	PFL0775w	hypothetical protein, conserved
+PFL0785c	PFL0785c	signal recognition particle 19 kd protein, putative
+PFL0790w	PFL0790w	hypothetical protein, conserved
+PFL0835w	PFL0835w	GTP-binding protein, putative
+PFL0840c	PFL0840c	hypothetical protein, conserved
+PFL0860c	PFL0860c	hypothetical protein, conserved
+PFL0870w	PTRAMP	Plasmodium thrombospondin-related apical membrane protein, PTRAMP
+PFL0875w	PFL0875w	hypothetical protein, conserved
+PFL0880c	PFL0880c	hypothetical protein, conserved
+PFL0890c	PFL0890c	triose Pi or hexose Pi: Pi antiporter; transporter
+PFL0900c	PFL0900c	arginyl-tRNA synthetase, putative
+PFL0925w	PFL0925w	Formin 2, putative
+PFL0930w	PFL0930w	clathrin heavy chain, putative
+PFL0935c	VAR_PFL0935c	erythrocyte membrane protein 1 (PfEMP1)
+PFL0950c	PfATPase2	aminophospholipid-transporting P-ATPase
+PFL0960w	PFL0960w	D-ribulose-5-phosphate 3-epimerase, putative
+PFL0970w	PFL0970w	pre-mRNA splicing factor, putative
+PFL0990w	PFL0990w	hypothetical protein, conserved
+PFL1000c	PFL1000c	hypothetical protein, conserved
+PFL1020w	PFL1020w	hypothetical protein, conserved
+PFL1045w	PFL1045w	hypothetical protein, conserved
+PFL1050w	PFL1050w	hypothetical protein, conserved
+PFL1055c	PFL1055c	hypothetical protein, conserved
+PFL1060c	PFL1060c	hypothetical protein, conserved
+PFL1065c	PFL1065c	hypothetical protein, conserved
+PFL1070c	PFL1070c	endoplasmin homolog precursor, putative
+PFL1080c	PFL1080c	hypothetical protein, conserved
+PFL1105c	PFL1105c	hypothetical protein, conserved
+PFL1115w	PFL1115w	hypothetical protein, conserved
+PFL1120c	PFL1120c	DNA GyrAse a-subunit, putative
+PFL1125w	PFL1125w	aminophospholipid-transporting P-ATPase
+PFL1135c	PFL1135c	hypothetical protein, conserved
+PFL1140w	PFL1140w	hypothetical protein, conserved
+PFL1150c	PFL1150c	ribosomal protein L24, putative
+PFL1155w	PFL1155w	GTP cyclohydrolase I
+PFL1160c	PFL1160c	hypothetical protein, conserved
+PFL1170w	PFL1170w	polyadenylate-binding protein, putative
+PFL1180w	PFL1180w	Chromatin assembly protein (ASF1), putative
+PFL1185c	PFL1185c	cytochrome c heme lyase, putative
+PFL1200c	PFL1200c	hypothetical protein, conserved
+PFL1210w	PFL1210w	hypothetical protein, conserved
+PFL1235c	PFL1235c	hypothetical protein, conserved
+PFL1240c	PFL1240c	hypothetical protein, conserved
+PFL1245w	PFL1245w	ubiquitin-activating enzyme e1, putative
+PFL1250c	PFL1250c	hypothetical protein, conserved
+PFL1255c	PFL1255c	hypothetical protein, conserved
+PFL1260w	PFL1260w	hydrolase / phosphatase, putative
+PFL1285c	PFL1285c	proliferating cell nuclear antigen, putative
+PFL1295w	PFL1295w	hypothetical protein, conserved
+PFL1305c	PFL1305c	hypothetical protein, conserved
+PFL1310c	PFL1310c	ATP-dependent RNA helicase, putative
+PFL1320w	PFL1320w	hypothetical protein, conserved
+PFL1330c	PFL1330c	hypothetical protein, conserved
+PFL1350w	PFL1350w	RNA pseudouridylate synthase, putative
+PFL1370w	Pfnek-1	NIMA-related protein kinase, Pfnek-1
+PFL1390w	PFL1390w	hypothetical protein, conserved
+PFL1395c	PFL1395c	hypothetical protein, conserved
+PFL1400c	PFL1400c	hypothetical protein, conserved
+PFL1405w	PFL1405w	hypothetical protein, conserved
+PFL1415w	PFL1415w	hypothetical protein, conserved
+PFL1420w	PFL1420w	macrophage migration inhibitory factor homolog, putative
+PFL1425w	PFL1425w	t-complex protein 1, gamma subunit, putative
+PFL1430c	PFL1430c	hypothetical protein, conserved
+PFL1435c	PFL1435c	myosin d
+PFL1440c	PFL1440c	hypothetical protein, conserved
+PFL1445w	PFL1445w	hypothetical protein, conserved
+PFL1455w	PFL1455w	hypothetical protein, conserved
+PFL1465c	PFL1465c	heat shock protein hslv, putative
+PFL1475w	PFL1475w	sun-family protein, putative
+PFL1500w	Rab2	Rab2, GTPase
+PFL1515c	PFL1515c	amino acid transporter
+PFL1520w	PFL1520w	dim1 protein homolog, putative
+PFL1525c	PFL1525c	pre-mRNA splicing factor RNA helicase, putative
+PFL1535w	PFL1535w	hypothetical protein, conserved
+PFL1540c	PFL1540c	phenylalanyl-tRNA synthetase alpha chain, putative
+PFL1545c	PFL1545c	chaperonin, cpn60
+PFL1550w	PFL1550w	lipoamide dehydrogenase
+PFL1555w	PFL1555w	cytochrome b5, putative
+PFL1575w	PFL1575w	hypothetical protein, conserved
+PFL1590c	PFL1590c	elongation factor g, putative
+PFL1595w	PFL1595w	hypothetical protein, conserved
+PFL1610c	PFL1610c	hypothetical protein, conserved
+PFL1630c	PFL1630c	hypothetical protein, conserved
+PFL1640c	PFL1640c	hypothetical protein, conserved
+PFL1670c	PFL1670c	hypothetical protein, conserved
+PFL1680w	PFL1680w	splicing factor 3b, subunit 3, 130kD, putative
+PFL1685w	PFL1685w	hypothetical protein, conserved
+PFL1710c	PFL1710c	tetQ family GTPase, putative
+PFL1720w	PFL1720w	Serine hydroxymethyltransferase
+PFL1725w	PFL1725w	ATP synthase beta chain, mitochondrial precursor, putative
+PFL1735c	PFL1735c	hypothetical protein, conserved
+PFL1740w	PFL1740w	hypothetical protein, conserved
+PFL1745c	PFL1745c	clustered-asparagine-rich protein
+PFL1775c	PFL1775c	hypothetical protein, conserved
+PFL1780w	PFL1780w	protein-S-isoprenylcysteine O-methyltransferase, putative
+PFL1790w	PFL1790w	ubiquitin activating enzyme, putative
+PFL1795c	PFL1795c	hypothetical protein, conserved
+PFL1800w	PFL1800w	hypothetical protein, conserved
+PFL1815c	PFL1815c	hypothetical protein, conserved
+PFL1825w	PFL1825w	hypothetical protein, conserved
+PFL1830w	PFL1830w	ubiquitin-like protein, putative
+PFL1835w	PFL1835w	hypothetical protein
+PFL1840w	PFL1840w	hypothetical protein, conserved
+PFL1845c	PFL1845c	calcyclin binding protein, putative
+PFL1855w	PFL1855w	cell cycle control protein, putative
+PFL1880w	PfACS11	acetyl-CoA synthetase, PfACS11
+PFL1885c	PfPK2	calcium/calmodulin-dependent protein kinase 2, putative
+PFL1890c	PFL1890c	hypothetical protein, conserved
+PFL1895w	PFL1895w	ribosomal protein L23, putative
+PFL1915w	PFL1915w	dna gyrase subunit b, putative
+PFL1925w	PFL1925w	cell division protein FtsH, putative
+PFL1940w	PFL1940w	3-hydroxyisobutyryl-coenzyme A hydrolase, putative
+PFL1945c	etramp 12	early transcribed membrane protein 12, ETRAMP12
+PFL1950w	VAR_PFL1950w	erythrocyte membrane protein 1 (PfEMP1)
+PFL1955w	VAR_PFL1955w	erythrocyte membrane protein 1 (PfEMP1)
+PFL1960w	VAR_PFL1960w	erythrocyte membrane protein 1 (PfEMP1)
+PFL1975c	PFL1975c	hypothetical protein, conserved
+PFL1980c	PFL1980c	hypothetical protein, conserved
+PFL2000w	PFL2000w	mitochondrial carrier protein, putative
+PFL2005w	PFL2005w	replication factor c subunit 4
+PFL2010c	PFL2010c	DEAD/DEAH box helicase, putative
+PFL2015w	PFL2015w	hypothetical protein, conserved
+PFL2030w	PFL2030w	queuine tRNA ribosyltransferase, putative
+PFL2035c	PFL2035c	hypothetical protein, conserved
+PFL2055w	PFL2055w	40S ribosomal protein S17, putative
+PFL2060c	PFL2060c	rabGDI protein
+PFL2065c	PFL2065c	mitochondrial import inner membrane translocase subunit, putative
+PFL2070w	PFL2070w	t-SNARE, putative
+PFL2075c	PFL2075c	hypothetical protein, conserved
+PFL2095w	PFL2095w	Translation initiation factor SUI1, putative
+PFL2115c	PFL2115c	glucose inhibited division protein A homologue, putative
+PFL2130w	PFL2130w	hypothetical protein, conserved
+PFL2140c	PFL2140c	ADP-ribosylation factor GTPase-activating protein
+PFL2150c	PFL2150c	hypothetical protein, conserved
+PFL2155w	PFL2155w	hypothetical protein, conserved
+PFL2165w	PFL2165w	kinesin-like protein, putative
+PFL2170c	PFL2170c	hypothetical protein, conserved
+PFL2175w	PFL2175w	ubiquitin-conjugating enzyme e2, putative
+PFL2180w	PFL2180w	50S ribosomal protein L3, putative
+PFL2185w	PFL2185w	hypothetical protein, conserved
+PFL2205w	PFL2205w	hypothetical protein, conserved
+PFL2210w	PFL2210w	delta-aminolevulinic acid synthetase
+PFL2215w	PFL2215w	actin
+PFL2230c	PFL2230c	hypothetical protein, conserved
+PFL2240w	PFL2240w	hypothetical protein, conserved
+PFL2250c	PfPKB	rac-beta serine/threonine protein kinase, PfPKB
+PFL2270w	PFL2270w	mannosyl transferase, putative
+PFL2275c	PfFKBP35	FK506-binding protein (FKBP)-type peptidyl-propyl isomerase
+PFL2280w	PFL2280w	cyclin g-associated kinase, putative
+PFL2290w	PFL2290w	preprocathepsin c precursor, putative
+PFL2305w	PFL2305w	hypothetical protein, conserved
+PFL2310w	PFL2310w	hypothetical protein, conserved
+PFL2315c	PFL2315c	hypothetical protein, conserved
+PFL2320w	PFL2320w	hypothetical protein, conserved
+PFL2325c	PFL2325c	P. falciparum homologue of Drosophila nmda1 protein, putative
+PFL2330w	PFL2330w	hypothetical protein, conserved
+PFL2345c	PFL2345c	tat-binding protein homolog
+PFL2350c	PFL2350c	hypothetical protein, conserved
+PFL2375c	PFL2375c	cutA, putative
+PFL2390c	PFL2390c	hypothetical protein, conserved
+PFL2395c	PFL2395c	dimethyladenosine transferase, putative
+PFL2405c	PFL2405c	PFG377 protein
+PFL2410w	PFL2410w	hypothetical protein, conserved
+PFL2415w	PFL2415w	Hbeta58/Vps26 protein homolog, putative
+PFL2425w	PFL2425w	adaptor-related protein complex 3, sigma 2 subunit, putative
+PFL2430c	PFL2430c	eukaryotictranslation initiation factor 2b, subunit 2, putative
+PFL2440w	PFL2440w	DNA repair protein rhp16, putative
+PFL2450c	PFL2450c	hypothetical protein, conserved
+PFL2455w	PFL2455w	hypothetical protein, conserved
+PFL2460w	PFL2460w	coronin
+PFL2465c	PFL2465c	thymidylate kinase, putative
+PFL2470c	PFL2470c	hypothetical protein, conserved
+PFL2475w	PFL2475w	DEAD/DEAH box helicase, putative
+PFL2485c	PFL2485c	tryptophanyl-tRNA synthetase, putative
+PFL2505c	PFL2505c	hypothetical protein, conserved
+PFL2510w	PFL2510w	chitinase
+PFL2515c	PFL2515c	hypothetical protein, conserved
+PFL2525c	PFL2525c	hypothetical protein
+PFL2540w	PFL2540w	hypothetical protein, conserved in P. falciparum
+PFL2550w	PFL2550w	hypothetical protein, conserved in P. falciparum
+PFL2555w	PFL2555w	hypothetical protein, conserved in P. falciparum
+PFL2565w	PFL2565w	hypothetical protein, consevred in P. falciparum
+PFL2570w	PfACS3	acyl-coa synthetase, PfACS3
+PFL2575c	PFL2575c	hypothetical protein, conserved in P. falciparum
+PFL2580w	RIF, pseudogene	rifin, pseudogene
+PFL2585c	RIF_PFL2585c	rifin
+PFL2590w	PFL2590w	hypothetical protein, onserved in P. falciparum
+PFL2595w	PFL2595w	hypothetical protein, conserved in P. falciparum
+PFL2605w	RIF_PFL2605w	rifin
+PFL2610w	stevor_PFL2610w	stevor
+PFL2615w	RIF_PFL2615w	rifin
+PFL2620w	stevor_PFL2620w	stevor
+PFL2625w	RIF_PFL2625w	rifin
+PFL2630w	RIF_PFL2630w	rifin
+PFL2635w	stevor_PFL2635w	stevor
+PFL2640c	RIF_PFL2640c	rifin
+PFL2645c	RIF_PFL2645c	rifin
+PFL2655w	RIF_PFL2655w	rifin
+PFL2660w	RIF_PFL2660w	rifin
+PFL2665c	VAR_PFL2665c	erythrocyte membrane protein 1 (PfEMP1)

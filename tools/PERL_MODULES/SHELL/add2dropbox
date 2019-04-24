@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+use lib "$ENV{HOME}/PERL_MODULES";
+
+use Sets;
+
+system("rm /Volumes/oelemento/dropbox/*");
+system("cp $ARGV[0] /Volumes/oelemento/dropbox/"); 
+
+my $f = Sets::filename($ARGV[0]);
+
+my $t = Sets::getTempFile("/tmp/drop");
+open OUT, ">$t";
+print OUT "$f\n";
+close OUT;
+system("cp $t /Volumes/oelemento/dropbox/file.txt");
+ 
+

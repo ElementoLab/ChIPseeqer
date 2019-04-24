@@ -1,0 +1,233 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+my $annotation  = undef;
+my $refLink		= undef;
+my $targets     = undef;
+my $chipdir		= undef;
+my $suf         = undef;
+my $iswig       = undef;
+my $lenu        = 2000;
+my $lend        = 2000;
+my $generegion	= undef;
+my $norm		= 1;
+my $verbose     = 0;
+my $ORF_mode	= 0;		#if set to 1 it extracts the genes names
+my $format      = undef;
+my $db			= "refSeq";
+my $genome		= "hg18";
+my $w			= 2000;
+my $outepsmap	= undef;
+my $uniquereads	= 1;
+my $fraglen		= 0;
+my $ws			= 10;
+my $xlabel		= undef;
+my $ylabel		= undef;
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerDensityMatrix --targets=FILE --chipdir=DIR --prefix=STR --lenu=INT --lend=INT --generegion=STR --norm=INT --iswig=INT\n";
+}
+
+GetOptions("targets=s"  => \$targets,
+"lenu=s"	        => \$lenu,
+"lend=s"			=> \$lend,
+"prefix=s"			=> \$suf,
+"verbose=s"			=> \$verbose,
+"annotation=s"		=> \$annotation,
+"chipdir=s"			=> \$chipdir,
+"generegion=s"		=> \$generegion,
+"norm=s"			=> \$norm,
+"format=s"			=> \$format,
+"suffix=s"			=> \$suf,
+"iswig=s"			=> \$iswig,
+"db=s"				=> \$db,
+"genome=s"			=> \$genome,
+"w=s"				=> \$w,
+"outepsmap=s"		=> \$outepsmap,
+"uniquereads=s"		=> \$uniquereads,
+"fraglen=s"			=> \$fraglen,
+"ws=s"				=> \$ws,
+"xlabel=s"			=> \$xlabel,
+"ylabel=s"			=> \$ylabel );
+
+if (!defined($suf)) {
+	$suf = $targets;
+}
+
+if ($genome eq "sacser") {
+	$db				= "sgd";
+}
+
+$annotation			= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.new";
+
+if($db eq "refSeq") {
+	$refLink		= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.refLink";
+}
+
+if(defined($generegion)) {
+	
+	my $generegionfile = "$annotation.\_$db\_$generegion\_u$lenu\_d$lend";
+	
+	if($generegion eq "TSS") {
+		#
+		# extract promoters
+		#
+		my $todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_upstream_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$lenu --lengthD=$lend --checkmaxlen=0 > $generegionfile"  ;
+		#system("head -10  $generegionfile");
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		print "Extracting promoters ... ";
+		system($todo) == 0 or die "Cannot execute promoter extraction script.\n"; 
+		print "Done.\n";
+	}
+	elsif($generegion eq "TES") {
+		#
+		# extract downstream extremities
+		#
+		my $todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_downstream_sequence_coordinates_from_annotation.pl --annotation=$annotation --lengthU=$lenu --lengthD=$lend --checkmaxlen=0 > $generegionfile"  ;
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		print "Extracting downstream extremities ... ";
+		system($todo) == 0 or die "Cannot execute dowstream extremities extraction script.\n"; 
+		print "Done.\n";
+	}
+	
+	#
+	# compare intervals
+	#
+	my $todo2 = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $generegionfile -hasid1 1 -intervals2 $targets -show_ov_int 1 -showstrand 1";
+	if (defined($iswig)) {
+		$todo2 .= " -iswig $iswig ";
+	}
+	$todo2 .= " > $suf.ALL.NM";
+	
+	if ($verbose == 1){ 
+		print "$todo2\n";
+	}
+	print "Determining overlap between gene regions and ChIP-seq peaks ... ";
+	system($todo2) == 0 or die "Cannot exec CompareIntervals\n";
+	#system("head -10 $suf.ALL.NM");
+	if (-e "$suf.ALL.NM") {
+		
+		my $todo3 = "awk -F \" \" '{if (\$6 != 0) print \$0}' $suf.ALL.NM > $suf.NM";
+		system($todo3) == 0 or die "Cannot exec $todo3\n";
+		print "Done ($suf.NM created).\n";
+		
+		unlink("$suf.ALL.NM");
+	}
+	
+	
+	#
+	# get gene names from RefLink
+	#
+	if ($ORF_mode == 1) {
+		my $todo5 = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/translate_column_using_table_column.pl --table=$suf.NM --col=0 --dict=$refLink --k=0 --v=1 --multicol=1 > $suf.tmp";
+		print "Converting RefSeq NM identifiers to ORFs (gene symbols, e.g. TP53, MYC, etc) and extracting gene descriptions... ";
+		system($todo5) == 0 or die "Cannot exec Conversion\n";
+		
+		my $todo6 = "cat $suf.tmp | sort -u --key=1,1 > $suf.SUM";
+		system($todo6) == 0 or die "Cannot exec $todo6\n";
+		
+		my $todo7 = "awk -F \"\t\" '{print \$1 \"\t\" \$3 \"\t\" \$4 \"\t\" \$5 \"\t\" \$6 }' $suf.SUM > $suf.$generegion";
+		system($todo7) == 0 or die "Cannot exec $todo7\n";
+		
+		unlink("$suf.tmp");
+		unlink("$suf.NM");
+		unlink("$suf.SUM");
+		
+	}
+	# skip getting the gene names
+	else {
+		my $todo5 = "awk -F \"\t\" '{print \$1 \"\t\" \$2 \"\t\" \$3 \"\t\" \$4 \"\t\" \$5 \"\t\" \$6 }' $suf.NM > $suf.$generegion";
+		system($todo5) == 0 or die "Cannot exec $todo5\n";
+	}
+	
+	if (-e "$suf.$generegion") {
+		print "Done ($suf.$generegion created).\n";	
+	}
+	
+	#system("head -10 $suf.$generegion");
+	
+	#
+	# create smoothed reads
+	#
+	my $todo11 = "$ENV{CHIPSEEQERDIR}/ChIPseeqerGetReadDensityProfiles.bin -chipdir $chipdir -intervals $suf.$generegion -hasid 1 -rpkmnorm $norm -uniquereads $uniquereads -fraglen $fraglen -ws $ws -outfile $suf.density ";
+	
+	if (defined($format)) {
+		$todo11 .= " -format $format ";
+	}
+	
+	if (defined($outepsmap)) {
+		$todo11 .= " -outepsmap $outepsmap ";
+	}
+	
+	if (defined($xlabel)) {
+		$todo11 .= " -xlabel $xlabel ";
+	}
+	
+	if (defined($ylabel)) {
+		$todo11 .= " -ylabel $ylabel ";
+	}
+	
+	if ($verbose == 1) {
+		print "$todo11\n";
+	}
+	print "Creating smoothed reads... ";
+	
+	system($todo11) == 0 or die "Cannot exec $todo11\n";
+	
+	if (-e "$suf.density") {
+		print "Done ($suf.density created).\n";	
+	}
+}
+
+else {
+	
+	my $todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/extract_regions_around_peak_summits.pl --peakfile=$targets --w=$w ";
+	
+	if ($verbose == 1) {
+		print "$todo\n";
+	}
+	print "Extracting regions around peak summit (window=$w bp)... ";
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	
+	#
+	# create smoothed reads
+	#
+	my $todo2 = "$ENV{CHIPSEEQERDIR}/ChIPseeqerGetReadDensityProfiles.bin -chipdir $chipdir -intervals $targets.centered$w -rpkmnorm $norm -uniquereads $uniquereads -fraglen $fraglen -ws $ws -outfile $suf.density ";
+	
+	if (defined($format)) {
+		$todo2 .= " -format $format ";
+	}
+
+	if (defined($outepsmap)) {
+		$todo2 .= " -outepsmap $outepsmap ";
+	}
+
+	if (defined($xlabel)) {
+		$todo2 .= " -xlabel $xlabel ";
+	}
+	
+	if (defined($ylabel)) {
+		$todo2 .= " -ylabel $ylabel ";
+	}
+	
+	if ($verbose == 1) {
+		print "$todo2\n";
+	}
+	print "Creating smoothed reads... ";
+	
+	system($todo2) == 0 or die "Cannot exec $todo2\n";
+	
+	if (-e "$suf.density") {
+		print "Done ($suf.density created).\n";	
+	}
+}

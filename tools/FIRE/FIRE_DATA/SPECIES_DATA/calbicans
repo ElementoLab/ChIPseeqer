@@ -1,0 +1,10 @@
+fastafile_dna	FIRE_DATA/CALBICANS/SEQUENCES/candida_u_600_0.fa
+seqlen_dna	600
+rightlabel_dna	0
+leftlabel_dna	-600
+fastafile_rna	FIRE_DATA/CALBICANS/SEQUENCES/candida_3_0_300.fa
+seqlen_rna	300
+rightlabel_rna	300
+leftlabel_rna	0
+goindex	FIRE_DATA/CALBICANS/ANNOTATIONS/candida_go_index.txt
+gonames	FIRE_DATA/CALBICANS/ANNOTATIONS/candida_go_names.txt

@@ -1,0 +1,3 @@
+#!/bin/bash
+uuencode $1 $1 | mail ole2001@med.cornell.edu 
+

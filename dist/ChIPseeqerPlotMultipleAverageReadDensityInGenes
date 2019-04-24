@@ -1,0 +1,295 @@
+#!/usr/bin/perl
+use lib "$ENV{CHIPSEEQERDIR}/SCRIPTS/PostScript-Simple-0.07/lib";
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use PostScript::Simple;
+use Table;
+use Sets;
+use Getopt::Long;
+use strict;
+
+my $promlen          = 3000;
+my $scriptdir        = "."; 
+my $profiles         = undef;
+my $summaryfile      = undef;
+my $epsfile          = undef;
+my $seqlen           = undef;
+my $ps2pdf           = 1;
+my $leftlabel        = 'leftlabel';
+my $rightlabel       = 'rightlabel';
+my $motifs_i         = undef;
+my $motifs_k         = undef;
+my $motifs_m         = undef;
+my $clusters         = undef;
+my $expfile          = undef;
+my $outeps           = undef;
+my $rna              = undef;
+my $intersection     = 0;
+my $overrep          = 0;
+my $h                = 200;
+my $fullmatrixfile   = undef;
+my $forcea4          = 0;
+my $fillup           = 0;
+my $fastafile        = undef;
+my $drawlegend       = 'bottom';
+my $draw             = 'open';
+my $genelist         = undef;
+my $geneprofile      = undef;
+my $argmotifname     = undef;
+my $genedesc         = undef;
+
+my $xstep            = 10;
+my $w                = 5;
+my $suffix           = undef;
+my $ymax             = undef;
+my $title            = undef;
+my $targets          = undef;
+my $annotation       = undef;
+my $chipdir          = undef;
+my $q                = 50;
+my $genelist	     = undef;
+my $format           = undef;
+my $genome	     = "hg18";
+my $chrdata	     = undef;
+my $db		     = "RefGene";	# could be RefGene, AceView or Ensembl
+my $getprofiles      = 1;
+my $geneparts        = "all";
+my $numbins          = 20;
+my $names            = undef;
+my $legend           = undef;
+my $revlegend        = 0;
+
+if (@ARGV == 0) {
+    die "Usage: ChIPseeqerPlotMultipleAverageReadDensityInGenes --profiles=FILES \n";
+}
+
+GetOptions (
+'profiles=s'	=> \$profiles,
+'names=s'       => \$names,
+'epsfile=s'     => \$epsfile,
+'rightlabel=s'	=> \$rightlabel,
+'leftlabel=s'	=> \$leftlabel,
+'seqlen=s'	=> \$seqlen,
+'revlegend=s'   => \$revlegend,
+'ymax=s'        => \$ymax,
+'chipdir=s'     => \$chipdir,
+'forcea4=s'     => \$forcea4,
+'title=s'       => \$title,
+'h=s'           => \$h,
+'w=s'           => \$w,
+'promlen=s'     => \$promlen,
+'legend=s'      => \$legend,
+'xstep=s'       => \$xstep,
+'suffix=s'      => \$suffix,
+'draw=s'        => \$draw,
+'format=s'	=> \$format,
+'genelist=s'	=> \$genelist,
+'geneprofile=s'	=> \$geneprofile,
+'motifname=s'   => \$argmotifname,
+'q=s'           => \$q,
+'genedesc=s'	=> \$genedesc,
+"getprofiles=s" => \$getprofiles,
+"genome=s"	=> \$genome,
+"db=s"		=> \$db);
+
+my @a_names = ();
+my @a_leg = undef;
+if (defined($legend)) {
+  @a_names = split /\,/, $legend;
+}
+
+# read profiles
+my @a_p = split /\,/, $profiles;
+
+my @cols = ("red", "green", "blue");
+
+
+if (defined($names)) {
+  @a_names = split /\,/, $names;
+}
+
+my @a_data    = ();
+my @a_numints = (); 
+my $cntp    = 0;
+my $ymax_data = 0;
+foreach my $p (@a_p) {
+    my $numints = 0; # total number of intervals
+    open IN, $p or die "Cannot open $p\n";
+    while (my $l = <IN>) {
+	chomp $l;
+	my @a = split /\t/, $l, -1;
+	foreach my $s (@a) {
+	  if ($s > $ymax_data) {
+	    $ymax_data = $s;
+	  }
+	}
+	push @{$a_data[$cntp]}, \@a;
+	$numints += @a; 
+	$numints --;
+    }
+    push @a_numints, $numints;
+    close IN;
+    $cntp++;
+}
+
+if (!defined($ymax)) {
+  $ymax = 1.1 * $ymax_data;
+}
+
+
+my $xbase  = 100;
+my $ybase  = 100;
+my $xright = 150;
+my $xleft  = $xbase;
+my $xsize  = $xbase + $w * $a_numints[0] + $xbase;
+#my $xscale = ($xsize - $xright - $xleft) / $seqlen;
+my $ybefleg = 35;
+
+my $yscale = $h / $ymax ;
+
+my $ysize  = $ybase + $h + $ybase + 100; 
+
+if ($forcea4 == 1) {
+	$ysize = Sets::min(842, $ysize);
+}
+
+my $p = new PostScript::Simple(xsize     => $xsize,
+ysize     => $ysize,		
+colour    => 1,
+eps       => 1,
+units     => "pt");
+
+$p->setlinewidth(3);
+$p->setcolour("black");
+$p->setfont("Arial", 10);
+
+# we want 5 ticks at most; what's the best increment ?
+my $inc = 0.1;
+while (($ymax/$inc) > 10) {
+  $inc *= 10;
+}
+ 
+# vert + tick marls
+$p->line($xleft , $ysize - ($ybase + $h), $xleft , $ysize - $ybase);
+for (my $i=0.0; $i<=$ymax*1.01; $i+=$inc) {
+	$p->line($xleft-2, $ysize - ($ybase + $h - $i * $yscale), $xleft+2, $ysize - ($ybase + $h - $i * $yscale));
+	$p->text({ align => 'center', rotate => 0 }, $xleft-15, $ysize - ($ybase  + $h - $i * $yscale + 4), sprintf("%2.1f", $i));
+}
+
+$p->setfont("Arial", 15);
+
+$p->text({ align => 'center', rotate => 90 }, $xleft-30, $ysize - ($ybase  + $h/2), "Read Density");
+
+# horiz line
+$p->line($xleft, $ysize - ($ybase + $h), $xleft + $a_numints[0] * $w, $ysize - ($ybase+$h));
+
+if (defined($title)) {
+	$p->text({ align => 'center', rotate => 0 }, $xleft + $a_numints[0] * $w / 2, $ysize - ($ybase-75) , $title);
+}
+
+if (defined($names) || defined($legend)) {
+  for (my $i=0; $i<$cntp; $i++) {
+    my $ii = $i;
+    if ($revlegend == 1) {
+      $ii = $cntp - $i -1 ;
+    }
+    my $fs = 15;
+    $p->setfont("Arial", $fs);
+    $p->setcolour($cols[$i]);
+
+    my $x = $xleft; # + $a_numints[0] * $w / 2;
+    my $y = $ysize - ($ybase-50 + $ii*$fs);
+    $p->line($x, $y, $x+40, $y );
+    
+    $p->setcolour("black");
+    
+    $p->text({ align => 'left', rotate => 0 }, $x+50, $y-$fs/2 , $a_names[$i]);
+
+  }
+}
+
+$p->setcolour("black");
+
+$p->setfont("Arial", 15);
+
+# cycle thru files
+for (my $i=0; $i<$cntp; $i++) {
+    
+    # cycle thru line
+    my $idx = 1; # index interval
+    my $cntregions = 0;
+    my $ph = undef;
+        
+    foreach my $r (@{$a_data[$i]}) {
+	
+	$p->setcolour("black");
+
+	# first item useless
+	my $n = shift @$r;
+	
+	my $y =  $ysize - ($ybase + $h + 20);
+	if (($cntregions+1) % 2 == 0) {
+		#  $y -= 25;
+	} 
+	
+	#$p->text({align => "center"}, $xleft + $w * $idx  + $w * scalar(@$r) / 2, $y, $n);
+	$p->text({align => "left", rotate => 300}, $xleft + $w * $idx  + $w * scalar(@$r) / 2 - $w/2, $y, $n);
+	
+	$p->setcolour($cols[$i]);
+ 
+	$p->setlinewidth(3);
+	my $j1 = undef;
+	if ($cntregions == 0) {
+	  $j1  = 1;
+	  $ph  = $r->[0];
+	} else {
+	  $j1 = 0;
+	}
+	for (my $j=$j1; $j<@$r; $j++) {
+	    #foreach my $v (@$r) {
+		
+		my $x1 = $xbase + ($idx-1) * $w + $w/2;
+		my $y1 = $ysize - ($ybase + $h - $ph * $yscale);
+		
+		my $x2 = $xbase + ($idx  ) * $w + $w/2;
+		my $y2 = $ysize - ($ybase + $h - $r->[$j  ] * $yscale);
+		
+		$p->line($x1, $y1, $x2, $y2);
+		$ph = $r->[$j];
+		$idx ++;
+	}
+	
+	$p->setlinewidth(3);
+	$p->setcolour("black");
+
+	$p->line($xleft + $w * $idx, $ysize - ($ybase + $h), $xleft + $w * $idx, $ysize - $ybase);
+	
+	
+	$cntregions ++;
+    }
+} # loop over profiles
+
+
+$outeps = "multi.plot";
+if (defined($suffix)) {
+	$outeps .= ".$suffix";
+}	
+$outeps .= ".eps";
+
+print "Creating $outeps\n";
+$p->output("$outeps");
+
+
+if ($ps2pdf == 1) {
+	my $outpdf = $outeps; $outpdf =~ s/\.eps/\.pdf/;
+	print "Creating $outpdf\n"; 
+	system("ps2pdf -dEPSCrop -dAutoRotatePages=/None $outeps $outpdf");
+	
+	
+	if ($draw eq 'open') {
+	  system("open $outpdf");
+	} elsif ($draw eq "evince") {
+	  system("evince $outpdf");
+	}
+	
+}

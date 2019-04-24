@@ -1,0 +1,102 @@
+#!/usr/bin/perl
+
+use lib "$ENV{HOME}/PERL_MODULES";
+use Sets;
+use strict;
+
+
+use Getopt::Long;
+
+if (@ARGV == 0) {
+  die "Args --chipdirfile=DIR --peakfile=FILE --format=STR\n";
+}
+
+my $peakfile   = undef;
+my $chipdir    = undef;
+my $chipdirfile= undef;
+my $genelist   = undef;
+my $todo       = undef;
+my $lenu       = 2000;
+my $lend       = 2000;
+my $format     = "eland";
+my $verbose    = 0;
+my $prefix     = undef;
+my $w          = 1000;
+my $chrdata    = "$ENV{CHIPSEEQERDIR}/DATA/hg18.chrdata";
+my $matfile    = undef;
+
+GetOptions(
+	   "chipdir=s"     => \$chipdir,
+	   "chipdirfile=s" => \$chipdirfile,
+	   "peakfile=s"    => \$peakfile,
+	   "verbose=s"     => \$verbose,
+	   "outfile=s"     => \$matfile,
+	   "w=s"           => \$w,
+	   "lenu=s"        => \$lenu,
+	   "lend=s"        => \$lend,
+	   "prefix=s"      => \$prefix,
+	   "genelist=s"    => \$genelist);
+
+if (!defined($matfile)) {
+  die "Please define --outfile\n";
+}
+my $tmpints = Sets::getTmpFile("/tmp/int");
+open IN, $peakfile or die "Cannot oen $peakfile\n";
+open OUT, ">$tmpints" or die "Cannot open $tmpints for writing\n";
+while (my $l = <IN>) {
+    chomp $l;
+    my @a = split /\t/, $l, -1;
+    if (!defined($a[5])) {
+	die "No peak summit in file\n";
+    }
+    my $i = Sets::max(0,$a[5] - $w);
+    my $j = $a[5] + $w;
+    print OUT "$a[0]\t$i\t$j\n";
+}
+close OUT;
+close IN;
+
+open IN, $chipdirfile or die "cannot open $chipdirfile\n";
+my %a_out = ();
+my %MA = ();
+while (my $l = <IN>) {
+  chomp $l;
+  my ($tfname, $chipdir) = split /\t/, $l;    
+  
+  my $outfile = "$tmpints.$tfname";
+  $todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerGetReadCountInPeakRegions -intervals $tmpints -chipdir $chipdir -format $format -fraglen 0 -chrdata $chrdata -normalize 0 -output max  -outfile $outfile ";
+  if ($verbose == 1) {
+    print "$todo\n";
+  }
+
+  system($todo) == 0 or die "Cannot exec $todo\n";
+
+  if (-e $outfile) {
+    print "Created $outfile\n";
+    $a_out{$tfname}=1;
+
+    open IM, $outfile;
+    while (my $m = <IM>) {
+      chomp $m;
+      my @b = split /\t/, $m, -1;
+      $MA{"$b[0]-$b[1]-$b[2]"}{$tfname} = $b[3];
+    }
+    close IM;
+
+  } else {
+    die "$outfile couldn't be created\n";
+  }
+  
+}
+close IN;
+
+open OUT, ">$matfile" or die "annot open $matfile\n";
+print OUT "\t" . join("\t", keys(%a_out)) . "\n";
+foreach my $i (keys(%MA)) {
+  print OUT "$i";
+  foreach my $t (keys(%a_out)) {
+    print OUT "\t$MA{$i}{$t}";
+  }
+  print OUT "\n";
+}
+close OUT;

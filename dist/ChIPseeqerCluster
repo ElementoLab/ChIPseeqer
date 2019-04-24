@@ -1,0 +1,156 @@
+#!/usr/bin/perl
+use lib "$ENV{CHIPSEEQERDIR}";
+use lib "$ENV{KOHONENDIR}";
+
+use Getopt::Long;
+use Switch;
+
+# variables to store the arguments values
+my $file		= undef;
+my $suf         = undef;
+my $distance	= 2;		# 1-uncentered correlation, 2-Pearson correlation, 3-uncentered correlation absolute value
+							# 4-Pearson correlation absolute value, 5-Spearman's rank correlation, 6-Kendall's tau
+							# 7-Euclidean distance, 8-City-block distance 
+my $distname	= undef;
+my $linkage		= "m";		# m-pairwise complete linkage, s-pairwise single linkage, c-pairwise centroid linkage, a-pairwise average linkage
+my $linkname    = undef;	
+my $todo        = undef;
+my $verbose     = 0;
+my $docluster   = 1;
+my $type		= 1;		# 0 for Cluster, 1 for (our) SOMs
+my $iter		= 20;		# number of iterations for SOMs
+my $xdim		= 10;		# the dimension of the map (number of nodes is -xdim times -ydim). Default is 10 x 10.
+my $ydim		= 10;	
+my $init_iter	= 1;		# how many times to run the clustering (with diff initialization)
+my $k			= undef;	# if defined, runs k-means with k clusters. Otherwise, default is hierarchical clustering
+my $r			= undef;	# for k-means clustering, the number of times the k-means clustering algorithm is run
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerCluster --file=FILE --suf=STR --distance=INT --linkage=STR --verbose=INT --type=INT[0 for Cluster, 1 for SOMs] \n";
+}
+
+# processing command line options
+GetOptions("file=s" => \$file,
+"suf=s"			=> \$suf,
+"docluster=s"   => \$docluster,
+"distance=s"	=> \$distance,
+"linkage=s"		=> \$linkage,
+"type=s"		=> \$type,
+"iter=s"		=> \$iter,
+"init_iter=s"	=> \$init_iter,
+"xdim=s"		=> \$xdim,
+"ydim=s"		=> \$ydim,
+"k=s"			=> \$k,
+"r=s"			=> \$r,
+"verbose=s"		=> \$verbose );
+
+if (!defined($suf)) {
+	$suf = $file;
+	#die("Must provide --suf=STR\n");
+}
+
+# Run Cluster
+if($type == 0) {
+	
+	switch ($distance) {
+		case 1 { $distname = "Uncentered correlation" }
+		case 2 { $distname = "Pearson correlation" }
+		case 3 { $distname = "Uncentered correlation absolute value" }
+		case 4 { $distname = "Pearson correlation absolute value" }
+		case 5 { $distname = "Spearman's rank correlation" }
+		case 6 { $distname = "Kendall's tau" }
+		case 7 { $distname = "Euclidean distance" }
+		case 8 { $distname = "City-block distance" }
+		else { $distname = "Unknown distance" }
+	}	
+	
+	switch ($linkage) {
+		case "m" { $linkname = "Pairwise complete linkage" }
+		case "s" { $linkname = "Pairwise single linkage" }
+		case "c" { $linkname = "Pairwise centroid linkage" }
+		case "a" { $linkname = "Pairwise average linkage" }
+		else { $distname = "Unknown linkage" }
+	}
+	
+	#		
+	# Run Clustering			
+	#
+	if ($docluster == 1) {	
+		$todo = "cluster -f $file -u $suf -g $distance ";
+		
+		if(defined($k)) {
+			$todo .= "-k $k ";
+			
+			if(defined($r)) {
+				$todo .= "-r $r "
+			}
+			else {
+				$r = 1;
+			}
+		}
+		else {
+			$todo .= "-m $linkage "; 
+		}
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		
+		
+		if(defined($k)) {
+			print "K-means clustering with $distname distance, $k clusters and $r runs...";
+		}
+		else {
+			print "Hierarchical clustering with $distname distance and $linkname method...";
+		}
+		
+		system($todo) == 0 or die "Cannot execute clustering program.\n"; 
+		print "Done.\n";
+	}
+	
+	#
+	# Open TreeView
+	#
+	if(defined($k)) {
+		
+		my $cdt = "$suf" ."_K_G" . "$k". ".cdt";
+		
+		$todo = "java -jar -Xmx800m $ENV{CHIPSEEQERDIR}/TREEVIEW/TreeView.jar -r $cdt"  ;		
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		print "Opening TreeView...";
+		system($todo) == 0 or die "Cannot execute TreeView.\n"; 
+		print "Done.\n";
+	}
+	elsif (-e "$suf.cdt") {
+		$todo = "java -jar -Xmx800m $ENV{CHIPSEEQERDIR}/TREEVIEW/TreeView.jar -r $suf.cdt"  ;		
+
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		print "Opening TreeView...";
+		system($todo) == 0 or die "Cannot execute TreeView.\n"; 
+		print "Done.\n";
+	}
+	else {
+		print "Cannot execute TreeView.\n";
+	}
+	print "\nTo retrieve the transcripts associated to each cluster, you can run: \nperl $ENV{CHIPSEEQERDIR}/SCRIPTS/hclust2kgg.pl --cdt=$suf.cdt --gtr=$suf.gtr --clusters=4 > $suf.4_clusters.txt\n";
+}
+# Run SOMs
+else {
+	
+	#		
+	# Run Clustering			
+	#
+	$todo = "$ENV{KOHONENDIR}/kohonen -exp $file -outclusters $suf.cl -iter $iter -outepsmap $suf.eps -shade 1 -xdim $xdim -ydim $ydim -init_iter $init_iter";
+	
+	if ($verbose == 1) {
+		print "$todo\n";
+	}
+	print "Clustering with $iter iterations and ($xdim x $ydim) dimensions...";
+	system($todo) == 0 or die "Cannot execute clustering program.\n"; 
+	print "Done.\n";
+}

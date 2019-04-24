@@ -1,0 +1,7 @@
+Alano_gametocyte_specific	Alano_gametocyte_specific	P
+PfEMP1	PfEMP1	P
+PfMC-2TM	PfMC-2TM	P
+glycolysis	glycolysis	P
+localized_to_apicoplast	localized_to_apicoplast	P
+rifin	rifin	P
+stevor	stevor	P

@@ -1,0 +1,40 @@
+This is an independent re-implementation of ScanACE (from the Church lab), with additional functions.
+
+to compile:
+
+make
+
+to run (on your motif, which I included in the test directory) :
+
+
+You can check it yourself using :
+
+./MyScanACE -i TEST/RAP1.ace -z TEST/yeast_u_600_0.fa -g 0.5 -c 2.0
+
+The output of my implementation is exactly identical to the output of the original ScanACE. It will return 447 matches, just like ScanACE. The output format is a little different, but simpler than ScanACE and self-explanatory.
+
+One of the new functions if the possibility to generate a profile of maximum scoring matches, for each gene.
+
+./MyScanACE -i TEST/PF14_0633.pwm.ace -z TEST/pf_u_1000_0.seq -p 2
+
+Another new function is the possibility to work directly from the Bulyk weight matrices, assuming that they are the follwing format:
+
+
+The command line to generate the max scores profile is then:
+
+./MyScanACE -jb TEST/PF14_0633.pwm -z TEST/pf_u_1000_0.seq -p 2
+
+
+
+---------------------
+
+
+The sample_sites_from_WM.pl script lets you sample sites from weight matrices, and create collections of sites in ScanACE format (that you can use in MyScanACE as shown above).
+
+The usage is :
+
+perl sample_sites_from_WM.pl TEST/RAP1.wm 10000  
+(which you can redirect to a file using > TEST/RAP1.wm.ace)
+
+At least for the RAP1 yeast motif, I have found that 10000 sampled sequences altogether approximate quite well the real collection of sites. 1000 is not as good. 100000 gives about the same results as 10000.
+

@@ -1,0 +1,539 @@
+
+AggloClust.pm,686
+package AggloClust;1,0
+sub new AggloClust::new5,43
+sub setMaxNbClusters AggloClust::setMaxNbClusters16,231
+sub setDistanceMatrix AggloClust::setDistanceMatrix22,309
+sub setMinD AggloClust::setMinD29,383
+sub agglomerate_using_avg_linkage AggloClust::agglomerate_using_avg_linkage35,446
+sub agglomerate_using_max_linkage AggloClust::agglomerate_using_max_linkage135,2658
+sub get_pairwise_min_cor AggloClust::get_pairwise_min_cor219,4273
+sub get_pairwise_max_dist AggloClust::get_pairwise_max_dist244,4640
+sub get_pairwise_avg_dist AggloClust::get_pairwise_avg_dist268,5000
+sub find_min AggloClust::find_min289,5328
+sub find_max_cor AggloClust::find_max_cor315,5771
+
+Alignment.pm,283
+package Alignment;1,0
+sub new Alignment::new7,84
+sub setVerbose Alignment::setVerbose23,300
+sub setComp Alignment::setComp28,368
+sub rnamatch Alignment::rnamatch33,430
+sub dnamatch Alignment::dnamatch50,829
+sub score Alignment::score61,962
+sub nw Alignment::nw70,1161
+
+ClustalW.pm,840
+package ClustalW;1,0
+sub new ClustalW::new5,30
+sub setSequences ClustalW::setSequences21,338
+sub setSequencesToAlign ClustalW::setSequencesToAlign29,467
+sub getClustalWformat ClustalW::getClustalWformat39,600
+sub setFile ClustalW::setFile75,1392
+sub setText ClustalW::setText95,1812
+sub _readline ClustalW::_readline110,2013
+sub run ClustalW::run123,2201
+sub _process ClustalW::_process155,2810
+sub lc ClustalW::lc198,3379
+sub getHTMLAlignment ClustalW::getHTMLAlignment208,3526
+sub kmerize ClustalW::kmerize267,4991
+sub redify ClustalW::redify284,5388
+sub getSeqArray ClustalW::getSeqArray294,5462
+sub getInputOrderedSeqArray ClustalW::getInputOrderedSeqArray306,5641
+sub getSeqsWithNames ClustalW::getSeqsWithNames317,5821
+sub getSeqs ClustalW::getSeqs330,6010
+sub getStars ClustalW::getStars338,6085
+
+DataFiles.pm,85
+package DataFiles;1,0
+sub new DataFiles::new4,21
+sub get DataFiles::get199,7244
+
+Fasta.pm,298
+package Fasta;2,17
+sub new Fasta::new8,74
+sub setFile Fasta::setFile20,308
+sub setText Fasta::setText29,502
+sub restart Fasta::restart41,665
+sub dispose Fasta::dispose51,832
+sub _readline Fasta::_readline58,899
+sub writeSeq Fasta::writeSeq73,1106
+sub nextSeq Fasta::nextSeq81,1264
+
+Fire.pm,298
+package Fire;1,0
+sub loadFireMotifNames Fire::loadFireMotifNames6,39
+sub loadFireMotifClusters Fire::loadFireMotifClusters15,187
+sub loadFireGOMotifs Fire::loadFireGOMotifs25,339
+sub loadFireMotifRep Fire::loadFireMotifRep34,485
+sub loadFireMotifSummary Fire::loadFireMotifSummary56,958
+
+GO.pm,731
+package GO;1,0
+sub new GO::new7,40
+sub load_OBO_Ontology GO::load_OBO_Ontology26,362
+sub printNames GO::printNames91,1210
+sub printNodes GO::printNodes100,1355
+sub loadOntology GO::loadOntology112,1549
+sub get_all_categories GO::get_all_categories296,4673
+sub category_exists GO::category_exists306,4785
+sub print GO::print312,4875
+sub getName GO::getName330,5081
+sub getFathers GO::getFathers338,5179
+sub getAllParents GO::getAllParents347,5281
+sub getParents GO::getParents373,5607
+sub getParentVector GO::getParentVector396,5918
+sub getParentVectorBef GO::getParentVectorBef417,6181
+sub trim GO::trim437,6427
+sub removeDuplicates GO::removeDuplicates447,6512
+sub in_array(GO::in_array466,6767
+
+Genbank.pm,405
+package Genbank;7,97
+sub new Genbank::new11,134
+sub getTaxonomy Genbank::getTaxonomy24,295
+sub getSpecies Genbank::getSpecies31,412
+sub read Genbank::read37,526
+sub getAccession Genbank::getAccession156,2608
+sub getFeatures Genbank::getFeatures161,2678
+sub getPosFromPOS Genbank::getPosFromPOS168,2748
+sub getSubseqFromPOS Genbank::getSubseqFromPOS221,3518
+sub seq Genbank::seq270,4262
+
+GroupEnrichment.pm,924
+package GroupEnrichment;1,0
+sub new GroupEnrichment::new9,169
+sub setUseModule GroupEnrichment::setUseModule28,569
+sub getAnnotation GroupEnrichment::getAnnotation36,666
+sub setMaxGroupSize GroupEnrichment::setMaxGroupSize46,827
+sub setMinGroupSize GroupEnrichment::setMinGroupSize52,910
+sub setBonferroni GroupEnrichment::setBonferroni58,993
+sub setGeneUniverse GroupEnrichment::setGeneUniverse63,1071
+sub setGroups GroupEnrichment::setGroups78,1310
+sub setGroupDesc GroupEnrichment::setGroupDesc110,1866
+sub filterSet GroupEnrichment::filterSet123,2080
+sub getGroupEnrichment GroupEnrichment::getGroupEnrichment138,2266
+sub setVerbose GroupEnrichment::setVerbose204,4074
+sub getGroupIds GroupEnrichment::getGroupIds211,4152
+sub getGeneAnnotation GroupEnrichment::getGeneAnnotation219,4250
+sub getGeneGroup GroupEnrichment::getGeneGroup246,4836
+sub getDesc GroupEnrichment::getDesc253,4917
+
+Log.pm,98
+package Log;1,0
+sub new Log::new3,14
+sub log Log::log17,172
+sub DESTROY Log::DESTROY25,240
+
+Markov.pm,743
+package Markov;1,0
+sub new Markov::new7,62
+sub useN Markov::useN44,764
+sub calcFrequenciesFromSeq Markov::calcFrequenciesFromSeq51,829
+sub countNucleotides Markov::countNucleotides67,1061
+sub _addCount Markov::_addCount131,2249
+sub generate1rstOrder Markov::generate1rstOrder152,2694
+sub _generateFirstLetter Markov::_generateFirstLetter172,3055
+sub _generateNextLetter Markov::_generateNextLetter209,3684
+sub printCounts Markov::printCounts264,4627
+sub writeFrequencies Markov::writeFrequencies302,5294
+sub generateOthOrder Markov::generateOthOrder330,5880
+sub getFrequencies Markov::getFrequencies339,5940
+sub getDiFrequencies Markov::getDiFrequencies357,6234
+sub readFrequencies Markov::readFrequencies383,6604
+
+Motif.pm,2737
+package Motif;1,0
+sub new Motif::new5,39
+sub getNbColumnsWithMaxNbSymbols Motif::getNbColumnsWithMaxNbSymbols28,677
+sub mark Motif::mark49,1102
+sub setScore Motif::setScore54,1169
+sub getScore Motif::getScore59,1238
+sub setName Motif::setName65,1306
+sub getName Motif::getName71,1374
+sub reCalc Motif::reCalc80,1483
+sub getSites Motif::getSites86,1502
+sub getStars Motif::getStars92,1573
+sub getSize Motif::getSize99,1673
+sub readFromMotifFile Motif::readFromMotifFile108,1755
+sub readScanACEMotif Motif::readScanACEMotif186,3466
+sub readClassicalWM Motif::readClassicalWM282,5480
+sub readPollardWM Motif::readPollardWM323,6018
+sub _initCounts Motif::_initCounts371,6766
+sub createMotifFromSite Motif::createMotifFromSite406,7591
+sub setStars Motif::setStars424,7848
+sub addSiteFromSeq Motif::addSiteFromSeq443,8131
+sub getNumberDistinctSequences Motif::getNumberDistinctSequences449,8256
+sub addSite Motif::addSite462,8464
+sub createMotifFromWeightedSite Motif::createMotifFromWeightedSite488,8953
+sub addWeightedSite Motif::addWeightedSite508,9308
+sub removeWeightedSite Motif::removeWeightedSite534,9670
+sub addRandomSite Motif::addRandomSite553,9939
+sub getScanAceWM Motif::getScanAceWM574,10212
+sub printAlignACE Motif::printAlignACE598,10550
+sub getAlignACEString Motif::getAlignACEString606,10640
+sub writeSites Motif::writeSites619,10837
+sub print Motif::print630,10992
+sub calcLogo Motif::calcLogo654,11468
+sub printSimple Motif::printSimple688,12103
+sub getSimpleMatrix Motif::getSimpleMatrix713,12527
+sub writeSimpleMatrix Motif::writeSimpleMatrix738,12907
+sub readBackgroundFromFile Motif::readBackgroundFromFile750,13094
+sub setBkgFrequencies Motif::setBkgFrequencies765,13435
+sub setManualBkgFrequencies Motif::setManualBkgFrequencies778,13622
+sub printBkg Motif::printBkg793,13854
+sub _diFreq Motif::_diFreq802,13992
+sub mutualInformationBetweenCols Motif::mutualInformationBetweenCols827,14426
+sub getKL Motif::getKL866,15373
+sub compareACELibrary Motif::compareACELibrary899,16212
+sub compareACEScoreWithMotif Motif::compareACEScoreWithMotif904,16241
+sub KLdivergenceWithMotif Motif::KLdivergenceWithMotif928,16678
+sub _log2 Motif::_log2946,17155
+sub score1M Motif::score1M957,17294
+sub score0M Motif::score0M1000,18375
+sub score0M_simple Motif::score0M_simple1027,18904
+sub getThresholdByStdDev Motif::getThresholdByStdDev1054,19352
+sub scanSequence Motif::scanSequence1093,20040
+sub generateRandomSequence Motif::generateRandomSequence1124,20634
+sub generateScanACEMotif Motif::generateScanACEMotif1164,21187
+sub normalize Motif::normalize1179,21426
+sub getPalindromeScore Motif::getPalindromeScore1196,21818
+
+MotifFile.pm,134
+package MotifFile;1,0
+sub new MotifFile::new6,69
+sub setFile MotifFile::setFile15,266
+sub nextMotif MotifFile::nextMotif55,829
+
+MotifLibrary.pm,621
+package MotifLibrary;5,58
+sub new MotifLibrary::new10,103
+sub setVerbose MotifLibrary::setVerbose21,288
+sub setMaxNbMotifs MotifLibrary::setMaxNbMotifs26,362
+sub loadAlignACEOutputFile MotifLibrary::loadAlignACEOutputFile34,478
+sub sortByScore MotifLibrary::sortByScore112,1639
+sub printInfo MotifLibrary::printInfo123,1796
+sub loadScanACEMotifs MotifLibrary::loadScanACEMotifs136,2033
+sub loadScanACEMotifList MotifLibrary::loadScanACEMotifList155,2385
+sub getMotifs MotifLibrary::getMotifs177,2743
+sub getOneMotif MotifLibrary::getOneMotif185,2819
+sub matchToAll MotifLibrary::matchToAll195,2972
+
+Motif_RE.pm,524
+package Motif_RE;5,85
+sub new Motif_RE::new8,114
+sub loadTransfacMotif Motif_RE::loadTransfacMotif22,369
+sub createMotifFromNameAndConsensus Motif_RE::createMotifFromNameAndConsensus66,1095
+sub print Motif_RE::print77,1338
+sub hasSpecies Motif_RE::hasSpecies85,1452
+sub getFileName Motif_RE::getFileName91,1560
+sub getName Motif_RE::getName103,1695
+sub _motifToRE Motif_RE::_motifToRE111,1762
+sub getRE Motif_RE::getRE140,2570
+sub getMotif Motif_RE::getMotif148,2649
+sub match Motif_RE::match157,2787
+
+MyBlast.pm,2205
+package MyBlast;1,0
+my $df df7,73
+sub new MyBlast::new9,99
+sub DESTROY MyBlast::DESTROY32,829
+sub setExitOnCrash MyBlast::setExitOnCrash39,884
+sub getRawOutput MyBlast::getRawOutput44,960
+sub log MyBlast::log49,1030
+sub setNbProcessors MyBlast::setNbProcessors58,1133
+sub setBlastProgram MyBlast::setBlastProgram64,1218
+sub setBlastDir MyBlast::setBlastDir71,1311
+sub setVerbose MyBlast::setVerbose76,1386
+sub setFilter MyBlast::setFilter81,1458
+sub setMegablast MyBlast::setMegablast86,1528
+sub setStoreSequences MyBlast::setStoreSequences91,1604
+sub setDatabaseDatabase MyBlast::setDatabaseDatabase97,1682
+sub setQueryDatabase MyBlast::setQueryDatabase103,1765
+sub setQueryFile MyBlast::setQueryFile110,1863
+sub setDatabaseFile MyBlast::setDatabaseFile119,2001
+sub setQuerySequence MyBlast::setQuerySequence129,2167
+sub setEvalueThreshold MyBlast::setEvalueThreshold138,2307
+sub addDatabaseSequence MyBlast::addDatabaseSequence145,2402
+sub format MyBlast::format152,2443
+sub blastallUnique MyBlast::blastallUnique170,2850
+sub blastallMultiple MyBlast::blastallMultiple211,3617
+sub _addOptions MyBlast::_addOptions233,4111
+sub setMismatchWeight MyBlast::setMismatchWeight286,5120
+sub setMatchWeight MyBlast::setMatchWeight291,5207
+sub setq MyBlast::setq297,5295
+sub setGapOpening MyBlast::setGapOpening307,5406
+sub setGapExtension MyBlast::setGapExtension317,5524
+sub setWordLength MyBlast::setWordLength327,5646
+sub setQueryStrand MyBlast::setQueryStrand336,5763
+sub getQueryLength MyBlast::getQueryLength346,5884
+sub getUniqueHitLength MyBlast::getUniqueHitLength351,5963
+sub getUniqueHitName MyBlast::getUniqueHitName356,6044
+sub _analyzeMultipleXML MyBlast::_analyzeMultipleXML364,6150
+sub _analyzeUniqueXML MyBlast::_analyzeUniqueXML465,8897
+sub getBoundariesOfQueryMatch MyBlast::getBoundariesOfQueryMatch539,11144
+sub getSequence MyBlast::getSequence551,11331
+sub retain_non_overlapping_blocks MyBlast::retain_non_overlapping_blocks566,11639
+sub get_query_total_aligned_length MyBlast::get_query_total_aligned_length594,12141
+sub get_indentity_and_aligned_length MyBlast::get_indentity_and_aligned_length609,12376
+
+PBS.pm,689
+package PBS;1,0
+sub new PBS::new41,808
+sub getNumJobsForUser PBS::getNumJobsForUser60,1225
+sub useAllNode PBS::useAllNode68,1353
+sub addDepJob PBS::addDepJob73,1424
+sub setQueue PBS::setQueue79,1501
+sub setWallTime PBS::setWallTime85,1566
+sub setPlatform PBS::setPlatform91,1637
+sub setMemory PBS::setMemory97,1708
+sub setErrorFile PBS::setErrorFile102,1776
+sub setScriptName PBS::setScriptName107,1847
+sub print PBS::print116,1930
+sub addCmd PBS::addCmd126,2020
+sub _createText PBS::_createText134,2096
+sub _writeScript PBS::_writeScript156,2470
+sub submitToGrid PBS::submitToGrid168,2621
+sub submit PBS::submit175,2735
+sub execute PBS::execute225,3755
+
+Repeats.pm,352
+package Repeats;1,0
+my $df df11,115
+sub new Repeats::new14,142
+sub setSeqFile Repeats::setSeqFile27,377
+sub setSeq Repeats::setSeq34,451
+sub setSpecies Repeats::setSpecies46,672
+sub setProgram Repeats::setProgram51,744
+sub dispose Repeats::dispose56,816
+sub process Repeats::process68,1051
+sub getResults Repeats::getResults151,2669
+
+Sequence.pm,1139
+package Sequence;1,0
+my $df df6,55
+sub new Sequence::new10,83
+sub setFastaProgram Sequence::setFastaProgram41,791
+sub getSequencesNotFound Sequence::getSequencesNotFound49,873
+sub seq Sequence::seq55,955
+sub getSeq Sequence::getSeq61,1024
+sub setSeq Sequence::setSeq69,1118
+sub mask Sequence::mask78,1242
+sub writeToFasta Sequence::writeToFasta90,1510
+sub getComplement Sequence::getComplement99,1685
+sub setVerbose Sequence::setVerbose136,2117
+sub useGI Sequence::useGI141,2189
+sub setBlastPath Sequence::setBlastPath146,2250
+sub setBlastDB Sequence::setBlastDB156,2420
+sub getSequenceFromBlastDB Sequence::getSequenceFromBlastDB168,2575
+sub addSequenceToFile Sequence::addSequenceToFile200,3364
+sub writeSequencesToFile Sequence::writeSequencesToFile213,3524
+sub getORFs Sequence::getORFs233,3907
+sub _match_positions{Sequence::_match_positions{279,4798
+sub getSimpleOverlap Sequence::getSimpleOverlap300,5161
+sub runFasta Sequence::runFasta321,5605
+sub getDistance Sequence::getDistance383,7116
+sub getDistanceJC Sequence::getDistanceJC392,7196
+sub translate Sequence::translate401,7299
+
+Sets.pm,7506
+package Sets;1,0
+sub new Sets::new12,129
+sub count_file_lines Sets::count_file_lines18,198
+sub get_all_permutations Sets::get_all_permutations32,438
+sub swap Sets::swap115,1730
+sub nbLinesInFile Sets::nbLinesInFile122,1814
+sub defined_exists_or_die Sets::defined_exists_or_die132,1923
+sub consensus2re Sets::consensus2re145,2075
+sub myre2scanace Sets::myre2scanace203,2999
+sub myre2wm_aa Sets::myre2wm_aa219,3203
+sub myre2wm Sets::myre2wm305,4534
+sub interp_from_matlab_colormap Sets::interp_from_matlab_colormap387,5783
+sub interp_general Sets::interp_general420,6312
+my ($a1, $b1, $c1)($a1, $b1, $c1433,6442
+my ($a2, $b2, $c2)($a2, $b2, $c2434,6470
+my $a_ref_A a_ref_A436,6499
+my $a_ref_B a_ref_B437,6556
+my $a_ref_C a_ref_C438,6613
+my $ai ai440,6671
+my $bi bi441,6732
+my $ci ci442,6793
+sub getInterpLine Sets::getInterpLine455,6983
+sub order Sets::order466,7155
+sub hash_order Sets::hash_order489,7532
+sub get_rank_from_array Sets::get_rank_from_array511,7838
+sub binom_test_greater Sets::binom_test_greater538,8204
+sub getNiceDateTime Sets::getNiceDateTime557,8523
+sub get_array_from_re Sets::get_array_from_re578,9097
+sub shuffle_re Sets::shuffle_re608,9487
+sub line_with_index Sets::line_with_index638,9885
+sub get_parameter Sets::get_parameter668,10740
+sub exist_parameter Sets::exist_parameter688,11017
+sub get_connected_components Sets::get_connected_components713,11353
+sub DFS Sets::DFS737,11727
+sub getNbGenesInFastaFile Sets::getNbGenesInFastaFile756,12109
+sub getDictionnary Sets::getDictionnary767,12277
+sub loadGeneTable Sets::loadGeneTable786,12504
+sub translateSet Sets::translateSet833,14142
+sub isMiRNATarget Sets::isMiRNATarget849,14319
+sub unlink_blast_files Sets::unlink_blast_files872,14697
+sub gccontent Sets::gccontent885,14937
+sub initHash Sets::initHash903,15156
+sub cmdLine Sets::cmdLine909,15207
+sub seqOverlap Sets::seqOverlap927,15442
+sub mergeOverlappingSequences Sets::mergeOverlappingSequences963,15975
+sub arraySum Sets::arraySum978,16168
+sub addArrays Sets::addArrays993,16338
+sub getSpecifiedDistribution Sets::getSpecifiedDistribution1010,16645
+sub isSubstringOf_2S Sets::isSubstringOf_2S1054,17562
+sub isSubstringOf_1S Sets::isSubstringOf_1S1074,17864
+sub getDistribution Sets::getDistribution1096,18107
+sub getNbMatches Sets::getNbMatches1144,18990
+sub getNbMatches_mRNA Sets::getNbMatches_mRNA1167,19328
+sub getBestOverlapDP Sets::getBestOverlapDP1202,19926
+sub getBestOverlap Sets::getBestOverlap1323,22194
+sub getBestOverlap_singlestrand Sets::getBestOverlap_singlestrand1400,23585
+sub sign Sets::sign1445,24347
+sub getComplement Sets::getComplement1458,24475
+sub getREComplement Sets::getREComplement1499,25059
+sub getRNAComplement Sets::getRNAComplement1538,25563
+sub assemble_overlapping_fragments Sets::assemble_overlapping_fragments1573,26024
+sub sequencesOverlap Sets::sequencesOverlap1636,27312
+sub getUnionForSequenceOverlap Sets::getUnionForSequenceOverlap1660,27656
+sub getBondariesForSequenceOverlap Sets::getBondariesForSequenceOverlap1675,27844
+sub getSequencesOverlap Sets::getSequencesOverlap1691,28037
+sub allkmers Sets::allkmers1713,28319
+sub kmer Sets::kmer1725,28432
+sub removeComplements Sets::removeComplements1743,28750
+sub countNucleotides Sets::countNucleotides1769,29124
+sub removeLowComplexityKmers Sets::removeLowComplexityKmers1782,29282
+sub getPolyAT Sets::getPolyAT1808,29656
+sub getNbLetterOccurrences Sets::getNbLetterOccurrences1827,29898
+sub dirname Sets::dirname1843,30083
+sub basename Sets::basename1853,30206
+sub filename Sets::filename1862,30314
+sub wormRenameSet Sets::wormRenameSet1875,30488
+sub printSet Sets::printSet1892,30727
+sub printSetSep Sets::printSetSep1901,30820
+sub printHash Sets::printHash1916,30994
+sub writeSet Sets::writeSet1931,31167
+sub writeTable{Sets::writeTable{1948,31384
+sub countSymbols Sets::countSymbols1962,31615
+sub writeSetToFile Sets::writeSetToFile1978,31837
+sub writeDistribution Sets::writeDistribution1995,32060
+sub in_array Sets::in_array2015,32250
+sub getIntersectionSet Sets::getIntersectionSet2028,32405
+sub getIntersection Sets::getIntersection2033,32509
+sub getOverlapSet Sets::getOverlapSet2041,32653
+sub getNotIntersection Sets::getNotIntersection2063,32971
+sub getOverlapSize Sets::getOverlapSize2100,33564
+sub getUnionSet Sets::getUnionSet2112,33745
+sub SetToSQLSet Sets::SetToSQLSet2137,34052
+sub SQLRefToSet Sets::SQLRefToSet2156,34288
+sub SQLRefToSimpleHash Sets::SQLRefToSimpleHash2170,34490
+sub SQLRefToIndex Sets::SQLRefToIndex2185,34699
+sub readSet Sets::readSet2201,34914
+sub getSetSize Sets::getSetSize2224,35289
+sub getIndex Sets::getIndex2236,35438
+sub getIndexKV Sets::getIndexKV2256,35643
+sub getIncreasingIndex Sets::getIncreasingIndex2276,35895
+sub  getIndexFromArrayRef Sets::getIndexFromArrayRef2299,36125
+sub  getIncreasingIndexFromArrayRef Sets::getIncreasingIndexFromArrayRef2315,36270
+sub  getIndexRefFromArrayRef Sets::getIndexRefFromArrayRef2332,36474
+sub getArrayKVFromHash Sets::getArrayKVFromHash2352,36672
+sub getMultipleIndexKV Sets::getMultipleIndexKV2374,36942
+sub removeDuplicates Sets::removeDuplicates2388,37179
+sub getREMotifPositions Sets::getREMotifPositions2409,37473
+sub getREMotifPositionsOrientations Sets::getREMotifPositionsOrientations2429,37920
+sub getREMotifPositions_singlestrand Sets::getREMotifPositions_singlestrand2457,38383
+sub getRandomElement Sets::getRandomElement2470,38631
+sub sampleSet Sets::sampleSet2483,38841
+sub sampleSetNoRep Sets::sampleSetNoRep2511,39208
+sub getTempFile Sets::getTempFile2545,39681
+sub saveToTempFile Sets::saveToTempFile2556,39880
+sub getRandomString Sets::getRandomString2568,40059
+sub log2 Sets::log22583,40252
+sub log10 Sets::log102593,40322
+sub shuffle_array Sets::shuffle_array2603,40394
+sub shuffle_seq Sets::shuffle_seq2621,40632
+sub shuffle_seq_kmers Sets::shuffle_seq_kmers2633,40795
+sub readKmersIdx Sets::readKmersIdx2659,41172
+sub readKmers Sets::readKmers2675,41429
+sub getArray Sets::getArray2691,41678
+sub max Sets::max2707,41930
+sub minInArray Sets::minInArray2714,41993
+sub maxInArray Sets::maxInArray2724,42097
+sub indexMaxInArray Sets::indexMaxInArray2734,42204
+sub percentile Sets::percentile2741,42290
+sub min Sets::min2763,42604
+sub generateRandomSymbol Sets::generateRandomSymbol2771,42709
+sub readEnsemblOrthologs Sets::readEnsemblOrthologs2808,43289
+sub getReciprocalOrthologs Sets::getReciprocalOrthologs2836,43752
+sub stddev Sets::stddev2863,44192
+sub average Sets::average2886,44595
+sub median Sets::median2909,44871
+sub pearson Sets::pearson2928,45182
+sub euclidean Sets::euclidean2987,46246
+sub jacquard Sets::jacquard3006,46624
+sub Sets::size 3018,46816
+sub getFiles Sets::getFiles3024,46881
+sub getManyFiles Sets::getManyFiles3044,47028
+sub file2txt Sets::file2txt3051,47192
+sub getNumberDifferencesBetweenKmers Sets::getNumberDifferencesBetweenKmers3062,47341
+sub getSequencesIdentity Sets::getSequencesIdentity3092,47812
+sub trim Sets::trim3113,48099
+sub translate Sets::translate3124,48197
+sub getArrayOfCodons Sets::getArrayOfCodons3158,49242
+sub maskExons Sets::maskExons3175,49479
+sub execRecompare Sets::execRecompare3187,49752
+sub getMaxCountFromHash Sets::getMaxCountFromHash3208,50185
+sub align_nt_on_aa_sequence Sets::align_nt_on_aa_sequence3230,50500
+
+Statistics.pm,150
+package Statistics;1,0
+sub t_statistics Statistics::t_statistics6,81
+sub average Statistics::average29,456
+sub stddev Statistics::stddev52,744
+
+Table.pm,1324
+package Table;1,0
+sub new Table::new6,29
+sub setSkipComments Table::setSkipComments29,342
+sub setDelim Table::setDelim36,420
+sub shift Table::shift41,482
+sub getNbRows Table::getNbRows49,592
+sub setUC Table::setUC57,677
+sub setLimit Table::setLimit63,740
+sub setFile Table::setFile70,810
+sub nextRow Table::nextRow82,939
+sub dispose Table::dispose113,1428
+sub _readline Table::_readline122,1566
+sub getFastArray Table::getFastArray136,1744
+sub loadFile Table::loadFile155,2039
+sub getHtmlTable Table::getHtmlTable202,2832
+sub getLatexTable Table::getLatexTable232,3205
+sub getLyxTable Table::getLyxTable267,3607
+sub getIndex Table::getIndex317,4574
+sub getIndexShifted Table::getIndexShifted334,4777
+sub getHash Table::getHash353,5032
+sub getIndexColumnsKV Table::getIndexColumnsKV370,5249
+sub getIndexKV Table::getIndexKV386,5485
+sub getArray Table::getArray400,5664
+sub getColumn Table::getColumn410,5744
+sub getRow Table::getRow423,5909
+sub getNbColumns Table::getNbColumns434,5998
+sub getArrayOfHashes Table::getArrayOfHashes444,6119
+sub sortbycol Table::sortbycol462,6381
+sub randomizeColumn Table::randomizeColumn473,6627
+sub printTable Table::printTable486,6897
+sub print Table::print496,7009
+sub getBidimensionalHash Table::getBidimensionalHash506,7131
+
+Vienna.pm,262
+package Vienna;1,0
+sub new Vienna::new4,27
+sub getRawOutput Vienna::getRawOutput20,339
+sub setRNAFile Vienna::setRNAFile25,409
+sub setCofoldSequences Vienna::setCofoldSequences31,482
+sub setRNASeq Vienna::setRNASeq39,584
+sub fold Vienna::fold52,837

@@ -1,0 +1,241 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+#use Fasta;
+use Getopt::Long;
+use Sets;
+use IO::Zlib;
+#use strict;
+
+# variables to store input 
+my $datafolder	= undef;
+my $files		= undef;
+my $file		= undef;
+
+# variable to store options
+my $format		= "sam"; #can be sam, eland, exteland 
+my $guiVersion	= 0;
+my $verbose		= 0;
+my $qcType		= "all"; #can be all, showUnique, showGCRich
+
+# variables to store lines and line parts
+my $inputLine	= undef;
+my $sequence	= undef;
+my $tag			= undef;
+my $position	= undef;
+my $chromosome	= undef;
+
+# variables to store counts
+my $totalReads			= undef;
+my $uniqueReads			= undef;
+my $uniqueReadsPrct		= undef;
+my $seqGCSum			= undef;
+my $totalGCSum			= undef;
+my $avgGC				= undef;
+my $seqATSum			= undef;
+my $totalATSum			= undef;
+my $avgAT				= undef;
+
+# arrays
+my @contents	= ();
+my @lineParts	= ();
+my @seqChars	= ();
+my @CGtable		= ();
+my @ATtable		= ();
+
+# hashes and hashes-related variables
+my %positionsHash	= ();
+
+my $posKey			= undef;
+
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: qc_analysis_tools.pl [ --files=FILES --datafolder=DIR ]\n
+	where \n
+	--format	can be sam, eland or exteland
+	--files=FILES	specifies files to process e.g. --files=\"*.gz\"
+	--datafolder=DIR	point to a directory with files to process
+	--qcType=STR	can be all, showUnique, showGCRich
+	\n";
+}
+
+# handling given options
+GetOptions("format=s"	=> \$format,
+"files=s"				=> \$files,
+"datafolder=s"			=> \$datafolder,
+"qcType=s"				=> \$qcType,
+"guiVersion=s"			=> \$guiVersion,
+"verbose=s"				=> \$verbose);
+
+if (!defined($datafolder) & !defined($files)) {
+	die "Must provide -datafolder or --files. \n Run script as: perl split_eland_files.pl --format=STR --datafolder=DIR --outputfolder=DIR \n";
+}
+
+#
+# open files or data folder
+#
+
+if (defined($datafolder)) {
+	print STDOUT "Opening directory $datafolder\n";
+	opendir (DIRECTORY, $datafolder) or die "can't open directory $datafolder: $!";
+	@contents = grep !/^\.\.?$/, readdir DIRECTORY; # skip . and ..
+	foreach my $f (@contents) {
+		$f = "$datafolder/$f";
+	}
+} elsif (defined($files)) {
+	my $a_ref_f = Sets::getFiles($files);
+	@contents = @$a_ref_f;
+}
+
+#
+# for each file
+#
+foreach $file (@contents) {
+	next if $file =~ /^reads/;     # skip anything starting with reads
+	
+	print STDOUT "Opening $file\n";
+	
+	#open file
+	if ($file =~ /\.gz$/) {
+		tie *IN, 'IO::Zlib', "$file", "rb";
+	} else {
+	    open(IN, "$file") or die "can't open file $file: $!";
+	} 
+	
+	while ($inputLine = <IN>) {
+		chomp $inputLine;
+		@lineParts	= split /[\t]/, $inputLine, -1;
+		
+		$totalReads++;
+		
+		#
+		# store read tag, position and sequence
+		#
+		if($format eq "sam") {
+			$tag		= $lineParts[11];
+			$sequence	= $lineParts[9];
+			$chromosome	= $lineParts[2];
+			$position	= $chromosome.":".$lineParts[3];
+		}
+		elsif($format eq "eland") {
+			$tag		= $lineParts[2];
+			$sequence	= $lineParts[1];
+			$chromosome = $lineParts[6]; $chromosome =~ s/\.fa//;
+			
+			if($chromosome =~ /^chr/) {				
+				$position	= $chromosome.":".$lineParts[7];
+			}			
+		}
+		elsif($format eq "exteland") {
+			$tag		= $lineParts[2];
+			$sequence	= $lineParts[1];
+			my ($chr, $pos, $str) = $lineParts[3] =~ /(chr.+?)\.fa\:(\d+?)([RF])/;
+			if($chr ne "") {
+				$chromosome = $chr;
+			}
+			if($pos ne "") {
+				$position	= $chromosome.":".$pos;
+			}
+		}
+		else {
+			die "Unknown format";
+		}
+		
+		#
+		# When qcType is showUnique or all
+		#
+		if(($qcType eq "all") || ($qcType eq "showUnique")) {
+			
+			if($format eq "sam") {
+				if($tag eq "XT:A:U") {
+					$uniqueReads++;
+				}
+			}
+			elsif($format eq "eland") {
+				if(($tag eq 'U0') || ($tag eq 'U1') || ($tag eq 'U2')) {
+					$uniqueReads++;
+				}
+			}
+			elsif($format eq "exteland") {
+				if (($tag eq '1:0:0') || ($tag eq '0:1:0') || ($tag eq '0:0:1')) {
+					$uniqueReads++;
+				}
+			}
+			else {
+				#add other formats
+			}
+		}
+		
+		#
+		# When qcType is showGCRich or all
+		#
+		if(($qcType eq "all") || ($qcType eq "showGCRich")) {
+			@seqChars	= split '', $sequence;
+			
+			#count GC and AT
+			$seqGCSum = 0;
+			$seqATSum = 0;
+			for($i=0; $i<length($sequence); $i++) {
+				#print "$seqChars[$i]";
+				if (($seqChars[$i] eq "C") || ($seqChars[$i] eq "G")) {
+					$seqGCSum++;
+				}
+				$GCtable[$totalReads] = $seqGCSum;
+				
+				if (($seqChars[$i] eq "A") || ($seqChars[$i] eq "T")) {
+					$seqATSum++;
+				}
+				$ATtable[$totalReads] = $seqATSum;
+			}
+			#print "\n";
+		}
+	}# end of while
+	
+	#
+	# When qcType is showUnique or all
+	#
+	if(($qcType eq "all") || ($qcType eq "showUnique")) {
+		
+		$uniqueReadsPrct		= sprintf("%3.1f", 100 * $uniqueReads/$totalReads);
+		
+		print "******** Mapped reads *********\n";
+		print "Total number of reads: \t $totalReads \n"; 
+		print "Number of unique reads: \t $uniqueReads\n";
+		print "Percentage of unique reads: \t $uniqueReadsPrct %\n";
+	}
+	
+	#
+	# When qcType is showGCRich or all
+	#
+	if(($qcType eq "all") || ($qcType eq "showGCRich")) {
+		
+		my $GCtableSize = @GCtable;
+		my $ATtableSize = @ATtable;
+		
+		for($j=0; $j<$GCtableSize; $j++) {
+			$totalGCSum += $GCtable[$j];
+		}		
+		$avgGC = sprintf("%3.2f", $totalGCSum/($totalReads * length($sequence)));
+		
+		for($k=0; $k<$ATtableSize; $k++) {
+			$totalATSum += $ATtable[$k];
+		}		
+		$avgAT = sprintf("%3.2f", $totalATSum/($totalReads * length($sequence)));
+		
+		print "******** Sequence bias *********\n";
+		
+		print "Total number of GCs: \t $totalGCSum \n"; 
+		print "Average GC frequency per position: \t $avgGC \n"; 
+		
+		print "Total number of ATs: \t $totalATSum \n"; 
+		print "Average AT frequency per position: \t $avgAT \n"; 
+	}
+	
+	close IN;
+}	
+
+if (defined($datafolder)) {
+	closedir(DIRECTORY);
+}

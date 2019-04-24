@@ -1,0 +1,12 @@
+fastafile_dna	FIRE_DATA/ARABIDOPSIS/SEQUENCES/arabidopsis_u_1000.fa
+seqlen_dna	1000
+rightlabel_dna	0
+leftlabel_dna	-1000
+fastafile_rna	FIRE_DATA/ARABIDOPSIS/SEQUENCES/arabidopsis_3_0_300.fa
+seqlen_rna	300
+rightlabel_rna	300
+leftlabel_rna	0
+goindex	FIRE_DATA/ARABIDOPSIS/ANNOTATIONS/arabidopsis_go_index.txt
+gonames	FIRE_DATA/ARABIDOPSIS/ANNOTATIONS/arabidopsis_go_names.txt
+acelibrary_dna	FIRE_DATA/ARABIDOPSIS/MOTIFNAMES/DB/ACE/*.txt
+micrornas	FIRE_DATA/ARABIDOPSIS/MOTIFNAMES/MIRNAS/mirnas.seq

@@ -1,0 +1,26 @@
+2010-10-25
+
+Some of the motif names in this species data package have been fixed. Some JASPAR entries had differing counts (typically for the final columns) and N characters have been added for padding.
+
+2010-10-08
+
+This species data package has been updated with current motif names.
+
+These annotations incorporate a subset of the current JASPAR database from <http://jaspar.genereg.net/html/DOWNLOAD/all_data/matrix_only/matrix_only.txt>, current entries from miRBase <http://www.mirbase.org/>, and protein array matches from <http://bioinfo.wilmer.jhu.edu/PDI/download/download.html>. Old entries, while still present, are marked with their replacement date. 
+
+Old JASPAR entries have been placed in the old_jaspar directory. other_jaspar contains current profiles that are not included in the main set.
+
+The below subsets have been updated/added as part of this update (October 08, 2010). Brief descriptions, summarized from <http://jaspar.genereg.net/html/TEMPLATES/help.html>, are included for reference.
+
+MA - CORE (published, experimentally defined transcription factor binding sites)
+PB - PBM (mouse transcription factors based on k-mer arrays)
+PH - PBM_HOMEO (mouse homeodomains based on k-mer arrays)
+PL - PBM_HLH (worm transcription factor models based on k-mer arrays)
+POL - POLII (DNA patterns associated with RNA polymerase II core promoters; experimental sources)
+
+These subsets are included in other_jaspar. Copy them to the parent directory should these subsets be of interest.
+
+SA/SD - SPLICE (profiles of splice sites)
+CN - CNE (over-represented sites within highly conserved non-coding elements)
+MF - FAM (metamodels based on CORE profiles)
+PF - PHYLOFACTS (phylogenetically conserved gene upstream elements)

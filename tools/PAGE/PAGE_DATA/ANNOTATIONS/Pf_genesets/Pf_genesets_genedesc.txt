@@ -1,0 +1,1 @@
+../malaria_go_all/malaria_go_all_genedesc.txt

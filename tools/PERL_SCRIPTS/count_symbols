@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+use lib qw(/home/elemento/PERL_MODULES);
+
+use Sets;
+use Table;
+
+my $a_ref = Sets::readSet($ARGV[0]);
+
+
+my %HASH = ();
+foreach my $r (@$a_ref) {
+	
+	$HASH { $r } ++;
+	
+}
+
+my $a_ref_sorted = Sets::getArrayKVFromHash(\%HASH, 1);
+
+Table::printTable($a_ref_sorted);
+
+

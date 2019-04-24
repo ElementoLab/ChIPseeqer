@@ -1,0 +1,3 @@
+#!/bin/sh
+osascript -e 'tell application "Finder" to mount volume "http://idisk.mac.com/oelemento/" as user name "oelemento" with password "batman"'
+

@@ -1,0 +1,225 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use Fasta;
+use Getopt::Long;
+use strict;
+use POSIX;
+
+# annotation type
+my $type_rnagenes	= "RNAGenes";
+
+my $geneparts			= undef;
+my $annotation			= undef;
+
+# variables to store the arguments values
+my $targets             = undef;
+my $suf                 = undef;
+my $verbose             = 0;
+my $annot_type	        = $type_rnagenes;
+my $usepeakcenter       = 1;
+my $fromgui				= 0;
+my $genome              = "hg18";		# could be hg18, mm9, dm3, sacser
+
+my $mindistaway			= 2000;			# minimum distance away from transcripts
+my $maxdistaway			= undef;		# maximum distance away from peaks
+my $ext					= 0;			# minimum distance away from peaks
+my $iswig				= undef;
+my $num_genes			= 1;			# how many closest genes. Can be 1 or 2
+
+# variable use to parse hashes
+my $key;
+
+# variables to store percentages
+my $rnag_prct	        = undef;
+
+# handling lack of arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerRNAGenes --targets=FILE  [--type=STR] 
+	where:
+	--targets=FILE\tpeak file
+	--usepeakcenter=INT\t1 to use peak midpoin (default), 0 otherwise
+	--type=STR\tRNAGenes\n";
+}
+
+# processing command line options
+GetOptions("targets=s" => \$targets,
+"peakfile=s"		=> \$targets,
+"verbose=s"			=> \$verbose,
+"type=s"			=> \$annot_type,
+"usepeakcenter=s"	=> \$usepeakcenter,
+"outfile=s"			=> \$suf,
+"fromgui=s"			=> \$fromgui);
+
+if (!defined($suf)) {
+	$suf = $targets;
+}
+
+# count number of peaks in targets file
+open IN, "$targets";
+my $peaks_num = 0;
+while (my $l = <IN>) {
+	chomp $l;
+	#my $line = split /\n/, $l;
+	$peaks_num++;
+}
+close IN;
+
+# RNAGenes annotation
+if($annot_type eq $type_rnagenes) {
+	
+	if($genome eq "hg18") {
+		my $rnagenes	= "$ENV{CHIPSEEQERDIR}/DATA/hg18/rnaGene.txt.hg18.annotation";
+		
+		# hashes to store the RNAGenes Names and Types for the annotation file
+		my %rnaNameANN		= ();
+		my %rnaTypeANN		= ();
+		
+		# hashes to store the RNAGenes Names and Types for my results
+		my %rnaName		= ();
+		my %rnaType		= ();	
+		
+		#open file
+		open IN, "$rnagenes" or die "cannot open $rnagenes\n";
+		
+		my $ann_cnt = 0;
+		#for each line
+		while (my $l = <IN>) {
+			chomp $l;
+			
+			#split line
+			my @a = split /[\t]/, $l, -1;
+			
+			my @b = split /[ ]/, $a[0], -1;
+			
+			my $type = shift @b;
+			my $name = join(" ", @b);
+			
+			$rnaNameANN{$name}++;
+			$rnaTypeANN{$type}++;
+			$ann_cnt++;
+		}
+		
+		close IN;
+		
+		# find overlapping peaks
+		my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -hasid1 0 -intervals2 $rnagenes -hasid2 1 -show_ov_int 1 -rand2 0";
+		if ($usepeakcenter == 1) {
+			$todo .= " -usepeak1center 1 ";
+		}
+		
+		$todo .= " > $suf.ALL.RNAG";
+		
+		if ($verbose == 1){ 
+			print "$todo\n";
+		}
+		
+		print "Determining overlap between RNAGenes and ChIP-seq peaks ... \n";
+		
+		system($todo) == 0 or die "Cannot exec $todo\n";
+		
+		if (-e "$suf.ALL.RNAG") {
+			
+			#open file
+			open IN, "$suf.ALL.RNAG" or die "cannot open $suf.ALL.RNAG\n";
+			
+			open RNAGFILE, ">>$suf.RNAG";
+			
+			#for each line
+			while (my $l = <IN>) {
+				chomp $l;
+				
+				#split line
+				my @a = split /[\t]/, $l, -1;
+				
+				if ($a[3] ne '0') {
+					print RNAGFILE "$l\n";
+				}
+			}
+			
+			print "Done ($suf.RNAG created).\n";	
+			
+			#close files
+			close RNAGFILE;
+			close IN;
+			
+			# count number of peaks with repeats
+			open IN, "$suf.RNAG" or die "cannot open $suf.RNAG\n";
+			my $cnt = 0;
+			while (my $l = <IN>) {
+				chomp $l;
+				my $line = split /\n/;
+				$cnt++;
+			}
+			close IN;
+			
+			# count %
+			if($peaks_num != 0) {
+				$rnag_prct = $cnt/$peaks_num;
+			}
+			else {
+				print "Cannot compute percentages, number of peaks is set to 0.\n"
+			}
+			
+			#open file
+			open IN, "$suf.RNAG" or die "cannot open $suf.RNAG\n";
+			
+			#for each line
+			while (my $l = <IN>) {
+				chomp $l;
+				
+				#split line
+				my @a = split /[\t]/, $l, -1;
+				
+				my @b = split /[:]/, $a[4], -1;
+				
+				my @c = split /[ ]/, $b[1], -1;
+				
+				my $type = "$c[0]";
+				my $name = "$c[1]";
+				
+				$rnaName{$name}++;
+				$rnaType{$type}++;
+			}
+			
+			#close files
+			close IN;
+			
+			print "Creating stats file ... ";
+			
+			# print in stats file
+			open STATSFILE, ">$suf.RNAG.stats";
+			print STATSFILE "Number of peaks: \t $peaks_num\n";
+			print STATSFILE "Number of peaks that overlap with RNAGenes: \t $cnt\n";
+			print STATSFILE "%RNAGenes: \t $rnag_prct\n";
+			
+			print STATSFILE "\nName of RNAGene \t RNAGene_occurences_in_the_peaks \t RNAGene_occurences_in_the_annotation \t %Occurence\n";		
+			foreach $key (sort{$rnaName{$b} <=> $rnaName{$a}} (keys(%rnaName))) {
+				if($rnaNameANN{$key} != 0) {
+					my $tmp = sprintf("%3.2f", $rnaName{$key}/$rnaNameANN{$key} *100);
+					print STATSFILE "$key \t $rnaName{$key} \t $rnaNameANN{$key} \t $tmp \n";
+				}
+			}
+			
+			print STATSFILE "\nType of RNAGene \t Type_occurences_in_the_peaks \t Type_occurences_in_the_annotation \t %Occurence\n";		
+			foreach $key (sort{$rnaType{$b} <=> $rnaType{$a}} (keys(%rnaType))) {
+				if($rnaNameANN{$key} != 0) {
+					my $tmp = sprintf("%3.2f", $rnaType{$key}/$rnaTypeANN{$key} *100);
+					print STATSFILE "$key \t $rnaType{$key} \t $rnaTypeANN{$key} \t $tmp\n";
+				}
+			}
+			
+			close STATSFILE;
+			
+			# end of execution
+			print "Done ($suf.RNAG.stats created).\n";
+			
+			if($fromgui == 0) {
+				system("head -15 $suf.RNAG.stats");
+			}
+		}
+	}
+	else {
+		print "The -type RNAGenes can only be used with -genome hg18.\n"
+	}
+}

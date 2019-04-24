@@ -1,0 +1,228 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+my $nm2orf				= undef;
+my $annotation_tss_tes	= undef;
+my $targets				= undef;
+my $suf					= undef;
+my $todo				= undef;
+my $iswig				= undef;
+my $db					= "refSeq";		# Genes database. Can be refSeq, AceView, Ensemble, or UCSCSGenes
+my $maxdistaway			= undef;		# Maximum distance of peak-gene
+my $ext					= 0;			# Gene body extension
+my $num_genes			= 1;
+my $verbose				= 0;
+my $genome				= "hg18";
+my $show_gene_only		= 0;
+my $show_upstream_gene	= 0;
+my $addheader			= undef;
+my %nm2orf_hash			= ();
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerFindClosestGenes --peakfile=FILE --mindistaway=INT --maxdistaway=INT [ --prefix=STR --db=STR --num_genes=INT --genome=STR ]\n
+	where:
+	--peakfile=FILE			file containing genomic regions
+	--mindistaway=INT		minimum distance away from peaks
+	--maxdistaway=INT		maximum distance away from peaks
+	--prefix=STR			prefix for output files
+	--db=STR				refSeq, AceView, UCSCGenes or Ensembl
+    --num_genes=INT			number of closest genes. Can be either 1 or 2. Default is 1
+	--genome=STR			can be hg18 for human, mm9 for mouse, dm3 for drosophila, or sacser for Saccharomyces cerevisiae
+	";
+}
+
+GetOptions("targets=s"  => \$targets,
+"addheader=s"           => \$addheader,
+"peakfile=s"			=> \$targets,
+"prefix=s"				=> \$suf,
+"verbose=s"				=> \$verbose,
+"db=s"					=> \$db,
+"mindistaway=s"			=> \$ext,
+"maxdistaway=s"			=> \$maxdistaway,
+"num_genes=s"			=> \$num_genes,
+"show_gene_only=s"		=> \$show_gene_only,
+"show_upstream_gene=s"	=> \$show_upstream_gene,
+"iswig=s"				=> \$iswig,
+"genome=s"				=> \$genome);
+
+if (! -e $targets) {
+	die "Please specify --peakfile=FILE\n";
+}
+
+if ($genome eq "sacser") {
+	$db				= "sgd";
+}
+
+$annotation_tss_tes	= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.TSS_TES";
+$nm2orf				= "$ENV{CHIPSEEQERDIR}/DATA/$genome/$db.NM2ORF";
+
+
+if ($genome eq "pf6.0") {
+ 	$annotation_tss_tes = "$ENV{CHIPSEEQERDIR}/DATA/pf_annotation_6.0.txt";
+	$nm2orf = undef;
+	$db = "pf6.0";
+} 
+
+if (!defined($suf)) {
+	$suf = $targets;
+} 
+
+#
+# find closest gene per peak
+#
+my $todo3= "$ENV{CHIPSEEQERDIR}/FindClosestGene -intervals1 $targets -intervals2 $annotation_tss_tes -hasid2 1 -ext2 $ext -num_close_genes $num_genes -showmin 1 -show_gene_only $show_gene_only -show_upstream_gene $show_upstream_gene ";
+
+if (defined($maxdistaway)) {
+	$todo3 .= " -distance_max $maxdistaway ";
+}
+
+if (defined($addheader) && ($addheader == 1)) {
+	$todo3 .= " -addheader 1 ";
+}
+
+$todo3 .= " > $suf.$db.CLOSEST_NM.tmp";
+
+
+print "$todo3\n" if ($verbose == 1);
+print "Running FindClosestGene, with minimum distance $ext";
+if (defined($maxdistaway)) {
+	print " and maximum distance $maxdistaway";
+}
+print "...";
+
+system($todo3) == 0 or die "Cannot exec $todo3\n";
+
+my $todo4 = "awk -F \"\\t\" '{if (\$4 != 0) print \$0}' $suf.$db.CLOSEST_NM.tmp > $suf.$db.CLOSEST_NM.txt";
+print "$todo4\n" if ($verbose == 1);
+system($todo4) == 0 or die "Cannot exec $todo4\n";
+
+print "... Done ($suf.$db.CLOSEST_NM.txt created).\n";
+
+# 
+# determine whether NM have close peaks
+#
+my %REFGENE = ();
+open IN, "$suf.$db.CLOSEST_NM.txt";
+while (my $l = <IN>) {
+	chomp $l;
+	my @a = split /\t/, $l, -1;  
+	if (@a > 8) {
+		$REFGENE{$a[8]} ++;
+	} else {
+		$REFGENE{$a[3]} ++;
+	}
+}
+close IN;
+
+open OUT, ">$suf.$db.GENEWITHPEAKS.txt";
+print OUT "GENE\tD\n";
+
+open IN, $annotation_tss_tes;
+my %IN = ();
+while (my $l = <IN>) {
+	chomp $l;
+	my @a = split /\t/, $l, -1;
+	if (defined($IN{$a[0]})) {
+		next;
+	}
+	$IN{$a[0]} = 1;
+	if (!defined($REFGENE{$a[0]})) {
+		$REFGENE{$a[0]} = 0;
+	}
+	print OUT "$a[0]\t$REFGENE{$a[0]}\n";
+}
+close IN;
+close OUT;
+if (-e "$suf.$db.GENEWITHPEAKS.txt") {
+	print "Created $suf.$db.GENEWITHPEAKS.txt\n";
+}
+
+#
+# Convert NMs to ORFs
+#
+
+if ($db eq "refSeq") {
+	print "Converting RefSeq NM identifiers to ORFs...";
+	
+	#
+	# open nm2orf file and store in hashe
+	#
+	open(IN, "$nm2orf") or die "Can't open file $nm2orf.";
+	
+	while (my $nm2orfLine = <IN>) {
+		
+		chomp $nm2orfLine;
+		my @a = split /[\t]/, $nm2orfLine, -1;
+		
+		# fill in input hash
+		$nm2orf_hash{$a[0]} = $a[1];
+	}
+	close IN;
+	
+	#for my $key ( keys %nm2orf_hash ) {
+    #    my $value = $nm2orf_hash{$key};
+    #    print "$key => $value\n";
+    #}
+	
+	open(IN, "$suf.$db.CLOSEST_NM.txt") or die "Can't open file $suf.$db.CLOSEST_NM.txt.";
+	open ORF_FILE, ">$suf.$db.CLOSEST_ORF.txt";
+	
+	if($show_gene_only == 0) {
+		
+		while (my $line = <IN>) {
+			
+			chomp $line;
+			my @nmLine	= split /[\t]/, $line , -1;
+			
+			my @nm1		= split /[-]/, $nmLine[4] , -1;
+			my @nm2		= split /[-]/, $nmLine[5] , -1;
+			
+			# Look for the 1st NM and replace in the line
+			if(exists($nm2orf_hash{$nm1[3]})) {
+				$line =~ s/$nm1[3]/$nm2orf_hash{$nm1[3]}/gi;
+			}
+			
+			# If you have 2nd NM, do the same
+			if($num_genes == 2) {
+				if(exists($nm2orf_hash{$nm2[3]})) {
+					$line =~ s/$nm2[3]/$nm2orf_hash{$nm2[3]}/gi;
+				}
+			}
+			
+			print ORF_FILE "$line\n";
+		}
+	}
+	else {
+		while (my $line = <IN>) {
+			
+			chomp $line;
+			my @nmLine	= split /[\t]/, $line , -1;
+			
+			# Look for the 1st NM and replace in the line
+			if(exists($nm2orf_hash{$nmLine[4]})) {
+				$line =~ s/$nmLine[4]/$nm2orf_hash{$nmLine[4]}/gi;
+			}
+			
+			# If you have 2nd NM, do the same
+			if($num_genes == 2) {
+				if(exists($nm2orf_hash{$nmLine[5]})) {
+					$line =~ s/$nmLine[5]/$nm2orf_hash{$nmLine[5]}/gi;
+				}
+			}
+			
+			print ORF_FILE "$line\n";
+		}
+		
+		
+	}
+	
+	close ORF_FILE;
+	close IN;
+	
+	print "...Done ($suf.$db.CLOSEST_ORF.txt created).\n";
+}

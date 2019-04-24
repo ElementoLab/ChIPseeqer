@@ -1,0 +1,44 @@
+=head2 Fri May 27 17:43:39 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl/5.12.3>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat May 28 10:48:15 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl/5.12.3>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

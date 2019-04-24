@@ -1,0 +1,30 @@
+#!/bin/bash
+
+nChIP="newChIP"
+nInput="newINPUT"
+EXEC="split_chrom_file"
+RATIO="0.15"
+	
+# check if a folder was passed as argument
+if (( $# < 1 )); then
+  echo "Please specify the folder of chromosome files to split"
+  exit
+  
+fi
+
+# make the directories
+mkdir -p $1$nChIP
+mkdir -p $1$nInput
+
+# for every line in the file
+for fpath in `ls $1reads.*`; do
+	
+	# count the lines of file
+	flines=`cat $fpath | wc -l`	
+	
+	# extract filename from path
+	fname=${fpath#$1}
+	
+	# split
+	$EXEC -f $fpath -l $flines -r $RATIO >$1$nChIP/$fname 2>$1$nInput/$fname
+done

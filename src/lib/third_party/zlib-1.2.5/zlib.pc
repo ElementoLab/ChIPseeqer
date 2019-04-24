@@ -1,0 +1,13 @@
+prefix=build_dir
+exec_prefix=${prefix}
+libdir=build_dir
+sharedlibdir=${libdir}
+includedir=build_dir
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.5
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

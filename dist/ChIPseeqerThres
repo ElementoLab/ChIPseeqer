@@ -1,0 +1,116 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use Table;
+use Sets;
+use strict;
+use Getopt::Long;
+
+#variables declaration
+my $chipdir		= undef;
+my $inputdir	= undef;
+my $format		= undef;
+my $pref		= undef;
+my $verbose		= 0;
+my $t			= undef;
+my $todo		= undef;
+my $outfile		= undef;
+my $fraglen		= undef;
+my $db			= "RefGene";	# could be RefGene or AceView
+
+
+#handling lack of arguments
+if (@ARGV == 0) {
+	die "
+	Usage: ChIPseeqerThres.pl --chipdir=DIR [ --inputdir=DIR --pref=STR --format=STR --fraglen=INT --verbose=INT ]
+	
+	--chipdir=DIR		directory that contains the ChIP reads (one file per chromosome, named reads.chr1, reads.chr2, etc),
+	--inputdir=DIR		directory that contains the input DNA reads,
+	--format=DIR		format
+	--pref=STR			prefix
+	--fraglen=INT		fragment length
+	"; 
+}
+
+# Note if input DNA reads are provided, the significance of peaks is given by the ratio between ChIP p-value and input DNA p-value (p-values are calculated using the Poisson distribution).
+
+#processing command line options
+GetOptions("inputdir=s"  => \$inputdir,
+"chipdir=s"		=> \$chipdir,
+"pref=s"		=> \$pref,
+"format=s"		=> \$format,
+"fraglen=s"		=> \$fraglen,
+"db=s"			=> \$db,
+"verbose=s"		=> \$verbose);
+
+
+#if the ChIP reads directory is not defined, end program
+if (!defined($chipdir)) {
+	die "Must define --chipdir.\n";
+}
+
+if (!defined($pref)) {
+	die "Must define --pref.\n";
+}
+
+for ($t=5; $t<30; $t+=5) {
+	#
+	#create and run the ChIPseeqer command
+	#
+	$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqer.bin -chipdir $chipdir ";
+	
+	if (defined($inputdir)) {
+		$todo .= " -inputdir $inputdir ";
+	}
+	
+	if (defined($format)) {
+		$todo .= " -format $format ";
+	}
+	
+	if (defined($fraglen)) {
+		$todo .= " -fraglen $fraglen ";
+	}
+	
+	$outfile = $pref."_TF_targets_".$t.".txt";
+	
+	$todo .= " -t $t > $outfile";
+	
+	if ($verbose == 1) {
+		print "$todo\n";
+	}
+	
+	print "Running ChIPseeqer for threshold $t ... \n";
+	system($todo);
+	print "done.\n";
+	
+	#
+	#create and run the ChIPseeqerSummary command
+	#
+	if (-e "$outfile") {
+		
+		$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerSummary --targets=$outfile --lenu=1000 -lend=500 --prefix=$outfile --db=$db ";
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		
+		print "Running ChIPseeqerSummary for threshold $t ... \n";
+		system($todo);
+		print "done.\n"; 
+	}
+}
+
+# print output on the screen
+for ($t=5; $t<30; $t+=5) {
+	if (-e "$outfile") {
+		print "For t=$t : \n Peaks\t ";
+		$outfile = $pref."_TF_targets_".$t.".txt";
+		$todo = "cat $outfile | wc -l";
+		system($todo);
+	}
+	if (-e "$outfile.$db.SUM") {
+		print " Genes\t ";
+		$todo = "cat $outfile.$db.SUM | wc -l";
+		system($todo);
+	}
+}

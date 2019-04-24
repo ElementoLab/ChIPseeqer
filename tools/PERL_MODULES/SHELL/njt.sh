@@ -1,0 +1,2 @@
+#!/bin/sh
+lynx --dump "http://www.njtransit.com/sf_tr_schedules.jsp?action=entry&resptype=U&MinB=0&MinA=0&Fare=Y&Line=NEC&LineDesc=Northeast+Corridor+Line&LineLookup=&STime=12%3A00+PM&RTime=1%3A00+PM&Oloc=Princeton&OSID=124+++++&Dloc=New+York+Penn+Station&DSID=105+++++&back=sf_tr_schedules.shtml&LineExt=NEC%3ANortheast+Corridor+Line&ori=124+++++%3APrinceton&LineExt2=NEC%3ANortheast+Corridor+Line&des=105+++++%3ANew+York+Penn+Station&DOW=W&mm=9&dd=10&yyyy=2004&date=9%2F10%2F2004" | more

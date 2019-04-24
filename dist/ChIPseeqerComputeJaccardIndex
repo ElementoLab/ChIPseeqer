@@ -1,0 +1,133 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+# variables to store options
+my $peaksFile	= undef;
+my $outfile		= undef;
+my $mode		= "all";
+
+# other variables
+my $verbose = 0;
+my @FILES	= ();
+my %LABELS  = ();
+
+my @COLS		= ();
+my $cnt_cols	= 0;
+my @ROWS		= ();
+my %HROWS		= ();
+
+# handling of missing arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerMakeGenepartsMatrix --peaksFile=FILE --outfile=STR\n";
+}
+
+# handling given options
+GetOptions("peaksFile=s"		=> \$peaksFile,
+"outfile=s"		=> \$outfile,
+"verbose=s"		=> \$verbose,
+"mode=s"		=> \$mode);
+
+if (!defined($peaksFile)) {
+	die("Must provide --peaksFile=FILE\n");
+}
+
+if (!defined($outfile)) {
+	die("Must provide --outfile=STR\n");
+}
+
+#
+# Make new files
+#
+
+# Open $TFgenesFile
+open(IN, "$peaksFile") or die "Can't open file $peaksFile.";
+
+while (my $fileline = <IN>) {
+	
+	chomp $fileline;
+	
+	my @b = split /\t/, $fileline, -1;
+	
+	my $peakfile	= "$b[0]";
+	my $label		= "$b[1]";
+	
+	if($verbose==1) {
+		print "Opening file $peakfile.\n";
+	}
+	
+	# Put all peak file names in array
+	push @FILES, $peakfile;
+	$LABELS{$peakfile} = $label;
+	
+}
+close IN;
+
+open OUTFILE, ">>$outfile" or die "Can't open file $outfile.";
+
+if($mode eq "all") {
+	
+	# Print the labels for the TFs
+	foreach my $f (@FILES) {
+		print OUTFILE " \t$LABELS{$f}";
+	}
+	
+	my $idx = 1;
+	
+	# While the peak file names array has elements
+	while(@FILES) {
+		
+		# Get and remove the first TF from the array...
+		my $TF		= shift @FILES;
+		my $l		= $LABELS{$TF};
+		
+		print OUTFILE "\n$l\t";
+		
+		for(my $i=0; $i<$idx; $i++) {
+			print OUTFILE "0\t";
+		}
+		
+		# ...and run against the rest
+		foreach my $f (@FILES) {
+			my $todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/JaccardIndex.pl -peakfile1 $TF -peakfile2 $f >> $outfile";
+			system($todo) == 0 or die "Cannot exec $todo\n";	
+		}
+		
+		$idx++;
+	}
+	
+	print "\n";
+}
+elsif($mode eq "one") {
+	
+	# Print the labels for the TFs
+	foreach my $f (@FILES) {
+		print OUTFILE " \t$LABELS{$f}";
+	}
+	
+	my $idx = 1;
+	
+	# Get and remove the first TF from the array...
+	my $TF		= shift @FILES;
+	my $l		= $LABELS{$TF};
+	
+	print OUTFILE "\n$l\t";
+	
+	for(my $i=0; $i<$idx; $i++) {
+		print OUTFILE "0\t";
+	}
+	
+	# ...and run against the rest
+	foreach my $f (@FILES) {
+		my $todo = "perl $ENV{CHIPSEEQERDIR}/SCRIPTS/JaccardIndex.pl -peakfile1 $TF -peakfile2 $f >> $outfile";
+		system($todo) == 0 or die "Cannot exec $todo\n";	
+	}
+	
+	$idx++;
+	
+	print "\n";
+}

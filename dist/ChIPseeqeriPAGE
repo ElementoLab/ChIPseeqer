@@ -1,0 +1,108 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use lib "$ENV{PAGEDIR}";
+
+use Fasta;
+use Getopt::Long;
+use strict;
+
+my $nm2orf		= undef;
+my $peakfile	= undef;
+my $targets		= undef;
+my $suf         = undef;
+my $todo        = undef;
+my $iswig       = undef;
+my $lenuP       = 2000;
+my $lendP       = 2000;
+my $lenuDW      = 2000;
+my $lendDW      = 2000;
+my $verbose     = 0;
+my $runit		= 1;
+my $genome		= "hg18";
+my $pathways	= "human_go_orf";
+my $db			= "refSeq";	# could be refSeq, AceView, UCSCGenes or Ensembl
+my $geneparts	= "P";			# can be "P,I", or any combination or P, E, I, I1, I2, DW, D
+my $fromgui		= 0;
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqeriPAGE --peakfile=FILE --prefix=STR --lenu=INT --lend=INT --iswig=INT\n";
+}
+
+GetOptions("targets=s" => \$targets,
+"peakfile=s"	=> \$targets,
+"lenuP=s"		=> \$lenuP,
+"lendP=s"		=> \$lendP,
+"lenuDW=s"		=> \$lenuDW,
+"lendDW=s"		=> \$lendDW,
+"prefix=s"		=> \$suf,
+"verbose=s"		=> \$verbose,
+"suffix=s"		=> \$suf,
+"iswig=s"		=> \$iswig,
+"runit=s"		=> \$runit,
+"genome=s"		=> \$genome,
+"geneparts=s"	=> \$geneparts,
+"pathways=s"	=> \$pathways,
+"db=s"			=> \$db,
+"fromgui=s"		=> \$fromgui);
+
+if (!defined($suf)) {
+	$suf = $targets;
+} 
+
+if ($genome eq "hg18") {
+	if (!defined($pathways)) {
+		$pathways			= "human_go_orf";
+	}
+}
+elsif ($genome eq "mm9") {
+	if (!defined($pathways)) {
+		$pathways			= "mouse_go_orf";
+	}
+}
+elsif ($genome eq "dm3") {
+	# We are missing GO for Drosophila
+	die "Unfortunately no GO data is currently available for Drosophila melanogaster (dm3)";
+}
+elsif ($genome eq "sacser") {
+	if (!defined($pathways)) {
+		$pathways			= "yeast_go";
+	}
+}
+
+#
+# Run CSAnnotate
+#
+my $todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate --targets=$targets --db=$db --genome=$genome --lenuP=$lenuP --lendP=$lendP --lenuDW=$lenuDW --lendDW=$lendDW --fromgui=$fromgui --prefix=$suf --print_stats=0";
+
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+print "Running ChIPseeqerAnnotate ...\n";
+system($todo) == 0 or die "Cannot exec $ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate\n";
+
+#
+# Run mergeGenesColumns
+#
+my $todo = "$ENV{CHIPSEEQERDIR}/SCRIPTS/mergeCSAnnotateGenesColumns.pl --genefile=$suf.$db.GP.genes.annotated.txt --geneparts=$geneparts --showORF=1 --outfile=$suf.$geneparts --showprofile=1";
+if ($verbose == 1){ 
+	print "$todo\n";
+}
+print "Running mergeCSAnnotateGenesColumns.pl ...\n";
+system($todo) == 0 or die "Cannot exec $ENV{CHIPSEEQERDIR}/SCRIPTS/mergeCSAnnotateGenesColumns.pl\n";
+
+#
+# Run iPAGE
+#
+$todo = "$ENV{PAGEDIR}/page.pl --expfile=$suf.$geneparts --pathways=$pathways";
+
+if ($runit == 1) {
+	print "Now running PAGE using the following command: $todo\n";
+	system($todo) == 0 or die "Cannot run PAGE ... \n";
+} else {
+	print "\nTo run PAGE, run: $todo\n";
+}
+
+print "\nTo retrieve the peaks and genes associated to a specific pathway after PAGE, you can run: \nperl $ENV{CHIPSEEQERDIR}/SCRIPTS/find_peaks_and_genes_in_pathway.pl --expfile=$suf.ORF --overlapfile=$suf.NM_peaks --bin=1 --pathway=your_pathway(e.g. GO:0045892) --species=human_go_orf --prefix=your_output_filename\n";
+
+unlink <$targets.$db.*>;

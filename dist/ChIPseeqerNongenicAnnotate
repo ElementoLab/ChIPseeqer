@@ -1,0 +1,668 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use CommonPaths;
+use Fasta;
+use Getopt::Long;
+use strict;
+use POSIX;
+
+# annotation types
+my $type_repmask	= "RepMasker";
+my $type_cpgislands	= "CpGislands";
+my $type_segmdup	= "SegmentalDups";
+my $type_encode		= "Encode";
+
+# annotation files
+my $repmask		= $CommonPaths::HG18_REPMASK;
+my $CpGislands	= $CommonPaths::HG18_CpGislands;
+my $segdups		= $CommonPaths::HG18_SEGDUPS;
+my $encode		= $CommonPaths::ENCODE;
+
+# variables to store the arguments values
+my $targets             = undef;
+my $suf                 = undef;
+my $verbose             = 0;
+my $annot_type	        = $type_repmask;
+my $usepeakcenter       = 1;
+my $fromgui				= 0;
+my $TFname				= undef;
+my $mode				= undef;
+
+# variable use to parse hashes
+my $key;
+
+# variables to store percentages
+my $rep_prct	        = undef;
+my $cpg_prct	        = undef;
+my $dup_prct	        = undef;
+my $en_prct				= undef;
+
+# used for Encode comparison
+my $idx					= undef;
+my $outdir				= undef;
+my $iterations			= 100;
+my $filename			= undef;
+
+# handling lack of arguments
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerNongenicAnnotate --targets=FILE  [--type=STR] 
+	where:
+	--targets=FILE			peak file
+	--usepeakcenter=INT		1 to use peak midpoin (default)t, 0 otherwise
+	--type=STR				RepMasker, CpGislands, SegmentalDups, Encode";
+}
+
+# processing command line options
+GetOptions("targets=s" => \$targets,
+"peakfile=s"		=> \$targets,
+"prefix=s"			=> \$suf,
+"verbose=s"			=> \$verbose,
+"type=s"			=> \$annot_type,
+"usepeakcenter=s"	=> \$usepeakcenter,
+"TFname=s"			=> \$TFname,
+"iterations=s"		=> \$iterations,
+"mode=s"			=> \$mode,
+"fromgui=s"			=> \$fromgui);
+
+if (!defined($suf)) {
+	$suf = $targets;
+}
+
+if (defined($targets)) {
+	# get coreTF directory
+	$idx	= rindex($targets, "/");
+	$filename = substr $targets, $idx+1; 
+}
+else {
+	die("Please specify --peakfile=FILE");
+}
+
+# count number of peaks in targets file
+open IN, "$targets" or die "cannot open $targets\n";
+my $peaks_num = 0;
+while (my $l = <IN>) {
+	chomp $l;
+	#my $line = split /\n/, $l;
+	$peaks_num++;
+}
+close IN;
+
+#
+# compare target peaks with annotation files
+#
+
+# RepMasker annotation
+if($annot_type eq $type_repmask) {
+	
+	# hashes to store the repeat Names Classes and Families for the annotation file
+	my %repNameANN		= ();
+	my %repClassANN		= ();
+	my %repFamilyANN	= ();
+	
+	# hashes to store the repeat Names, Classes and Families
+	my %repName		= ();
+	my %repClass	= ();
+	my %repFamily	= ();
+	
+	#open file
+	open IN, "$repmask" or die "cannot open $repmask\n";
+	
+	my $ann_cnt = 0;
+	#for each line
+	while (my $l = <IN>) {
+		chomp $l;
+		
+		#split line
+		my @a = split /[\t]/, $l, -1;
+		
+		my @b = split /[ ]/, $a[0], -1;
+		
+		my $name	= "$b[0]";
+		my $class	= "$b[1]";
+		my $family	= "$b[2]";
+		
+		$repNameANN{$name}++;
+		$repClassANN{$class}++;
+		$repFamilyANN{$family}++;
+		$ann_cnt++;		
+	}
+	
+	close IN;
+	
+	# find overlapping peaks
+	my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -hasid1 0 -intervals2 $repmask -hasid2 1 -show_ov_int 1 -rand2 0";
+	if ($usepeakcenter == 1) {
+		$todo .= " -usepeak1center 1 ";
+	}
+	
+	$todo .= " > $suf.ALL.RM";
+	
+	if ($verbose == 1){ 
+		print "$todo\n";
+	}
+	
+	print "Determining overlap between RepMask repeats and ChIP-seq peaks ... ";
+	
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	
+	if (-e "$suf.ALL.RM") {
+		
+		#open file
+		open IN, "$suf.ALL.RM" or die "cannot open $suf.ALL.RM\n";
+		
+		open RMFILE, ">$suf.RM";
+		
+		#for each line
+		while (my $l = <IN>) {
+			chomp $l;
+			
+			#split line
+			my @a = split /[\t]/, $l, -1;
+			
+			if ($a[3] ne '0') {
+				print RMFILE "$l\n";
+			}
+		}
+		
+		print "Done ($suf.RM created).\n";	
+		
+		#close files
+		close RMFILE;
+		close IN;
+		
+		# count number of peaks with repeats
+		open IN, "$suf.RM" or die "cannot open $suf.RM\n";
+		my $cnt = 0;
+		while (my $l = <IN>) {
+			chomp $l;
+			my $line = split /\n/;
+			$cnt++;
+		}
+		close IN;
+		
+		# count %
+		if($peaks_num != 0) {
+			$rep_prct = sprintf("%3.1f", 100 * $cnt/$peaks_num);
+		}
+		else {
+			print "Cannot compute percentages, number of peaks is set to 0.\n";
+		}
+		
+		#open file
+		open IN, "$suf.RM" or die "cannot open $suf.RM\n";
+		
+		#for each line
+		while (my $l = <IN>) {
+			chomp $l;
+			
+			#split line
+			my @a = split /[\t]/, $l, -1;
+			
+			my @b = split /[:]/, $a[4], -1;
+			
+			my @c = split /[ ]/, $b[1], -1;
+			
+			my $name	= "$c[0]";
+			my $class	= "$c[1]";
+			my $family	= "$c[2]";
+			
+			$repName{$name}++;
+			$repClass{$class}++;
+			$repFamily{$family}++;
+		}
+		
+		close IN;
+		
+		print "Creating stats file ... ";
+		
+		# print in stats file
+		open STATSFILE, ">$suf.RM.stats";
+		print STATSFILE "Number of peaks:\t$peaks_num\n";
+		print STATSFILE "Number of peaks with Repeats:\t$cnt\n";
+		print STATSFILE "%Repeats:\t$rep_prct\n";
+		
+		print STATSFILE "\nName of repeats \t Repeats_occurences_in_the_peaks \t Repeats_occurences_in_the_annotation \t %Occurence\n";		
+		foreach $key (sort{$repName{$b} <=> $repName{$a}} (keys(%repName))) {
+			my $tmp = sprintf("%3.2f", $repName{$key}/$repNameANN{$key} *100);
+			print STATSFILE "$key \t $repName{$key} \t $repNameANN{$key} \t $tmp \n";
+		}
+		
+		print STATSFILE "\nClass of repeats \t Class_occurences_in_the_peaks \t Class_occurences_in_the_annotation \t %Occurence\n";		
+		foreach $key (sort{$repClass{$b} <=> $repClass{$a}} (keys(%repClass))) {
+			my $tmp = sprintf("%3.2f", $repClass{$key}/$repClassANN{$key} *100);
+			print STATSFILE "$key \t $repClass{$key} \t $repClassANN{$key} \t $tmp \n";
+		}
+		
+		print STATSFILE "\nFamily of repeats \t Family_occurences_in_the_peaks \t Family_occurences_in_the_annotation \t %Occurence\n";		
+		foreach $key (sort{$repFamily{$b} <=> $repFamily{$a}} (keys(%repFamily))) {
+			my $tmp = sprintf("%3.2f", $repFamily{$key}/$repFamilyANN{$key} *100);
+			print STATSFILE "$key: \t $repFamily{$key} \t (% $tmp)\n";
+			print STATSFILE "$key \t $repFamily{$key} \t $repFamilyANN{$key} \t $tmp \n";
+		}
+		
+		close STATSFILE;
+		
+		# end of execution
+		print "Done ($suf.RM.stats created).\n";
+		
+		if($fromgui == 0) {
+			system("head -15 $suf.RM.stats");
+		}
+	}
+}
+# CpG islands annotation
+elsif($annot_type eq $type_cpgislands) {
+		
+	# find overlapping peaks
+	my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -hasid1 0 -intervals2 $CpGislands -hasid2 0 -show_ov_int 1 -rand2 0";
+	if ($usepeakcenter == 1) {
+		$todo .= " -usepeak1center 1 ";
+	}
+	
+	$todo .= " > $suf.ALL.CpG";
+	
+	if ($verbose == 1){ 
+		print "$todo\n";
+	}
+	
+	print "Determining overlap between CpG islands and ChIP-seq peaks ... ";
+	
+	system($todo) == 0 or die "Cannot exec CompareIntervals\n";
+	
+	if (-e "$suf.ALL.CpG") {
+		
+		#open file
+		open IN, "$suf.ALL.CpG";
+		
+		open CPGFILE, ">$suf.CpG";
+		
+		#for each line
+		while (my $l = <IN>) {
+			chomp $l;
+			
+			#split line
+			my @a = split /[\t]/, $l, -1;
+			
+			if ($a[3] ne '0') {
+				print CPGFILE "$l\n";
+			}
+		}
+		
+		print "Done ($suf.CpG created).\n";	
+		
+		#close files
+		close CPGFILE;
+		close IN;
+		
+		#count number of peaks with Duplicates
+		open IN, "$suf.CpG";
+		my $cnt = 0;
+		while (my $l = <IN>) {
+			chomp $l;
+			my $line = split /\n/;
+			$cnt++;
+		}
+		close IN;
+		
+		# count %
+		if($peaks_num != 0) {
+			$cpg_prct = sprintf("%3.1f", 100 * $cnt/$peaks_num);
+		}
+		else {
+			print "Cannot compute percentages, number of peaks is set to 0.\n";
+		}
+		
+		print "Creating stats file ... ";
+		
+		# print in stats file
+		open STATSFILE, ">$suf.CpG.stats";	
+		print STATSFILE "Number of peaks:\t$peaks_num\n";
+		print STATSFILE "Number of peaks with CpGs:\t$cnt\n";
+		print STATSFILE "%CpGs:\t$cpg_prct\n\n";
+		close STATSFILE;
+		
+		# end of execution
+		print "Done ($suf.CpG.stats created).\n";
+		
+		if($fromgui == 0) {
+			system("head -15 $suf.CpG.stats");
+		}
+		
+	}
+}
+# Segmental Duplications annotation
+elsif($annot_type eq $type_segmdup) {
+	
+	# find overlapping peaks
+	my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -hasid1 0 -intervals2 $segdups -hasid2 0 -show_ov_int 1";
+	if ($usepeakcenter == 1) {
+		$todo .= " -usepeak1center 1 ";
+	}
+	
+	$todo .= " > $suf.ALL.DUP";
+	
+	if ($verbose == 1){ 
+		print "$todo\n";
+	}
+	
+	print "Determining overlap between Segmental duplications and ChIP-seq peaks ... ";
+	
+	system($todo) == 0 or die "Cannot exec CompareIntervals\n";
+	
+	if (-e "$suf.ALL.DUP") {
+		
+		#open file
+		open IN, "$suf.ALL.DUP";
+		
+		open DUPFILE, ">$suf.DUP";
+		
+		#for each line
+		while (my $l = <IN>) {
+			chomp $l;
+			
+			#split line
+			my @a = split /[\t]/, $l, -1;
+			
+			if ($a[3] ne '0') {
+				print DUPFILE "$l\n";
+			}
+		}
+		
+		print "Done ($suf.DUP created).\n";	
+		
+		#close files
+		close DUPFILE;
+		close IN;
+		
+		#count number of peaks with Duplicates
+		open IN, "$suf.DUP";
+		my $cnt = 0;
+		while (my $l = <IN>) {
+			chomp $l;
+			my $line = split /\n/;
+			$cnt++;
+		}
+		close IN;
+		
+		# count %
+		if($peaks_num != 0) {
+			$dup_prct = sprintf("%3.1f", 100 * $cnt/$peaks_num);
+		}
+		else {
+			print "Cannot compute percentages, number of peaks is set to 0.\n";
+		}
+		
+		print "Creating stats file ... ";
+		
+		# print in stats file
+		open STATSFILE, ">$suf.DUP.stats";
+		print STATSFILE "Number of peaks:\t$peaks_num\n";
+		print STATSFILE "Number of peaks with Duplicates:\t$cnt\n";
+		print STATSFILE "%Duplicates:\t$dup_prct\n\n";
+		close STATSFILE;
+		
+		# end of execution
+		print "Done ($suf.DUP.stats created).\n";
+		
+		if($fromgui == 0) {
+			system("head -15 $suf.DUP.stats");
+		}
+	}
+}
+# Encode TFs and HMs
+elsif($annot_type eq $type_encode) {
+	
+	if (defined($targets)) {
+		# get coreTF directory
+		$outdir = substr $targets, 0, $idx+1;  
+	}
+		
+	if($mode eq "all") {
+		
+		# get the ENCODE files
+		my $a_ref_j = Sets::getFiles("$encode");
+		
+		foreach my $f (@$a_ref_j) {
+			next if $f =~ /ENCODE_TERMS/;     
+			
+			my $encodeFile = "$encode$f";
+			
+			#print "$encodeFile \n";
+			
+			# find overlapping peaks
+			#my $todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerCompareIntervals --peakfile1=$targets --peakfile2=$encodeFile --show_ov_int=1 --showovpeaks=0 ";
+			
+			#$todo.= "--outdir=$outdir --iterations=$iterations --prefix=ENCODE.ALL.$TFname --randmode=default --verbose=0 ";
+			
+			my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -intervals2 $encodeFile -show_ov_int 1 -outfile $suf.ENCODE.ALL.$f";
+			if ($usepeakcenter == 1) {
+					$todo .= " -usepeak1center 1 ";
+			}
+			
+			if ($verbose == 1){ 
+				print "$todo\n";
+			}
+			
+			#print "Determining overlap between ChIP-seq peaks and ENCODE peaks for $f ...\n ";
+			
+			system($todo) == 0 or die "Cannot exec $todo\n";
+			
+			if (-e "$suf.ENCODE.ALL.$f") {
+				
+				#open file
+				open IN, "$suf.ENCODE.ALL.$f";
+				
+				open ENCFILE, ">$suf.ENCODE.$f";
+				
+				#for each line
+				while (my $l = <IN>) {
+					chomp $l;
+					
+					#split line
+					my @a = split /[\t]/, $l, -1;
+					
+					if ($a[3] ne '0') {
+						print ENCFILE "$l\n";
+					}
+				}
+				
+				#print "Done ($suf.ENCODE.$f created).\n";	
+				
+				#close files
+				close ENCFILE;
+				close IN;
+				
+				#count number of peaks with Encode overlap
+				open IN, "$suf.ENCODE.$f";
+				my $cnt = 0;
+				while (my $l = <IN>) {
+					chomp $l;
+					my $line = split /\n/;
+					$cnt++;
+				}
+				close IN;
+				
+				# count %
+				if($peaks_num != 0) {
+					$en_prct = sprintf("%3.1f", 100 * $cnt/$peaks_num);
+				}
+				else {
+					print "Cannot compute percentages, number of peaks is set to 0.\n";
+				}
+				
+				#print "Creating stats file ... ";
+				
+				# print in stats file
+				open STATSFILE, ">$suf.ENCODE.$f.stats";
+				#print STATSFILE "Number of peaks: \t $peaks_num\n";
+				print STATSFILE "Overlap with $f peaks: \t $cnt \t ($en_prct %)\n";
+				close STATSFILE;
+				
+				# end of execution
+				#print "Done ($suf.ENCODE.$f.stats created).\n";
+				
+				if($fromgui == 0) {
+					system("head -15 $suf.ENCODE.$f.stats");
+				}
+			}
+			
+			unlink("$suf.ENCODE.ALL.$f");
+			
+		}
+	}
+	
+	else {
+		# if TFname is not defined, throw message
+		if(!defined($TFname)) {
+			die "Please define --TFname\n";
+		}
+		
+		# if prefix is not set by the user
+		if($suf eq $targets) {
+			$suf = $filename;
+		}
+		else {
+			$filename = $suf;
+		}
+				
+		# get the ENCODE files
+		my $a_ref_j = Sets::getFiles("$encode");
+		
+		my @matches = ();
+		
+		foreach my $f (@$a_ref_j) {
+			my $ff = Sets::filename($f);
+			
+			# store the files that contain the TFname
+			if ($ff =~ /$TFname/i) {
+				push @matches, [$ff, "TF"];			
+			}
+		}
+		
+		if (@matches == 0) {
+			print "Found no matches.\n";
+			exit;
+		} 
+		elsif (@matches > 1) {
+			print "Found multiple matches:\n";
+			foreach my $r (@matches) {
+				print "$r->[0]\n";
+			}
+			printf(STDERR "Try again using a more specific name\n"); 	
+		}
+		else {
+			
+			my $encodeFile = "$encode$matches[0]->[0]";
+			
+			# find overlapping peaks
+			my $todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerCompareIntervals --peakfile1=$targets --peakfile2=$encodeFile --show_ov_int=1 --showovpeaks=0 ";
+
+			$todo.= "--outdir=$outdir --iterations=$iterations --prefix=$filename.ENCODE.ALL.$TFname --randmode=default --verbose=0 ";
+			#$todo.= "--outdir=$outdir --iterations=$iterations --prefix=ENCODE.ALL.$TFname --randmode=default --verbose=0 ";
+			
+			#my $todo = "$ENV{CHIPSEEQERDIR}/CompareIntervals -intervals1 $targets -intervals2 $encodeFile -show_ov_int 1 -outfile $suf.ENCODE.ALL.$TFname";
+			#if ($usepeakcenter == 1) {
+			#	$todo .= " -usepeak1center 1 ";
+			#}
+			
+			if ($verbose == 1){ 
+				print "$todo\n";
+			}
+			
+			print "Determining overlap between ChIP-seq peaks and ENCODE peaks for $TFname ($matches[0]->[0]) ...\n ";
+			
+			system($todo) == 0 or die "Cannot exec $todo\n";
+
+			my $out = $outdir . "OUT.$filename.ENCODE.ALL." . $TFname . ".txt";
+			
+			if (-e "$out") {
+			
+				my $newout = $outdir . "$filename.ENCODE." . $TFname ;
+								
+				#open file
+				open IN, "$out";
+				
+				open ENCFILE, ">$newout";
+				
+				#for each line
+				while (my $l = <IN>) {
+					chomp $l;
+					
+					#split line
+					my @a = split /[\t]/, $l, -1;
+					
+					if ($a[3] ne '0') {
+						print ENCFILE "$l\n";
+					}
+				}
+				
+				print "Done ($newout created).\n";	
+				
+				#close files
+				close ENCFILE;
+				close IN;
+				
+				#count number of peaks with Encode overlap
+				open IN, "$newout";
+				my $cnt = 0;
+				while (my $l = <IN>) {
+					chomp $l;
+					my $line = split /\n/;
+					$cnt++;
+				}
+				close IN;
+				
+				# count %
+				if($peaks_num != 0) {
+					$en_prct = sprintf("%3.1f", 100 * $cnt/$peaks_num);
+				}
+				else {
+					print "Cannot compute percentages, number of peaks is set to 0.\n";
+				}
+				
+				print "Creating stats file ... ";
+				
+				# print in stats file
+				open STATSFILE, ">$newout.stats";
+				print STATSFILE "Number of peaks:\t$peaks_num\n";
+				print STATSFILE "Number of peaks that overlap with $TFname peaks:\t$cnt\t($en_prct %)\n";
+				
+				# end of execution
+				print "Done ($newout.stats created).\n";
+				
+				if($fromgui == 0) {
+					system("head -15 $newout.stats");
+				}
+				
+				my $zstats = $outdir . "STATS.$filename.ENCODE.ALL." . $TFname . ".txt";
+				
+				if (-e "$zstats") {
+					open INZ, "$zstats";
+
+					while (my $l = <INZ>) {
+						chomp $l;
+						
+						print STATSFILE "$l\n";
+						
+						#split line
+						my @a = split /[\t]/, $l, -1;
+						
+						print "$a[3]\n";
+					}
+										
+					close INZ, "$zstats";
+				}
+				
+				close STATSFILE;
+				
+				unlink("$zstats");
+				unlink("$out");
+			}
+		}
+	}	
+}
+else {
+	print "Please use a valid -type (RepMasker, CpGislands, SegmentalDups, Encode).\n"
+}

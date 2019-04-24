@@ -1,0 +1,245 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use Table;
+use Sets;
+use strict;
+use Getopt::Long;
+
+#variables declaration
+my $chipdir			= undef;
+my $inputdir		= undef;
+my $format			= undef;
+my $outfile			= undef;
+my $verbose			= 0;
+my $t				= undef;
+my $todo			= undef;
+my $outfile			= undef;
+my $fraglen			= undef;
+my $db				= "RefGene";	# could be RefGene, AceView, Ensembl or UCSCGenes
+my $genome			= "hg18";
+my $lenuP			= 2000;
+my $lendP			= 2000;
+my $lenuDW			= 2000;
+my $lendDW			= 2000;
+my $chrdata			= undef;
+my $chipfiles		= undef;
+my $inputfiles		= undef;
+my $chipoutfolder	= undef;
+my $inputoutfolder	= undef;
+my $runQC			= 0;
+my $runSplit		= 1;
+
+#handling lack of arguments
+if (@ARGV == 0) {
+	die "
+	Usage: ChIPseeqerBasic --chipfiles=FILES [ --inputfiles=FILES --outfile=STR --format=STR --fraglen=INT --verbose=INT ]
+	
+	--chipfiles=FILES   specifies ChIP files to process e.g. --files=\"*.gz\"
+	--inputfiles=FILES	specifies INPUT files to process e.g. --files=\"*.gz\"
+	--format=DIR		format
+	--outfile=STR		name of output file for ChIPseeqer peak detection
+	--fraglen=INT		fragment length
+	"; 
+}
+
+#processing command line options
+GetOptions("inputfiles=s"  => \$inputfiles,
+"chipfiles=s"		=> \$chipfiles,
+"chipoutfolder=s"	=> \$chipoutfolder,
+"inputoutfolder=s"	=> \$inputoutfolder,
+"inputdir=s"		=> \$inputdir,
+"chipdir=s"			=> \$chipdir,
+"outfile=s"			=> \$outfile,
+"format=s"			=> \$format,
+"fraglen=s"			=> \$fraglen,
+"db=s"				=> \$db,
+"genome=s"			=> \$genome,
+"lenuP=s"			=> \$lenuP,
+"lendP=s"			=> \$lendP,
+"lenuDW=s"			=> \$lenuDW,
+"lendDW=s"			=> \$lendDW,
+"chrdata=s"			=> \$chrdata,
+"runQC=s"			=> \$runQC,
+"runSplit=s"		=> \$runSplit,
+"verbose=s"			=> \$verbose);
+
+#if the ChIP reads directory is not defined, end program
+if (!defined($chipdir)) {
+	if(!defined($chipfiles)) {
+		die "Must define --chipdir=DIR OR --chipfiles=FILES.\n";
+	}
+}
+
+if (!defined($outfile)) {
+	die "Must define --outfile.\n";
+}
+
+if (!defined($chrdata)) {
+	die "Must define --chrdata.\n";
+}
+
+
+#
+# If chipfiles and inputfiles are given, run Split script
+#
+
+if(defined($chipfiles)) {
+	
+	if($runSplit == 1) {
+		
+		$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerSplitReadFiles --files=$chipfiles ";
+		
+		if (defined($format)) {
+			$todo .= " --format=$format ";
+		}
+		
+		if (defined($chipoutfolder)) {
+			$todo .= " --outputfolder=$chipoutfolder ";
+		}
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		
+		print "Running ChIPseeqerSplitReadFiles for $chipfiles... \n";
+		system($todo);
+		print "Done.\n";
+		
+		$chipdir = $chipoutfolder;
+	}
+	else {
+		die "You need to split the files into reads to run the program. Use --runSplit=1";
+	}
+}
+
+if(defined($inputfiles)) {
+	
+	if($runSplit == 1) {
+		
+		$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerSplitReadFiles --files=$inputfiles ";
+		
+		if (defined($format)) {
+			$todo .= " --format=$format ";
+		}
+		
+		if (defined($chipoutfolder)) {
+			$todo .= " --outputfolder=$inputoutfolder ";
+		}
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		
+		print "Running ChIPseeqerSplitReadFiles for $inputfiles... \n";
+		system($todo);
+		print "Done.\n";
+		
+		$inputdir = $inputoutfolder;
+		
+		else {
+			die "You need to split the files into reads to run the program. Use --runSplit=1";
+		}
+	}
+	
+	if($runQC == 1) {
+		#
+		# Run QC analysis tools
+		#
+		
+		# Coverage
+		
+		$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerReadCountDistribution -chipdir $chipdir -chrdata $chrdata -uniquereads 1 -normalize 0 ";
+		
+		if (defined($format)) {
+			$todo .= " -format $format ";
+		}
+		
+		if (defined($fraglen)) {
+			$todo .= " -fraglen $fraglen ";
+		}
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		
+		print "Running ChIPreadCountDistribution ... \n";
+		system($todo);
+		print "Done.\n";
+		
+		
+		# Clonal
+		
+		$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerGetNumClonalReads -chipdir $chipdir -chrdata $chrdata ";
+		
+		if (defined($format)) {
+			$todo .= " -format $format ";
+		}
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		
+		print "Running ChIPseeqerGetNumClonalReads ... \n";
+		system($todo);
+		print "Done.\n";
+		
+		# Uniquely mapped reads and GC content
+		
+		$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerQC --files=$chipfiles --qcType=all";
+		
+		if (defined($format)) {
+			$todo .= " -format $format ";
+		}
+		
+		if ($verbose == 1) {
+			print "$todo\n";
+		}
+		
+		print "Running ChIPseeqerQC ... \n";
+		system($todo);
+		print "Done.\n";
+		
+	}
+	#
+	# Run ChIPseeqer
+	#
+	$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqer.bin -chipdir $chipdir -chrdata $chrdata ";
+	
+	if (defined($inputdir)) {
+		$todo .= " -inputdir $inputdir ";
+	}
+	
+	if (defined($format)) {
+		$todo .= " -format $format ";
+	}
+	
+	if (defined($fraglen)) {
+		$todo .= " -fraglen $fraglen ";
+	}
+	
+	$todo .= " -outfile $outfile";
+	
+	if ($verbose == 1) {
+		print "$todo\n";
+	}
+	
+	print "Running ChIPseeqer ... \n";
+	system($todo);
+	print "Done.\n";
+	
+	#
+	# Run CSAnnotate
+	#
+	if (-e "$outfile") {
+		
+		my $todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate --targets=$outfile --db=$db --genome=$genome --lenuP=$lenuP --lendP=$lendP --lenuDW=$lenuDW --lendDW=$lendDW";
+		
+		if ($verbose == 1){ 
+			print "$todo\n";
+		}
+		
+		print "Running ChIPseeqerAnnotate ...\n";
+		
+		system($todo) == 0 or die "Cannot exec $ENV{CHIPSEEQERDIR}/ChIPseeqerAnnotate\n";
+	}

@@ -1,0 +1,322 @@
+#!/usr/bin/perl
+
+use lib "$ENV{CHIPSEEQERDIR}";
+use lib "$ENV{FIREDIR}";
+
+use CommonPaths;
+use Markov;
+use Fasta;
+use Getopt::Long;
+
+my $genome		= undef;
+my $fastafile	= undef;
+my $targets		= undef;
+my $suf			= undef;
+my $todo		= undef;
+my $iswig		= undef;
+my $verbose		= 0;
+my $runit		= 1;
+my $randmode	= undef;	# can be "random", "adjacent", "1MM" (shuffles the sequences), or "CGI" (keeps the % of peaks that overlap with CpG islands)
+my $randomize	= undef;
+my $genomeid	= 0;
+my $peaksfolder	= undef;
+my $seed        = undef;
+my $species		= "human";
+my $chrdata		= $CommonPaths::HG18_CHRDATA;
+my %peaksindx   = ();
+
+if (($ENV{FIREDIR} eq "") || (! -e "$ENV{FIREDIR}/fire.pl")) {
+	die "It looks like FIRE is not installed. Please install FIRE from http://tavazoielab.princeton.edu/FIRE\n";
+}
+
+if (@ARGV == 0) {
+	die "Usage: ChIPseeqerFIRE --peakfile=FILE --fastafile=FILE  [ -randomize=INT  --randmode=adjacent|1MM|CGI --genome=STR(hg18) --iswig=INT --seed=INT ]\n";
+}
+
+GetOptions("targets=s"		=> \$targets,
+"peakfile=s"         => \$targets,   # not a bug, ok this way
+"fastafile=s"		=> \$fastafile,
+"genome=s"			=> \$genome,	
+"suffix=s"			=> \$suf,
+"randmode=s"        => \$randmode,
+"iswig=s"			=> \$iswig,
+"verbose=s"			=> \$verbose,
+"peaksfolder=s"     => \$peaksfolder,
+"seed=s"			=> \$seed,
+"runit=s"			=> \$runit,
+"chrdata=s"			=> \$chrdata,
+"species=s"			=> \$species);
+
+if (! -e $targets) {
+	if(! -e $peaksfolder) {
+		die "Peakfile does not exist ... Exiting. \n";
+	}
+}
+
+if (!defined($suf)) {
+	$suf = "$targets.FIRE";
+}
+
+if (!defined($fastafile) && ($genome eq "hg18")) {
+	my $p1 = "$ENV{SNVSEEQERDIR}/REFDATA/hg18/wg.fa";
+	if (-e $p1) {
+		$fastafile = $p1;   
+	} else {
+		die "--fastafile must be defined.\n";
+	}
+} elsif (!defined($fastafile)) {
+	die "Please define --fastafile\n";
+}
+
+if (! -e $fastafile) {
+	die "$fastafile not a valid file\n";
+}
+
+
+#
+# If we give a folder with peak files, merge peak files into one
+#
+if(defined($peaksfolder)) {
+	# open data folder
+	my @contents = ();
+	
+	if (defined($peaksfolder)) {
+		print STDOUT "Opening directory $peaksfolder\n";
+		opendir (DIRECTORY, $peaksfolder) or die "can't open directory $peaksfolder: $!";
+		@contents = grep !/^\.\.?$/, readdir DIRECTORY; # skip . and ..
+		foreach my $f (@contents) {
+			$f = "$peaksfolder/$f";
+		}
+	} 
+	
+	# create new file to store all peak files
+	open ALLPEAKFILES, ">>$peaksfolder/allpeakfiles.txt";
+	
+	# counter for the files
+	my $cnt = 1;
+	
+	# for each file
+	foreach $file (@contents) {
+		next if $file =~ /^allpeakfiles/;   # skip anything starting with allpeakfiles
+		
+		print STDOUT "Opening $file\n";
+		
+		#open file
+		open(IN, "$file") or die "can't open file $file: $!";
+		
+		#for each line
+		while ($line = <IN>) {
+			chomp $line;
+			my @a = split /[\t]/, $line, -1;
+			
+			my $peak = "$a[0]-$a[1]-$a[2]";
+			
+			push(@{$peaksindx{$peak}}, $cnt);
+			
+			print ALLPEAKFILES "$line\n";
+		}
+		$cnt++;
+	}
+	
+	close ALLPEAKFILES;
+	$targets	= "$peaksfolder/allpeakfiles.txt";
+	$suf		= "$targets.FIRE";
+}
+
+#
+# Get sequences for the input peaks (or the merged peak files)
+#
+$todo = "$ENV{CHIPSEEQERDIR}/GetSubstringsIdx -intervals $targets -fastafile $fastafile ";
+
+if(defined($genome)) {
+	$todo .= "-genome $genome ";
+}
+
+if(defined($chrdata)) {
+	$todo .= "-chrdata $chrdata ";
+}
+
+$todo .= "> $targets.trueseq";
+
+if ($verbose == 1) {
+	print STDERR "Exec: $todo\n";
+}
+
+print "Extracting sequences for $targets from $fastafile ... ";
+system($todo) == 0 or die "Cannot exec GetSubstrings\n";
+print "Done.\n";
+
+#
+# Create random sequences
+#
+
+# Default randomize mode set to "CGI"
+if (!(defined($randmode))) {
+	$randomize = 3;
+}
+
+# If we want to extract random regions of our input peaks
+if ($randmode eq "random") {
+	$randomize = 1;
+} 
+# If we want to extract flanking regions of our input peaks
+if ($randmode eq "adjacent") {
+	$randomize = 2;
+} 
+# If we want to keep the % of peaks with CpG islands overlap
+elsif ($randmode eq "CGI") {
+	$randomize = 3;
+}
+# If we want to shuffle the sequences of the input peaks
+elsif ($randmode eq "1MM") {
+	$randomize = 4;
+}
+
+# For the "default" randomization mode, or the "adjacent", extract random sequences
+if ($randomize < 3) {
+	
+	$todo = "$ENV{CHIPSEEQERDIR}/GetSubstringsIdx -intervals $targets -fastafile $fastafile -randomize $randomize ";
+	
+	if(defined($genome)) {
+		$todo .= "-genome $genome ";
+	}
+	
+	if(defined($chrdata)) {
+		$todo .= "-chrdata $chrdata ";
+	}
+	
+	if (defined($seed)) {
+		$todo .= " -seed $seed ";
+	}
+	if (defined($iswig)) {
+		$todo .= " -iswig $iswig ";
+	}
+	$todo .= " > $targets.randseq";
+	if ($verbose == 1) {
+		print STDERR "Exec: $todo\n";
+	}
+	
+	print "Extracting randomly selected sequences (randomize=$randomize) from $fastafile ... ";
+	system($todo) == 0 or die "Cannot exec GetSubstrings\n";
+	print "Done.\n";
+	
+} 
+# For the "CGI" randomization mode, we keep the % of peaks with CpG islands overlap
+elsif($randomize == 3) {
+	
+	# We call ChIPseeqerCreateRandomRegions to extract random regions that keep the % of overlap with CpG islands
+	$todo = "$ENV{CHIPSEEQERDIR}/ChIPseeqerCreateRandomRegions --peakfile=$targets --prefix=$targets --randmode=CGI ";
+	
+	if ($verbose == 1) {
+		print STDERR "Exec: $todo\n";
+	}
+	
+	print "Extracting randomly selected regions (randomize=$randomize) ... \n";
+	system($todo) == 0 or die "Cannot exec $todo\n";
+	print "Done.\n";
+	
+	# We extract the sequences for the CpG-random regions
+	$todo = "$ENV{CHIPSEEQERDIR}/GetSubstringsIdx -intervals $targets.randompeaks.cpg.txt -fastafile $fastafile -randomize $randomize ";
+	
+	if(defined($genome)) {
+		$todo .= "-genome $genome ";
+	}
+	
+	if(defined($chrdata)) {
+		$todo .= "-chrdata $chrdata ";
+	}
+	
+	$todo .= "> $targets.randseq";
+	
+	if ($verbose == 1) {
+		print STDERR "Exec: $todo\n";
+	}
+	
+	print "Extracting randomly selected sequences (randomize=$randomize) from $fastafile ... ";
+	system($todo) == 0 or die "Cannot exec GetSubstrings\n";
+	print "Done.\n";
+}
+# For the "1MM" randomization mode, shuffle the input sequences
+elsif ($randomize == 4) {
+	
+	if ($verbose == 1) {
+		print "Creating random sequences using a 1rst order Markov Model (randomize=$randomize) ... ";
+	}	
+	
+	my $fa = Fasta->new;   # open seqs
+	$fa->setFile("$targets.trueseq");
+	open OUT, ">$targets.randseq" or die "Cannot open $targets.randseq\n";
+	while (my $a_ref = $fa->nextSeq()) {
+		my ($n, $s) = @$a_ref;
+		#print "$n\n$s\n";
+		my $o_markov = Markov->new();    
+		$o_markov->calcFrequenciesFromSeq($s);
+		my $s_new = $o_markov->generate1rstOrder(length($s));    
+		print OUT ">$n-random\n$s_new\n";
+        #die();
+	}
+	$fa->dispose();
+	close OUT;
+	print "Done.\n";
+}
+
+
+
+#
+# Merge the input/random peaks/sequences into two files, one for peaks (.txt) , one for sequences (.seq)
+#
+my $fa = Fasta->new;
+
+open OUT1, ">$suf.seq";
+open OUT2, ">$suf.txt";
+print OUT2 "GENE\tEXP\n";
+
+$fa->setFile("$targets.trueseq");
+while (my $a_ref = $fa->nextSeq()) {
+	my ($n, $s) = @$a_ref;
+	
+	if(defined($peaksfolder)) {
+		my @a = @{$peaksindx{$n}};
+		print OUT2 "$n\t$a[0]\n";
+		#print  "1: $n\t$a[0]\t$a[1]\n";
+		#print  "1: $n\t$peaksindx{$n}[0]\t$peaksindx{$n}[1]\n";
+		
+		shift @{$peaksindx{$n}};
+	}
+	else {
+		print OUT2 "$n\t1\n";
+	}
+	print OUT1 ">$n\n$s\n";
+}
+
+$fa = Fasta->new;
+$fa->setFile("$targets.randseq");
+while (my $a_ref = $fa->nextSeq()) {
+	my ($n, $s) = @$a_ref;
+	print OUT2 "$n\t0\n";
+	print OUT1 ">$n\n$s\n";
+}
+
+
+close OUT1;
+close OUT2;
+
+print "$suf.txt and $suf.seq have been generated.\n";
+
+
+#
+# Now that the files are created you can run FIRE
+#
+
+$todo = "$ENV{FIREDIR}/fire.pl --expfile=$suf.txt --fastafile_dna=$suf.seq --nodups=1 --minr=2 --species=$species --dorna=0 --dodnarna=0 --dogoclusters=1";
+
+if ($runit == 1) {
+	print "Now running FIRE using the following command: $todo\n";
+	system($todo) == 0 or die "Cannot run FIRE ... \n";
+} else {
+	print "\nTo run FIRE, run: $todo\n";
+}
+
+my @a = split /\//, $suf, -1;
+
+print "\nTo retrieve the peaks associated to a specific motif after FIRE, you can run: \nperl $ENV{CHIPSEEQERDIR}/SCRIPTS/find_peaks_with_motif.pl --targets=$suf.txt_FIRE/DNA/$a[$#a].txt --seed=TCCTAGA\n";

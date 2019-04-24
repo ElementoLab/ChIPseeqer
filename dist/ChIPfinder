@@ -1,0 +1,143 @@
+#!/usr/bin/perl
+use lib "$ENV{CHIPSEEQERDIR}";
+
+use Table;
+use Sets;
+use strict;
+use Getopt::Long;
+
+my $chipdir  = undef;
+my $inputdir = undef;
+my $t        = 15;
+my $run      = 1;
+my $k        = undef;
+my $fold     = undef;
+my $readlen  = undef;
+my $chain    = 1;
+my $oldfiles = 0;
+my $format   = undef;
+my $intervals= undef;
+my $outfile  = undef;
+my $verbose  = 0;
+my $mychr    = undef;
+my $fraglen  = undef;
+
+GetOptions("intervals=s"=> \$intervals,
+	   "inputdir=s" => \$inputdir,
+           "chipdir=s"  => \$chipdir,
+	   "verbose=s"  => \$verbose,
+	   "t=s"        => \$t,
+	   "fold=s"     => \$fold,
+	   "run=s"      => \$run,
+	   "k=s"        => \$k,
+	   "readlen=s"  => \$readlen,
+	   "fraglen=s"  => \$fraglen,
+	   "chain=s"    => \$chain,
+	   "oldfiles=s" => \$oldfiles,
+	   "outfile=s"  => \$outfile,
+	   "chr=s"       => \$mychr,
+	   "format=s"   => \$format);
+
+
+if (!defined($chipdir)) {
+  die "Must define --chipdir.\n";
+}
+
+
+if (defined($outfile) && (-e $outfile)) {
+  print "$outfile already exist, overwrite ? [y] ";
+  my $ans = <STDIN>;
+  chomp $ans;
+  if (($ans eq "") || ($ans =~ /y/)) {
+    system("rm $outfile");
+  } else {
+    die "Exiting.\n";
+  }
+}
+
+#my $t = ($ARGV[0] ne ""?$ARGV[0]:5);
+
+# read chromosomes
+my $chr = [ "chrY",
+	    "chrX",
+	    "chrM",
+	    "chr9",
+	    "chr8",
+	    "chr7",
+	    "chr6",
+	    "chr5",
+	    "chr4",
+	    "chr3",
+	    "chr22",
+	    "chr21",
+	    "chr20",
+	    "chr2",
+	    "chr19",
+	    "chr18",
+	    "chr17",
+	    "chr16",
+	    "chr15",
+	    "chr14",
+	    "chr13",
+	    "chr12",
+	    "chr11",
+	    "chr10",
+	    "chr1" ];
+
+
+foreach my $c (@$chr) {
+
+  next if (defined($mychr) && ($chr ne $c));
+  next if ($c eq "chrM");
+
+  my $todo = "$ENV{CHIPSEEQERDIR}/ChIPfinder.bin ";
+
+  $todo .= " -intervals $intervals -hasid 1 -chrname $c ";
+
+  if ($oldfiles == 0) {
+    $todo .= " -chipfile $chipdir/reads.$c ";
+  } else {
+    $todo .= " -chipfile $chipdir/reads.chip.$c ";
+  }
+
+  if (defined($inputdir)) {
+
+    if ($oldfiles == 0) {
+      $todo .= " -inputfile $inputdir/reads.$c ";
+    } else {
+      $todo .= " -inputfile $inputdir/reads.input.$c ";
+    }
+
+  }
+ 
+
+  if (defined($fraglen)) {
+    $todo .= " -fraglen $fraglen ";
+  }
+
+
+  if (defined($readlen)) {
+    $todo .= " -readlen $readlen ";
+  }
+  
+  if (defined($format)) {
+    $todo .= " -format $format ";
+  }
+
+  if (defined($outfile)) {
+    $todo .= " >> $outfile ";
+  }
+  
+  if ($verbose == 1) {
+    print "$todo\n";
+  }
+
+  
+  if ($run == 1) {
+    print "Processing reads in $c ... ";
+    system($todo);
+    print "done.\n";
+  }	
+
+}
+

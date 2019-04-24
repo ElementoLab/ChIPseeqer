@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cp Makefile Makefile.linux
+cp Makefile Makefile.direwulf
+perl -pi -e 's/\-arch\ x86_64//' Makefile.linux
+perl -pi -e 's/\-arch\ x86_64//' Makefile.direwulf
+

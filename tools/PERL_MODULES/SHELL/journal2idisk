@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Sync all data from Documents dir (except Virtual Machines) to MobileMe iDisk
+
+export LOG=/Volumes/"Macintosh HD"/Users/olivier/idisk.log
+
+echo `date` > $LOG
+echo "Starting copy of Documents to iDisk..." >> $LOG
+
+rsync -a -E -4 -u --exclude=.DS_Store --exclude=.TemporaryItems --exclude=.VolumeIcon.icns --exclude=tmp --exclude="Virtual Machines" --exclude="Virtual Machines.localized" --stats --progress /Volumes/"Macintosh HD"/Users/Olivier/Desktop/journal.org /Volumes/oelemento/journal.txt >> $LOG
+
+echo "Backup of Documents to iDisk complete..." >> $LOG
+echo "" >> $LOG
+echo `date` >> $LOG
+
+exit 0

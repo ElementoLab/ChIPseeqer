@@ -1,0 +1,33 @@
+TrPrU	Trehalose Production Upregulated	P
+GlBeSyU	Glycine Betaine Synthesis Upregulated	P
+OtCyHeReGeU	Other Cytoplasmic Heat Response Genes Upregulated	P
+OsStReU	Osmotic Stress Response Upregulated	P
+AcStReU	Acid Stress Response Upregulated	P
+CoSoUpU	Compatibe Solute Uptake Upregulated	P
+OxDeReU	Oxygen Deprivation Response Upregulated	P
+PrBiU	Proline Biosynthesis Upregulated	P
+OxStReU	Oxidative Stress Response Upregulated	P
+CyHeShReU	Cytoplasmic Heat Shock Response Upregulated	P
+EnStReU	Envelop Stress Response Upregulated	P
+SOReU	SOS Response Upregulated	P
+GeStReU	General Stress Response Upregulated	P
+AropU	ArcAB operon Upregulated	P
+CoSoEfU	Compatible Solute Efflux Upregulated	P
+FNopD	FNR operon Downregulated	P
+oxReU	oxyR Regulon Upregulated	P
+DrReU	Drug Resistance Upregulated	P
+OxStReD	Oxidative Stress Response Downregulated	P
+CoShReU	Cold Shock Response Upregulated	P
+rpReU	rpoH Regulon Upregulated	P
+GlBeSyD	Glycine Betaine Synthesis Downregulated	P
+SoReU	SoxRS Regulon Upregulated	P
+EcAcU	Ectoine Accumulation Upregulated	P
+OxDeReD	Oxygen Deprivation Response Downregulated	P
+OtOxReGeU	Other Oxidative Response Genes Upregulated	P
+AropD	ArcAB operon Downregulated	P
+oxReD	oxyR Regulon Downregulated	P
+FNopU	FNR operon Upregulated	P
+HeShReU	Heat Shock Response Upregulated	P
+OsStReD	Osmotic Stress Response Downregulated	P
+RcSiPaU	RcsCB Signaling Pathway Upregulated	P
+rpReReU	rpoE Related Response Upregulated	P

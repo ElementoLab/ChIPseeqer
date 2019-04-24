@@ -1,0 +1,132 @@
+=head2 Mon May 23 12:24:09 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon May 23 12:56:06 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon May 23 17:26:26 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon May 23 21:54:41 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue May 24 17:50:50 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue May 24 18:01:02 2011: C<Module> L<Hypergeom|Hypergeom>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/eug2002/Development/ChIPseeqer/branches/ChIPseeqer-2.0/tools/FIRE/SCRIPTS/../modules/lib/perl5/site_perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
