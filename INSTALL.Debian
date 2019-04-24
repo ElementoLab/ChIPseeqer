@@ -1,11 +1,6 @@
-==========================
+# ChIPseeqer (v2.0)
 
-ChIPseeqer (v2.0)
-
-==========================
-
-
-== Dependencies ==
+## Dependencies
 
 ChIPseeqer has been tested in GNU/Linux Debian distribution v6 (Squeeze), in x86/x86-64 
 architectures.
@@ -26,7 +21,7 @@ The following packages are needed:
 	6.  libqt4-dev		(>= v4.6.3)
 
 
-== Download ==
+## Download
 
 1. Download ChIPseeqer source code:
 
@@ -37,7 +32,7 @@ The following packages are needed:
 	tar xzf ChIPseeqer-2.0/tar.gz
 
 
-== Data ==
+## Data
 
 
 1. Download the annotation data for a species:
@@ -74,7 +69,7 @@ Follow these instructions to download the required files:
 	http://icb.med.cornell.edu/wiki/index.php/Elementolab/ChIPseeqer_FIRE
 
 
-== How to install ==
+## How to install
 
 1. Go to the source directory.
 
@@ -119,7 +114,7 @@ Follow these instructions to download the required files:
 	at the correct directories.
 
 
-== How to run ChIPseeqer ==
+## How to run ChIPseeqer
 
 1. To run the ChIPseeqer tools from the command-line go to the directory:
 
@@ -140,7 +135,7 @@ Follow these instructions to download the required files:
 		./ChIPseeqerGUI
 
 
-== Cleanup ==
+## Cleanup
 	
 If needed to reinstall, go to the src directory
 
@@ -159,6 +154,6 @@ and do the following:
 	make -f Makefile.init clean
 
 
-== Contact ==
+## Contact
 
 If you find any errors during installation, broken links, or have any comments, contact: Eugenia Giannopoulou <eug2002@med.cornell.edu>
