@@ -95,7 +95,7 @@ Follow these instructions to download the required files:
 
 	make gui
 
-7. Set the envormental variables.
+7. Set the environmental variables.
 
 	Edit the .bash_profile file in your home directory and add the following at the end.
 	
