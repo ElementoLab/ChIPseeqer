@@ -1,0 +1,9 @@
+data/NONGENIC_ANNOTATION/CpGislands_annotation filter=lfs diff=lfs merge=lfs -text
+data/hg18.chroms.sizes filter=lfs diff=lfs merge=lfs -text
+data/mm9.chrdata filter=lfs diff=lfs merge=lfs -text
+data/sacser.chrdata filter=lfs diff=lfs merge=lfs -text
+data/BULYK_MATRICES filter=lfs diff=lfs merge=lfs -text
+data/JASPAR_MATRICES filter=lfs diff=lfs merge=lfs -text
+data/NONGENIC_ANNOTATION filter=lfs diff=lfs merge=lfs -text
+data/dm3.chrdata filter=lfs diff=lfs merge=lfs -text
+data/hg18.chrdata filter=lfs diff=lfs merge=lfs -text
