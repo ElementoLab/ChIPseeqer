@@ -31,7 +31,7 @@ Annotation data are available at:
 
 ## Installation
 
-For installation instructions please take a look at the file called INSTALL.
+For installation instructions please take a look at the file called [INSTALL](docs/).
 
 ## Documentation
 
