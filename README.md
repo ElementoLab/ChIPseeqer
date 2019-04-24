@@ -1,5 +1,7 @@
 # ChIPseeqer (v2.0)
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 ChIPseeqer is a computational framework for the analysis of ChIP-seq datasets.
 
 ![ChIPseeqer](docs/images/ChIPseeqer.png)
@@ -37,17 +39,17 @@ For installation instructions please take a look at the file called [INSTALL](do
 
 ChIPseeqer is fully documented online at:
 
-[http://physiology.med.cornell.edu/faculty/elemento/lab/chipseq.shtml](http://physiology.med.cornell.edu/faculty/elemento/lab/chipseq.shtml)
+[https://physiology.med.cornell.edu/faculty/elemento/lab/chipseq.shtml](https://physiology.med.cornell.edu/faculty/elemento/lab/chipseq.shtml)
 
 ## Authors
 
 The ChIPseeqer software has been developed in the [Elemento lab](http://physiology.med.cornell.edu/faculty/elemento/lab/), at the Institute of Computational Biology of Weill Cornell Medical College, by:
 
-- Eugenia Giannopoulou, Ph.D. (eug2002@med.cornell.edu)
-- Olivier Elemento, Ph.D. (ole2001@med.cornell.edu)
+- Eugenia Giannopoulou, Ph.D. ([eug2002@med.cornell.edu](mailto:eug2002@med.cornell.edu))
+- Olivier Elemento, Ph.D. ([ole2001@med.cornell.edu](mailto:ole2001@med.cornell.edu))
 
 ## Contact
 
 If you have any questions, bug reports or features suggestions please contact:
 
-- Eugenia Giannopoulou, Ph.D. (eug2002@med.cornell.edu)
+- Eugenia Giannopoulou, Ph.D. ([eug2002@med.cornell.edu](mailto:eug2002@med.cornell.edu))
